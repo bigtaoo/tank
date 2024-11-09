@@ -39,6 +39,22 @@
       "version": "1.0.0",
       "source": "builtin"
     },
+    "com.unity.2d.tilemap@1.0.0": {
+      "name": "com.unity.2d.tilemap",
+      "resolvedPath": "C:\\Users\\Tao Wang\\Documents\\tank\\Unity-Tank\\Library\\PackageCache\\com.unity.2d.tilemap",
+      "fingerprint": "6bdab8e797050ef862d77161c1dd31c993cc2a57",
+      "editorCompatibility": "2019.2.0a1",
+      "version": "1.0.0",
+      "source": "builtin"
+    },
+    "com.unity.2d.tilemap.extras@4.0.2": {
+      "name": "com.unity.2d.tilemap.extras",
+      "resolvedPath": "C:\\Users\\Tao Wang\\Documents\\tank\\Unity-Tank\\Library\\PackageCache\\com.unity.2d.tilemap.extras",
+      "fingerprint": "6a6fc3dece599bfc4df5dd2cb0da6635868f1281",
+      "editorCompatibility": "2023.1.0a1",
+      "version": "4.0.2",
+      "source": "registry"
+    },
     "com.unity.ai.navigation@2.0.4": {
       "name": "com.unity.ai.navigation",
       "resolvedPath": "C:\\Users\\Tao Wang\\Documents\\tank\\Unity-Tank\\Library\\PackageCache\\com.unity.ai.navigation",
