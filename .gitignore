@@ -13,25 +13,25 @@ _ReSharper.CSharp/
 ~$*.xlsx.meta
 
 #Unity相关目录
-Unity/.gradle
-Unity/Bundles
-Unity/Library
-Unity/Logs
-Unity/UserSettings
-Unity/*.csproj
-Unity/*.vsconfig
-Unity/ProjectSettings/RiderScriptEditorPersistedState.asset
-Unity/HybridCLRData
+Unity-Tank/.gradle
+Unity-Tank/Bundles
+Unity-Tank/Library
+Unity-Tank/Logs
+Unity-Tank/UserSettings
+Unity-Tank/*.csproj
+Unity-Tank/*.vsconfig
+Unity-Tank/ProjectSettings/RiderScriptEditorPersistedState.asset
+Unity-Tank/HybridCLRData
 
 #Unity/Assets
-Unity/Assets/Bundles/Code/*
-Unity/Assets/Bundles/AotDlls/*
-Unity/Assets/StreamingAssets/
-Unity/Assets/StreamingAssets.meta
+Unity-Tank/Assets/Bundles/Code/*
+Unity-Tank/Assets/Bundles/AotDlls/*
+Unity-Tank/Assets/StreamingAssets/
+Unity-Tank/Assets/StreamingAssets.meta
 
 #Unity中的IgnoreAssembly定义文件
-Unity/Assets/Scripts/**/Ignore.asmdef
-Unity/Assets/Scripts/**/Ignore.asmdef.meta
+Unity-Tank/Assets/Scripts/**/Ignore.asmdef
+Unity-Tank/Assets/Scripts/**/Ignore.asmdef.meta
 
 #WebGL
 WebGL
@@ -51,8 +51,4 @@ obj/
 Publish/
 */Temp/
 */TestResults/
-/Unity-Tank/Library/PackageCache
-/Unity-Tank/Library/Artifacts
-/Unity-Tank/Library
-/Unity-Tank/Library
-/Unity-Tank/Library
+
