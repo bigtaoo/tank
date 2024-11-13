@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEditor;
+using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
 
@@ -33,8 +34,10 @@ namespace ET
         public static void EnableDefineSymbols(string symbols, bool enable)
         {
             Debug.Log($"EnableDefineSymbols {symbols} {enable}");
-            string defines = PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
+            NamedBuildTarget buildTarget = NamedBuildTarget.FromBuildTargetGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
+            string defines = PlayerSettings.GetScriptingDefineSymbols(buildTarget);
             var ss = defines.Split(';').ToList();
+
             if (enable)
             {
                 if (ss.Contains(symbols))
@@ -56,7 +59,7 @@ namespace ET
 
             Debug.Log($"EnableDefineSymbols {symbols} {enable}");
             defines = string.Join(";", ss);
-            PlayerSettings.SetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup, defines);
+            PlayerSettings.SetScriptingDefineSymbols(buildTarget, defines);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
         }

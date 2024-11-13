@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSUnitViewSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Tank\UI\UIGameMode\ChooseGameModeUI.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\UIHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Tank\Game\GameTankSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\EntryEvent3_InitClient.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\UI\UILSLogin\LoginFinish_RemoveLoginUI.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\UILogin\AppStartInitFinish_CreateLoginUI.cs" />
