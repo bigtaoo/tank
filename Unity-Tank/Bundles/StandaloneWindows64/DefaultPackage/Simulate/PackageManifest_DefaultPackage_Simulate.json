@@ -224,6 +224,13 @@
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 12
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Scenes/TankGameMap.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 13
         }
     ],
     "BundleList": [
@@ -353,6 +360,16 @@
             "FileHash": "af1a78394663923e2bfce5c6585a0ebe",
             "FileCRC": "00000000",
             "FileSize": 73309,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "assets_bundles_scenes_tankgamemap.bundle",
+            "UnityCRC": 0,
+            "FileHash": "9a4bb9bab6a80baf85afd1d59a606c9e",
+            "FileCRC": "00000000",
+            "FileSize": 144141,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
