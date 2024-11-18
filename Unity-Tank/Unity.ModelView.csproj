@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\ModelView\Empty.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Module\UI\UIComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\LockStep\UI\UILSLobby\UILSLobbyComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Tank\TankGameComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Demo\UI\UILoading\UILoadingComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Module\Resource\ResourcesLoaderComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Module\UI\UI.cs" />
@@ -76,13 +77,13 @@
     <Compile Include="Assets\Scripts\ModelView\Client\Tank\UIType.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Demo\Unit\GameObjectComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Module\UI\UIEventComponent.cs" />
-    <Compile Include="Assets\Scripts\ModelView\Client\Tank\GameTankComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Plugins\Example\ModelView.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\LockStep\UI\UILSRoom\UILSRoomComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\LockStep\Camera\LSCameraComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Module\UI\AUIEvent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Module\UI\LayerNames.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Demo\Opera\OperaComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Tank\TankCameraComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\LockStep\LSOperaComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Demo\Unit\AnimatorComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\LockStep\UI\UILSLogin\UILSLoginComponent.cs" />

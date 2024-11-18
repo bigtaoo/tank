@@ -22,7 +22,7 @@ namespace ET.Client
 
                 //currentScene.AddComponent<OperaComponent>();
 
-                Log.Warning("load map");
+                //Log.Warning("load map");
             }
             catch (Exception e)
             {

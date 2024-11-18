@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\UILobby\UILobbyComponentSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\UI\UILSLogin\UILSLoginEvent.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Module\Resource\GameObjectHelper.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Tank\Game\TankCameraSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Unit\ChangeRotation_SyncGameObjectRotation.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSUnitViewSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Tank\UI\UIGameMode\ChooseGameModeUI.cs" />
