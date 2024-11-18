@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\Camera\LSCameraComponentSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\UIHelp\SceneChangeFinishEvent_CreateUIHelp.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Scene\AfterCreateClientScene_AddComponent.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Tank\Scene\TankSceneChangeStartEvent.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\UI\UILSRoom\UILSRoomEvent.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\Scene\AfterCreateClientScene_LSAddComponent.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Unit\ChangePosition_SyncGameObjectPos.cs" />

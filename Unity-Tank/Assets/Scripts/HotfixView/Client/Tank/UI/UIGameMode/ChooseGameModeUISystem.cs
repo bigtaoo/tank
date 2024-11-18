@@ -11,14 +11,16 @@ namespace ET.Client
         private static void Awake(this UIGameModeComponent self)
         {
             ReferenceCollector rc = self.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
-            self.SingelMode = rc.Get<GameObject>("LoginBtn");
+            self.SingleMode = rc.Get<GameObject>("EnterMap");
 
-            self.SingelMode.GetComponent<Button>().onClick.AddListener(() => { self.OnLogin(); });
+            self.SingleMode.GetComponent<Button>().onClick.AddListener(() => { self.StartSingleMode().Coroutine(); });
         }
 
 
-        public static void OnLogin(this UIGameModeComponent self)
+        public static async ETTask StartSingleMode(this UIGameModeComponent self)
         {
+            await TankSceneChangeHelper.SceneChangeTo(self.Root(), "tank", self.Root().InstanceId);
+            await UIHelper.Remove(self.Root(), UIType.UILogin);
         }
     }
 }
