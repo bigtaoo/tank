@@ -14,17 +14,17 @@ namespace ET.Client
             {
                 gameCamera.SetActive(true);
                 self.Camera = gameCamera.GetComponent<Camera>();
-                Log.Warning("Active the game camera");
+                //Log.Warning("Active the game camera");
             }
 
             var originalCamera = GameObject.Find("OriginalCamera");
             if (originalCamera != null)
             {
-                Log.Warning("Deactive the original camera");
+                //Log.Warning("Deactive the original camera");
                 originalCamera.SetActive(false);
             }
 
-            Log.Warning("TankCameraComponent awake");
+            //Log.Warning("TankCameraComponent awake");
         }
     }
 }
