@@ -10,8 +10,8 @@ namespace ET.Client
         private static void Awake(this TankGameComponent self)
         {
             self.TankPlayer1 = GameObject.Find("tank_player");
-            self.MoveSpeed = 20;
-            Log.Warning($"Tank player is null: {self.TankPlayer1 == null}");
+            self.MoveSpeed = 0.1f;
+            //Log.Warning($"Tank player is null: {self.TankPlayer1 == null}");
         }
 
         [EntitySystem]
@@ -47,6 +47,11 @@ namespace ET.Client
 
             if (moved)
             {
+                if (self.TankPlayer1 == null)
+                {
+                    self.TankPlayer1 = GameObject.Find("tank_player");
+                    //Log.Warning($"Tank player is null: {self.TankPlayer1 == null}");
+                }
                 self.TankPlayer1.GetComponent<Transform>().position += movement;
             }
         }

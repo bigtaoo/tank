@@ -20,7 +20,7 @@ namespace ET.Client
         public static async ETTask StartSingleMode(this UIGameModeComponent self)
         {
             await TankSceneChangeHelper.SceneChangeTo(self.Root(), "tank", self.Root().InstanceId);
-            await UIHelper.Remove(self.Root(), UIType.UILogin);
+            await UIHelper.Remove(self.Root(), UIType.TankUIGameMode);
         }
     }
 }

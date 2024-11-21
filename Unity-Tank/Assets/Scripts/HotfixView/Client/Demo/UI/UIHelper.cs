@@ -11,6 +11,7 @@
         [EnableAccessEntiyChild]
         public static async ETTask Remove(Entity scene, string uiType)
         {
+            //Log.Warning($"Remove UI: {uiType}");
             scene.GetComponent<UIComponent>().Remove(uiType);
             await ETTask.CompletedTask;
         }

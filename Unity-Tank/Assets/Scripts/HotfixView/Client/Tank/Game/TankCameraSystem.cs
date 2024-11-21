@@ -25,6 +25,8 @@ namespace ET.Client
             }
 
             //Log.Warning("TankCameraComponent awake");
+
+            Application.targetFrameRate = 60;
         }
     }
 }
