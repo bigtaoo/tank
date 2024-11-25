@@ -199,38 +199,45 @@
         },
         {
             "Address": "",
-            "AssetPath": "Assets/Bundles/UI/Tank/UIGameMode.prefab",
+            "AssetPath": "Assets/Bundles/UI/Tank/TankUIGameMain.prefab",
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 9
         },
         {
             "Address": "",
-            "AssetPath": "Assets/Bundles/Unit/Unit.prefab",
+            "AssetPath": "Assets/Bundles/UI/Tank/TankUIGameMode.prefab",
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 10
         },
         {
             "Address": "",
-            "AssetPath": "Assets/Bundles/Scenes/Map1.unity",
+            "AssetPath": "Assets/Bundles/Unit/Unit.prefab",
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 11
         },
         {
             "Address": "",
-            "AssetPath": "Assets/Bundles/Scenes/Map2.unity",
+            "AssetPath": "Assets/Bundles/Scenes/Map1.unity",
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 12
         },
         {
             "Address": "",
-            "AssetPath": "Assets/Bundles/Scenes/TankGameMap.unity",
+            "AssetPath": "Assets/Bundles/Scenes/Map2.unity",
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 13
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Scenes/TankGameMap.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 14
         }
     ],
     "BundleList": [
@@ -249,7 +256,7 @@
             "UnityCRC": 0,
             "FileHash": "dee6dd5f77582b799d4ab7d1ebba46ac",
             "FileCRC": "00000000",
-            "FileSize": 678196,
+            "FileSize": 680764,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -325,11 +332,21 @@
             "DependIDs": []
         },
         {
-            "BundleName": "assets_bundles_ui_tank_uigamemode.bundle",
+            "BundleName": "assets_bundles_ui_tank_tankuigamemain.bundle",
             "UnityCRC": 0,
-            "FileHash": "dc237d46f6752ef1958eb41ce66431a1",
+            "FileHash": "f1a1f6fc001fac158d9127084f698ee7",
             "FileCRC": "00000000",
-            "FileSize": 11012,
+            "FileSize": 16170,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "assets_bundles_ui_tank_tankuigamemode.bundle",
+            "UnityCRC": 0,
+            "FileHash": "a81c7177969e53c579dd50da5bfad8b8",
+            "FileCRC": "00000000",
+            "FileSize": 11016,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -369,7 +386,7 @@
             "UnityCRC": 0,
             "FileHash": "9a4bb9bab6a80baf85afd1d59a606c9e",
             "FileCRC": "00000000",
-            "FileSize": 144126,
+            "FileSize": 253571,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []

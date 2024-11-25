@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1431576037130298803}
   - component: {fileID: 114905074804487618}
   m_Layer: 5
-  m_Name: UIGameMode
+  m_Name: TankUIGameMode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

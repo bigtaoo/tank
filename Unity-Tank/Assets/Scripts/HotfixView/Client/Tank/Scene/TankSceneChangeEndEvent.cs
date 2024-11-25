@@ -7,10 +7,11 @@ namespace ET.Client
         {
             //scene.AddComponent<UIComponent>();
             //scene.AddComponent<ResourcesLoaderComponent>();
-            await ETTask.CompletedTask;
 
             scene.AddComponent<TankCameraComponent>();
             scene.AddComponent<TankGameComponent>();
+
+            await UIHelper.Create(scene, UIType.TankUIGameMain, UILayer.Mid);
         }
     }
 }
