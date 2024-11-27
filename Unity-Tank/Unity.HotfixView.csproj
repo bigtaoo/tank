@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\UILogin\UILoginEvent.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Tank\Game\TankClientTileMapSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\UI\UILSLogin\UILoginComponentSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\UILogin\UILoginComponentSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSOperaComponentSystem.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Scene\AfterCreateClientScene_AddComponent.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Tank\Scene\TankSceneChangeStartEvent.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\UI\UILSRoom\UILSRoomEvent.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Tank\Game\TankClientPlayerTankSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\Scene\AfterCreateClientScene_LSAddComponent.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Unit\ChangePosition_SyncGameObjectPos.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Empty.cs" />
@@ -107,7 +109,6 @@
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Unit\ChangeRotation_SyncGameObjectRotation.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSUnitViewSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\UIHelper.cs" />
-    <Compile Include="Assets\Scripts\HotfixView\Client\Tank\Game\GameTankSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\EntryEvent3_InitClient.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\UI\UILSLogin\LoginFinish_RemoveLoginUI.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\UILogin\AppStartInitFinish_CreateLoginUI.cs" />

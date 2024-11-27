@@ -4,7 +4,7 @@ namespace ET.Client
 {
     [EntitySystemOf(typeof(TankClientPlayerTankComponent))]
     [FriendOf(typeof(TankClientPlayerTankComponent))]
-    public static partial class GameTankSystem
+    public static partial class TankClientPlayerTankSystem
     {
         [EntitySystem]
         private static void Awake(this TankClientPlayerTankComponent self)

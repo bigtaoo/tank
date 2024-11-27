@@ -8,8 +8,10 @@ namespace ET.Client
             //scene.AddComponent<UIComponent>();
             //scene.AddComponent<ResourcesLoaderComponent>();
 
+            scene.AddComponent<TankMapTilesComponent>();
             scene.AddComponent<TankCameraComponent>();
             scene.AddComponent<TankClientPlayerTankComponent>();
+            scene.AddComponent<TankClientTileMapComponent>();
 
             await UIHelper.Create(scene, UIType.TankUIGameMain, UILayer.Mid);
         }
