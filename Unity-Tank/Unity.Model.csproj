@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSInput.cs" />
     <Compile Include="Assets\Scripts\Model\Generate\Client\Config\AIConfig.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSEntity.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\TankMapTile.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Move\MoveEventType.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Unit\Unit.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Console\ConsoleHandlerAttribute.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="Assets\Scripts\Model\Generate\Client\Message\LockStepOuter_C_11001.cs" />
     <Compile Include="Assets\Scripts\Model\Share\ConstFiberId.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\IMessageSessionHandler.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\TankMapTileType.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\MessageSessionHandlerAttribute.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Console\ModeContex.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\IRoomMessage.cs" />
@@ -139,6 +141,7 @@
     <Compile Include="Assets\Scripts\Model\Client\Demo\Main\ClientSenderComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\OneFrameInputs.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\NetComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\TankMapTilesComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSInputComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\NumericComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSWorld.cs" />

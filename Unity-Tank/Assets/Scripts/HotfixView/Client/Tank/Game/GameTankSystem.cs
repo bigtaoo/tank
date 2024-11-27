@@ -2,12 +2,12 @@ using UnityEngine;
 
 namespace ET.Client
 {
-    [EntitySystemOf(typeof(TankGameComponent))]
-    [FriendOf(typeof(TankGameComponent))]
+    [EntitySystemOf(typeof(TankClientPlayerTankComponent))]
+    [FriendOf(typeof(TankClientPlayerTankComponent))]
     public static partial class GameTankSystem
     {
         [EntitySystem]
-        private static void Awake(this TankGameComponent self)
+        private static void Awake(this TankClientPlayerTankComponent self)
         {
             self.TankPlayer1 = GameObject.Find("tank_player");
             self.MoveSpeed = 0.1f;
@@ -15,12 +15,12 @@ namespace ET.Client
         }
 
         [EntitySystem]
-        private static void Update(this TankGameComponent self)
+        private static void Update(this TankClientPlayerTankComponent self)
         {
             self.UpdateInput();
         }
 
-        private static void UpdateInput(this TankGameComponent self)
+        private static void UpdateInput(this TankClientPlayerTankComponent self)
         {
             var movement = new Vector3 (0, 0, 0);
             var targetRotation = new Vector3(0, 0, 0);

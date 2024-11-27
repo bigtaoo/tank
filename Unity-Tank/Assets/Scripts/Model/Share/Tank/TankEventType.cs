@@ -1,4 +1,4 @@
-namespace ET.Client
+namespace ET
 {
     public struct TankSceneChangeStart { }
     public struct TankSceneChangeEnd { }
