@@ -1,3 +1,5 @@
+using MongoDB.Bson;
+
 namespace ET.Client
 {
     [EntitySystemOf(typeof(TankMapTilesComponent))]
@@ -15,6 +17,8 @@ namespace ET.Client
             self.Tiles = tiles;
             self.TileWidth = tileWidth;
             self.TileHeight = tileHeight;
+
+            Log.Warning($"width: {tileWidth}, height: {tileHeight}, tiles: {tiles.ToJson()},");
         }
     }
 }
