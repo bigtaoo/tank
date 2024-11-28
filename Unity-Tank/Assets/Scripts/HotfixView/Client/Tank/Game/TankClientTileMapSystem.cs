@@ -31,13 +31,13 @@ namespace ET.Client
                 {
                     var tilePosition = new Vector3Int(x, y, 0);
                     var tile = self.Tilemap.GetTile(tilePosition);
-                    if (tile != null)
+                    if (tile != null && tile is TankTile tankTile)
                     {
                         var tankMapTile = new TankMapTile
                         {
                             X = x,
                             Y = y,
-                            Type = TankMapTileType.Wall,
+                            Type = tankTile.TileType,
                         };
                         tiles.Add(tankMapTile);
                     }
