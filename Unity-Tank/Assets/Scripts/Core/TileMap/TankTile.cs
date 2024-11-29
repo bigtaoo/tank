@@ -1,9 +1,8 @@
-using ET;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [CreateAssetMenu(fileName = "TankTile", menuName = "2D/Tiles/TankTile", order = 1)]
-[EnableClass]
+
 public class TankTile : Tile
 {
     public TankMapTileType TileType;

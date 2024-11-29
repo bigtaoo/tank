@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Core\Entity\ISerializeSystem.cs" />
     <Compile Include="Assets\Scripts\Core\World\Module\Actor\MessageDispatcher.cs" />
     <Compile Include="Assets\Scripts\Core\Network\IKcpTransport.cs" />
+    <Compile Include="Assets\Scripts\Core\TileMap\TankTile.cs" />
     <Compile Include="Assets\Scripts\Core\Entity\EntitySystemAttribute.cs" />
     <Compile Include="Assets\Scripts\Core\World\Module\Actor\MessageLocationHandlerAttribute.cs" />
     <Compile Include="Assets\Scripts\Core\Entity\EntityHelper.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="Assets\Scripts\Core\Method\StaticMethod.cs" />
     <Compile Include="Assets\Scripts\Core\World\Module\IdGenerater\IdGenerater.cs" />
     <Compile Include="Assets\Scripts\Core\World\Module\Options\Options.cs" />
+    <Compile Include="Assets\Scripts\Core\TileMap\TankMapTileType.cs" />
     <Compile Include="Assets\Scripts\Core\Network\OpcodeType.cs" />
     <Compile Include="Assets\Scripts\Core\World\Module\EventSystem\IEvent.cs" />
     <Compile Include="Assets\Scripts\Core\Helper\AssemblyHelper.cs" />

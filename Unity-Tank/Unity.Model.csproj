@@ -106,7 +106,6 @@
     <Compile Include="Assets\Scripts\Model\Generate\Client\Message\LockStepOuter_C_11001.cs" />
     <Compile Include="Assets\Scripts\Model\Share\ConstFiberId.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\IMessageSessionHandler.cs" />
-    <Compile Include="Assets\Scripts\Model\Share\Tank\TankMapTileType.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\MessageSessionHandlerAttribute.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Console\ModeContex.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\IRoomMessage.cs" />

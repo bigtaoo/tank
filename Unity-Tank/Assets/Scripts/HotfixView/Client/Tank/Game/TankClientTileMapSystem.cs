@@ -24,6 +24,7 @@ namespace ET.Client
         {
             var tiles = new ListComponent<TankMapTile>();
             var bounds = self.Tilemap.cellBounds;
+            //Log.Warning($"tile map bounds: {bounds.ToJson()}");
 
             for (var x = bounds.xMin; x < bounds.xMax; x++)
             {

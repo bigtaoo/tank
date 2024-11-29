@@ -82,7 +82,6 @@
     <Compile Include="Assets\Scripts\ModelView\Client\LockStep\Camera\LSCameraComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Module\UI\AUIEvent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Module\UI\LayerNames.cs" />
-    <Compile Include="Assets\Scripts\ModelView\Client\Tank\TankTile.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Demo\Opera\OperaComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Tank\TankCameraComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\LockStep\LSOperaComponent.cs" />
