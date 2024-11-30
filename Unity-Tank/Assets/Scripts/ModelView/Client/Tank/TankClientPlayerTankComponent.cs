@@ -6,7 +6,5 @@ namespace ET.Client
     public class TankClientPlayerTankComponent : Entity, IAwake, IUpdate
     {
         public GameObject TankPlayer1;
-
-        public float MoveSpeed;
     }
 }

@@ -9,6 +9,7 @@ namespace ET.Client
             //scene.AddComponent<ResourcesLoaderComponent>();
 
             scene.AddComponent<TankMapTilesComponent>();
+            scene.AddComponent<TankPlayerComponent>();
             scene.AddComponent<TankCameraComponent>();
             scene.AddComponent<TankClientPlayerTankComponent>();
             scene.AddComponent<TankClientTileMapComponent>();

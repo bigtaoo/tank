@@ -74,7 +74,6 @@
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSInput.cs" />
     <Compile Include="Assets\Scripts\Model\Generate\Client\Config\AIConfig.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSEntity.cs" />
-    <Compile Include="Assets\Scripts\Model\Share\Tank\TankMapTile.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Move\MoveEventType.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Unit\Unit.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Console\ConsoleHandlerAttribute.cs" />
@@ -84,7 +83,6 @@
     <Compile Include="Assets\Scripts\Model\Share\Module\Scene\CurrentScenesComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\EntitySerializeRegister.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Unit\UnitEventType.cs" />
-    <Compile Include="Assets\Scripts\Model\Share\Tank\TankEventType.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\AI\AAIHandler.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\NumericType.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\ILSUpdateSystem.cs" />
@@ -107,6 +105,7 @@
     <Compile Include="Assets\Scripts\Model\Share\ConstFiberId.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\IMessageSessionHandler.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\MessageSessionHandlerAttribute.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankMapTile.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Console\ModeContex.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\IRoomMessage.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\Room.cs" />
@@ -122,12 +121,15 @@
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSConstValue.cs" />
     <Compile Include="Assets\Scripts\Model\Share\MongoRegister.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Move\MoveComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankPosition.cs" />
     <Compile Include="Assets\Scripts\Model\Client\Demo\Main\Scene\Wait_SceneChangeFinish.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankEventType.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\NumericWatcherAttribute.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Console\ConsoleDispatcher.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\AI\AIConfig.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\MessageSessionHandler.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\FrameBuffer.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\TankPlayerComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\SessionAcceptTimeoutComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Unit\UnitType.cs" />
     <Compile Include="Assets\Scripts\Model\Client\Demo\NetClient\Router\RouterCheckComponent.cs" />
@@ -140,6 +142,7 @@
     <Compile Include="Assets\Scripts\Model\Client\Demo\Main\ClientSenderComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\OneFrameInputs.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\NetComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Enums\TankMoveDirection.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\TankMapTilesComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSInputComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\NumericComponent.cs" />

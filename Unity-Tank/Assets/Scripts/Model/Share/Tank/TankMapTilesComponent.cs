@@ -3,8 +3,8 @@ namespace ET
     [ComponentOf(typeof(Scene))]
     public class TankMapTilesComponent : Entity, IAwake
     {
-        public ListComponent<TankMapTile> Tiles;
-        public float TileWidth;
-        public float TileHeight;
+        public ListComponent<TankMapTile> Tiles { get; set; }
+        public float TileWidth { get; set; }
+        public float TileHeight { get; set; }
     }
 }
