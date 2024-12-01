@@ -44,23 +44,39 @@ namespace ET.Client
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                playerComponent.SetMoveDirection(TankMoveDirection.Up);
+                playerComponent.SetMoveDirection(TankDirection.Up);
+                playerComponent.CurrentDirection = TankDirection.Up;
             }
             else if (Input.GetKey(KeyCode.DownArrow))
             {
-                playerComponent.SetMoveDirection(TankMoveDirection.Down);
+                playerComponent.SetMoveDirection(TankDirection.Down);
+                playerComponent.CurrentDirection = TankDirection.Down;
             }
             else if (Input.GetKey(KeyCode.LeftArrow))
             {
-                playerComponent.SetMoveDirection(TankMoveDirection.Left);
+                playerComponent.SetMoveDirection(TankDirection.Left);
+                playerComponent.CurrentDirection= TankDirection.Left;
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
-                playerComponent.SetMoveDirection(TankMoveDirection.Right);
+                playerComponent.SetMoveDirection(TankDirection.Right);
+                playerComponent.CurrentDirection = TankDirection.Right;
             }
             else
             {
-                playerComponent.SetMoveDirection(TankMoveDirection.None);
+                playerComponent.SetMoveDirection(TankDirection.None);
+            }
+
+            if (Input.GetKeyUp(KeyCode.Escape))
+            {
+                var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
+                bulletComponent.CreateBullet(new TankBullet
+                {
+                    Camp = TankCamp.Player,
+                    MoveDirection = playerComponent.CurrentDirection,
+                    Position = playerComponent.Position,
+                    Speed = playerComponent.MoveSpeed,
+                });
             }
 
 

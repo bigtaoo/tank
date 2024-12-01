@@ -9,7 +9,7 @@ namespace ET.Client
         {
             self.MoveSpeed = 1.3f;
             self.LastFrameTime = TimeInfo.Instance.ClientFrameTime();
-            self.MoveDirection = TankMoveDirection.None;
+            self.MoveDirection = TankDirection.None;
         }
 
         [EntitySystem]
@@ -18,36 +18,36 @@ namespace ET.Client
             var currentTime = TimeInfo.Instance.ClientFrameTime();
             var deltaTime = currentTime - self.LastFrameTime;
             self.LastFrameTime = currentTime;
-            var distence = self.MoveSpeed * deltaTime / 1000;
+            var distance = self.MoveSpeed * deltaTime / 1000;
             var position = self.Position;
 
             switch(self.MoveDirection)
             {               
-                case TankMoveDirection.Left:
+                case TankDirection.Left:
                 {
-                    position.X -= distence;
+                    position.X -= distance;
                     self.Rotation = 360;
                     break;
                 }
-                case TankMoveDirection.Right:
+                case TankDirection.Right:
                 {
-                    position.X += distence;
+                    position.X += distance;
                     self.Rotation = 180;
                     break;
                 }
-                case TankMoveDirection.Up:
+                case TankDirection.Up:
                 {
-                    position.Y += distence;
+                    position.Y += distance;
                     self.Rotation = 270;
                     break;
                 }
-                case TankMoveDirection.Down:
+                case TankDirection.Down:
                 {
-                    position.Y -= distence;
+                    position.Y -= distance;
                     self.Rotation = 90;
                     break;
                 }
-                case TankMoveDirection.None:
+                case TankDirection.None:
                 default:
                 {
                     return;
@@ -64,7 +64,7 @@ namespace ET.Client
             Log.Warning($"Initia tank position: x: {self.Position.X}, y: {self.Position.Y}");
         }
 
-        public static void SetMoveDirection(this TankPlayerComponent self, TankMoveDirection moveDirection)
+        public static void SetMoveDirection(this TankPlayerComponent self, TankDirection moveDirection)
         {
             self.MoveDirection = moveDirection;
         }

@@ -4,7 +4,7 @@ namespace ET
     {
         public TankCamp Camp { get; set; }
         public TankPosition Position { get; set; }
-        public TankMoveDirection MoveDirection { get; set; }
+        public TankDirection MoveDirection { get; set; }
         public float Speed { get; set; }
     }
 }

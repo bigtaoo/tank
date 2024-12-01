@@ -9,5 +9,6 @@ namespace ET
         public ListComponent<long> BulletsToAdd { get; set; } = new();
         public ListComponent<long> BulletsToRemove { get; set; } = new();
         public long IdCounter { get; set; }
+        public long LastFrameTime { get; set; }
     }
 }

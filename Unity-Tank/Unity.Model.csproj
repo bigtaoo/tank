@@ -123,6 +123,7 @@
     <Compile Include="Assets\Scripts\Model\Share\MongoRegister.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Move\MoveComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankPosition.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Enums\TankDirection.cs" />
     <Compile Include="Assets\Scripts\Model\Client\Demo\Main\Scene\Wait_SceneChangeFinish.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankEventType.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\NumericWatcherAttribute.cs" />
@@ -144,7 +145,6 @@
     <Compile Include="Assets\Scripts\Model\Client\Demo\Main\ClientSenderComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\OneFrameInputs.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\NetComponent.cs" />
-    <Compile Include="Assets\Scripts\Model\Share\Tank\Enums\TankMoveDirection.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\TankMapTilesComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankBullet.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSInputComponent.cs" />

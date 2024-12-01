@@ -1,6 +1,6 @@
 namespace ET
 {
-    public enum TankMoveDirection
+    public enum TankDirection
     {
         None = 0,
         Up,

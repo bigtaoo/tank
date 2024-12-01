@@ -10,14 +10,20 @@ namespace ET
         private static void Awake(this TankBulletComponent self)
         {
             self.IdCounter++;
+            self.LastFrameTime = TimeInfo.Instance.ClientFrameTime();
         }
 
         [EntitySystem]
         private static void Update(this TankBulletComponent self)
         {
+            var currentTime = TimeInfo.Instance.ClientFrameTime();
+            var deltaTime = currentTime - self.LastFrameTime;
+            self.LastFrameTime = currentTime;
+
             foreach (var key in self.Bullets.Keys.ToList())
             {
                 var bullet = self.Bullets[key];
+                self.UpdateBulletPosition(bullet, deltaTime);
             }
         }
 
@@ -26,6 +32,42 @@ namespace ET
             self.IdCounter++;
             self.Bullets.Add(self.IdCounter, bullet);
             self.BulletsToAdd.Add(self.IdCounter);
+        }
+
+        private static void UpdateBulletPosition(this TankBulletComponent self, TankBullet bullet, long deltaTime)
+        {
+            var distance = bullet.Speed * deltaTime / 1000;
+            var position = bullet.Position;
+
+            switch (bullet.MoveDirection)
+            {
+                case TankDirection.Left:
+                    {
+                        position.X -= distance;
+                        break;
+                    }
+                case TankDirection.Right:
+                    {
+                        position.X += distance;
+                        break;
+                    }
+                case TankDirection.Up:
+                    {
+                        position.Y += distance;
+                        break;
+                    }
+                case TankDirection.Down:
+                    {
+                        position.Y -= distance;
+                        break;
+                    }
+                case TankDirection.None:
+                default:
+                    {
+                        return;
+                    }
+            }
+            bullet.Position = position;
         }
     }
 }
