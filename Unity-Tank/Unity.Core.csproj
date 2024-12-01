@@ -115,8 +115,8 @@
     <Compile Include="Assets\Scripts\Core\DoubleMap.cs" />
     <Compile Include="Assets\Scripts\Core\Network\KService.cs" />
     <Compile Include="Assets\Scripts\Core\Fiber\Module\Timer\TimerComponent.cs" />
-    <Compile Include="Assets\Scripts\Core\World\Module\Fiber\FiberInit.cs" />
     <Compile Include="Assets\Scripts\Core\Fiber\MailBoxComponent.cs" />
+    <Compile Include="Assets\Scripts\Core\World\Module\Fiber\FiberInit.cs" />
     <Compile Include="Assets\Scripts\Core\Method\IStaticMethod.cs" />
     <Compile Include="Assets\Scripts\Core\Fiber\Module\CoroutineLock\CoroutineLockQueueType.cs" />
     <Compile Include="Assets\Scripts\Core\Serialize\MemoryBuffer.cs" />

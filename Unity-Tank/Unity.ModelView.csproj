@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\ModelView\Client\Tank\TankUIGameMainComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Plugins\Example\ModelView.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\LockStep\UI\UILSRoom\UILSRoomComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Tank\TankClientBulletComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\LockStep\Camera\LSCameraComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Module\UI\AUIEvent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Module\UI\LayerNames.cs" />

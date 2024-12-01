@@ -100,6 +100,7 @@
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSSceneInitFinish_Finish.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Tank\Scene\TankSceneChangeEndEvent.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Unit\AfterUnitCreate_CreateUnitView.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Tank\Game\TankClientBulletSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\UI\UILSLobby\UILSLobbyComponentSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\UILobby\UILobbyComponentSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\UI\UILSLogin\UILSLoginEvent.cs" />
