@@ -9,6 +9,6 @@ namespace ET
         public float MoveSpeed { get; set; }
         public int Rotation { get; set; }
         public long LastFrameTime { get; set; }
-        public TankDirection CurrentDirection { get; set; }
+        public TankDirection CurrentDirection { get; set; } = TankDirection.Up;
     }
 }

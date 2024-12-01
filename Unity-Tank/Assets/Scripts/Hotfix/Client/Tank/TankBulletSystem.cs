@@ -39,6 +39,8 @@ namespace ET
             var distance = bullet.Speed * deltaTime / 1000;
             var position = bullet.Position;
 
+            Log.Warning($"Update bullet: distance: {distance}, direction: {bullet.MoveDirection}, x:{position.X}, y:{position.Y}");
+
             switch (bullet.MoveDirection)
             {
                 case TankDirection.Left:
@@ -68,6 +70,7 @@ namespace ET
                     }
             }
             bullet.Position = position;
+            Log.Warning($"After update: x:{bullet.Position.X}, y:{bullet.Position.Y}");
         }
     }
 }

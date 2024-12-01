@@ -67,7 +67,7 @@ namespace ET.Client
                 playerComponent.SetMoveDirection(TankDirection.None);
             }
 
-            if (Input.GetKeyUp(KeyCode.Escape))
+            if (Input.GetKeyUp(KeyCode.Space))
             {
                 var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
                 bulletComponent.CreateBullet(new TankBullet
@@ -75,7 +75,7 @@ namespace ET.Client
                     Camp = TankCamp.Player,
                     MoveDirection = playerComponent.CurrentDirection,
                     Position = playerComponent.Position,
-                    Speed = playerComponent.MoveSpeed,
+                    Speed = playerComponent.MoveSpeed * 3,
                 });
             }
 

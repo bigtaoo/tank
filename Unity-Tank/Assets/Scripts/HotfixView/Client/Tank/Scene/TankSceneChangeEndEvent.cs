@@ -11,6 +11,7 @@ namespace ET.Client
             // Logic
             scene.AddComponent<TankMapTilesComponent>();
             scene.AddComponent<TankPlayerComponent>();
+            scene.AddComponent<TankBulletComponent>();
 
             // Client
             scene.AddComponent<TankCameraComponent>();

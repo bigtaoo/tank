@@ -8,5 +8,6 @@ namespace ET
     {
         public GameObject Bullet;
         public Dictionary<long, GameObject> Bullets = new Dictionary<long, GameObject>();
+        public float Z;
     }
 }
