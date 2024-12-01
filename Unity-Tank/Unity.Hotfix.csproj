@@ -116,6 +116,7 @@
     <Compile Include="Assets\Scripts\Hotfix\Client\Demo\Main\Login\EnterMapHelper.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\LockStep\G2C_ReconnectHandler.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\Demo\Main\Unit\M2C_RemoveUnitsHandler.cs" />
+    <Compile Include="Assets\Scripts\Hotfix\Client\Tank\TankBulletSystem.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\Tank\TankMapTilesSystem.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\Tank\Helper\TankSceneChangeHelper.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\Demo\Main\Scene\CurrentSceneFactory.cs" />

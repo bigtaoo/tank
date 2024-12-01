@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Model\Client\Demo\NetClient\Session\SessionComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSEntitySystemSingleton.cs" />
     <Compile Include="Assets\Scripts\Model\Generate\Client\Config\UnitConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\TankBulletComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\MessageSessionDispatcher.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSUnitComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSEntitySystemAttribute.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="Assets\Scripts\Model\Generate\Client\Message\OuterMessage_C_10001.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSUnit.cs" />
     <Compile Include="Assets\Scripts\Model\Client\LockStep\WaitType.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Enums\TankCamp.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\FixedTimeCounter.cs" />
     <Compile Include="Assets\Scripts\Model\Client\LockStep\LSReplayUpdater.cs" />
     <Compile Include="Assets\Scripts\Model\Client\Demo\Main\ClientSenderComponent.cs" />
@@ -144,6 +146,7 @@
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\NetComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\Enums\TankMoveDirection.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\TankMapTilesComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankBullet.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSInputComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\NumericComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSWorld.cs" />
