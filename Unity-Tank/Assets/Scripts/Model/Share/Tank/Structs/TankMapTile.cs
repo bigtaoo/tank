@@ -1,6 +1,7 @@
 namespace ET
 {
-    public struct TankMapTile
+    [EnableClass]
+    public class TankMapTile
     {
         public int X {  get; set; }
         public int Y { get; set; }

@@ -1,6 +1,7 @@
 namespace ET
 {
-    public struct TankBullet
+    [EnableClass]
+    public class TankBullet
     {
         public TankCamp Camp { get; set; }
         public TankPosition Position { get; set; }

@@ -20,5 +20,11 @@ namespace ET.Client
 
             Log.Warning($"width: {tileWidth}, height: {tileHeight}, tiles: {tiles.ToJson()},");
         }
+
+        public static bool IsInMap(this TankMapTilesComponent self, TankPosition position)
+        {
+            return position.X > self.MapBound.Left && position.X < self.MapBound.Right &&
+                position.Y > self.MapBound.Bottom && position.Y < self.MapBound.Top;
+        }
     }
 }

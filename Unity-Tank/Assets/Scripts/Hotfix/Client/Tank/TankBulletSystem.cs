@@ -1,3 +1,4 @@
+using ET.Client;
 using System.Linq;
 
 namespace ET
@@ -20,10 +21,18 @@ namespace ET
             var deltaTime = currentTime - self.LastFrameTime;
             self.LastFrameTime = currentTime;
 
+            var mapTilesComponent = self.Root().GetComponent<TankMapTilesComponent>();
+
             foreach (var key in self.Bullets.Keys.ToList())
             {
                 var bullet = self.Bullets[key];
                 self.UpdateBulletPosition(bullet, deltaTime);
+
+                if (!mapTilesComponent.IsInMap(bullet.Position))
+                {
+                    self.BulletsToRemove.Add(key);
+                    self.Bullets.Remove(key);
+                }
             }
         }
 
@@ -39,7 +48,7 @@ namespace ET
             var distance = bullet.Speed * deltaTime / 1000;
             var position = bullet.Position;
 
-            Log.Warning($"Update bullet: distance: {distance}, direction: {bullet.MoveDirection}, x:{position.X}, y:{position.Y}");
+            //Log.Warning($"Update bullet: distance: {distance}, direction: {bullet.MoveDirection}, x:{position.X}, y:{position.Y}");
 
             switch (bullet.MoveDirection)
             {
@@ -70,7 +79,7 @@ namespace ET
                     }
             }
             bullet.Position = position;
-            Log.Warning($"After update: x:{bullet.Position.X}, y:{bullet.Position.Y}");
+            //Log.Warning($"After update: x:{bullet.Position.X}, y:{bullet.Position.Y}");
         }
     }
 }

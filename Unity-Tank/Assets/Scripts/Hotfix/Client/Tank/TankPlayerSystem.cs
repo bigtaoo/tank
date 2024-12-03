@@ -53,7 +53,12 @@ namespace ET.Client
                     return;
                 }
             }
-            self.Position = position;
+
+            var mapTilesComponent = self.Root().GetComponent<TankMapTilesComponent>();
+            if (mapTilesComponent.IsInMap(position))
+            {
+                self.Position = position;
+            }
         }
 
         public static void InilializePlayer(this TankPlayerComponent self, TankPosition spawnPosition)

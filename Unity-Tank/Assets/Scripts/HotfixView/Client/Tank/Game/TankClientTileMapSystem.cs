@@ -1,3 +1,4 @@
+using MongoDB.Bson;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -47,6 +48,17 @@ namespace ET.Client
 
             var tankMapTileComponent = self.Root().GetComponent<TankMapTilesComponent>();
             tankMapTileComponent.InitializeMapTiles(tiles, self.Tilemap.cellSize.x, self.Tilemap.cellSize.y);
+
+            var topleft = GameObject.Find("topleft").GetComponent<Transform>().position;
+            var buttomright = GameObject.Find("buttomright").GetComponent<Transform>().position;
+            tankMapTileComponent.MapBound = new TankMapBound
+            {
+                Top = topleft.y,
+                Bottom = buttomright.y,
+                Left = topleft.x,
+                Right = buttomright.x,
+            };
+            Log.Warning($"map bound: {tankMapTileComponent.MapBound.ToJson()}");
         }
     }
 }

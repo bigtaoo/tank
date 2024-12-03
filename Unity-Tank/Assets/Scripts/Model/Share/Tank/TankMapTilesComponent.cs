@@ -6,5 +6,6 @@ namespace ET
         public ListComponent<TankMapTile> Tiles { get; set; }
         public float TileWidth { get; set; }
         public float TileHeight { get; set; }
+        public TankMapBound MapBound { get; set; }
     }
 }
