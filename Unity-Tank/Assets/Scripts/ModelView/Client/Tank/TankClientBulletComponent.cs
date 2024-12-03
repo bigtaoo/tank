@@ -7,7 +7,8 @@ namespace ET
     public class TankClientBulletComponent : Entity, IAwake, IUpdate
     {
         public GameObject Bullet;
-        public Dictionary<long, GameObject> Bullets = new Dictionary<long, GameObject>();
+        public Dictionary<long, GameObject> Bullets = new();
         public float Z;
+        public Stack<GameObject> RecycledBullets = new();
     }
 }

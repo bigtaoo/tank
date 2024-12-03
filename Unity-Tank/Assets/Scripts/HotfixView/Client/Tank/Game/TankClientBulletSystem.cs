@@ -16,14 +16,29 @@ namespace ET
                 Log.Error("Not bullet was found in the scene");
             }
             self.Bullet.SetActive(false);
+            self.RecycledBullets.Push(self.Bullet);
             self.Z = self.Bullet.transform.position.z;
         }
 
         [EntitySystem]
         private static void Update(this TankClientBulletComponent self)
-        {       
+        {
+            self.RecycleRemovedBullets();
             self.CreateNewBullets();
             self.UpdateBullets();
+        }
+
+        private static void RecycleRemovedBullets(this TankClientBulletComponent self)
+        {
+            var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
+            foreach (var bulletId in bulletComponent.BulletsToRemove)
+            {
+                var bulletGameObject = self.Bullets[bulletId];
+                bulletGameObject.SetActive(false);
+                self.RecycledBullets.Push(bulletGameObject);
+                self.Bullets.Remove(bulletId);
+            }
+            bulletComponent.BulletsToRemove.Clear();
         }
 
         private static void CreateNewBullets(this TankClientBulletComponent self)
@@ -31,7 +46,7 @@ namespace ET
             var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
             foreach (var bulletId in bulletComponent.BulletsToAdd)
             {
-                var bulletGameObject = UnityEngine.Object.Instantiate(self.Bullet);
+                var bulletGameObject = self.RecycledBullets.Count > 0 ? self.RecycledBullets.Pop() : UnityEngine.Object.Instantiate(self.Bullet);
                 bulletGameObject.SetActive(true);
                 self.Bullets.Add(bulletId, bulletGameObject);
             }
