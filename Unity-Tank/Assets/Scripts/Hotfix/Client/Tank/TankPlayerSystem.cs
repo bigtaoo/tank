@@ -7,7 +7,7 @@ namespace ET.Client
         [EntitySystem]
         private static void Awake(this TankPlayerComponent self)
         {
-            self.MoveSpeed = 1.3f;
+            self.MoveSpeed = 2.3f;
             self.LastFrameTime = TimeInfo.Instance.ClientFrameTime();
             self.MoveDirection = TankDirection.None;
         }
@@ -55,7 +55,7 @@ namespace ET.Client
             }
 
             var mapTilesComponent = self.Root().GetComponent<TankMapTilesComponent>();
-            if (mapTilesComponent.IsInMap(position))
+            if (mapTilesComponent.IsInMap(position) && mapTilesComponent.GetTileType(position) == TankMapTileType.None)
             {
                 self.Position = position;
             }

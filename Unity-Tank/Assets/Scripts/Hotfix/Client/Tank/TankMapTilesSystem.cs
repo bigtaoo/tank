@@ -1,4 +1,6 @@
 using MongoDB.Bson;
+using System;
+using System.Linq;
 
 namespace ET.Client
 {
@@ -25,6 +27,12 @@ namespace ET.Client
         {
             return position.X > self.MapBound.Left && position.X < self.MapBound.Right &&
                 position.Y > self.MapBound.Bottom && position.Y < self.MapBound.Top;
+        }
+
+        public static TankMapTileType GetTileType(this TankMapTilesComponent self, TankPosition position)
+        {
+            var tile = self.Tiles.Where(t => t.X == (int)position.X && t.Y == (int)position.Y).FirstOrDefault();
+            return tile == null ? TankMapTileType.None : tile.Type;
         }
     }
 }
