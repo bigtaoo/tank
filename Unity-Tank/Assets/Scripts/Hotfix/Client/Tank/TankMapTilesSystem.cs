@@ -29,10 +29,9 @@ namespace ET.Client
                 position.Y > self.MapBound.Bottom && position.Y < self.MapBound.Top;
         }
 
-        public static TankMapTileType GetTileType(this TankMapTilesComponent self, TankPosition position)
+        public static TankMapTile GetTile(this TankMapTilesComponent self, TankPosition position)
         {
-            var tile = self.Tiles.Where(t => t.X == (int)position.X && t.Y == (int)position.Y).FirstOrDefault();
-            return tile == null ? TankMapTileType.None : tile.Type;
+            return self.Tiles.Where(t => t.X == (int)position.X && t.Y == (int)position.Y).FirstOrDefault();
         }
     }
 }

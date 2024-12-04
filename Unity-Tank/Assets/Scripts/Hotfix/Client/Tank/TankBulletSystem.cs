@@ -27,11 +27,20 @@ namespace ET
             {
                 var bullet = self.Bullets[key];
                 self.UpdateBulletPosition(bullet, deltaTime);
+                var tile = mapTilesComponent.GetTile(bullet.Position);
 
                 if (!mapTilesComponent.IsInMap(bullet.Position))
                 {
                     self.BulletsToRemove.Add(key);
                     self.Bullets.Remove(key);
+                }
+                else if (tile != null)
+                {
+                    self.BulletsToRemove.Add(key);
+                    self.Bullets.Remove(key);
+                    mapTilesComponent.Tiles.Remove(tile);
+                    tile.Type = TankMapTileType.None;
+                    mapTilesComponent.TilesToUpdate.Add(tile);
                 }
             }
         }

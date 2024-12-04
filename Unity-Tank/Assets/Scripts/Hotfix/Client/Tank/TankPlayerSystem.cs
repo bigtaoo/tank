@@ -55,7 +55,7 @@ namespace ET.Client
             }
 
             var mapTilesComponent = self.Root().GetComponent<TankMapTilesComponent>();
-            if (mapTilesComponent.IsInMap(position) && mapTilesComponent.GetTileType(position) == TankMapTileType.None)
+            if (mapTilesComponent.IsInMap(position) && mapTilesComponent.GetTile(position) == null)
             {
                 self.Position = position;
             }
