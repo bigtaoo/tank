@@ -21,6 +21,23 @@ namespace ET.Client
             self.InitializeTileMap();
         }
 
+        [EntitySystem]
+        private static void Update(this TankClientTileMapComponent self)
+        {
+            var mapTileComponent = self.Root().GetComponent<TankMapTilesComponent>();
+            if (mapTileComponent.TilesToUpdate.Count > 0)
+            {
+                foreach(var tile in mapTileComponent.TilesToUpdate)
+                {
+                    if (tile.Type == TankMapTileType.None)
+                    {
+                        self.Tilemap.SetTile(new Vector3Int(tile.X, tile.Y, 0), null);
+                    }
+                }
+                mapTileComponent.TilesToUpdate.Clear();
+            }
+        }
+
         private static void InitializeTileMap(this TankClientTileMapComponent self)
         {
             var tiles = new ListComponent<TankMapTile>();
