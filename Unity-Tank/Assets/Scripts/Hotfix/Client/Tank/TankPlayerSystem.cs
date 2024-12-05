@@ -26,25 +26,25 @@ namespace ET.Client
                 case TankDirection.Left:
                 {
                     position.X -= distance;
-                    self.Rotation = 360;
+                    self.Rotation = 90;
                     break;
                 }
                 case TankDirection.Right:
                 {
                     position.X += distance;
-                    self.Rotation = 180;
+                    self.Rotation = 270;
                     break;
                 }
                 case TankDirection.Up:
                 {
                     position.Y += distance;
-                    self.Rotation = 270;
+                    self.Rotation = 0;
                     break;
                 }
                 case TankDirection.Down:
                 {
                     position.Y -= distance;
-                    self.Rotation = 90;
+                    self.Rotation = 180;
                     break;
                 }
                 case TankDirection.None:
@@ -65,7 +65,7 @@ namespace ET.Client
         {
             self.SpawnPosition = spawnPosition;
             self.Position = spawnPosition;
-            self.Rotation = 270;
+            self.Rotation = 0;
             Log.Warning($"Initia tank position: x: {self.Position.X}, y: {self.Position.Y}");
         }
 
