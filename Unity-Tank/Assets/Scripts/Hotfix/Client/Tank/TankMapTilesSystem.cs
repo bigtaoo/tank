@@ -23,10 +23,10 @@ namespace ET.Client
             Log.Warning($"width: {tileWidth}, height: {tileHeight}, tiles: {tiles.ToJson()},");
         }
 
-        public static bool IsInMap(this TankMapTilesComponent self, TankPosition position)
+        public static bool IsInMap(this TankMapTilesComponent self, TankPosition position, float collision)
         {
-            return position.X > self.MapBound.Left && position.X < self.MapBound.Right &&
-                position.Y > self.MapBound.Bottom && position.Y < self.MapBound.Top;
+            return position.X > self.MapBound.Left + collision && position.X < self.MapBound.Right - collision &&
+                position.Y > self.MapBound.Bottom + collision && position.Y < self.MapBound.Top - collision;
         }
 
         public static TankMapTile GetTile(this TankMapTilesComponent self, TankPosition position)

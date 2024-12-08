@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts\Core\World\Module\Config\IMerge.cs" />
     <Compile Include="Assets\Scripts\Core\Entity\InstanceQueueIndex.cs" />
     <Compile Include="Assets\Scripts\Core\Network\RpcException.cs" />
+    <Compile Include="Assets\Scripts\Core\TileMap\TankDisplayTileInfo.cs" />
     <Compile Include="Assets\Scripts\Core\Entity\IAwakeSystem.cs" />
     <Compile Include="Assets\Scripts\Core\Network\WChannel.cs" />
     <Compile Include="Assets\Scripts\Core\Helper\StringHelper.cs" />

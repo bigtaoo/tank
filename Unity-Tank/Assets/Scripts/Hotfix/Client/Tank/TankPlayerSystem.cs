@@ -76,7 +76,7 @@ namespace ET.Client
             }
 
             var mapTilesComponent = self.Root().GetComponent<TankMapTilesComponent>();
-            if (mapTilesComponent.IsInMap(position) && mapTilesComponent.GetTile(position) == null)
+            if (mapTilesComponent.IsInMap(position, 1.0f) && mapTilesComponent.GetTile(position) == null)
             {
                 self.Position = position;
             }
@@ -92,7 +92,7 @@ namespace ET.Client
             {
                 var position = self.Position;
                 position.Y = (float)Math.Round(self.Position.Y);
-                Log.Warning($"Ajust Y: current Y: {self.Position.Y}, target Y: {position.Y}");
+                //Log.Warning($"Ajust Y: current Y: {self.Position.Y}, target Y: {position.Y}");
                 if (position.Y != self.Position.Y)
                 {
                     self.Position = position;

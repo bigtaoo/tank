@@ -29,7 +29,7 @@ namespace ET
                 self.UpdateBulletPosition(bullet, deltaTime);
                 var tile = mapTilesComponent.GetTile(bullet.Position);
 
-                if (!mapTilesComponent.IsInMap(bullet.Position))
+                if (!mapTilesComponent.IsInMap(bullet.Position, 0.5f))
                 {
                     self.BulletsToRemove.Add(key);
                     self.Bullets.Remove(key);
