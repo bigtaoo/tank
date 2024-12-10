@@ -74,11 +74,38 @@ namespace ET.Client
                         return;
                     }
             }
-
-            var mapTilesComponent = self.Root().GetComponent<TankMapTilesComponent>();
-            if (mapTilesComponent.IsInMap(position, 1.0f) && mapTilesComponent.GetTile(position) == null)
+          
+            if(self.CanUpdatePlayerTankPosition(position))
             {
                 self.Position = position;
+            }
+        }
+
+        private static bool CanUpdatePlayerTankPosition(this TankPlayerComponent self, TankPosition position)
+        {
+            var mapTilesComponent = self.Root().GetComponent<TankMapTilesComponent>();
+            if (mapTilesComponent.IsInMap(position, 1.0f))
+            {
+                return false;
+            }
+
+            switch (self.CurrentDirection)
+            {
+                case TankDirection.Left:
+                    return mapTilesComponent.GetTile(new TankPosition { X = position.X - 2, Y = position.Y }) == null &&
+                        mapTilesComponent.GetTile(new TankPosition { X = position.X - 2, Y = position.Y - 1 }) == null;
+                case TankDirection.Right:
+                    return mapTilesComponent.GetTile(new TankPosition { X = position.X + 1, Y = position.Y }) == null &&
+                    mapTilesComponent.GetTile(new TankPosition { X = position.X + 1, Y = position.Y - 1 }) == null;
+                case TankDirection.Up:
+                    return mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y + 1}) == null &&
+                        mapTilesComponent.GetTile(new TankPosition { X = position.X + 1, Y = position.Y + 1 }) == null;
+                case TankDirection.Down:
+                    return mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y - 1 }) == null &&
+                        mapTilesComponent.GetTile(new TankPosition { X = position.X + 1, Y = position.Y - 1}) == null;
+                case TankDirection.None:
+                default:
+                    return false;
             }
         }
 
