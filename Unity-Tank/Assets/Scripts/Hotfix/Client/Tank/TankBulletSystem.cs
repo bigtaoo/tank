@@ -28,19 +28,31 @@ namespace ET
                 var bullet = self.Bullets[key];
                 self.UpdateBulletPosition(bullet, deltaTime);
                 var tile = mapTilesComponent.GetTile(bullet.Position);
+                var neighborTile = bullet.MoveDirection == TankDirection.Up || bullet.MoveDirection == TankDirection.Down ?
+                    mapTilesComponent.GetTile(new TankPosition { X = bullet.Position.X - 1, Y = bullet.Position.Y }) : 
+                    mapTilesComponent.GetTile(new TankPosition { X = bullet.Position.X, Y = bullet.Position.Y - 1 });
 
                 if (!mapTilesComponent.IsInMap(bullet.Position, 0.5f))
                 {
                     self.BulletsToRemove.Add(key);
                     self.Bullets.Remove(key);
                 }
-                else if (tile != null)
+                else if (tile != null || neighborTile != null)
                 {
                     self.BulletsToRemove.Add(key);
                     self.Bullets.Remove(key);
-                    mapTilesComponent.Tiles.Remove(tile);
-                    tile.Type = TankMapTileType.None;
-                    mapTilesComponent.TilesToUpdate.Add(tile);
+                    if (tile != null)
+                    {
+                        mapTilesComponent.Tiles.Remove(tile);
+                        tile.Type = TankMapTileType.None;
+                        mapTilesComponent.TilesToUpdate.Add(tile);
+                    }
+                    if (neighborTile != null)
+                    {
+                        mapTilesComponent.Tiles.Remove(neighborTile);
+                        neighborTile.Type = TankMapTileType.None;
+                        mapTilesComponent.TilesToUpdate.Add(neighborTile);
+                    }
                 }
             }
         }
