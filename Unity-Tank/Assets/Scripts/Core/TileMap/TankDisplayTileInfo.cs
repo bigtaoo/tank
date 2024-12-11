@@ -32,7 +32,7 @@ public class TilemapDebugger : MonoBehaviour
             // Optionally, draw the grid position as a label
             GUIStyle style = new GUIStyle();
             style.normal.textColor = Color.white;
-            UnityEditor.Handles.Label(worldPosition, position.ToString(), style);
+            UnityEditor.Handles.Label(worldPosition, $"X {position.x + 100} Y {position.y + 100}", style);
         }
 #endif
     }

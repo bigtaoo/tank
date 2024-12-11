@@ -94,21 +94,25 @@ namespace ET.Client
             switch (self.CurrentDirection)
             {
                 case TankDirection.Left:
-                    Log.Warning($"Move left: x {position.X} y:{position.Y} up {mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y })}," +
-                        $"down {mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y - 1 })}");
+                    //Log.Warning($"Move left: x {position.X} y:{position.Y} up {mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y })}," +
+                    //    $"down {mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y - 1 })}");
                     return mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y }) == null &&
                         mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y - 1 }) == null;
                 case TankDirection.Right:
-                    return mapTilesComponent.GetTile(new TankPosition { X = position.X + 1, Y = position.Y }) == null &&
-                    mapTilesComponent.GetTile(new TankPosition { X = position.X + 1, Y = position.Y - 1 }) == null;
+                    //Log.Warning($"Move Right: x {position.X} y:{position.Y} up {mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y })}," +
+                    //    $"down {mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y - 1 })}");
+                    return mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y }) == null &&
+                    mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y - 1 }) == null;
                 case TankDirection.Up:
-                    //Log.Warning("Move UP");
-                    return true;
-                    //return mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y + 1}) == null &&
-                    //    mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y + 1 }) == null;
+                    //Log.Warning($"Move Up: x {position.X} y:{position.Y} right {mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y })}," +
+                    //    $"left {mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y })}");
+                    return mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y }) == null &&
+                        mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y }) == null;
                 case TankDirection.Down:
+                    //Log.Warning($"Move Down: x {position.X} y:{position.Y} right {mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y - 1 })}," +
+                    //    $"left {mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y - 1 })}");
                     return mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y - 1 }) == null &&
-                        mapTilesComponent.GetTile(new TankPosition { X = position.X + 1, Y = position.Y - 1}) == null;
+                        mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y - 1}) == null;
                 case TankDirection.None:
                 default:
                     return false;
@@ -144,7 +148,7 @@ namespace ET.Client
 
         private static float PositionToTile(this TankPlayerComponent self, float v)
         {
-            return v > 0 ? (float)Math.Ceiling(v) : (float)Math.Floor(v);
+            return (self.CurrentDirection == TankDirection.Up || self.CurrentDirection == TankDirection.Right) ? (float)Math.Ceiling(v) : (float)Math.Floor(v);
         }
     }
 }

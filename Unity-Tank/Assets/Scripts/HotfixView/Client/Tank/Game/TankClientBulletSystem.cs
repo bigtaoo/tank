@@ -61,7 +61,7 @@ namespace ET
                 var bulletGameObject = self.Bullets[key];
                 var bullet = bulletComponent.Bullets[key];
                 var transform = bulletGameObject.GetComponent<Transform>();
-                transform.position = new Vector3(bullet.Position.X, bullet.Position.Y, self.Z);
+                transform.position = new Vector3(bullet.Position.X - TankConsts.TileOffset, bullet.Position.Y - TankConsts.TileOffset, self.Z);
                 //Log.Warning($"client bullet x:{bullet.Position.X}, y:{bullet.Position.Y}");
             }
         }

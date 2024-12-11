@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\MessageSessionDispatcher.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSUnitComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSEntitySystemAttribute.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Enums\TankConsts.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSInput.cs" />
     <Compile Include="Assets\Scripts\Model\Generate\Client\Config\AIConfig.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSEntity.cs" />

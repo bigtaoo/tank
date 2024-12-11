@@ -14,7 +14,7 @@ namespace ET.Client
 
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             var position = self.TankPlayer1.GetComponent<Transform>().position;
-            playerComponent.InilializePlayer(new TankPosition { X = position.x, Y = position.y });
+            playerComponent.InilializePlayer(new TankPosition { X = position.x + TankConsts.TileOffset, Y = position.y + TankConsts.TileOffset });
         }
 
         [EntitySystem]
@@ -25,7 +25,7 @@ namespace ET.Client
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             var transform = self.TankPlayer1.GetComponent<Transform>();
             var currentPosition = transform.position;
-            var targetPosition = new Vector3(playerComponent.Position.X, playerComponent.Position.Y, currentPosition.z);
+            var targetPosition = new Vector3(playerComponent.Position.X - TankConsts.TileOffset, playerComponent.Position.Y - TankConsts.TileOffset, currentPosition.z);
             if (targetPosition != currentPosition)
             {
                 //Log.Warning($"Update position: oldX: {currentPosition.x}, oldY:{currentPosition.y}, oldz:{currentPosition.z}, x:{targetPosition.x}, y:{targetPosition.y}");

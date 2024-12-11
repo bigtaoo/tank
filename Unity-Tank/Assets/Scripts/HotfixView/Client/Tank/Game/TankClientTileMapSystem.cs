@@ -31,7 +31,7 @@ namespace ET.Client
                 {
                     if (tile.Type == TankMapTileType.None)
                     {
-                        self.Tilemap.SetTile(new Vector3Int(tile.X, tile.Y, 0), null);
+                        self.Tilemap.SetTile(new Vector3Int(tile.X - TankConsts.TileOffset, tile.Y - TankConsts.TileOffset, 0), null);
                     }
                 }
                 mapTileComponent.TilesToUpdate.Clear();
@@ -54,8 +54,8 @@ namespace ET.Client
                     {
                         var tankMapTile = new TankMapTile
                         {
-                            X = x,
-                            Y = y,
+                            X = x + TankConsts.TileOffset,
+                            Y = y + TankConsts.TileOffset,
                             Type = tankTile.TileType,
                         };
                         tiles.Add(tankMapTile);
@@ -70,10 +70,10 @@ namespace ET.Client
             var buttomright = GameObject.Find("buttomright").GetComponent<Transform>().position;
             tankMapTileComponent.MapBound = new TankMapBound
             {
-                Top = topleft.y,
-                Bottom = buttomright.y,
-                Left = topleft.x,
-                Right = buttomright.x,
+                Top = topleft.y + TankConsts.TileOffset,
+                Bottom = buttomright.y + TankConsts.TileOffset,
+                Left = topleft.x + TankConsts.TileOffset,
+                Right = buttomright.x + TankConsts.TileOffset,
             };
             Log.Warning($"map bound: {tankMapTileComponent.MapBound.ToJson()}");
         }
