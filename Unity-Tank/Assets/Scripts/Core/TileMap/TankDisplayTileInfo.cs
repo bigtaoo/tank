@@ -8,6 +8,7 @@ public class TilemapDebugger : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+#if UNITY_EDITOR
         if (tilemap == null)
             tilemap = GetComponent<Tilemap>();
 
@@ -33,5 +34,6 @@ public class TilemapDebugger : MonoBehaviour
             style.normal.textColor = Color.white;
             UnityEditor.Handles.Label(worldPosition, position.ToString(), style);
         }
+#endif
     }
 }
