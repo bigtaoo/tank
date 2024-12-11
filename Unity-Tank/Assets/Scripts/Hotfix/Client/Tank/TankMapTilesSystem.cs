@@ -25,8 +25,8 @@ namespace ET.Client
 
         public static bool IsInMap(this TankMapTilesComponent self, TankPosition position, float collision)
         {
-            return position.X > self.MapBound.Left + collision && position.X < self.MapBound.Right - collision &&
-                position.Y > self.MapBound.Bottom + collision && position.Y < self.MapBound.Top - collision;
+            return position.X >= self.MapBound.Left + collision && position.X <= self.MapBound.Right - collision &&
+                position.Y >= self.MapBound.Bottom + collision && position.Y <= self.MapBound.Top - collision;
         }
 
         public static TankMapTile GetTile(this TankMapTilesComponent self, TankPosition position)
