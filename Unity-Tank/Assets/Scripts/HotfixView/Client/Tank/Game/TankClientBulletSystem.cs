@@ -13,7 +13,12 @@ namespace ET
             self.Bullet = GameObject.Find("bullet");
             if (self.Bullet == null)
             {
-                Log.Error("Not bullet was found in the scene");
+                Log.Error("No bullet was found in the scene");
+            }
+            self.Explosion = GameObject.Find("explosion");
+            if (self.Explosion == null)
+            {
+                Log.Error("No explosion effect was found in the scene");
             }
             self.Bullet.SetActive(false);
             self.RecycledBullets.Push(self.Bullet);
@@ -37,8 +42,16 @@ namespace ET
                 bulletGameObject.SetActive(false);
                 self.RecycledBullets.Push(bulletGameObject);
                 self.Bullets.Remove(bulletId);
+
+                self.CreateExplosionEffect(bulletGameObject.GetComponent<Transform>().position);
             }
             bulletComponent.BulletsToRemove.Clear();
+        }
+
+        private static void CreateExplosionEffect(this TankClientBulletComponent self, Vector3 position)
+        {
+            var explosion = UnityEngine.Object.Instantiate(self.Explosion);
+            explosion.transform.position = position;
         }
 
         private static void CreateNewBullets(this TankClientBulletComponent self)
