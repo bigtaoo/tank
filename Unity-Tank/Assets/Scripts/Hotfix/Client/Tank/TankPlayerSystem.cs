@@ -34,6 +34,25 @@ namespace ET.Client
             self.MoveDirection = moveDirection;
         }
 
+        public static void Shoot(this TankPlayerComponent self)
+        {
+            var currentTime = TimeInfo.Instance.ClientFrameTime();
+            if (currentTime - self.LastShootTime < self.ShootCoolDownTime)
+            {
+                return;
+            }
+            self.LastShootTime = currentTime;
+
+            var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
+            bulletComponent.CreateBullet(new TankBullet
+            {
+                Camp = TankCamp.Player,
+                MoveDirection = self.CurrentDirection,
+                Position = self.Position,
+                Speed = self.MoveSpeed * 3,
+            });
+        }
+
         private static void UpdatePosition(this TankPlayerComponent self)
         {
             var currentTime = TimeInfo.Instance.ClientFrameTime();

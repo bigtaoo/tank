@@ -69,14 +69,7 @@ namespace ET.Client
 
             if (Input.GetKeyUp(KeyCode.Space))
             {
-                var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
-                bulletComponent.CreateBullet(new TankBullet
-                {
-                    Camp = TankCamp.Player,
-                    MoveDirection = playerComponent.CurrentDirection,
-                    Position = playerComponent.Position,
-                    Speed = playerComponent.MoveSpeed * 3,
-                });
+                playerComponent.Shoot();
             }
         }
     }

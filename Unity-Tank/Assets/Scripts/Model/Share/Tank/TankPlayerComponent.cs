@@ -10,5 +10,7 @@ namespace ET
         public int Rotation { get; set; }
         public long LastFrameTime { get; set; }
         public TankDirection CurrentDirection { get; set; } = TankDirection.Up;
+        public long LastShootTime { get; set; }
+        public long ShootCoolDownTime { get; set; } = 1000;
     }
 }
