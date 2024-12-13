@@ -39,6 +39,7 @@ namespace ET
                 }
                 else if (tile != null || neighborTile != null)
                 {
+                    self.CreateExplosionEffect(bullet);
                     self.BulletsToRemove.Add(key);
                     self.Bullets.Remove(key);
                     if (tile != null)
@@ -62,6 +63,28 @@ namespace ET
             self.IdCounter++;
             self.Bullets.Add(self.IdCounter, bullet);
             self.BulletsToAdd.Add(self.IdCounter);
+        }
+
+        private static void CreateExplosionEffect(this TankBulletComponent self, TankBullet bullet)
+        {
+            var position = bullet.Position;
+            var rotation = 0;
+            switch (bullet.MoveDirection)
+            {
+                case TankDirection.Up: position.Y += 1.0f; rotation = 0;  break;
+                case TankDirection.Down: position.Y -= 1.0f; rotation = 180; break;
+                case TankDirection.Left: position.X -= 1.0f; rotation = 90; break;
+                case TankDirection.Right: position.X += 1.0f; rotation = 270; break;
+                default: break;
+            }
+
+            var effectComponent = self.Root().GetComponent<TankEffectComponent>();
+            effectComponent.ExplosionEffects.Add(new TankEffect
+            {
+                Position = position,
+                Rotation = rotation,
+                RemoveTime = TimeInfo.Instance.ClientFrameTime() + 2000,
+            });
         }
 
         private static void UpdateBulletPosition(this TankBulletComponent self, TankBullet bullet, long deltaTime)

@@ -34,7 +34,7 @@ namespace ET
             {
                 var explosion = self.RecycledExplosion.Count > 0 ? self.RecycledExplosion.Pop() : UnityEngine.Object.Instantiate(self.Explosion);
                 explosion.SetActive(true);
-                explosion.transform.position = new Vector3(effect.Position.X, effect.Position.Y, self.ExplosionZ);
+                explosion.transform.position = new Vector3(effect.Position.X - TankConsts.TileOffset, effect.Position.Y - TankConsts.TileOffset, self.ExplosionZ);
                 explosion.transform.rotation = Quaternion.Euler(new Vector3(0, 0, effect.Rotation));
                 explosion.GetComponent<Animator>().Play("explosion", -1, 0f);
 
