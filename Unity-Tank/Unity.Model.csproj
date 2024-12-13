@@ -108,6 +108,7 @@
     <Compile Include="Assets\Scripts\Model\Share\ConstFiberId.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\IMessageSessionHandler.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\MessageSessionHandlerAttribute.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\TankEffectComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankMapTile.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Console\ModeContex.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\IRoomMessage.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="Assets\Scripts\Model\Share\Tank\TankMapTilesComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankBullet.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSInputComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankEffect.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\NumericComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSWorld.cs" />
     <Compile Include="Assets\Scripts\Model\Client\Module\Message\ClientSessionErrorComponent.cs" />

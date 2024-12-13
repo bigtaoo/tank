@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\ModelView\Client\Demo\Unit\AnimatorComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Tank\TankUIGameModeComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\LockStep\UI\UILSLogin\UILSLoginComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Tank\TankClientEffectComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\LockStep\UI\UIType.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\LockStep\LSUnitView.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Demo\UI\UIHelp\UIHelpComponent.cs" />

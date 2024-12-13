@@ -10,6 +10,5 @@ namespace ET
         public Dictionary<long, GameObject> Bullets = new();
         public float Z;
         public Stack<GameObject> RecycledBullets = new();
-        public GameObject Explosion;
     }
 }

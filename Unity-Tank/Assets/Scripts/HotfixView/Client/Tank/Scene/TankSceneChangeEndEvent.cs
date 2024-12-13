@@ -12,12 +12,14 @@ namespace ET.Client
             scene.AddComponent<TankMapTilesComponent>();
             scene.AddComponent<TankPlayerComponent>();
             scene.AddComponent<TankBulletComponent>();
+            scene.AddComponent<TankEffectComponent>();
 
             // Client
             scene.AddComponent<TankCameraComponent>();
             scene.AddComponent<TankClientPlayerTankComponent>();
             scene.AddComponent<TankClientTileMapComponent>();
             scene.AddComponent<TankClientBulletComponent>();
+            scene.AddComponent<TankClientEffectComponent>();
 
             await UIHelper.Create(scene, UIType.TankUIGameMain, UILayer.Mid);
         }
