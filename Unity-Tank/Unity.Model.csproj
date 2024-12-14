@@ -107,8 +107,8 @@
     <Compile Include="Assets\Scripts\Model\Generate\Client\Message\LockStepOuter_C_11001.cs" />
     <Compile Include="Assets\Scripts\Model\Share\ConstFiberId.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\IMessageSessionHandler.cs" />
-    <Compile Include="Assets\Scripts\Model\Share\Module\Message\MessageSessionHandlerAttribute.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\TankEffectComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Module\Message\MessageSessionHandlerAttribute.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankMapTile.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Console\ModeContex.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\IRoomMessage.cs" />
@@ -129,6 +129,7 @@
     <Compile Include="Assets\Scripts\Model\Share\Tank\Enums\TankDirection.cs" />
     <Compile Include="Assets\Scripts\Model\Client\Demo\Main\Scene\Wait_SceneChangeFinish.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankEventType.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankRobot.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\NumericWatcherAttribute.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Console\ConsoleDispatcher.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\AI\AIConfig.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Assets\Scripts\Model\Client\Demo\NetClient\Router\RouterCheckComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Scene\FiberParentComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Generate\Client\Message\OuterMessage_C_10001.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankRobotSpawnInfo.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSUnit.cs" />
     <Compile Include="Assets\Scripts\Model\Client\LockStep\WaitType.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\Enums\TankCamp.cs" />
