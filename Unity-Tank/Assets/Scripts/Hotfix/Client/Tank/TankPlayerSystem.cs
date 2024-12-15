@@ -1,5 +1,3 @@
-using System;
-
 namespace ET.Client
 {
     [EntitySystemOf(typeof(TankPlayerComponent))]
@@ -58,41 +56,15 @@ namespace ET.Client
             var currentTime = TimeInfo.Instance.ClientFrameTime();
             var deltaTime = currentTime - self.LastFrameTime;
             self.LastFrameTime = currentTime;
-            var distance = self.MoveSpeed * deltaTime / 1000;
-            var position = self.Position;
 
-            switch (self.MoveDirection)
+            if (self.MoveDirection == TankDirection.None)
             {
-                case TankDirection.Left:
-                    {
-                        position.X -= distance;
-                        self.Rotation = 90;
-                        break;
-                    }
-                case TankDirection.Right:
-                    {
-                        position.X += distance;
-                        self.Rotation = 270;
-                        break;
-                    }
-                case TankDirection.Up:
-                    {
-                        position.Y += distance;
-                        self.Rotation = 0;
-                        break;
-                    }
-                case TankDirection.Down:
-                    {
-                        position.Y -= distance;
-                        self.Rotation = 180;
-                        break;
-                    }
-                case TankDirection.None:
-                default:
-                    {
-                        return;
-                    }
+                return;
             }
+
+            var distance = self.MoveSpeed * deltaTime / 1000;
+            var (position, rotation) = TankMovementHelper.Move(self.Position, self.MoveDirection, distance);
+            self.Rotation = rotation;
 
             if (TankMovementHelper.CanTankMoveToPosition(self.Root(), position, self.CurrentDirection))
             {

@@ -5,6 +5,44 @@ namespace ET
 {
     public static class TankMovementHelper
     {
+        public static (TankPosition, int) Move(TankPosition position, TankDirection direction, float distance)
+        {
+            var rotation = 0;
+            switch (direction)
+            {
+                case TankDirection.Left:
+                    {
+                        position.X -= distance;
+                        rotation = 90;
+                        break;
+                    }
+                case TankDirection.Right:
+                    {
+                        position.X += distance;
+                        rotation = 270;
+                        break;
+                    }
+                case TankDirection.Up:
+                    {
+                        position.Y += distance;
+                        rotation = 0;
+                        break;
+                    }
+                case TankDirection.Down:
+                    {
+                        position.Y -= distance;
+                        rotation = 180;
+                        break;
+                    }
+                case TankDirection.None:
+                default:
+                    {
+                        break;
+                    }
+            }
+            return (position, rotation);
+        }
+
         public static bool CanTankMoveToPosition(Scene root, TankPosition position, TankDirection direction)
         {
             var mapTilesComponent = root.GetComponent<TankMapTilesComponent>();

@@ -30,7 +30,6 @@ namespace ET
                         SpawnTime = 0,
                     };
                     robotComponent.SpawnInfos.Add(spawnInfo);
-
                     spawnPoint.SetActive(false);
                     self.RecycledRobots.Push(spawnPoint);
                 }
