@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\Hotfix\Share\Module\Console\ConsoleComponentSystem.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\Demo\NetClient\Router\RouterHelper.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Share\Demo\EntryEvent1_InitShare.cs" />
+    <Compile Include="Assets\Scripts\Hotfix\Client\Tank\Helper\TankMovementHelper.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\Demo\AI\AI_XunLuo.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Share\Module\Console\ReloadConfigConsoleHandler.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\LockStep\G2C_ChangeSceneHandler.cs" />

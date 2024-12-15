@@ -8,5 +8,6 @@ namespace ET
         public TankDirection Direction { get; set; }
         public long ShootInterval { get; set; }
         public long ShootTime { get; set; }
+        public float MoveSpeed { get; set; }
     }
 }

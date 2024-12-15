@@ -10,5 +10,6 @@ namespace ET
         public long SpawnInterval { get; set; }
         public int RobotLevel { get; set; }
         public long SpawnTime { get; set; }
+        public long ShootInterval { get; set; }
     }
 }

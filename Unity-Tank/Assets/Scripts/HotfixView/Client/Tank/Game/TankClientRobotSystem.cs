@@ -27,9 +27,12 @@ namespace ET
                             X = spawnPoint.transform.position.x,
                             Y = spawnPoint.transform.position.y,
                         },
-                        SpawnTime = TimeInfo.Instance.ClientFrameTime(),
+                        SpawnTime = 0,
                     };
-                    robotComponent.SpawnInfo.Add(spawnInfo);
+                    robotComponent.SpawnInfos.Add(spawnInfo);
+
+                    spawnPoint.SetActive(false);
+                    self.RecycledRobots.Push(spawnPoint);
                 }
             }
         }
