@@ -13,6 +13,7 @@ namespace ET.Client
             scene.AddComponent<TankPlayerComponent>();
             scene.AddComponent<TankBulletComponent>();
             scene.AddComponent<TankEffectComponent>();
+            scene.AddComponent<TankRobotComponent>();
 
             // Client
             scene.AddComponent<TankCameraComponent>();
@@ -20,6 +21,7 @@ namespace ET.Client
             scene.AddComponent<TankClientTileMapComponent>();
             scene.AddComponent<TankClientBulletComponent>();
             scene.AddComponent<TankClientEffectComponent>();
+            scene.AddComponent<TankClientRobotComponent>();
 
             await UIHelper.Create(scene, UIType.TankUIGameMain, UILayer.Mid);
         }

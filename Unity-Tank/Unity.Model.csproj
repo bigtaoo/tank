@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\Model\Client\LockStep\EventType.cs" />
     <Compile Include="Assets\Scripts\Model\Client\Demo\Main\Scene\Wait_CreateMyUnit.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\ISessionMessage.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\TankRobotComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Plugins\Example\ModelShare.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Demo\EventType.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\ObjectWait\ObjectWait.cs" />

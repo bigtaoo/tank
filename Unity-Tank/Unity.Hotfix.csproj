@@ -102,6 +102,7 @@
     <Compile Include="Assets\Scripts\Hotfix\Client\Plugins\Example\HotfixClient.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Share\Module\Actor\MessageHandler.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\Demo\NetClient\Router\RouterCheckComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\Hotfix\Client\Tank\TankRobotSystem.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\Demo\Main\Scene\SceneChangeHelper.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\Demo\NetClient\Router\HttpClientHelper.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\LockStep\OneFrameInputsHandler.cs" />

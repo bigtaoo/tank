@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\ModelView\Client\Module\UI\UIGlobalComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Empty.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Module\UI\UIComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Tank\TankClientRobotComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\LockStep\UI\UILSLobby\UILSLobbyComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Demo\UI\UILoading\UILoadingComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Module\Resource\ResourcesLoaderComponent.cs" />
