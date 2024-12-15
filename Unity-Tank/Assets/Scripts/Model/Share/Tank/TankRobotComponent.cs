@@ -7,5 +7,7 @@ namespace ET
         public ListComponent<TankRobotSpawnInfo> SpawnInfos { get; set; } = new();
         public ListComponent<TankRobot> RobotsToAdd { get; set; } = new();
         public ListComponent<TankRobot> RobotsToRemove { get; set; } = new();
+        public long LastFrameTime { get; set; }
+        public int RobotIdCount { get; set; }
     }
 }

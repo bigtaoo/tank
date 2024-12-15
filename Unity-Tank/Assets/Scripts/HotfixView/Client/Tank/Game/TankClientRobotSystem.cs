@@ -1,3 +1,4 @@
+using ET.Client;
 using UnityEngine;
 
 namespace ET
@@ -21,17 +22,18 @@ namespace ET
                         RobotCount = 5,
                         RobotLevel = 1,
                         Rotation = (int)spawnPoint.transform.rotation.z,
-                        SpawnInterval = 5000,
+                        SpawnInterval = 50 * 1000,
                         SpawnPosition = new TankPosition
                         {
-                            X = spawnPoint.transform.position.x,
-                            Y = spawnPoint.transform.position.y,
+                            X = spawnPoint.transform.position.x + TankConsts.TileOffset,
+                            Y = spawnPoint.transform.position.y + TankConsts.TileOffset,
                         },
                         SpawnTime = 0,
                     };
                     robotComponent.SpawnInfos.Add(spawnInfo);
                     spawnPoint.SetActive(false);
                     self.RecycledRobots.Push(spawnPoint);
+                    self.robotGameObject = spawnPoint;
                 }
             }
         }
@@ -39,7 +41,46 @@ namespace ET
         [EntitySystem]
         private static void Update(this TankClientRobotComponent self)
         {
+            self.AddRobot();
+            self.UpdataPosition();
+        }
 
+        private static void UpdataPosition(this TankClientRobotComponent self)
+        {
+            var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+            foreach (var robot in robotComponent.Robots)
+            {
+                var robotGameObject = self.Robots[robot.RobotId];
+                var currentPosition = robotGameObject.transform.position;
+                var targetPosition = new Vector3(robot.Position.X - TankConsts.TileOffset, robot.Position.Y - TankConsts.TileOffset, currentPosition.z);
+                if (targetPosition != currentPosition)
+                {
+                    //Log.Warning($"Update position: oldX: {currentPosition.x}, oldY:{currentPosition.y}, oldz:{currentPosition.z}, x:{targetPosition.x}, y:{targetPosition.y}");
+                    robotGameObject.transform.position = targetPosition;
+                }
+
+                var rotation = Quaternion.Euler(new Vector3(0, 0, robot.Rotation));
+                if (robotGameObject.transform.rotation != rotation)
+                {
+                    robotGameObject.transform.rotation = rotation;
+                }
+            }
+        }
+
+        private static void AddRobot(this TankClientRobotComponent self)
+        {
+            var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+            foreach (var robot in robotComponent.RobotsToAdd)
+            {
+                var robotGameObject = self.RecycledRobots.Count > 0 ?
+                    self.RecycledRobots.Pop() :
+                    GameObject.Instantiate(self.robotGameObject);
+                self.robotGameObject.SetActive(true);
+                self.Robots[robot.RobotId] = robotGameObject;
+
+                Log.Warning($"Add robot {robot.RobotId}");
+            }
+            robotComponent.RobotsToAdd.Clear();
         }
     }
 }
