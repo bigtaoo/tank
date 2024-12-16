@@ -7,7 +7,7 @@ namespace ET
         [EntitySystem]
         private static void Awake(this TankRobotComponent self)
         {
-
+            self.LastFrameTime = TimeInfo.Instance.ClientFrameTime();
         }
 
         [EntitySystem]
@@ -55,6 +55,7 @@ namespace ET
                         MoveSpeed = 1.8f,
                         Rotation = spawnInfo.Rotation,
                     };
+                    //Log.Warning($"Spawn robot, id: {robot.RobotId}, x: {robot.Position.X}, y: {robot.Position.Y}");
                     self.Robots.Add(robot);
                     self.RobotsToAdd.Add(robot);
                 }

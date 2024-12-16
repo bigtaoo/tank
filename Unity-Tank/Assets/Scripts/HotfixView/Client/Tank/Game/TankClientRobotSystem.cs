@@ -72,13 +72,14 @@ namespace ET
             var robotComponent = self.Root().GetComponent<TankRobotComponent>();
             foreach (var robot in robotComponent.RobotsToAdd)
             {
+                Log.Warning($"recycled robots: {self.RecycledRobots.Count}");
                 var robotGameObject = self.RecycledRobots.Count > 0 ?
                     self.RecycledRobots.Pop() :
                     GameObject.Instantiate(self.robotGameObject);
-                self.robotGameObject.SetActive(true);
+                robotGameObject.SetActive(true);
                 self.Robots[robot.RobotId] = robotGameObject;
 
-                Log.Warning($"Add robot {robot.RobotId}");
+                Log.Warning($"Add robot {robot.RobotId}, x: {robot.Position.X}, y: {robot.Position.X}, point:{robot.SpawnPointId}");
             }
             robotComponent.RobotsToAdd.Clear();
         }
