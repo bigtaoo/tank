@@ -1,4 +1,3 @@
-using ET.Client;
 using UnityEngine;
 
 namespace ET
@@ -11,7 +10,7 @@ namespace ET
         private static void Awake(this TankClientRobotComponent self)
         {
             var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 1; i++)
             {
                 var spawnPoint = GameObject.Find($"robot-{i + 1}");
                 if (spawnPoint != null)
