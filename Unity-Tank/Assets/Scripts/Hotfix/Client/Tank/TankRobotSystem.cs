@@ -1,3 +1,5 @@
+using MongoDB.Bson;
+
 namespace ET
 {
     [EntitySystemOf(typeof(TankRobotComponent))]
@@ -55,7 +57,7 @@ namespace ET
                         MoveSpeed = 1.8f,
                         Rotation = spawnInfo.Rotation,
                     };
-                    //Log.Warning($"Spawn robot, id: {robot.RobotId}, x: {robot.Position.X}, y: {robot.Position.Y}");
+                    Log.Warning($"Spawn robot, {robot.ToJson()}, spawn info: {spawnInfo.ToJson()}");
                     self.Robots.Add(robot);
                     self.RobotsToAdd.Add(robot);
                 }

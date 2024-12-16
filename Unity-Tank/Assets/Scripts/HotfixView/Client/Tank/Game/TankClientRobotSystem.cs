@@ -20,7 +20,7 @@ namespace ET
                         SpawnPointId = i,
                         RobotCount = 5,
                         RobotLevel = 1,
-                        Rotation = (int)spawnPoint.transform.rotation.z,
+                        Rotation = (int)spawnPoint.transform.rotation.eulerAngles.z,
                         SpawnInterval = 50 * 1000,
                         SpawnPosition = new TankPosition
                         {
@@ -28,6 +28,7 @@ namespace ET
                             Y = spawnPoint.transform.position.y + TankConsts.TileOffset,
                         },
                         SpawnTime = 0,
+                        ShootInterval = 3 * 1000,
                     };
                     robotComponent.SpawnInfos.Add(spawnInfo);
                     spawnPoint.SetActive(false);
