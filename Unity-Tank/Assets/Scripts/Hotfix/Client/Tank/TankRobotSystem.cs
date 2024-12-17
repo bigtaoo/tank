@@ -1,4 +1,6 @@
 using MongoDB.Bson;
+using System;
+using System.Collections.Generic;
 
 namespace ET
 {
@@ -29,12 +31,47 @@ namespace ET
             foreach (var robot in self.Robots)
             {
                 float distance = robot.MoveSpeed * deltaTime / 1000.0f;
-                var (position, rotation) = TankMovementHelper.Move(robot.Position, robot.Direction, distance);
-                if (TankMovementHelper.CanTankMoveToPosition(self.Root(), position, robot.Direction))
+                var nearTarget = Math.Abs(robot.Position.X - robot.TargetPosition.X) <= distance &&
+                    Math.Abs(robot.Position.Y - robot.TargetPosition.Y) <= distance;
+                //Log.Warning($"Near target:{nearTarget}, distance: {distance}, x:{Math.Abs(robot.Position.X - robot.TargetPosition.X)}, y: {Math.Abs(robot.Position.Y - robot.TargetPosition.Y)}");
+                if (nearTarget)
                 {
+                    robot.Position = robot.TargetPosition;
+                    self.FindNextTargetPosition(robot);
+                }
+                else
+                {
+                    var (position, rotation) = TankMovementHelper.Move(robot.Position, robot.Direction, distance);
                     robot.Position = position;
+                    robot.Rotation = rotation;
                 }
             }
+        }
+
+        private static void FindNextTargetPosition(this TankRobotComponent self, TankRobot robot)
+        {
+            //Log.Warning($"Robot position x: {robot.Position.X}, y: {robot.Position.Y}, direction: {robot.Direction.ToString()}");
+            var possiblePositions = new List<(TankPosition, TankDirection)>();
+            if (TankMovementHelper.CanTankMoveToPosition(self.Root(), new TankPosition { X = robot.Position.X - 0.5f, Y = robot.Position.Y }, TankDirection.Left))
+            {
+                possiblePositions.Add((new TankPosition { X = robot.Position.X - 1, Y =  robot.Position.Y }, TankDirection.Left));
+            }
+            if (TankMovementHelper.CanTankMoveToPosition(self.Root(), new TankPosition { X = robot.Position.X + 0.5f, Y = robot.Position.Y }, TankDirection.Right))
+            {
+                possiblePositions.Add((new TankPosition { X = robot.Position.X + 1, Y = robot.Position.Y }, TankDirection.Right));
+            }
+            if (TankMovementHelper.CanTankMoveToPosition(self.Root(), new TankPosition { X = robot.Position.X, Y = robot.Position.Y + 0.5f }, TankDirection.Up))
+            {
+                possiblePositions.Add((new TankPosition { X = robot.Position.X, Y = robot.Position.Y + 1 }, TankDirection.Up));
+            }
+            if (TankMovementHelper.CanTankMoveToPosition(self.Root(), new TankPosition { X = robot.Position.X, Y = robot.Position.Y - 0.5f }, TankDirection.Down))
+            {
+                possiblePositions.Add((new TankPosition { X = robot.Position.X, Y = robot.Position.Y - 1 }, TankDirection.Down));
+            }
+            var index = RandomGenerator.RandInt32() % possiblePositions.Count;
+            robot.TargetPosition = possiblePositions[index].Item1;
+            robot.Direction = possiblePositions[index].Item2;
+            //Log.Warning($"Find next positon: {robot.TargetPosition.X}  {robot.TargetPosition.Y}, direction: {robot.Direction.ToString()}");
         }
 
         private static void SpawnRobot(this TankRobotComponent self)
@@ -60,6 +97,7 @@ namespace ET
                     Log.Warning($"Spawn robot, {robot.ToJson()}, spawn info: {spawnInfo.ToJson()}");
                     self.Robots.Add(robot);
                     self.RobotsToAdd.Add(robot);
+                    self.FindNextTargetPosition(robot);
                 }
             }
         }

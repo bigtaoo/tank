@@ -11,5 +11,6 @@ namespace ET
         public long ShootTime { get; set; }
         public float MoveSpeed { get; set; }
         public int Rotation { get; set; }
+        public TankPosition TargetPosition { get; set; }
     }
 }
