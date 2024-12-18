@@ -9,5 +9,6 @@ namespace ET
         public ListComponent<TankRobot> RobotsToRemove { get; set; } = new();
         public long LastFrameTime { get; set; }
         public int RobotIdCount { get; set; }
+        public int BasicShootInterval { get; } = 3 * 1000;
     }
 }

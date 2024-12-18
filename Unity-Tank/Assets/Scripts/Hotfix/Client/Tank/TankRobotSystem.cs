@@ -19,7 +19,29 @@ namespace ET
         {
             self.SpawnRobot();
             self.UpdatePosition();
+            self.UpdateShooting();
+        }
 
+        private static void UpdateShooting(this TankRobotComponent self)
+        {
+            var currentTime = TimeInfo.Instance.ClientFrameTime();
+
+            foreach (var robot in self.Robots)
+            {
+                if (robot.ShootTime < currentTime)
+                {
+                    robot.ShootTime = currentTime + robot.ShootInterval + RandomGenerator.RandInt32() % self.BasicShootInterval;
+
+                    var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
+                    bulletComponent.CreateBullet(new TankBullet
+                    {
+                        Camp = TankCamp.Enemy,
+                        MoveDirection = robot.Direction,
+                        Position = robot.Position,
+                        Speed = robot.MoveSpeed * 3,
+                    });
+                }
+            }
         }
 
         private static void UpdatePosition(this TankRobotComponent self)
@@ -100,7 +122,7 @@ namespace ET
                         Direction = self.RotationToDirection(spawnInfo.Rotation),
                         Position = spawnInfo.SpawnPosition,
                         ShootInterval = spawnInfo.ShootInterval,
-                        ShootTime = currentTime,
+                        ShootTime = currentTime + spawnInfo.ShootInterval + RandomGenerator.RandInt32() % self.BasicShootInterval,
                         SpawnPointId = spawnInfo.SpawnPointId,
                         MoveSpeed = 1.8f,
                         Rotation = spawnInfo.Rotation,
