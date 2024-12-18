@@ -52,21 +52,32 @@ namespace ET
         {
             //Log.Warning($"Robot position x: {robot.Position.X}, y: {robot.Position.Y}, direction: {robot.Direction.ToString()}");
             var possiblePositions = new List<(TankPosition, TankDirection)>();
+            TankPosition? sameDirection = null;
             if (TankMovementHelper.CanTankMoveToPosition(self.Root(), new TankPosition { X = robot.Position.X - 0.5f, Y = robot.Position.Y }, TankDirection.Left))
             {
                 possiblePositions.Add((new TankPosition { X = robot.Position.X - 1, Y =  robot.Position.Y }, TankDirection.Left));
+                if (robot.Direction == TankDirection.Left) sameDirection = new TankPosition { X = robot.Position.X - 1, Y = robot.Position.Y };
             }
             if (TankMovementHelper.CanTankMoveToPosition(self.Root(), new TankPosition { X = robot.Position.X + 0.5f, Y = robot.Position.Y }, TankDirection.Right))
             {
                 possiblePositions.Add((new TankPosition { X = robot.Position.X + 1, Y = robot.Position.Y }, TankDirection.Right));
+                if (robot.Direction == TankDirection.Right) sameDirection = new TankPosition { X = robot.Position.X + 1, Y = robot.Position.Y };
             }
             if (TankMovementHelper.CanTankMoveToPosition(self.Root(), new TankPosition { X = robot.Position.X, Y = robot.Position.Y + 0.5f }, TankDirection.Up))
             {
                 possiblePositions.Add((new TankPosition { X = robot.Position.X, Y = robot.Position.Y + 1 }, TankDirection.Up));
+                if (robot.Direction == TankDirection.Up) sameDirection = new TankPosition { X = robot.Position.X, Y = robot.Position.Y + 1 };
             }
             if (TankMovementHelper.CanTankMoveToPosition(self.Root(), new TankPosition { X = robot.Position.X, Y = robot.Position.Y - 0.5f }, TankDirection.Down))
             {
                 possiblePositions.Add((new TankPosition { X = robot.Position.X, Y = robot.Position.Y - 1 }, TankDirection.Down));
+                if (robot.Direction == TankDirection.Down) sameDirection = new TankPosition { X = robot.Position.X, Y = robot.Position.Y - 1 };
+            }
+            if (sameDirection != null && RandomGenerator.RandInt32() % 100 < 50)
+            {
+                //Log.Warning("Keep the same direction");
+                robot.TargetPosition = sameDirection.Value;
+                return;
             }
             var index = RandomGenerator.RandInt32() % possiblePositions.Count;
             robot.TargetPosition = possiblePositions[index].Item1;
