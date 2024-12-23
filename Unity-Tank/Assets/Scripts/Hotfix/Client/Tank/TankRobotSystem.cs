@@ -143,7 +143,7 @@ namespace ET
                         Rotation = spawnInfo.Rotation,
                         HealthPoint = 1,
                     };
-                    Log.Warning($"Spawn robot, {robot.ToJson()}, spawn info: {spawnInfo.ToJson()}");
+                    //Log.Warning($"Spawn robot, {robot.ToJson()}, spawn info: {spawnInfo.ToJson()}");
                     self.Robots.Add(robot);
                     self.RobotsToAdd.Add(robot);
                     self.FindNextTargetPosition(robot);
