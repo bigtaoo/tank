@@ -34,6 +34,8 @@ namespace ET
                         if (TankDamageHelper.BulletHitTank(bullet.Position, robot.Position))
                         {
                             robot.HealthPoint -= 1;
+                            bulletComponent.HitTank(bulletId);
+                            return;
                         }
                     }
                 }

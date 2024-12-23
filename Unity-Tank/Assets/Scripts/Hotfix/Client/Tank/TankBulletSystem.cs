@@ -65,6 +65,14 @@ namespace ET
             self.BulletsToAdd.Add(self.IdCounter);
         }
 
+        public static void HitTank(this TankBulletComponent self, long bulletId)
+        {
+            var bullet = self.Bullets[bulletId];
+            self.CreateExplosionEffect(bullet);
+            self.BulletsToRemove.Add(bulletId);
+            self.Bullets.Remove(bulletId);
+        }
+
         private static void CreateExplosionEffect(this TankBulletComponent self, TankBullet bullet)
         {
             var position = bullet.Position;
