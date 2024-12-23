@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3c6106255df2248bc04f2b7340d438, type: 3}
   m_Name: TankTile_Wall
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 12aeebc11d58f43408d32682e44e5381, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 63e440ffc96d99a4a9c60aae6e0ddcdf, type: 3}
+  m_Color: {r: 0.8867924, g: 0.8426823, b: 0.013943187, a: 1}
   m_Transform:
     e00: 1
     e01: 0

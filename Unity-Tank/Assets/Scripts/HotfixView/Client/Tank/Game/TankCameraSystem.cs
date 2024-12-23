@@ -28,7 +28,7 @@ namespace ET.Client
 
             Application.targetFrameRate = 60;
 
-            self.SetRandomBackground();
+            //self.SetRandomBackground();
         }
 
         private static void SetRandomBackground(this TankCameraComponent self)
