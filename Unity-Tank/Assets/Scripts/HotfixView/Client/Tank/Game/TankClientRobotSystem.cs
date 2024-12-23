@@ -10,7 +10,7 @@ namespace ET
         private static void Awake(this TankClientRobotComponent self)
         {
             var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 1; i++)
             {
                 var spawnPoint = GameObject.Find($"robot-{i + 1}");
                 if (spawnPoint != null)
@@ -42,6 +42,7 @@ namespace ET
         private static void Update(this TankClientRobotComponent self)
         {
             self.AddRobot();
+            self.RemoveRobot();
             self.UpdataPosition();
         }
 
@@ -82,6 +83,18 @@ namespace ET
                 Log.Warning($"Add robot {robot.RobotId}, x: {robot.Position.X}, y: {robot.Position.X}, point:{robot.SpawnPointId}");
             }
             robotComponent.RobotsToAdd.Clear();
+        }
+
+        private static void RemoveRobot(this TankClientRobotComponent self)
+        {
+            var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+            foreach (var robot in robotComponent.RobotsToRemove)
+            {
+                var robotGameObject = self.Robots[robot.RobotId];
+                self.RecycledRobots.Push(robotGameObject);
+                robotGameObject.SetActive(false);
+                self.Robots.Remove(robot.RobotId);
+            }
         }
     }
 }

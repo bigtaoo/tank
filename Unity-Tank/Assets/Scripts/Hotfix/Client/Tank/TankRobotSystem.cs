@@ -18,8 +18,22 @@ namespace ET
         private static void Update(this TankRobotComponent self)
         {
             self.SpawnRobot();
+            self.CheckRobotAlive();
             self.UpdatePosition();
             self.UpdateShooting();
+        }
+
+        public static void CheckRobotAlive(this TankRobotComponent self)
+        {
+            for (int i = self.Robots.Count - 1; i >= 0; i--)
+            {
+                var robot = self.Robots[i];
+                if (robot.HealthPoint <= 0)
+                {
+                    self.RobotsToRemove.Add(robot);
+                    self.Robots.RemoveAt(i);
+                }
+            }
         }
 
         private static void UpdateShooting(this TankRobotComponent self)
@@ -126,6 +140,7 @@ namespace ET
                         SpawnPointId = spawnInfo.SpawnPointId,
                         MoveSpeed = 1.8f,
                         Rotation = spawnInfo.Rotation,
+                        HealthPoint = 1,
                     };
                     Log.Warning($"Spawn robot, {robot.ToJson()}, spawn info: {spawnInfo.ToJson()}");
                     self.Robots.Add(robot);
