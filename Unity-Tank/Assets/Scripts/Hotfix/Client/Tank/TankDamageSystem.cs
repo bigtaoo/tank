@@ -20,15 +20,21 @@ namespace ET
             foreach (var bulletId in bulletComponent.Bullets.Keys)
             {
                 var bullet = bulletComponent.Bullets[bulletId];
-                if (TankDamageHelper.BulletHitTank(bullet.Position, playerComponent.Position))
+                if (bullet.Camp == TankCamp.Enemy)
                 {
-                    Log.Warning("Player was hit");
-                }
-                foreach (var robot in robotComponent.Robots)
-                {
-                    if (TankDamageHelper.BulletHitTank(bullet.Position, robot.Position))
+                    if (TankDamageHelper.BulletHitTank(bullet.Position, playerComponent.Position))
                     {
-                        robot.HealthPoint -= 1;
+                        Log.Warning("Player was hit");
+                    }
+                }
+                else
+                {
+                    foreach (var robot in robotComponent.Robots)
+                    {
+                        if (TankDamageHelper.BulletHitTank(bullet.Position, robot.Position))
+                        {
+                            robot.HealthPoint -= 1;
+                        }
                     }
                 }
             }

@@ -30,6 +30,7 @@ namespace ET
                 var robot = self.Robots[i];
                 if (robot.HealthPoint <= 0)
                 {
+                    self.SpawnInfos[robot.SpawnPointId].SpawnTime = 0;
                     self.RobotsToRemove.Add(robot);
                     self.Robots.RemoveAt(i);
                 }

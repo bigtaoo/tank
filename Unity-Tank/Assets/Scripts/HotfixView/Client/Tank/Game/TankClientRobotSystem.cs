@@ -95,6 +95,7 @@ namespace ET
                 robotGameObject.SetActive(false);
                 self.Robots.Remove(robot.RobotId);
             }
+            robotComponent.RobotsToRemove.Clear();
         }
     }
 }
