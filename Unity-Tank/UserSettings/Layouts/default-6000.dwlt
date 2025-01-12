@@ -504,7 +504,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Bundles/Sprites
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -514,16 +514,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Bundles/Sprites
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Tao Wang\Documents\tank\Unity-Tank
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: 809c0000
-    m_LastClickedID: 40064
-    m_ExpandedIDs: 00000000009c0000029c0000049c0000
+    m_SelectedIDs: 6c9c0000
+    m_LastClickedID: 40044
+    m_ExpandedIDs: 000000000c9c00000e9c0000109c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -552,7 +552,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000009c0000029c0000049c0000
+    m_ExpandedIDs: 000000000c9c00000e9c0000109c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -578,10 +578,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c69d0000
-    m_LastClickedInstanceID: 40390
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000ba970000cc9900009ea40000000000006c9a0000
+    m_ExpandedInstanceIDs: c6230000ba970000cc9900009ea40000000000006c9a0000949d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -702,7 +702,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 08eafffff2faffff
+      m_ExpandedIDs: ecf4fffff8faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1279,9 +1279,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -11.212013, y: 8.470754, z: -2.03071}
+    m_Target: {x: 0.44541046, y: -0.1343137, z: -2.1084013}
     speed: 2
-    m_Value: {x: -11.212013, y: 8.470754, z: -2.03071}
+    m_Value: {x: 0.44541046, y: -0.1343137, z: -2.1084013}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1331,9 +1331,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.488637
+    m_Target: 12.257781
     speed: 2
-    m_Value: 4.488637
+    m_Value: 12.257781
   m_Ortho:
     m_Target: 1
     speed: 2
