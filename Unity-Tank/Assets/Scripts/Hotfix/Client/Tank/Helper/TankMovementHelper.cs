@@ -85,5 +85,35 @@ namespace ET
         {
             return (direction == TankDirection.Up || direction == TankDirection.Right) ? (float)Math.Ceiling(v) : (float)Math.Floor(v);
         }
+
+        public static bool PositionHasTank(Scene root, TankPosition position, TankDirection direction, int tankId)
+        {
+            var X = PositionToTile(direction, position.X);
+            var Y = PositionToTile(direction, position.Y);
+
+            var robotComponent = root.GetComponent<TankRobotComponent>();
+            foreach (var robot in robotComponent.Robots)
+            {
+                if (robot.RobotId == tankId)
+                {
+                    continue;
+                }
+                var robotX = PositionToTile(robot.Direction, robot.Position.X);
+                var robotY = PositionToTile(robot.Direction, robot.Position.Y);
+
+                if (AreRectanglesIntersecting(X, Y, robotX, robotY))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private static bool AreRectanglesIntersecting(float x1, float y1, float x2, float y2)
+        {
+            if (x1 < x2 - 1 || x2 < x1 - 1) return false;
+            if (y1 < y2 - 1 || y2 < y1 - 1) return false;
+            return true;
+        }
     }
 }

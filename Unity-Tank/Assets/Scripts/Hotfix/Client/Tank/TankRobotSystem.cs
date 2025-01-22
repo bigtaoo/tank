@@ -110,6 +110,26 @@ namespace ET
                 possiblePositions.Add((new TankPosition { X = robot.Position.X, Y = robot.Position.Y - 1 }, TankDirection.Down));
                 if (robot.Direction == TankDirection.Down) sameDirection = new TankPosition { X = robot.Position.X, Y = robot.Position.Y - 1 };
             }
+
+            if (possiblePositions.Count == 0)
+            {
+                return;
+            }
+
+            for (int i = possiblePositions.Count - 1; i >= 0; i--)
+            {
+                var p = possiblePositions[i];
+                if (TankMovementHelper.PositionHasTank(self.Root(), p.Item1, p.Item2, robot.RobotId))
+                {
+                    possiblePositions.RemoveAt(i);
+                }
+            }
+
+            if (possiblePositions.Count == 0)
+            {
+                return;
+            }
+
             if (sameDirection != null && RandomGenerator.RandInt32() % 100 < 50)
             {
                 //Log.Warning("Keep the same direction");
