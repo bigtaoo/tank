@@ -56,14 +56,4 @@ Publish/
 Unity-Tank/UserSettings/Layouts/default-6000.dwlt
 Unity-Tank/UserSettings/Layouts/default-6000.dwlt
 /Unity-Tank/UserSettings/Layouts
-Unity-Tank/Bundles/StandaloneWindows64/DefaultPackage/Simulate/PackageManifest_DefaultPackage_Simulate.json
-Unity-Tank/Bundles/StandaloneWindows64/DefaultPackage/Simulate/PackageManifest_DefaultPackage_Simulate.hash
-Unity-Tank/Bundles/StandaloneWindows64/DefaultPackage/Simulate/PackageManifest_DefaultPackage_Simulate.bytes
-Unity-Tank/Assets/Bundles/Code/Unity.ModelView.pdb.bytes
-Unity-Tank/Assets/Bundles/Code/Unity.ModelView.dll.bytes
-Unity-Tank/Assets/Bundles/Code/Unity.Model.pdb.bytes
-Unity-Tank/Assets/Bundles/Code/Unity.Model.dll.bytes
-Unity-Tank/Assets/Bundles/Code/Unity.HotfixView.pdb.bytes
-Unity-Tank/Assets/Bundles/Code/Unity.HotfixView.dll.bytes
-Unity-Tank/Assets/Bundles/Code/Unity.Hotfix.pdb.bytes
-Unity-Tank/Assets/Bundles/Code/Unity.Hotfix.dll.bytes
+/Unity-Tank/Assets/Bundles/Code

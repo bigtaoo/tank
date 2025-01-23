@@ -121,6 +121,10 @@ namespace ET
                 var p = possiblePositions[i];
                 if (TankMovementHelper.PositionHasTank(self.Root(), p.Item1, p.Item2, robot.RobotId))
                 {
+                    if (robot.Direction == p.Item2)
+                    {
+                        sameDirection = null;
+                    }
                     possiblePositions.RemoveAt(i);
                 }
             }
