@@ -1,4 +1,5 @@
 using ET.Client;
+using System;
 using System.Linq;
 
 namespace ET
@@ -21,15 +22,68 @@ namespace ET
             var deltaTime = currentTime - self.LastFrameTime;
             self.LastFrameTime = currentTime;
 
+            foreach (var key in self.Bullets.Keys.ToList())
+            {
+                var bullet = self.Bullets[key];
+                self.UpdateBulletPosition(bullet, deltaTime);
+            }
+
+            self.CheckCollisionWithTiles();
+            self.CheckCollisionWithOtherBullets();
+        }
+
+        public static void CreateBullet(this TankBulletComponent self, TankBullet bullet)
+        {
+            self.IdCounter++;
+            self.Bullets.Add(self.IdCounter, bullet);
+            self.BulletsToAdd.Add(self.IdCounter);
+        }
+
+        public static void HitTank(this TankBulletComponent self, long bulletId)
+        {
+            var bullet = self.Bullets[bulletId];
+            self.CreateExplosionEffect(bullet);
+            self.BulletsToRemove.Add(bulletId);
+            self.Bullets.Remove(bulletId);
+        }
+
+        private static void CheckCollisionWithOtherBullets(this TankBulletComponent self)
+        {
+            foreach (var key in self.Bullets.Keys.ToList())
+            {
+                if (self.Bullets.TryGetValue(key, out var bullet))
+                {
+                    foreach (var checkKey in self.Bullets.Keys.ToList())
+                    {
+                        if (key == checkKey)
+                        {
+                            continue;
+                        }
+                        var checkBullet = self.Bullets[checkKey];
+                        if (Math.Abs(bullet.Position.X - checkBullet.Position.X) < 0.5f &&
+                            Math.Abs(bullet.Position.Y - checkBullet.Position.Y) < 0.5f)
+                        {
+                            self.CreateExplosionEffect(bullet);
+                            self.BulletsToRemove.Add(key);
+                            self.Bullets.Remove(key);
+                            self.BulletsToRemove.Add(checkKey);
+                            self.Bullets.Remove(checkKey);
+                        }
+                    }
+                }
+            }
+        }
+
+        private static void CheckCollisionWithTiles(this TankBulletComponent self)
+        {
             var mapTilesComponent = self.Root().GetComponent<TankMapTilesComponent>();
 
             foreach (var key in self.Bullets.Keys.ToList())
             {
                 var bullet = self.Bullets[key];
-                self.UpdateBulletPosition(bullet, deltaTime);
                 var tile = mapTilesComponent.GetTile(bullet.Position);
                 var neighborTile = bullet.MoveDirection == TankDirection.Up || bullet.MoveDirection == TankDirection.Down ?
-                    mapTilesComponent.GetTile(new TankPosition { X = bullet.Position.X - 1, Y = bullet.Position.Y }) : 
+                    mapTilesComponent.GetTile(new TankPosition { X = bullet.Position.X - 1, Y = bullet.Position.Y }) :
                     mapTilesComponent.GetTile(new TankPosition { X = bullet.Position.X, Y = bullet.Position.Y - 1 });
 
                 if (!mapTilesComponent.IsInMap(bullet.Position, 0.5f))
@@ -56,21 +110,6 @@ namespace ET
                     }
                 }
             }
-        }
-
-        public static void CreateBullet(this TankBulletComponent self, TankBullet bullet)
-        {
-            self.IdCounter++;
-            self.Bullets.Add(self.IdCounter, bullet);
-            self.BulletsToAdd.Add(self.IdCounter);
-        }
-
-        public static void HitTank(this TankBulletComponent self, long bulletId)
-        {
-            var bullet = self.Bullets[bulletId];
-            self.CreateExplosionEffect(bullet);
-            self.BulletsToRemove.Add(bulletId);
-            self.Bullets.Remove(bulletId);
         }
 
         private static void CreateExplosionEffect(this TankBulletComponent self, TankBullet bullet)
