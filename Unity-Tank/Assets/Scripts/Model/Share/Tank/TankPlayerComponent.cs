@@ -12,5 +12,6 @@ namespace ET
         public TankDirection CurrentDirection { get; set; } = TankDirection.Up;
         public long LastShootTime { get; set; }
         public long ShootCoolDownTime { get; set; } = 1000;
+        public bool ShowTween { get; set; } = false;
     }
 }

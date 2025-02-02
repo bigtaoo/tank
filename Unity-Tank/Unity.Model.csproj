@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Model\Client\LockStep\LSClientUpdater.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Entry.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Scene\CurrentScenesComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Enums\TankBuffType.cs" />
     <Compile Include="Assets\Scripts\Model\Share\EntitySerializeRegister.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Unit\UnitEventType.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\AI\AAIHandler.cs" />
@@ -114,6 +115,7 @@
     <Compile Include="Assets\Scripts\Model\Share\Module\Console\ModeContex.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\IRoomMessage.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\Room.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankBuff.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\AI\AIDispatcherComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\NumericWatcherComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Client\Plugins\Example\ModelClient.cs" />

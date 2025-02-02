@@ -12,6 +12,7 @@ namespace ET
         private static void Awake(this TankRobotComponent self)
         {
             self.LastFrameTime = TimeInfo.Instance.ClientFrameTime();
+            self.RobotId = TankConsts.RobotStartIndex;
         }
 
         [EntitySystem]
@@ -153,11 +154,11 @@ namespace ET
             {
                 if (spawnInfo.SpawnTime == 0 || spawnInfo.SpawnTime + spawnInfo.SpawnInterval < currentTime)
                 {
-                    ++self.RobotIdCount;
+                    ++self.RobotId;
                     spawnInfo.SpawnTime = currentTime;
                     var robot = new TankRobot
                     {
-                        RobotId = self.RobotIdCount,
+                        RobotId = self.RobotId,
                         Direction = self.RotationToDirection(spawnInfo.Rotation),
                         Position = spawnInfo.SpawnPosition,
                         ShootInterval = spawnInfo.ShootInterval,

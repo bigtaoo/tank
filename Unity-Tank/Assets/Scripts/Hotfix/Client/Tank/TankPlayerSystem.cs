@@ -88,6 +88,7 @@ namespace ET.Client
                 if (position.Y != self.Position.Y)
                 {
                     self.Position = position;
+                    self.ShowTween = true;
                 }
             }
             else if (self.CurrentDirection == TankDirection.Left || self.CurrentDirection == TankDirection.Right)
@@ -97,6 +98,7 @@ namespace ET.Client
                 if ( position.X != self.Position.X)
                 {
                     self.Position = position;
+                    self.ShowTween = true;
                 }
             }
         }
