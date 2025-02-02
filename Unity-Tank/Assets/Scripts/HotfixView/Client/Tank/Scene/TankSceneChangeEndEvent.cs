@@ -15,6 +15,7 @@ namespace ET.Client
             scene.AddComponent<TankEffectComponent>();
             scene.AddComponent<TankRobotComponent>();
             scene.AddComponent<TankDamageComponent>();
+            scene.AddComponent<TankBuffComponent>();
 
             // Client
             scene.AddComponent<TankCameraComponent>();
