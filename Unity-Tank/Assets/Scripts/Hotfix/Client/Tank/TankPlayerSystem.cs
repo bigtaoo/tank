@@ -1,3 +1,5 @@
+using System;
+
 namespace ET.Client
 {
     [EntitySystemOf(typeof(TankPlayerComponent))]
@@ -51,20 +53,6 @@ namespace ET.Client
             });
         }
 
-        public static void AddBuff(this TankPlayerComponent self, TankBuffType type, long persistTime)
-        {
-            var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-
-            buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.CanNotMove, persistTime);
-        }
-
-        public static void RemoveBuff(this TankPlayerComponent self, TankBuffType type)
-        {
-            var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-
-            buffComponent.RemoveBuff(TankConsts.PlayerIndex, type);
-        }
-
         private static void UpdatePosition(this TankPlayerComponent self)
         {
             var currentTime = TimeInfo.Instance.ClientFrameTime();
@@ -94,6 +82,8 @@ namespace ET.Client
             {
                 return;
             }
+
+            var buffComponent = self.Root().GetComponent<TankBuffComponent>();
             if (self.CurrentDirection == TankDirection.Up || self.CurrentDirection == TankDirection.Down)
             {
                 var position = self.Position;
@@ -102,7 +92,8 @@ namespace ET.Client
                 if (position.Y != self.Position.Y)
                 {
                     self.Position = position;
-                    self.ShowTween = true;
+                    var time = Math.Abs(position.Y - self.Position.Y) / self.MoveSpeed * 1000;
+                    buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.AddTween, (int)time);
                 }
             }
             else if (self.CurrentDirection == TankDirection.Left || self.CurrentDirection == TankDirection.Right)
@@ -112,7 +103,8 @@ namespace ET.Client
                 if ( position.X != self.Position.X)
                 {
                     self.Position = position;
-                    self.ShowTween = true;
+                    var time = Math.Abs(position.Y - self.Position.Y) / self.MoveSpeed * 1000;
+                    buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.AddTween, (int)time);
                 }
             }
         }

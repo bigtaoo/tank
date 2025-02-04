@@ -67,6 +67,21 @@ namespace ET
             }
         }
 
+        public static TankBuff GetBuff(this TankBuffComponent self, int TankId, TankBuffType type)
+        {
+            if (self.TankBuffs.TryGetValue(TankId, out var buffList))
+            {
+                foreach (var buff in buffList)
+                {
+                    if (buff.Type == type)
+                    {
+                        return buff;
+                    }
+                }
+            }
+            return null;
+        }
+
         public static void OnTankDestroyed(this TankBuffComponent self, int TankId)
         {
             if (self.TankBuffs.ContainsKey(TankId))

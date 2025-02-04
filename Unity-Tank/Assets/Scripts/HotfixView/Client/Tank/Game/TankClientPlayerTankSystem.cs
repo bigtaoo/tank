@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 namespace ET.Client
@@ -20,12 +21,29 @@ namespace ET.Client
         [EntitySystem]
         private static void Update(this TankClientPlayerTankComponent self)
         {
-            self.UpdateInput();
-
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             var transform = self.TankPlayer1.GetComponent<Transform>();
             var currentPosition = transform.position;
             var targetPosition = new Vector3(playerComponent.Position.X - TankConsts.TileOffset, playerComponent.Position.Y - TankConsts.TileOffset, currentPosition.z);
+
+            var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+            var addTweenBuff = buffComponent.GetBuff(TankConsts.PlayerIndex, TankBuffType.AddTween);
+            if (addTweenBuff != null)
+            {
+                var time = addTweenBuff.RemoveTime - TimeInfo.Instance.ClientFrameTime();
+                buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.TweenDisplay, time);
+                buffComponent.RemoveBuff(TankConsts.PlayerIndex, TankBuffType.AddTween);
+
+                transform.DOMove(targetPosition, time / 1000.0f);
+            }
+
+            if (buffComponent.GetBuff(TankConsts.PlayerIndex, TankBuffType.TweenDisplay) != null)
+            {
+                return;
+            }
+
+            self.UpdateInput();
+                  
             if (targetPosition != currentPosition)
             {
                 //Log.Warning($"Update position: oldX: {currentPosition.x}, oldY:{currentPosition.y}, oldz:{currentPosition.z}, x:{targetPosition.x}, y:{targetPosition.y}");

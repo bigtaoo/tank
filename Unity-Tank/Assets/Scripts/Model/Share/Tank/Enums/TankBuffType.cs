@@ -7,5 +7,7 @@ namespace ET
         CanNotControl,
         CanNotAttack,
         OppositeDirection,
+        TweenDisplay,
+        AddTween,
     }
 }

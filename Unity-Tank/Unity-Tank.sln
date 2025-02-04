@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Editor", "Unity.Edito
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.ModelView", "Unity.ModelView.csproj", "{FEDB5CD0-6CE1-B674-5493-37CF93197536}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{9997AA60-11F7-FCD9-2794-CD2ED7714026}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{FEDB5CD0-6CE1-B674-5493-37CF93197536}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEDB5CD0-6CE1-B674-5493-37CF93197536}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEDB5CD0-6CE1-B674-5493-37CF93197536}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9997AA60-11F7-FCD9-2794-CD2ED7714026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9997AA60-11F7-FCD9-2794-CD2ED7714026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9997AA60-11F7-FCD9-2794-CD2ED7714026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9997AA60-11F7-FCD9-2794-CD2ED7714026}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
