@@ -91,9 +91,11 @@ namespace ET.Client
                 //Log.Warning($"Ajust Y: current Y: {self.Position.Y}, target Y: {position.Y}");
                 if (position.Y != self.Position.Y)
                 {
-                    self.Position = position;
-                    var time = Math.Abs(position.Y - self.Position.Y) / self.MoveSpeed * 1000;
+                    var time = Math.Abs(position.Y - self.Position.Y) * 1000 / self.MoveSpeed;
+                    //Log.Warning($"Player tank tween time: {time}, t: {position.Y}, c:{self.Position.Y}, s: {self.MoveSpeed}");
                     buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.AddTween, (int)time);
+
+                    self.Position = position;
                 }
             }
             else if (self.CurrentDirection == TankDirection.Left || self.CurrentDirection == TankDirection.Right)
@@ -102,9 +104,10 @@ namespace ET.Client
                 position.X = TankMovementHelper.PositionToTile(self.CurrentDirection, self.Position.X);
                 if ( position.X != self.Position.X)
                 {
-                    self.Position = position;
-                    var time = Math.Abs(position.Y - self.Position.Y) / self.MoveSpeed * 1000;
+                    var time = Math.Abs(position.X - self.Position.X) / self.MoveSpeed * 1000;
                     buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.AddTween, (int)time);
+
+                    self.Position = position;
                 }
             }
         }

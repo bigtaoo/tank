@@ -32,6 +32,7 @@ namespace ET.Client
             {
                 var time = addTweenBuff.RemoveTime - TimeInfo.Instance.ClientFrameTime();
                 buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.TweenDisplay, time);
+                //Log.Warning($"Add tween display time {time}");
                 buffComponent.RemoveBuff(TankConsts.PlayerIndex, TankBuffType.AddTween);
 
                 transform.DOMove(targetPosition, time / 1000.0f);

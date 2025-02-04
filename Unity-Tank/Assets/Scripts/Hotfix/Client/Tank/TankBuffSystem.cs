@@ -19,8 +19,9 @@ namespace ET
                 for (var i = tankBuff.Count - 1; i >= 0; i--)
                 {
                     var buff = tankBuff[i];
-                    if (buff.RemoveTime >  currentTime)
+                    if (buff.RemoveTime <  currentTime)
                     {
+                        //Log.Warning($"Remove buff: {buff.Type}");
                         tankBuff.RemoveAt(i);
                     }
                 }
