@@ -52,6 +52,21 @@ namespace ET
             tankBuff.Add(newBuff);
         }
 
+        public static void RemoveBuff(this TankBuffComponent self, int TankId, TankBuffType type)
+        {
+            if (self.TankBuffs.TryGetValue(TankId, out var buffList))
+            {
+                foreach (var buff in buffList)
+                {
+                    if (buff.Type == type)
+                    {
+                        buffList.Remove(buff);
+                        break;
+                    }
+                }
+            }
+        }
+
         public static void OnTankDestroyed(this TankBuffComponent self, int TankId)
         {
             if (self.TankBuffs.ContainsKey(TankId))

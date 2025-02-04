@@ -51,6 +51,20 @@ namespace ET.Client
             });
         }
 
+        public static void AddBuff(this TankPlayerComponent self, TankBuffType type, long persistTime)
+        {
+            var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+
+            buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.CanNotMove, persistTime);
+        }
+
+        public static void RemoveBuff(this TankPlayerComponent self, TankBuffType type)
+        {
+            var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+
+            buffComponent.RemoveBuff(TankConsts.PlayerIndex, type);
+        }
+
         private static void UpdatePosition(this TankPlayerComponent self)
         {
             var currentTime = TimeInfo.Instance.ClientFrameTime();
