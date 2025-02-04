@@ -1,6 +1,6 @@
 namespace ET
 {
-    [EntitySystemOf(typeof(TankBuffComponent)]
+    [EntitySystemOf(typeof(TankBuffComponent))]
     [FriendOf(typeof(TankBuffComponent))]
     public static partial class TankBuffSystem
     {
