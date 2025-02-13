@@ -10,5 +10,6 @@ namespace ET
         public long LastFrameTime { get; set; }
         public int RobotId { get; set; }
         public int BasicShootInterval { get; } = 3 * 1000;
+        public int[] RemainingRobotsCount { get; set; } = new int[TankInitialConfig.RobotTypies];
     }
 }
