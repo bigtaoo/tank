@@ -172,6 +172,7 @@
     <Compile Include="Assets\Scripts\Core\HashSetComponent.cs" />
     <Compile Include="Assets\Scripts\Core\Analyzer\UniqueIdAttribute.cs" />
     <Compile Include="Assets\Scripts\Core\Network\AService.cs" />
+    <Compile Include="Assets\Scripts\Core\TileMap\TankInitialConfig.cs" />
     <Compile Include="Assets\Scripts\Core\Network\IMessage.cs" />
     <Compile Include="Assets\Scripts\Core\Entity\ComponentView.cs" />
     <Compile Include="Assets\Scripts\Core\Fiber\Module\CoroutineLock\CoroutineLockQueue.cs" />

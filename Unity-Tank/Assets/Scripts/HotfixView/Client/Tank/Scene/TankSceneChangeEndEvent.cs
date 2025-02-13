@@ -24,6 +24,7 @@ namespace ET.Client
             scene.AddComponent<TankClientBulletComponent>();
             scene.AddComponent<TankClientEffectComponent>();
             scene.AddComponent<TankClientRobotComponent>();
+            scene.AddComponent<TankInitializeConfigComponent>();
 
             await UIHelper.Create(scene, UIType.TankUIGameMain, UILayer.Mid);
         }

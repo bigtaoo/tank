@@ -9,36 +9,18 @@ namespace ET
         [EntitySystem]
         private static void Awake(this TankClientRobotComponent self)
         {
-            var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < TankInitialConfig.RobotTypies; i++)
             {
                 var spawnPoint = GameObject.Find($"robot-{i + 1}");
                 if (spawnPoint != null)
                 {
-                    var spawnInfo = new TankRobotSpawnInfo
-                    {
-                        SpawnPointId = i,
-                        RobotCount = 5,
-                        RobotLevel = 1,
-                        Rotation = (int)spawnPoint.transform.rotation.eulerAngles.z,
-                        SpawnInterval = 50 * 1000,
-                        SpawnPosition = new TankPosition
-                        {
-                            X = spawnPoint.transform.position.x + TankConsts.TileOffset,
-                            Y = spawnPoint.transform.position.y + TankConsts.TileOffset,
-                        },
-                        SpawnTime = 0,
-                        ShootInterval = 3 * 1000,
-                    };
-                    robotComponent.SpawnInfos.Add(spawnInfo);
-                    spawnPoint.SetActive(false);
                     self.RecycledRobots.Push(spawnPoint);
                     self.robotGameObject = spawnPoint;
                 }
             }
         }
 
-        [EntitySystem]
+                [EntitySystem]
         private static void Update(this TankClientRobotComponent self)
         {
             self.AddRobot();

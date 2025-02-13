@@ -117,6 +117,7 @@
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\UILogin\AppStartInitFinish_CreateLoginUI.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Unit\GameObjectComponentSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Tank\UI\UIGameMode\TankUIGameModeSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Tank\Game\TankInitializeConfigSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSAnimatorComponentSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\UI\UILSRoom\UILSRoomComponentSystem.cs" />
   </ItemGroup>
