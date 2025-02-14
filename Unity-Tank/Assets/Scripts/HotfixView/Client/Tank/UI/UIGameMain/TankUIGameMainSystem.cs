@@ -1,5 +1,5 @@
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace ET.Client
 {
@@ -14,10 +14,31 @@ namespace ET.Client
             self.JoySticker = rc.Get<GameObject>("joystick");
             self.PlayerHp = rc.Get<GameObject>("hp");
             self.playerTank = rc.Get<GameObject>("player");
-            for (int i = 1; i < 4; i++)
+            for (int i = 0; i < self.RobotUICount; i++)
             {
-                self.RobotImages[i - 1] = rc.Get<GameObject>($"tank-{i}");
-                self.RobotRemainingCounts[i - 1] = rc.Get<GameObject>($"number-{i}");
+                self.RobotImages[i] = rc.Get<GameObject>($"tank-{i + 1}");
+                self.RobotRemainingCounts[i] = rc.Get<GameObject>($"number-{i + 1}");
+            }
+        }
+
+        public static void UpdateUI(this TankUIGameMainComponent self)
+        {
+            var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+            self.PlayerHp.GetComponent<TMP_Text>().text = playerComponent.HealthPoint.ToString();
+
+            var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+            for (int i = 0; i < self.RobotUICount; i++)
+            {
+                var remainingRotot = robotComponent.RemainingRobotsCount[i];
+                if (remainingRotot > 0)
+                {
+                    self.RobotRemainingCounts[i].GetComponent<TMP_Text>().text += remainingRotot.ToString();
+                }
+                else
+                {
+                    self.RobotRemainingCounts[i].SetActive(false);
+                    self.RobotImages[i].SetActive(false);
+                }
             }
         }
     }

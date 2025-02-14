@@ -11,5 +11,7 @@ namespace ET.Client
         public GameObject JoySticker;
         public GameObject PlayerHp;
         public GameObject playerTank;
+
+        public readonly int RobotUICount = 3;
     }
 }
