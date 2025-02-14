@@ -1,3 +1,4 @@
+using ET.Client;
 using UnityEngine;
 
 namespace ET
@@ -70,6 +71,11 @@ namespace ET
         private static void RemoveRobot(this TankClientRobotComponent self)
         {
             var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+            if (robotComponent.RobotsToRemove.Count == 0)
+            {
+                return;
+            }
+
             foreach (var robot in robotComponent.RobotsToRemove)
             {
                 var robotGameObject = self.Robots[robot.RobotId];
