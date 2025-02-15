@@ -24,6 +24,7 @@ namespace ET.Client
             }
         }
 
+        [EntitySystem]
         private static void LateUpdate(this TankUIGameMainComponent self)
         {
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
@@ -33,9 +34,10 @@ namespace ET.Client
             for (int i = 0; i < self.RobotUICount; i++)
             {
                 var remainingRotot = robotComponent.RemainingRobotsCount[i];
+                //Log.Warning($"remaining robot: {remainingRotot}, index: {i}");
                 if (remainingRotot > 0)
                 {
-                    self.RobotRemainingCounts[i].GetComponent<TMP_Text>().text += remainingRotot.ToString();
+                    self.RobotRemainingCounts[i].GetComponent<TMP_Text>().text = remainingRotot.ToString();
                 }
                 else
                 {
