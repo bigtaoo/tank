@@ -34,6 +34,7 @@ namespace ET
                     self.SpawnInfos[robot.SpawnPointId].SpawnTime = 0;
                     self.RobotsToRemove.Add(robot);
                     self.Robots.RemoveAt(i);
+                    self.RemainingRobotsCount[robot.Level - 1]--;
                 }
             }
         }
@@ -167,6 +168,7 @@ namespace ET
                         MoveSpeed = 1.8f,
                         Rotation = spawnInfo.Rotation,
                         HealthPoint = 1,
+                        Level = spawnInfo.RobotLevel,
                     };
                     //Log.Warning($"Spawn robot, {robot.ToJson()}, spawn info: {spawnInfo.ToJson()}");
                     self.Robots.Add(robot);

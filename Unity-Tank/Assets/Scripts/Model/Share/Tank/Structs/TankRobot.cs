@@ -13,5 +13,6 @@ namespace ET
         public int Rotation { get; set; }
         public TankPosition TargetPosition { get; set; }
         public int HealthPoint { get; set; }
+        public int Level { get; set; }
     }
 }
