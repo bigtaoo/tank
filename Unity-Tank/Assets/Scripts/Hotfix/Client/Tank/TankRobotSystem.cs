@@ -150,6 +150,15 @@ namespace ET
 
         private static void SpawnRobot(this TankRobotComponent self)
         {
+            var remaining = 0;
+            foreach (var count in self.RemainingSpawnRobots)
+            {
+                remaining += count;
+            }
+            if (remaining <= 0)
+            {
+                return;
+            }
             var currentTime = TimeInfo.Instance.ClientFrameTime();
             foreach (var spawnInfo in self.SpawnInfos)
             {
@@ -174,6 +183,7 @@ namespace ET
                     self.Robots.Add(robot);
                     self.RobotsToAdd.Add(robot);
                     self.FindNextTargetPosition(robot);
+                    self.RemainingSpawnRobots[robot.Level - 1]--;
                 }
             }
         }
