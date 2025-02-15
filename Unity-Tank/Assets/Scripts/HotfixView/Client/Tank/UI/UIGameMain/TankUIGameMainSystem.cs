@@ -10,6 +10,9 @@ namespace ET.Client
         [EntitySystem]
         private static void Awake(this TankUIGameMainComponent self)
         {
+            self.RobotImages = new GameObject[self.RobotUICount];
+            self.RobotRemainingCounts = new GameObject[self.RobotUICount];
+
             ReferenceCollector rc = self.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             self.JoySticker = rc.Get<GameObject>("joystick");
             self.PlayerHp = rc.Get<GameObject>("hp");
@@ -21,7 +24,7 @@ namespace ET.Client
             }
         }
 
-        public static void UpdateUI(this TankUIGameMainComponent self)
+        private static void LateUpdate(this TankUIGameMainComponent self)
         {
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             self.PlayerHp.GetComponent<TMP_Text>().text = playerComponent.HealthPoint.ToString();
