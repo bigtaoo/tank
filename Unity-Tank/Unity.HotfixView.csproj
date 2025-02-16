@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\UILogin\UILoginEvent.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Tank\Game\TankClientTileMapSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\UI\UILSLogin\UILoginComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Tank\UI\UIGameResult\TankUIGameResultEvent.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\UILogin\UILoginComponentSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSOperaComponentSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSUnitViewComponentSystem.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Assets\Scripts\HotfixView\Client\Module\TrueSync\TrueSyncExtensions.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Tank\UI\UIGameMain\TankUIGameMainEvent.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSSceneInitFinish_Finish.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Tank\UI\UIGameResult\TankUIGameResultSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Tank\Scene\TankSceneChangeEndEvent.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Unit\AfterUnitCreate_CreateUnitView.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Tank\Game\TankClientRobotSystem.cs" />

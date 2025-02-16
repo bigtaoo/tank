@@ -84,6 +84,16 @@ namespace ET
                 self.Robots.Remove(robot.RobotId);
             }
             robotComponent.RobotsToRemove.Clear();
+
+            var remainingRobot = 0;
+            foreach (var c in robotComponent.RemainingRobotsCount)
+            {
+                remainingRobot += c;
+            }
+            if (remainingRobot == 0)
+            {
+                UIHelper.Create(self.Root(), UIType.TankUIGameResult, UILayer.High).Coroutine();
+            }
         }
     }
 }

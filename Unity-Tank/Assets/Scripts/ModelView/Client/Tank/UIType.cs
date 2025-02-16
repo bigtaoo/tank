@@ -4,5 +4,6 @@ namespace ET.Client
     {
         public const string TankUIGameMode = nameof(TankUIGameMode);
         public const string TankUIGameMain = nameof(TankUIGameMain);
+        public const string TankUIGameResult = nameof(TankUIGameResult);
     }
 }
