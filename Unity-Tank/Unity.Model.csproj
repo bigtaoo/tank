@@ -137,6 +137,7 @@
     <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\NumericWatcherAttribute.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Console\ConsoleDispatcher.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\AI\AIConfig.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Enums\TankMapType.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\MessageSessionHandler.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\TankDamageComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\FrameBuffer.cs" />

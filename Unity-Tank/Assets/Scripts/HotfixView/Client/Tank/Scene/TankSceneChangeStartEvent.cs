@@ -15,7 +15,20 @@ namespace ET.Client
                 ResourcesLoaderComponent resourcesLoaderComponent = root.GetComponent<ResourcesLoaderComponent>();
 
                 // 加载场景资源
-                await resourcesLoaderComponent.LoadSceneAsync($"Assets/Bundles/Scenes/TankGameMap.unity", LoadSceneMode.Single);
+                if (args.mapType == TankMapType.UI)
+                {
+                    //var gameScene = SceneManager.GetActiveScene();
+                    //var initScene = SceneManager.GetSceneAt(0);
+                    //SceneManager.SetActiveScene(initScene);
+                    //await SceneManager.UnloadSceneAsync(gameScene);
+                    
+                    RemoveGameComponent(root);
+                    await resourcesLoaderComponent.LoadSceneAsync($"Assets/Bundles/Scenes/TankUIMap.unity", LoadSceneMode.Single);
+                }
+                else
+                {
+                    await resourcesLoaderComponent.LoadSceneAsync($"Assets/Bundles/Scenes/TankGameMap.unity", LoadSceneMode.Single);
+                }
                 // 切换到map场景
 
                 //await SceneManager.LoadSceneAsync(currentScene.Name);
@@ -28,7 +41,27 @@ namespace ET.Client
             {
                 Log.Error(e);
             }
+        }
 
+        private void RemoveGameComponent(Scene scene)
+        {
+            // Logic
+            scene.RemoveComponent<TankMapTilesComponent>();
+            scene.RemoveComponent<TankPlayerComponent>();
+            scene.RemoveComponent<TankBulletComponent>();
+            scene.RemoveComponent<TankEffectComponent>();
+            scene.RemoveComponent<TankRobotComponent>();
+            scene.RemoveComponent<TankDamageComponent>();
+            scene.RemoveComponent<TankBuffComponent>();
+
+            // Client
+            scene.RemoveComponent<TankCameraComponent>();
+            scene.RemoveComponent<TankClientPlayerTankComponent>();
+            scene.RemoveComponent<TankClientTileMapComponent>();
+            scene.RemoveComponent<TankClientBulletComponent>();
+            scene.RemoveComponent<TankClientEffectComponent>();
+            scene.RemoveComponent<TankClientRobotComponent>();
+            scene.RemoveComponent<TankInitializeConfigComponent>();
         }
     }
 }

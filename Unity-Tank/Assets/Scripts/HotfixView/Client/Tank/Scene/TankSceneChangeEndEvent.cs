@@ -8,6 +8,16 @@ namespace ET.Client
             //scene.AddComponent<UIComponent>();
             //scene.AddComponent<ResourcesLoaderComponent>();
 
+            if (args.mapType == TankMapType.Game)
+            {
+                AddGameComponent(scene);
+
+                await UIHelper.Create(scene, UIType.TankUIGameMain, UILayer.Mid);
+            }
+        }
+
+        private void AddGameComponent(Scene scene)
+        {
             // Logic
             scene.AddComponent<TankMapTilesComponent>();
             scene.AddComponent<TankPlayerComponent>();
@@ -25,8 +35,6 @@ namespace ET.Client
             scene.AddComponent<TankClientEffectComponent>();
             scene.AddComponent<TankClientRobotComponent>();
             scene.AddComponent<TankInitializeConfigComponent>();
-
-            await UIHelper.Create(scene, UIType.TankUIGameMain, UILayer.Mid);
         }
     }
 }

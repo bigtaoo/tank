@@ -28,6 +28,11 @@ namespace ET.Client
         private static void LateUpdate(this TankUIGameMainComponent self)
         {
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+            if (playerComponent == null)
+            {
+                return;
+            }
+
             self.PlayerHp.GetComponent<TMP_Text>().text = playerComponent.HealthPoint.ToString();
 
             var robotComponent = self.Root().GetComponent<TankRobotComponent>();

@@ -20,8 +20,10 @@ namespace ET.Client
 
         public static async ETTask BackToGameModeUI(this TankUIGameResultComponent self)
         {
+            await TankSceneChangeHelper.SceneChangeTo(self.Root(), TankMapType.UI, "init", self.Root().InstanceId);
             await UIHelper.Create(self.Root(), UIType.TankUIGameMode, UILayer.Mid);
-            await UIHelper.Remove(self.Root(), UIType.TankUIGameResult);
+            await UIHelper.Remove(self.Root(), UIType.TankUIGameMain);
+            await UIHelper.Remove(self.Root(), UIType.TankUIGameResult);         
         }
     }
 }
