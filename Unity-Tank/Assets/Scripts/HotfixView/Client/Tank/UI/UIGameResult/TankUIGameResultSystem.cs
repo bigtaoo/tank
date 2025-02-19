@@ -17,13 +17,13 @@ namespace ET.Client
             self.Back.GetComponent<Button>().onClick.AddListener(() => { self.BackToGameModeUI().Coroutine(); });
         }
 
-
         public static async ETTask BackToGameModeUI(this TankUIGameResultComponent self)
         {
             await TankSceneChangeHelper.SceneChangeTo(self.Root(), TankMapType.UI, "init", self.Root().InstanceId);
-            await UIHelper.Create(self.Root(), UIType.TankUIGameMode, UILayer.Mid);
-            await UIHelper.Remove(self.Root(), UIType.TankUIGameMain);
-            await UIHelper.Remove(self.Root(), UIType.TankUIGameResult);         
+            var scene = self.Root();
+            await UIHelper.Create(scene, UIType.TankUIGameMode, UILayer.Mid);
+            await UIHelper.Remove(scene, UIType.TankUIGameMain);
+            await UIHelper.Remove(scene, UIType.TankUIGameResult);
         }
     }
 }
