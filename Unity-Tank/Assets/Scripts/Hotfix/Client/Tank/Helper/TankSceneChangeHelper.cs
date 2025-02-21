@@ -22,7 +22,7 @@
             //unitComponent.Add(unit);
             //root.RemoveComponent<AIComponent>();
 
-            await root.GetComponent<TimerComponent>().WaitAsync(1000);
+            await root.GetComponent<TimerComponent>().WaitAsync(100);
             EventSystem.Instance.Publish(root, new TankSceneChangeEnd { mapType = mapType });
             
             // 通知等待场景切换的协程

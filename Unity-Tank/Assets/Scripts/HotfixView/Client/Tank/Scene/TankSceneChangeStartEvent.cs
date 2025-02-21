@@ -15,7 +15,7 @@ namespace ET.Client
                 root.RemoveComponent<ResourcesLoaderComponent>();
                 ResourcesLoaderComponent resourcesLoaderComponent = root.AddComponent<ResourcesLoaderComponent>();
 
-                Log.Warning($"map type: {args.mapType}");
+                //Log.Warning($"map type: {args.mapType}");
                 // 加载场景资源
                 if (args.mapType == TankMapType.UI)
                 {
