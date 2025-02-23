@@ -9,5 +9,6 @@ namespace ET
         OppositeDirection,
         TweenDisplay,
         AddTween,
+        Spwan,
     }
 }

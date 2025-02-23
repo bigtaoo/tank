@@ -35,6 +35,10 @@ namespace ET
             foreach (var bulletId in bulletComponent.BulletsToRemove)
             {
                 var bulletGameObject = self.Bullets[bulletId];
+                if (bulletGameObject == null)
+                {
+                    Log.Warning($"Bullet not found with id {bulletId}");
+                }
                 bulletGameObject.SetActive(false);
                 self.RecycledBullets.Push(bulletGameObject);
                 self.Bullets.Remove(bulletId);

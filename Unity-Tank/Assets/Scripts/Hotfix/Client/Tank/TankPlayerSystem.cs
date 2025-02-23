@@ -17,6 +17,7 @@ namespace ET.Client
         [EntitySystem]
         private static void Update(this TankPlayerComponent self)
         {
+            self.CheckHelth();
             self.UpdatePosition();
             self.AdjustStopPosition();
         }
@@ -51,6 +52,24 @@ namespace ET.Client
                 Position = self.Position,
                 Speed = self.MoveSpeed * 3,
             });
+        }
+
+        private static void CheckHelth(this TankPlayerComponent self)
+        {
+            if (self.PlayerLifes <= 0)
+            {
+                return;
+            }
+            if (self.HealthPoint <= 0)
+            {
+                self.HealthPoint = 1;
+                --self.PlayerLifes;
+                self.Position = self.SpawnPosition;
+                self.Rotation = 0;
+
+                var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+                buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.Spwan, 3000);
+            }
         }
 
         private static void UpdatePosition(this TankPlayerComponent self)
