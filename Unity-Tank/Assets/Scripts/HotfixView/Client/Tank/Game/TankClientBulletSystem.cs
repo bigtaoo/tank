@@ -34,10 +34,10 @@ namespace ET
             var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
             foreach (var bulletId in bulletComponent.BulletsToRemove)
             {
-                var bulletGameObject = self.Bullets[bulletId];
-                if (bulletGameObject == null)
+                if (!self.Bullets.TryGetValue(bulletId, out var bulletGameObject))
                 {
                     Log.Warning($"Bullet not found with id {bulletId}");
+                    continue;
                 }
                 bulletGameObject.SetActive(false);
                 self.RecycledBullets.Push(bulletGameObject);
