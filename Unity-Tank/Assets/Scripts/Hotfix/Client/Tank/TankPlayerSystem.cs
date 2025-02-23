@@ -70,9 +70,7 @@ namespace ET.Client
 
             if (TankMovementHelper.CanTankMoveToPosition(self.Root(), position, self.CurrentDirection))
             {
-                self.Position = position;     
-                
-
+                self.Position = position;              
             }
         }
 

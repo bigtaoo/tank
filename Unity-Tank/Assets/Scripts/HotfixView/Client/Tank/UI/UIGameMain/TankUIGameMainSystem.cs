@@ -33,7 +33,7 @@ namespace ET.Client
                 return;
             }
 
-            self.PlayerHp.GetComponent<TMP_Text>().text = playerComponent.HealthPoint.ToString();
+            self.PlayerHp.GetComponent<TMP_Text>().text = playerComponent.PlayerLifes.ToString();
 
             var robotComponent = self.Root().GetComponent<TankRobotComponent>();
             for (int i = 0; i < self.RobotUICount; i++)

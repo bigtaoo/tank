@@ -12,7 +12,7 @@ namespace ET
         public TankDirection CurrentDirection { get; set; } = TankDirection.Up;
         public long LastShootTime { get; set; }
         public long ShootCoolDownTime { get; set; } = 1000;
-        public int HealthPoint { get; set; }
-        public int Level { get; set; }
+        public int PlayerLifes { get; set; }
+        public int HealthPoint { get; set; } = 1;
     }
 }

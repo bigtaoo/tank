@@ -52,7 +52,7 @@ namespace ET
             }
 
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-            playerComponent.HealthPoint = initiaConfig.PlayerHP;
+            playerComponent.PlayerLifes = initiaConfig.PlayerHP;
         }
     }
 }
