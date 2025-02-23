@@ -27,6 +27,7 @@ namespace ET
                         //Log.Warning("Player was hit");
                         playerComponent.HealthPoint -= 1;
                         bulletComponent.HitTank(bulletId);
+                        return;
                     }
                 }
                 else
