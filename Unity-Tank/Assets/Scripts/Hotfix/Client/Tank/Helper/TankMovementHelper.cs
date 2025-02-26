@@ -106,6 +106,18 @@ namespace ET
                     return true;
                 }
             }
+
+            if (tankId != TankConsts.PlayerIndex)
+            {
+                var playerComponent = root.GetComponent<TankPlayerComponent>();
+                var playerX = PositionToTile(playerComponent.MoveDirection, playerComponent.Position.X);
+                var playerY = PositionToTile(playerComponent.MoveDirection, playerComponent.Position.Y);
+                if (AreRectanglesIntersecting(X, Y, playerX, playerY))
+                {
+                    return true;
+                }
+            }
+
             return false;
         }
 
