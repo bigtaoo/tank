@@ -32,6 +32,12 @@ namespace ET.Client
 
         public static void SetMoveDirection(this TankPlayerComponent self, TankDirection moveDirection)
         {
+            var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+            var spawnBuff = buffComponent.GetBuff(TankConsts.PlayerIndex, TankBuffType.Spwan);
+            if (spawnBuff != null)
+            {
+                return;
+            }
             self.MoveDirection = moveDirection;
         }
 
@@ -66,6 +72,7 @@ namespace ET.Client
                 --self.PlayerLifes;
                 self.Position = self.SpawnPosition;
                 self.Rotation = 0;
+                self.MoveDirection = TankDirection.None;
 
                 var buffComponent = self.Root().GetComponent<TankBuffComponent>();
                 buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.Spwan, 3000);
