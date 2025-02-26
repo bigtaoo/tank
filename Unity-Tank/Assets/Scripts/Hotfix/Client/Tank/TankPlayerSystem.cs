@@ -75,7 +75,7 @@ namespace ET.Client
                 self.MoveDirection = TankDirection.None;
 
                 var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.Spwan, 3000);
+                buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.Spwan, 2000);
             }
         }
 
@@ -93,6 +93,15 @@ namespace ET.Client
             var distance = self.MoveSpeed * deltaTime / 1000;
             var (position, rotation) = TankMovementHelper.Move(self.Position, self.MoveDirection, distance);
             self.Rotation = rotation;
+
+            var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+            foreach(var robot in robotComponent.Robots)
+            {
+                if (TankMovementHelper.PositionHasTank(self.Root(), position, self.MoveDirection, TankConsts.PlayerIndex))
+                {
+                    return;
+                }
+            }
 
             if (TankMovementHelper.CanTankMoveToPosition(self.Root(), position, self.CurrentDirection))
             {
