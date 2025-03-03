@@ -1,4 +1,3 @@
-using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 
@@ -18,6 +17,11 @@ namespace ET
         [EntitySystem]
         private static void Update(this TankRobotComponent self)
         {
+            var gameResultComponent = self.Root().GetComponent<TankGameResultComponent>();
+            if (gameResultComponent.IsGameEnd)
+            {
+                return;
+            }
             self.SpawnRobot();
             self.CheckRobotAlive();
             self.UpdatePosition();
