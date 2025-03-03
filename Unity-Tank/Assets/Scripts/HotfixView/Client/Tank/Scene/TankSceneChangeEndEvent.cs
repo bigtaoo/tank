@@ -26,6 +26,7 @@ namespace ET.Client
             scene.AddComponent<TankRobotComponent>();
             scene.AddComponent<TankDamageComponent>();
             scene.AddComponent<TankBuffComponent>();
+            scene.AddComponent<TankGameResultComponent>();
 
             // Client
             scene.AddComponent<TankCameraComponent>();

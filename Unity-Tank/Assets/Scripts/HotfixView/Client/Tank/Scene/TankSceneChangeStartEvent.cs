@@ -55,6 +55,7 @@ namespace ET.Client
             scene.RemoveComponent<TankRobotComponent>();
             scene.RemoveComponent<TankDamageComponent>();
             scene.RemoveComponent<TankBuffComponent>();
+            scene.RemoveComponent<TankGameResultComponent>();
 
             // Client
             scene.RemoveComponent<TankCameraComponent>();
