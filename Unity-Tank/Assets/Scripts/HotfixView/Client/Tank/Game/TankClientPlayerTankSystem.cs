@@ -21,7 +21,21 @@ namespace ET.Client
         [EntitySystem]
         private static void Update(this TankClientPlayerTankComponent self)
         {
+            var gameResultComponent = self.Root().GetComponent<TankGameResultComponent>();
+            if (gameResultComponent.IsGameEnd)
+            {
+                return;
+            }
+
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+            if (playerComponent.PlayerLifes <= 0)
+            {
+                gameResultComponent.IsGameEnd = true;
+                gameResultComponent.IsWin = false;
+                UIHelper.Create(self.Root(), UIType.TankUIGameResult, UILayer.High).Coroutine();
+                return;
+            }
+
             var transform = self.TankPlayer1.GetComponent<Transform>();
             var currentPosition = transform.position;
             var targetPosition = new Vector3(playerComponent.Position.X - TankConsts.TileOffset, playerComponent.Position.Y - TankConsts.TileOffset, currentPosition.z);

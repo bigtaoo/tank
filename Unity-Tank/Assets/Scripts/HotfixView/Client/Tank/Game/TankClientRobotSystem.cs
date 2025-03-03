@@ -94,6 +94,7 @@ namespace ET
             {
                 var gameResultComponent = self.Root().GetComponent<TankGameResultComponent>();
                 gameResultComponent.IsWin = true;
+                gameResultComponent.IsGameEnd = true;
                 UIHelper.Create(self.Root(), UIType.TankUIGameResult, UILayer.High).Coroutine();
             }
         }
