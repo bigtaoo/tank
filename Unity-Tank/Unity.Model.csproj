@@ -120,6 +120,7 @@
     <Compile Include="Assets\Scripts\Model\Share\Module\AI\AIDispatcherComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\NumericWatcherComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Client\Plugins\Example\ModelClient.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\TankBaseComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Client\Demo\NetClient\Router\RouterAddressComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Recast\PathfindingComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\Replay.cs" />
