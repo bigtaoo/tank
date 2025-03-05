@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 52d84904c0fad9440b5dc86095cdd775
+guid: a44f14d494bb9af41925923f27b5b621
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6852161910764687709
-    second: background-2_0
+      213: -3966044189379602213
+    second: base_0
+  - first:
+      213: 5214576322002826026
+    second: base_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 512
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: background-2_0
+      name: base_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 256
-        height: 256
+        y: 6
+        width: 512
+        height: 506
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +144,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d51579a14f4c71f50800000000000000
-      internalID: 6852161910764687709
+      spriteID: bd8d680a2d7c5f8c0800000000000000
+      internalID: -3966044189379602213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 344
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a23342f6985ed5840800000000000000
+      internalID: 5214576322002826026
       vertices: []
       indices: 
       edges: []
@@ -161,7 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      background-2_0: 6852161910764687709
+      base_0: -3966044189379602213
+      base_1: 5214576322002826026
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
