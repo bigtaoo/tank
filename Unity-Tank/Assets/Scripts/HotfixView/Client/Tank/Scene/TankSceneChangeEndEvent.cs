@@ -36,6 +36,7 @@ namespace ET.Client
             scene.AddComponent<TankClientEffectComponent>();
             scene.AddComponent<TankClientRobotComponent>();
             scene.AddComponent<TankInitializeConfigComponent>();
+            scene.AddComponent<TankBaseComponent>();
         }
     }
 }

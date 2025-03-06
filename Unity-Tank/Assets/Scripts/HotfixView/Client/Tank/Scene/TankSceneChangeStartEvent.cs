@@ -65,6 +65,7 @@ namespace ET.Client
             scene.RemoveComponent<TankClientEffectComponent>();
             scene.RemoveComponent<TankClientRobotComponent>();
             scene.RemoveComponent<TankInitializeConfigComponent>();
+            scene.RemoveComponent<TankBaseComponent>();
         }
     }
 }
