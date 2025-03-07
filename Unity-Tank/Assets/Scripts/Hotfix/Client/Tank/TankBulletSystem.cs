@@ -93,20 +93,26 @@ namespace ET
                 }
                 else if (tile != null || neighborTile != null)
                 {
-                    self.CreateExplosionEffect(bullet);
-                    self.BulletsToRemove.Add(key);
-                    self.Bullets.Remove(key);
-                    if (tile != null)
+                    var hit = false;
+                    if (tile != null && tile.Type != TankMapTileType.Water)
                     {
+                        hit = true;
                         mapTilesComponent.Tiles.Remove(tile);
                         tile.Type = TankMapTileType.None;
                         mapTilesComponent.TilesToUpdate.Add(tile);
                     }
-                    if (neighborTile != null)
+                    if (neighborTile != null && neighborTile.Type != TankMapTileType.Water)
                     {
+                        hit = true;
                         mapTilesComponent.Tiles.Remove(neighborTile);
                         neighborTile.Type = TankMapTileType.None;
                         mapTilesComponent.TilesToUpdate.Add(neighborTile);
+                    }
+                    if (hit)
+                    {
+                        self.CreateExplosionEffect(bullet);
+                        self.BulletsToRemove.Add(key);
+                        self.Bullets.Remove(key);
                     }
                 }
             }
