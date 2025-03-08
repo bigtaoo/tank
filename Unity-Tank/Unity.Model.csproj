@@ -107,6 +107,7 @@
     <Compile Include="Assets\Scripts\Model\Share\Demo\EventType.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\ObjectWait\ObjectWait.cs" />
     <Compile Include="Assets\Scripts\Model\Generate\Client\Message\LockStepOuter_C_11001.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Enums\TankItemType.cs" />
     <Compile Include="Assets\Scripts\Model\Share\ConstFiberId.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\IMessageSessionHandler.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\TankEffectComponent.cs" />
