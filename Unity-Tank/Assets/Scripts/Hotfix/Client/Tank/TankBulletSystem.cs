@@ -97,16 +97,30 @@ namespace ET
                     if (tile != null && tile.Type != TankMapTileType.Water)
                     {
                         hit = true;
-                        mapTilesComponent.Tiles.Remove(tile);
-                        tile.Type = TankMapTileType.None;
-                        mapTilesComponent.TilesToUpdate.Add(tile);
+                        if (tile.Type == TankMapTileType.Steel && bullet.Level <= 3)
+                        {
+                            // Stell only can be destroyed by level 3 bullet
+                        }
+                        else
+                        {
+                            mapTilesComponent.Tiles.Remove(tile);
+                            tile.Type = TankMapTileType.None;
+                            mapTilesComponent.TilesToUpdate.Add(tile);
+                        }
                     }
                     if (neighborTile != null && neighborTile.Type != TankMapTileType.Water)
                     {
                         hit = true;
-                        mapTilesComponent.Tiles.Remove(neighborTile);
-                        neighborTile.Type = TankMapTileType.None;
-                        mapTilesComponent.TilesToUpdate.Add(neighborTile);
+                        if (neighborTile.Type == TankMapTileType.Steel && bullet.Level <= 3)
+                        {
+                            // Stell only can be destroyed by level 3 bullet
+                        }
+                        else
+                        {
+                            mapTilesComponent.Tiles.Remove(neighborTile);
+                            neighborTile.Type = TankMapTileType.None;
+                            mapTilesComponent.TilesToUpdate.Add(neighborTile);
+                        }
                     }
                     if (hit)
                     {

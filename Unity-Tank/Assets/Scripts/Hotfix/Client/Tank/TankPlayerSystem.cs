@@ -12,6 +12,7 @@ namespace ET.Client
             self.MoveSpeed = 2.3f;
             self.LastFrameTime = TimeInfo.Instance.ClientFrameTime();
             self.MoveDirection = TankDirection.None;
+            self.ShootCoolDownTime = 500;
         }
 
         [EntitySystem]
