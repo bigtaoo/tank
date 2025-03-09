@@ -7,5 +7,8 @@ namespace ET
         BaseWallUpgrade,
         PlayerTankLevelUp,
         Gold,
+        PlayerLife,
+        Shield,
+        TimeStop,
     }
 }

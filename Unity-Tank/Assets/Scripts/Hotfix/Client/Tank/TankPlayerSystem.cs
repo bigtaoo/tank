@@ -9,7 +9,7 @@ namespace ET.Client
         [EntitySystem]
         private static void Awake(this TankPlayerComponent self)
         {
-            self.MoveSpeed = 2.3f;
+            self.MoveSpeed = 3.3f;
             self.LastFrameTime = TimeInfo.Instance.ClientFrameTime();
             self.MoveDirection = TankDirection.None;
             self.ShootCoolDownTime = 500;
