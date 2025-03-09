@@ -127,6 +127,7 @@
     <Compile Include="Assets\Scripts\Hotfix\Client\Demo\Main\Scene\CurrentSceneFactory.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Share\Module\Unit\UnitComponentSystem.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Share\Module\Numeric\NumericWatcher_Hp_ShowUI.cs" />
+    <Compile Include="Assets\Scripts\Hotfix\Client\Tank\TankItemSystem.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Share\Module\Scene\CurrentScenesComponentSystem.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\LockStep\LSReplayUpdaterSystem.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Share\Module\Numeric\NumericChangeEvent_NotifyWatcher.cs" />
