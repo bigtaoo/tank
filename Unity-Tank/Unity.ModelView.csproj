@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\ModelView\Client\Tank\TankCameraComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\LockStep\LSOperaComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Demo\Unit\AnimatorComponent.cs" />
+    <Compile Include="Assets\Scripts\ModelView\Client\Tank\TankClientItemComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Tank\TankUIGameModeComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\LockStep\UI\UILSLogin\UILSLoginComponent.cs" />
     <Compile Include="Assets\Scripts\ModelView\Client\Tank\TankClientEffectComponent.cs" />
