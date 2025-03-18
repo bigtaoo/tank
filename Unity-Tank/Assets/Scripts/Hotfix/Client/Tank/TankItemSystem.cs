@@ -1,3 +1,4 @@
+using MongoDB.Bson;
 using System.Linq;
 
 namespace ET
@@ -29,7 +30,8 @@ namespace ET
         public static void SpawnItem(this TankItemComponent self, TankPosition position)
         {
             var spawnItemRate = RandomGenerator.RandUInt32() % 100;
-            if (spawnItemRate < TankConsts.SpawnItemRate)
+            Log.Warning($"Item spawn rate: {spawnItemRate}");
+            if (spawnItemRate > TankConsts.SpawnItemRate)
             {
                 return;
             }
@@ -45,6 +47,7 @@ namespace ET
             };
             self.Items[item.ItemId] = item;
             self.ItemsToAdd.Add(item);
+            Log.Warning($"Spawn item: {item.ToJson()}");
         }
 
         public static void PickUpItem(this TankItemComponent self, int itemId)

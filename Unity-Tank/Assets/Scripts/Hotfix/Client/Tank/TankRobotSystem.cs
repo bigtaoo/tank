@@ -35,12 +35,20 @@ namespace ET
                 var robot = self.Robots[i];
                 if (robot.HealthPoint <= 0)
                 {
+                    self.SpawnItem(robot);
+
                     self.SpawnInfos[robot.SpawnPointId].SpawnTime = 0;
                     self.RobotsToRemove.Add(robot);
                     self.Robots.RemoveAt(i);
                     self.RemainingRobotsCount[robot.Level - 1]--;
                 }
             }
+        }
+
+        private static void SpawnItem(this TankRobotComponent self, TankRobot robot)
+        {
+            var itemComponent = self.Root().GetComponent<TankItemComponent>();
+            itemComponent.SpawnItem(robot.Position);
         }
 
         private static void UpdateShooting(this TankRobotComponent self)
