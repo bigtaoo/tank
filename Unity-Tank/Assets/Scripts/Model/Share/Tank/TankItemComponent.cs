@@ -7,7 +7,7 @@ namespace ET
     {
         public Dictionary<int, TankItem> Items { get; set; } = new Dictionary<int, TankItem>();
         public ListComponent<TankItem> ItemsToAdd { get; set; } = new ListComponent<TankItem>();
-        public ListComponent<int> ItemsToRemove { get; set; } = new ListComponent<int>();
+        public ListComponent<TankItem> ItemsToRemove { get; set; } = new ListComponent<TankItem>();
         public int ItemId { get; set; } = 0;
         public TankItemType[] SpawnItemTypes { get; private set; } = {
             TankItemType.Bomb, 

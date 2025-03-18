@@ -1,5 +1,6 @@
 using MongoDB.Bson;
 using System.Linq;
+using Unity.Mathematics;
 
 namespace ET
 {
@@ -22,9 +23,11 @@ namespace ET
                 var item = self.Items[key];
                 if (item.LivingEndTime < currentTime)
                 {
-                    self.RemoveItem(key);
+                    self.RemoveItem(item);
                 }
             }
+
+            self.PickUpItem();
         }
 
         public static void SpawnItem(this TankItemComponent self, TankPosition position)
@@ -50,15 +53,26 @@ namespace ET
             Log.Warning($"Spawn item: {item.ToJson()}");
         }
 
-        public static void PickUpItem(this TankItemComponent self, int itemId)
+        private static void PickUpItem(this TankItemComponent self)
         {
-            self.RemoveItem(itemId);
+            var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+            var playerPosition = playerComponent.Position;
+
+            foreach (var item in self.Items.Values)
+            {
+                if (math.abs(playerPosition.X - item.Position.X) < 0.5f &&
+                    math.abs(playerPosition.Y - item.Position.Y) < 0.5f)
+                {
+                    self.RemoveItem(item);
+                    break;
+                }
+            }
         }
 
-        private static void RemoveItem(this TankItemComponent self, int itemId)
+        private static void RemoveItem(this TankItemComponent self, TankItem item)
         {
-            self.Items.Remove(itemId);
-            self.ItemsToRemove.Add(itemId);
+            self.ItemsToRemove.Add(item);
+            self.Items.Remove(item.ItemId);
         }
     }
 }

@@ -36,12 +36,28 @@ namespace ET
             levelUp.SetActive(false);
             self.AvaiableItemResources[TankItemType.PlayerTankLevelUp].Add(levelUp);
             self.ItemTypeToGameObject[TankItemType.PlayerTankLevelUp] = levelUp;
+
+            var life = GameObject.Find("life");
+            life.SetActive(false);
+            self.AvaiableItemResources[TankItemType.PlayerLife].Add(life);
+            self.ItemTypeToGameObject[TankItemType.PlayerLife] = life;
+
+            var shield = GameObject.Find("shield");
+            shield.SetActive(false);
+            self.AvaiableItemResources[TankItemType.Shield].Add(shield);
+            self.ItemTypeToGameObject[TankItemType.Shield] = shield;
+
+            var timestoper = GameObject.Find("timestoper");
+            timestoper.SetActive(false);
+            self.AvaiableItemResources[TankItemType.TimeStop].Add(timestoper);
+            self.ItemTypeToGameObject[TankItemType.TimeStop] = timestoper;
         }
 
         [EntitySystem]
         private static void Update(this TankClientItemComponent self)
         {
             self.CreateItems();
+            self.RemoveItems();
         }
 
         private static void CreateItems(this TankClientItemComponent self)
@@ -61,6 +77,20 @@ namespace ET
                     item.Position.Y - TankConsts.TileOffset,
                     gameObject.transform.position.z);
             }
+            itemComponent.ItemsToAdd.Clear();
+        }
+
+        private static void RemoveItems(this TankClientItemComponent self)
+        {
+            var itemComponent = self.Root().GetComponent<TankItemComponent>();
+            foreach (var item in itemComponent.ItemsToRemove)
+            {
+                var gameObject = self.Items[item.ItemId];
+                gameObject.SetActive(false);
+                self.Items.Remove(item.ItemId);
+                self.AvaiableItemResources[item.ItemType].Add(gameObject);
+            }
+            itemComponent.ItemsToRemove.Clear();
         }
     }
 }
