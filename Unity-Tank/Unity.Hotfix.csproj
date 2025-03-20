@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Hotfix\Share\Module\Move\MoveComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\Hotfix\Client\Tank\TankBaseSystem.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\Demo\Main\Move\M2C_PathfindingResultHandler.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\Module\Message\ClientSessionErrorComponentSystem.cs" />
     <Compile Include="Assets\Scripts\Hotfix\Client\Demo\Main\Unit\UnitHelper.cs" />

@@ -84,7 +84,7 @@ namespace ET
                     {
                         var robotComponent = self.Root().GetComponent<TankRobotComponent>();
                         var selectedRobot = robotComponent.Robots.Take(3).ToList();
-                        foreach(var robot in selectedRobot)
+                        foreach (var robot in selectedRobot)
                         {
                             robot.HealthPoint = -1;
                         }
@@ -92,6 +92,8 @@ namespace ET
                     }
                 case TankItemType.BaseWallUpgrade:
                     {
+                        var baseComponent = self.Root().GetComponent<TankBaseComponent>();
+                        baseComponent.UpgradeBaseWalls();
                         break;
                     }
                 case TankItemType.PlayerTankLevelUp:
@@ -105,6 +107,8 @@ namespace ET
                     }
                 case TankItemType.Gold:
                     {
+                        var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
+                        gameInfoComponent.Gold++;
                         break;
                     }
                 case TankItemType.PlayerLife:
@@ -123,7 +127,7 @@ namespace ET
                     {
                         var robotComponent = self.Root().GetComponent<TankRobotComponent>();
                         var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                        foreach(var robot in robotComponent.Robots)
+                        foreach (var robot in robotComponent.Robots)
                         {
                             buffComponent.AddBuff(robot.RobotId, TankBuffType.CanNotMove, 3000);
                         }

@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\Model\Share\LockStep\ILSRollbackSystem.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankMapBound.cs" />
     <Compile Include="Assets\Scripts\Model\Client\LockStep\LSClientUpdater.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\TankGameInfoComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Entry.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Scene\CurrentScenesComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\Enums\TankBuffType.cs" />
