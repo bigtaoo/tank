@@ -10,5 +10,6 @@ namespace ET
         TweenDisplay,
         AddTween,
         Spwan,
+        Invincible,
     }
 }

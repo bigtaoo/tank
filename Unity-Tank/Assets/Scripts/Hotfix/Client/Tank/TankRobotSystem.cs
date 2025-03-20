@@ -79,8 +79,14 @@ namespace ET
             var deltaTime = currentTime - self.LastFrameTime;
             self.LastFrameTime = currentTime;
 
+            var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+
             foreach (var robot in self.Robots)
             {
+                if (buffComponent.GetBuff(robot.RobotId, TankBuffType.CanNotMove) != null)
+                {
+                    continue;
+                }
                 float distance = robot.MoveSpeed * deltaTime / 1000.0f;
                 var nearTarget = Math.Abs(robot.Position.X - robot.TargetPosition.X) <= distance &&
                     Math.Abs(robot.Position.Y - robot.TargetPosition.Y) <= distance;

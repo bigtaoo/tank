@@ -13,6 +13,6 @@ namespace ET
         public long LastShootTime { get; set; }
         public long ShootCoolDownTime { get; set; } = 1000;
         public int PlayerLifes { get; set; }
-        public int HealthPoint { get; set; } = 1;
+        public int TankLevel { get; set; } = 1;
     }
 }

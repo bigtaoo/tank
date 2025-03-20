@@ -63,6 +63,7 @@ namespace ET
                 if (math.abs(playerPosition.X - item.Position.X) < 0.5f &&
                     math.abs(playerPosition.Y - item.Position.Y) < 0.5f)
                 {
+                    self.ItemEffect(item);
                     self.RemoveItem(item);
                     break;
                 }
@@ -73,6 +74,62 @@ namespace ET
         {
             self.ItemsToRemove.Add(item);
             self.Items.Remove(item.ItemId);
+        }
+
+        private static void ItemEffect(this TankItemComponent self, TankItem item)
+        {
+            switch (item.ItemType)
+            {
+                case TankItemType.Bomb:
+                    {
+                        var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+                        var selectedRobot = robotComponent.Robots.Take(3).ToList();
+                        foreach(var robot in selectedRobot)
+                        {
+                            robot.HealthPoint = -1;
+                        }
+                        break;
+                    }
+                case TankItemType.BaseWallUpgrade:
+                    {
+                        break;
+                    }
+                case TankItemType.PlayerTankLevelUp:
+                    {
+                        var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+                        if (playerComponent.TankLevel <= 3)
+                        {
+                            playerComponent.TankLevel++;
+                        }
+                        break;
+                    }
+                case TankItemType.Gold:
+                    {
+                        break;
+                    }
+                case TankItemType.PlayerLife:
+                    {
+                        var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+                        playerComponent.PlayerLifes++;
+                        break;
+                    }
+                case TankItemType.Shield:
+                    {
+                        var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+                        buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.Invincible, 3000);
+                        break;
+                    }
+                case TankItemType.TimeStop:
+                    {
+                        var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+                        var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+                        foreach(var robot in robotComponent.Robots)
+                        {
+                            buffComponent.AddBuff(robot.RobotId, TankBuffType.CanNotMove, 3000);
+                        }
+                        break;
+                    }
+            }
         }
     }
 }

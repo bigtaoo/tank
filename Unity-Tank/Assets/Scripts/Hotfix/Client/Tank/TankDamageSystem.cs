@@ -25,7 +25,7 @@ namespace ET
                     if (TankDamageHelper.BulletHitTank(bullet.Position, playerComponent.Position))
                     {
                         //Log.Warning("Player was hit");
-                        playerComponent.HealthPoint -= 1;
+                        playerComponent.TankLevel -= 1;
                         bulletComponent.HitTank(bulletId);
                         return;
                     }

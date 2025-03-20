@@ -67,9 +67,9 @@ namespace ET.Client
             {
                 return;
             }
-            if (self.HealthPoint <= 0)
+            if (self.TankLevel <= 0)
             {
-                self.HealthPoint = 1;
+                self.TankLevel = 1;
                 --self.PlayerLifes;
                 self.Position = self.SpawnPosition;
                 self.Rotation = 0;

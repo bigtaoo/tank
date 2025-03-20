@@ -28,7 +28,7 @@ namespace ET
             }
         }
 
-        public static void AddBuff(this TankBuffComponent self, int TankId, TankBuffType type, long persistTime) 
+        public static void AddBuff(this TankBuffComponent self, int TankId, TankBuffType type, long persistTimeMS) 
         {
             if (!self.TankBuffs.ContainsKey(TankId))
             {
@@ -40,7 +40,7 @@ namespace ET
             {
                 if (buff.Type == type)
                 {
-                    buff.RemoveTime = TimeInfo.Instance.ClientFrameTime() + persistTime;
+                    buff.RemoveTime = TimeInfo.Instance.ClientFrameTime() + persistTimeMS;
                     return;
                 }
             }
@@ -48,7 +48,7 @@ namespace ET
             var newBuff = new TankBuff
             {
                 Type = type,
-                RemoveTime = TimeInfo.Instance.ClientFrameTime() + persistTime,
+                RemoveTime = TimeInfo.Instance.ClientFrameTime() + persistTimeMS,
             };
             tankBuff.Add(newBuff);
         }
