@@ -7,6 +7,7 @@ namespace ET
         [EntitySystem]
         private static void Awake(this TankBaseComponent self)
         {
+            self.BaseWallUpgradeEndTime = 0;
             self.BaseWalls = new ListComponent<TankPosition>
             {
                 new() { X = 98, Y = 90 },
@@ -20,10 +21,29 @@ namespace ET
             };
         }
 
+        [EntitySystem]
+        private static void Update(this TankBaseComponent self)
+        {
+            if (self.BaseWallUpgradeEndTime == 0)
+            {
+                return;
+            }
+            if (TimeInfo.Instance.ClientFrameTime() > self.BaseWallUpgradeEndTime)
+            {
+                self.BaseWallUpgradeEndTime = 0;
+                var mapTileComponent = self.Root().GetComponent<TankMapTilesComponent>();
+                foreach (var position in self.BaseWalls)
+                {
+                    mapTileComponent.TilesToUpdate.Add(new TankMapTile { Type = TankMapTileType.Wall, X = (int)position.X, Y = (int)position.Y });
+                }
+            }
+        }
+
         public static void UpgradeBaseWalls(this TankBaseComponent self)
         {
+            self.BaseWallUpgradeEndTime = TimeInfo.Instance.ClientFrameTime() + 3000;
             var mapTileComponent = self.Root().GetComponent<TankMapTilesComponent>();
-            foreach(var position in self.BaseWalls)
+            foreach (var position in self.BaseWalls)
             {
                 mapTileComponent.TilesToUpdate.Add(new TankMapTile { Type = TankMapTileType.Steel, X = (int)position.X, Y = (int)position.Y });
             }
