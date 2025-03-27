@@ -111,6 +111,8 @@ MonoBehaviour:
     gameObject: {fileID: 4780397958147956594}
   - key: number-3
     gameObject: {fileID: 2493488442996476376}
+  - key: gold
+    gameObject: {fileID: 3718770940149772575}
 --- !u!1 &1557878541865682075
 GameObject:
   m_ObjectHideFlags: 0

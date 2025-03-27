@@ -16,12 +16,13 @@ namespace ET.Client
             ReferenceCollector rc = self.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             self.JoySticker = rc.Get<GameObject>("joystick");
             self.PlayerHp = rc.Get<GameObject>("hp");
-            self.playerTank = rc.Get<GameObject>("player");
+            self.PlayerTank = rc.Get<GameObject>("player");
             for (int i = 0; i < self.RobotUICount; i++)
             {
                 self.RobotImages[i] = rc.Get<GameObject>($"tank-{i + 1}");
                 self.RobotRemainingCounts[i] = rc.Get<GameObject>($"number-{i + 1}");
             }
+            self.Gold = rc.Get<GameObject>("gold");
         }
 
         [EntitySystem]
@@ -50,6 +51,9 @@ namespace ET.Client
                     self.RobotImages[i].SetActive(false);
                 }
             }
+
+            var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
+            self.Gold.GetComponent<TMP_Text>().text = gameInfoComponent.Gold.ToString();
         }
     }
 }

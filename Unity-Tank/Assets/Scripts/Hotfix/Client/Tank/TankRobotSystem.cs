@@ -1,3 +1,4 @@
+using ET.Client;
 using System;
 using System.Collections.Generic;
 
@@ -80,6 +81,7 @@ namespace ET
             self.LastFrameTime = currentTime;
 
             var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+            var mapTilesComponent = self.Root().GetComponent<TankMapTilesComponent>();
 
             foreach (var robot in self.Robots)
             {
@@ -101,6 +103,14 @@ namespace ET
                     var (position, rotation) = TankMovementHelper.Move(robot.Position, robot.Direction, distance);
                     robot.Position = position;
                     robot.Rotation = rotation;
+                }
+
+                // Safe guard
+                if (!mapTilesComponent.IsInMap(robot.Position, 0.5f))
+                {
+                    Log.Error($"Robot runs out of map. Position: {robot.Position.ToString()}");
+                    robot.Position = robot.SpawnPosition;
+                    self.FindNextTargetPosition(robot);
                 }
             }
         }
@@ -189,6 +199,7 @@ namespace ET
                         RobotId = self.RobotId,
                         Direction = self.RotationToDirection(spawnInfo.Rotation),
                         Position = spawnInfo.SpawnPosition,
+                        SpawnPosition = spawnInfo.SpawnPosition,
                         ShootInterval = spawnInfo.ShootInterval,
                         ShootTime = currentTime + spawnInfo.ShootInterval + RandomGenerator.RandInt32() % self.BasicShootInterval,
                         SpawnPointId = spawnInfo.SpawnPointId,

@@ -5,6 +5,7 @@ namespace ET
     {
         public int RobotId { get; set; }
         public int SpawnPointId { get; set; }
+        public TankPosition SpawnPosition { get; set; }
         public TankPosition Position { get; set; }
         public TankDirection Direction { get; set; }
         public long ShootInterval { get; set; }

@@ -10,7 +10,8 @@ namespace ET.Client
         public GameObject[] RobotRemainingCounts;
         public GameObject JoySticker;
         public GameObject PlayerHp;
-        public GameObject playerTank;
+        public GameObject PlayerTank;
+        public GameObject Gold;
 
         public readonly int RobotUICount = 3;
     }
