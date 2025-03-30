@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 7e9240f140da78f4c84c5018a41801c8
+guid: e4eaaea538d9fda48bc74fe7ad7e336e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 847476712743134929
-    second: tank-normal_0
+      213: -9176122009169712612
+    second: tank_0
   - first:
-      213: -6643137359720826237
-    second: tank-normal_1
+      213: 2514563993790797495
+    second: tank_1
   - first:
-      213: -1208661057559244997
-    second: tank-normal_2
+      213: -5607435026271281972
+    second: tank_2
+  - first:
+      213: -8513860805877293909
+    second: tank_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -132,13 +135,79 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tank-normal_0
+      name: tank_0
       rect:
         serializedVersion: 2
         x: 0
+        y: 30
+        width: 459
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1aabcb56add7a080800000000000000
+      internalID: -9176122009169712612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tank_1
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 333
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b653ee21a685e220800000000000000
+      internalID: 2514563993790797495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tank_2
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 10
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccc54069d836e22b0800000000000000
+      internalID: -5607435026271281972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tank_3
+      rect:
+        serializedVersion: 2
+        x: 505
         y: 0
-        width: 512
-        height: 512
+        width: 7
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,52 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1d668728497d2cb00800000000000000
-      internalID: 847476712743134929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tank-normal_1
-      rect:
-        serializedVersion: 2
-        x: 298
-        y: 504
-        width: 20
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 38ab6b7a4c5dec3a0800000000000000
-      internalID: -6643137359720826237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tank-normal_2
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 505
-        width: 70
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b3f45520c29f93fe0800000000000000
-      internalID: -1208661057559244997
+      spriteID: bac109694b0b8d980800000000000000
+      internalID: -8513860805877293909
       vertices: []
       indices: 
       edges: []
@@ -211,9 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tank-normal_0: 847476712743134929
-      tank-normal_1: -6643137359720826237
-      tank-normal_2: -1208661057559244997
+      tank_0: -9176122009169712612
+      tank_1: 2514563993790797495
+      tank_2: -5607435026271281972
+      tank_3: -8513860805877293909
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
