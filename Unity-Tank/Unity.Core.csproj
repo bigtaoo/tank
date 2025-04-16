@@ -107,6 +107,7 @@
     <Compile Include="Assets\Scripts\Core\Entity\IUpdateSystem.cs" />
     <Compile Include="Assets\Scripts\Core\World\ActorId.cs" />
     <Compile Include="Assets\Scripts\Core\World\Module\Config\ConfigAttribute.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\HoldButton.cs" />
     <Compile Include="Assets\Scripts\Core\Entity\IDeserializeSystem.cs" />
     <Compile Include="Assets\Scripts\Core\Helper\StringHashHelper.cs" />
     <Compile Include="Assets\Scripts\Core\Fiber\Module\Actor\ProcessInnerSender.cs" />

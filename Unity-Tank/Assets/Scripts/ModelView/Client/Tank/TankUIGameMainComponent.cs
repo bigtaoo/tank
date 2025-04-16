@@ -13,6 +13,13 @@ namespace ET.Client
         public GameObject PlayerTank;
         public GameObject Gold;
 
+        public GameObject Left;
+        public GameObject Right;
+        public GameObject Up;
+        public GameObject Down;
+        public GameObject Center;
+        public GameObject Shoot;
+
         public readonly int RobotUICount = 3;
     }
 }

@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ET.Client
 {
@@ -23,6 +24,25 @@ namespace ET.Client
                 self.RobotRemainingCounts[i] = rc.Get<GameObject>($"number-{i + 1}");
             }
             self.Gold = rc.Get<GameObject>("gold");
+
+            self.Left = rc.Get<GameObject>("left");
+            var leftHoldButton = self.Left.GetComponent<HoldButton>();
+            leftHoldButton.onPress = () => { self.MoveTank(TankDirection.Left); };
+            leftHoldButton.onRelease = self.StopTank;
+            self.Up = rc.Get<GameObject>("up");
+            var upHoldButton = self.Up.GetComponent<HoldButton>();
+            upHoldButton.onPress = () => { self.MoveTank(TankDirection.Up); };
+            upHoldButton.onRelease = self.StopTank;
+            self.Right = rc.Get<GameObject>("right");
+            var rightHoldButton = self.Right.GetComponent<HoldButton>();
+            rightHoldButton.onPress = () => { self.MoveTank(TankDirection.Right); };
+            rightHoldButton.onRelease= self.StopTank;
+            self.Down = rc.Get<GameObject>("down");
+            var downHoldButton = self.Down.GetComponent<HoldButton>();
+            downHoldButton.onPress = () => { self.MoveTank(TankDirection.Down); };
+            downHoldButton.onRelease = self.StopTank;
+            self.Shoot = rc.Get<GameObject>("shoot");
+            self.Shoot.GetComponent<Button>().onClick.AddListener(() => { self.TankShoot(); });
         }
 
         [EntitySystem]
@@ -54,6 +74,25 @@ namespace ET.Client
 
             var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
             self.Gold.GetComponent<TMP_Text>().text = gameInfoComponent.Gold.ToString();
+        }
+
+        private static void MoveTank(this TankUIGameMainComponent self, TankDirection direction)
+        {
+            var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+            playerComponent.SetMoveDirection(direction);
+            playerComponent.CurrentDirection = direction;
+        }
+
+        private static void StopTank(this TankUIGameMainComponent self)
+        {
+            var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+            playerComponent.SetMoveDirection(TankDirection.None);
+        }
+
+        private static void TankShoot(this  TankUIGameMainComponent self)
+        {
+            var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+            playerComponent.Shoot();
         }
     }
 }
