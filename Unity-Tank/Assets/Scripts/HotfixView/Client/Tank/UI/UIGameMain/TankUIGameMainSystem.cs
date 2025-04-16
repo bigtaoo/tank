@@ -81,12 +81,18 @@ namespace ET.Client
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             playerComponent.SetMoveDirection(direction);
             playerComponent.CurrentDirection = direction;
+
+            var gameInfoComponent = self.Root().GetComponent<TankClientGameInfoComponent>();
+            gameInfoComponent.InputMutex = true;
         }
 
         private static void StopTank(this TankUIGameMainComponent self)
         {
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             playerComponent.SetMoveDirection(TankDirection.None);
+
+            var gameInfoComponent = self.Root().GetComponent<TankClientGameInfoComponent>();
+            gameInfoComponent.InputMutex = false;
         }
 
         private static void TankShoot(this  TankUIGameMainComponent self)
