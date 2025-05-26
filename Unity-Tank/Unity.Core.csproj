@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Core\World\Module\Fiber\ThreadScheduler.cs" />
     <Compile Include="Assets\Scripts\Core\World\Module\EventSystem\InvokeAttribute.cs" />
     <Compile Include="Assets\Scripts\Core\Analyzer\EntitySystemOf.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\DigitDisplay.cs" />
     <Compile Include="Assets\Scripts\Core\Network\MessageSerializeHelper.cs" />
     <Compile Include="Assets\Scripts\Core\World\World.cs" />
     <Compile Include="Assets\Scripts\Core\World\Module\Fiber\IScheduler.cs" />
