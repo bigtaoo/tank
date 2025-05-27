@@ -38,7 +38,13 @@ public class DigitDisplay : MonoBehaviour
     {
 #if UNITY_EDITOR
         if (!Application.isPlaying && updateInEditor)
-            EditorSafeDisplay();
+        {
+            UnityEditor.EditorApplication.delayCall += () =>
+            {
+                if (this != null) // object might be destroyed
+                    EditorSafeDisplay();
+            };
+        }
 #endif
     }
 
@@ -78,6 +84,7 @@ public class DigitDisplay : MonoBehaviour
             if (digit < 0 || digit > 9) continue;
 
             GameObject digitObj = CreateDigitObjectEditorSafe();
+            if (digitObj == null) continue;
             RectTransform rt = digitObj.GetComponent<RectTransform>();
             rt.SetParent(transform, false);
             rt.anchoredPosition = new Vector2(startX + i * digitSpacing, 0);
@@ -93,16 +100,32 @@ public class DigitDisplay : MonoBehaviour
     private GameObject CreateDigitObjectEditorSafe()
     {
 #if UNITY_EDITOR
+        if (digitImagePrefab == null)
+        {
+            Debug.LogWarning("DigitDisplay: digitImagePrefab is not assigned.");
+            return null;
+        }
+
+        GameObject newObj;
+
         if (Application.isPlaying)
         {
-            return Instantiate(digitImagePrefab);
+            newObj = Instantiate(digitImagePrefab);
         }
         else
         {
-            GameObject newObj = UnityEditor.PrefabUtility.InstantiatePrefab(digitImagePrefab) as GameObject;
-            newObj.transform.SetParent(transform, false);
-            return newObj;
+            newObj = UnityEditor.PrefabUtility.InstantiatePrefab(digitImagePrefab) as GameObject;
+            if (newObj != null)
+            {
+                newObj.transform.SetParent(transform, false);
+            }
+            else
+            {
+                Debug.LogWarning("DigitDisplay: Failed to instantiate digitImagePrefab in Editor.");
+            }
         }
+
+        return newObj;
 #else
     return Instantiate(digitImagePrefab);
 #endif
