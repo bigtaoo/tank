@@ -1,6 +1,11 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 [ExecuteAlways]
 public class DigitDisplay : MonoBehaviour
@@ -23,14 +28,20 @@ public class DigitDisplay : MonoBehaviour
     public int previewNumber = 0;
     public bool updateInEditor = true;
 
-    private List<GameObject> activeDigits = new List<GameObject>();
-    private bool isUpdating = false; // prevent re-entrant calls
+    [Header("Appearance")]
+    public Color digitColor = Color.white;
+
+    private readonly List<GameObject> activeDigits = new();
+    private readonly List<GameObject> pooledDigits = new();
+    private bool isUpdating = false;
 
     private void OnEnable()
     {
 #if UNITY_EDITOR
-        if (!Application.isPlaying && updateInEditor)
+        if (!Application.isPlaying && updateInEditor && !isUpdating)
+        {
             EditorSafeDisplay();
+        }
 #endif
     }
 
@@ -39,24 +50,26 @@ public class DigitDisplay : MonoBehaviour
 #if UNITY_EDITOR
         if (!Application.isPlaying && updateInEditor)
         {
-            UnityEditor.EditorApplication.delayCall += () =>
+            EditorApplication.delayCall += () =>
             {
-                if (this != null) // object might be destroyed
+                if (this != null)
                     EditorSafeDisplay();
             };
         }
 #endif
     }
 
+#if UNITY_EDITOR
     private void EditorSafeDisplay()
     {
-#if UNITY_EDITOR
-        if (isUpdating) return; // prevent infinite loops
+        if (isUpdating || digitSprites == null || digitSprites.Length < 10 || digitImagePrefab == null)
+            return;
+
         isUpdating = true;
         DisplayNumber(previewNumber);
         isUpdating = false;
-#endif
     }
+#endif
 
     public void DisplayNumber(int number)
     {
@@ -83,63 +96,63 @@ public class DigitDisplay : MonoBehaviour
             int digit = numberStr[i] - '0';
             if (digit < 0 || digit > 9) continue;
 
-            GameObject digitObj = CreateDigitObjectEditorSafe();
+            GameObject digitObj = CreateDigitObject();
             if (digitObj == null) continue;
+
             RectTransform rt = digitObj.GetComponent<RectTransform>();
-            rt.SetParent(transform, false);
             rt.anchoredPosition = new Vector2(startX + i * digitSpacing, 0);
 
             Image img = digitObj.GetComponent<Image>();
             img.sprite = digitSprites[digit];
+            img.color = digitColor;
             img.enabled = true;
 
+            digitObj.SetActive(true);
             activeDigits.Add(digitObj);
         }
     }
 
-    private GameObject CreateDigitObjectEditorSafe()
+    private GameObject CreateDigitObject()
     {
-#if UNITY_EDITOR
-        if (digitImagePrefab == null)
-        {
-            Debug.LogWarning("DigitDisplay: digitImagePrefab is not assigned.");
-            return null;
-        }
-
-        GameObject newObj;
-
         if (Application.isPlaying)
         {
-            newObj = Instantiate(digitImagePrefab);
-        }
-        else
-        {
-            newObj = UnityEditor.PrefabUtility.InstantiatePrefab(digitImagePrefab) as GameObject;
-            if (newObj != null)
+            GameObject obj = pooledDigits.FirstOrDefault(go => !go.activeSelf);
+            if (obj == null)
             {
-                newObj.transform.SetParent(transform, false);
+                obj = Instantiate(digitImagePrefab, transform);
+                pooledDigits.Add(obj);
             }
-            else
-            {
-                Debug.LogWarning("DigitDisplay: Failed to instantiate digitImagePrefab in Editor.");
-            }
+            obj.transform.SetParent(transform, false);
+            return obj;
         }
 
+#if UNITY_EDITOR
+        GameObject newObj = PrefabUtility.InstantiatePrefab(digitImagePrefab, transform) as GameObject;
+        if (newObj == null)
+        {
+            Debug.LogWarning("DigitDisplay: Failed to instantiate digitImagePrefab in Editor.");
+        }
         return newObj;
 #else
-    return Instantiate(digitImagePrefab);
+        return Instantiate(digitImagePrefab, transform);
 #endif
     }
 
     private void ClearDigits()
     {
 #if UNITY_EDITOR
-        foreach (GameObject obj in activeDigits)
+        if (!Application.isPlaying)
         {
-            if (Application.isPlaying)
+            for (int i = transform.childCount - 1; i >= 0; i--)
+            {
+                GameObject child = transform.GetChild(i).gameObject;
+                Undo.DestroyObjectImmediate(child);
+            }
+        }
+        else
+        {
+            foreach (GameObject obj in activeDigits)
                 obj.SetActive(false);
-            else
-                DestroyImmediate(obj);
         }
 #else
         foreach (GameObject obj in activeDigits)
