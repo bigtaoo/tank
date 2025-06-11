@@ -10,7 +10,7 @@ namespace ET.Client
         {
             try
             {
-                //Scene currentScene = root.CurrentScene();
+                Scene currentScene = root.CurrentScene();
 
                 root.RemoveComponent<ResourcesLoaderComponent>();
                 ResourcesLoaderComponent resourcesLoaderComponent = root.AddComponent<ResourcesLoaderComponent>();
@@ -29,7 +29,7 @@ namespace ET.Client
                 }
                 else
                 {
-                    await resourcesLoaderComponent.LoadSceneAsync($"Assets/Bundles/Scenes/TankGameMap.unity", LoadSceneMode.Single);
+                    await resourcesLoaderComponent.LoadSceneAsync($"Assets/Bundles/Scenes/TankMaps/{currentScene.Name}.unity", LoadSceneMode.Single);
                 }
                 // 切换到map场景
 
