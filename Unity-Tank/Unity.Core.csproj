@@ -134,6 +134,7 @@
     <Compile Include="Assets\Scripts\Core\Analyzer\EnableMethodAttribute.cs" />
     <Compile Include="Assets\Scripts\Core\World\Module\Fiber\ThreadPoolScheduler.cs" />
     <Compile Include="Assets\Scripts\Core\Fiber\Module\Navmesh\NavmeshComponent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\GameModeConfig.cs" />
     <Compile Include="Assets\Scripts\Core\ThreadSynchronizationContext.cs" />
     <Compile Include="Assets\Scripts\Core\Entity\ITransfer.cs" />
     <Compile Include="Assets\Scripts\Core\Network\OpcodeRangeDefine.cs" />
