@@ -6,5 +6,9 @@ namespace ET.Client
     public class TankUIGameModeComponent : Entity, IAwake
     {
         public GameObject SingleMode;
+
+        public GameObject DigitDisplay;
+        public GameObject MapIndex;
+        public GameModeConfig Config;
     }
 }
