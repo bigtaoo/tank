@@ -31,8 +31,7 @@ public class DigitDisplay : MonoBehaviour
     [Header("Appearance")]
     public Color digitColor = Color.white;
 
-    private readonly List<GameObject> activeDigits = new();
-    private readonly List<GameObject> pooledDigits = new();
+    private readonly List<GameObject> digits = new();
     private bool isUpdating = false;
 
     private void OnEnable()
@@ -108,7 +107,6 @@ public class DigitDisplay : MonoBehaviour
             img.enabled = true;
 
             digitObj.SetActive(true);
-            activeDigits.Add(digitObj);
         }
     }
 
@@ -116,11 +114,16 @@ public class DigitDisplay : MonoBehaviour
     {
         if (Application.isPlaying)
         {
-            GameObject obj = pooledDigits.FirstOrDefault(go => !go.activeSelf);
+            GameObject obj = digits.FirstOrDefault(go => !go.activeSelf);
             if (obj == null)
             {
                 obj = Instantiate(digitImagePrefab, transform);
-                pooledDigits.Add(obj);
+                digits.Add(obj);
+                //Debug.LogWarning("Create a new digit object");
+            }
+            else
+            {
+                //Debug.LogWarning("Using exist digit object");
             }
             obj.transform.SetParent(transform, false);
             return obj;
@@ -148,16 +151,19 @@ public class DigitDisplay : MonoBehaviour
                 GameObject child = transform.GetChild(i).gameObject;
                 Undo.DestroyObjectImmediate(child);
             }
+            return;
         }
-        else
-        {
-            foreach (GameObject obj in activeDigits)
-                obj.SetActive(false);
-        }
-#else
-        foreach (GameObject obj in activeDigits)
-            obj.SetActive(false);
 #endif
-        activeDigits.Clear();
+        var images = transform.GetComponentsInChildren<Image>(true);
+        digits.Clear();
+        foreach (Image image in images)
+        {
+            digits.Add(image.gameObject);
+        }
+        foreach (GameObject obj in digits)
+        {
+            obj.SetActive(false);
+            //Debug.LogWarning("Set object active to false");
+        }
     }
 }

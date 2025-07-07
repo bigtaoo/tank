@@ -51,6 +51,9 @@ namespace ET.Client
                 clone.transform.localPosition = position + self.MapIndex.transform.localPosition;
                 //Log.Warning($"Actual position: {clone.transform.position}");
                 clone.SetActive(true);
+
+                var digitDisplay = clone.GetComponentInChildren<DigitDisplay>();
+                digitDisplay.DisplayNumber(i + 1);
             }
         }
     }
