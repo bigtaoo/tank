@@ -16,6 +16,7 @@ namespace ET.Client
             self.DigitDisplay = rc.Get<GameObject>("DigitDisplay");
             self.MapIndex = rc.Get<GameObject>("MapIndex");
             self.MapIndex.SetActive(true);
+            self.MapIndex.GetComponent<Button>().onClick.AddListener(() => { self.StartSingleMode(1).Coroutine(); });
 
             self.DisplayMapIndex();
         }
