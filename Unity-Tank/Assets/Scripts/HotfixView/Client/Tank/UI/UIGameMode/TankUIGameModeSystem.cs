@@ -11,10 +11,6 @@ namespace ET.Client
         private static void Awake(this TankUIGameModeComponent self)
         {
             ReferenceCollector rc = self.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
-            self.SingleMode = rc.Get<GameObject>("EnterMap");
-            self.SingleMode.SetActive(true);
-
-            self.SingleMode.GetComponent<Button>().onClick.AddListener(() => { self.StartSingleMode().Coroutine(); });
 
             self.Config = rc.Get<GameObject>("Config").GetComponent<GameModeConfig>();
             self.DigitDisplay = rc.Get<GameObject>("DigitDisplay");
@@ -24,10 +20,10 @@ namespace ET.Client
             self.DisplayMapIndex();
         }
 
-        public static async ETTask StartSingleMode(this TankUIGameModeComponent self)
+        public static async ETTask StartSingleMode(this TankUIGameModeComponent self, int mapIndex)
         {
-            self.SingleMode.SetActive(false);
-            await TankSceneChangeHelper.SceneChangeTo(self.Root(), TankMapType.Game, "level-1", self.Root().InstanceId);
+            Log.Warning($"Start single mode for map: {mapIndex}");
+            await TankSceneChangeHelper.SceneChangeTo(self.Root(), TankMapType.Game, $"level-{mapIndex}", self.Root().InstanceId);
             await UIHelper.Remove(self.Root(), UIType.TankUIGameMode);
         }
 
@@ -44,16 +40,16 @@ namespace ET.Client
                 int rowIndex = i / mapCountInRow;
                 int columnIndex = i % mapCountInRow;
                 var position = new Vector3(columnIndex * width, -rowIndex * height, 0);
-                //Log.Warning($"Calculated original position: {position}");
-                //Log.Warning($"Base object position: {self.MapIndex.transform.localPosition}");
-                //Log.Warning($"Calculated position: {position + self.MapIndex.transform.position}");
                 var clone = GameObject.Instantiate(self.MapIndex, self.MapIndex.transform.parent);
                 clone.transform.localPosition = position + self.MapIndex.transform.localPosition;
                 //Log.Warning($"Actual position: {clone.transform.position}");
                 clone.SetActive(true);
 
+                var showingIndex = i + 1;
+                clone.GetComponent<Button>().onClick.AddListener(() => { self.StartSingleMode(showingIndex).Coroutine(); });
+
                 var digitDisplay = clone.GetComponentInChildren<DigitDisplay>();
-                digitDisplay.DisplayNumber(i + 1);
+                digitDisplay.DisplayNumber(showingIndex);
             }
         }
     }

@@ -5,6 +5,7 @@
         // 场景切换协程
         public static async ETTask SceneChangeTo(Scene root, TankMapType mapType, string sceneName, long sceneInstanceId)
         {
+            Log.Warning($"Change scene to {sceneName}");
             root.RemoveComponent<AIComponent>();
 
             CurrentScenesComponent currentScenesComponent = root.GetComponent<CurrentScenesComponent>();
