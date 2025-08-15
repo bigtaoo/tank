@@ -150,6 +150,7 @@
     <Compile Include="Assets\Scripts\Core\Helper\WinPeriod.cs" />
     <Compile Include="Assets\Scripts\Core\World\Module\Code\CodeAttribute.cs" />
     <Compile Include="Assets\Scripts\Core\Object\Object.cs" />
+    <Compile Include="Assets\Scripts\Core\File\LightObfuscation.cs" />
     <Compile Include="Assets\Scripts\Core\World\ISingletonAwake.cs" />
     <Compile Include="Assets\Scripts\Core\Analyzer\ComponentOfAttribute.cs" />
     <Compile Include="Assets\Scripts\Core\Helper\ObjectHelper.cs" />
