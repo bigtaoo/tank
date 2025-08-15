@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\UI\UILogin\UILoginComponentSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSOperaComponentSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\LockStep\LSUnitViewComponentSystem.cs" />
+    <Compile Include="Assets\Scripts\HotfixView\Client\Tank\Utilities\TankClientSavedFileSystem.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Demo\Scene\AfterCreateCurrentScene_AddComponent.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Tank\UI\UIGameMode\TankUIGameModeEvent.cs" />
     <Compile Include="Assets\Scripts\HotfixView\Client\Module\UI\UIComponentSystem.cs" />

@@ -30,6 +30,9 @@ namespace ET.Client
 
         private static void DisplayMapIndex(this  TankUIGameModeComponent self)
         {
+            var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
+            var currentMapIndex = savedFileComponent.GetCurrentMapIndex();
+
             var mapCount = self.Config.MapCount;
             //Log.Warning($"Map Count: {mapCount}");
             const int mapCountInRow = 5;

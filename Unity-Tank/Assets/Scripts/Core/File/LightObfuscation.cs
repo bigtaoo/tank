@@ -15,7 +15,9 @@ public static class LightObfuscation
     {
         var bytes = Encoding.UTF8.GetBytes(json);
         for (int i = 0; i < bytes.Length; i++)
+        {
             bytes[i] ^= Key[i % Key.Length];                // XOR
+        }
 
         string b64 = Convert.ToBase64String(bytes);         // Base64 for file-friendliness
         var path = Path.Combine(Application.persistentDataPath, fileName);
@@ -26,12 +28,17 @@ public static class LightObfuscation
     public static string LoadJson(string fileName)
     {
         var path = Path.Combine(Application.persistentDataPath, fileName);
-        if (!File.Exists(path)) return null;
+        if (!File.Exists(path))
+        {
+            return null;
+        }
 
         var b64 = File.ReadAllText(path);
         var bytes = Convert.FromBase64String(b64);
         for (int i = 0; i < bytes.Length; i++)
+        {
             bytes[i] ^= Key[i % Key.Length];
+        }
 
         return Encoding.UTF8.GetString(bytes);
     }

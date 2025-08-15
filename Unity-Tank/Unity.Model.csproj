@@ -97,6 +97,7 @@
     <Compile Include="Assets\Scripts\Model\Client\Demo\Main\Move\Wait_UnitStop.cs" />
     <Compile Include="Assets\Scripts\Model\Client\Demo\NetClient\Ping\PingComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Client\Demo\AI\XunLuoPathComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankUserInfo.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Numeric\INumericWatcher.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSUpdater.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\LogMsg.cs" />
