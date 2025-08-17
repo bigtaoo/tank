@@ -23,6 +23,14 @@ namespace ET.Client
 
         public static async ETTask StartSingleMode(this TankUIGameModeComponent self, int mapIndex)
         {
+            var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
+            var currentMapIndex = savedFileComponent.GetCurrentMapIndex();
+            if (mapIndex > currentMapIndex)
+            {
+                Log.Warning($"The map is locked. Try to join {mapIndex} but can only join until {currentMapIndex}");
+                return;
+            }
+
             Log.Warning($"Start single mode for map: {mapIndex}");
             await TankSceneChangeHelper.SceneChangeTo(self.Root(), TankMapType.Game, $"level-{mapIndex}", self.Root().InstanceId);
             await UIHelper.Remove(self.Root(), UIType.TankUIGameMode);
@@ -54,6 +62,18 @@ namespace ET.Client
 
                 var digitDisplay = clone.GetComponentInChildren<DigitDisplay>();
                 digitDisplay.DisplayNumber(showingIndex);
+
+                var lockImage = clone.transform.Find("Locker").gameObject;
+                //Log.Warning($"lock image: {lockImage.name}, current index: {currentMapIndex}");
+                if (i >= currentMapIndex)
+                {
+                    //Log.Warning($"current index: {currentMapIndex}, index: {i}, set active true");
+                    lockImage.SetActive(true);
+                }
+                else
+                {
+                    lockImage.SetActive(false);
+                }
             }
         }
     }
