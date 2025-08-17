@@ -108,7 +108,7 @@ namespace ET
                 case TankItemType.Gold:
                     {
                         var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
-                        gameInfoComponent.Gold++;
+                        gameInfoComponent.AddGold();
                         break;
                     }
                 case TankItemType.PlayerLife:

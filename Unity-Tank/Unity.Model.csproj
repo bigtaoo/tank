@@ -164,6 +164,7 @@
     <Compile Include="Assets\Scripts\Model\Share\LockStep\OneFrameInputs.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Module\Message\NetComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\TankMapTilesComponent.cs" />
+    <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankGameInfo.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankBullet.cs" />
     <Compile Include="Assets\Scripts\Model\Share\LockStep\LSInputComponent.cs" />
     <Compile Include="Assets\Scripts\Model\Share\Tank\Structs\TankEffect.cs" />

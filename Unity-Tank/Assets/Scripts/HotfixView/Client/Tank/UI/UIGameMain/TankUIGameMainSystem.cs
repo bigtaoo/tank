@@ -73,7 +73,7 @@ namespace ET.Client
             }
 
             var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
-            self.Gold.GetComponent<TMP_Text>().text = gameInfoComponent.Gold.ToString();
+            self.Gold.GetComponent<TMP_Text>().text = gameInfoComponent.GameInfo.Gold.ToString();
         }
 
         private static void MoveTank(this TankUIGameMainComponent self, TankDirection direction)
