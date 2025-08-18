@@ -39,6 +39,12 @@ namespace ET.Client
             {
                 self.Result.GetComponent<TMP_Text>().text = "Loss";
             }
+
+            var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
+            gameInfoComponent.EndGame(gameResultComponent.IsWin);
+
+            var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
+            savedFileComponent.UpdateGameInfo(gameInfoComponent.GameInfo.MapIndex, gameInfoComponent.GameInfo.Gold);
         }
     }
 }

@@ -19,6 +19,7 @@ namespace ET.Client
             self.MapIndex.GetComponent<Button>().onClick.AddListener(() => { self.StartSingleMode(1).Coroutine(); });
 
             self.DisplayMapIndex();
+            self.LoadGameInfo();
         }
 
         public static async ETTask StartSingleMode(this TankUIGameModeComponent self, int mapIndex)
@@ -30,6 +31,9 @@ namespace ET.Client
                 Log.Warning($"The map is locked. Try to join {mapIndex} but can only join until {currentMapIndex}");
                 return;
             }
+
+            var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
+            gameInfoComponent.StartNewGame(mapIndex);
 
             Log.Warning($"Start single mode for map: {mapIndex}");
             await TankSceneChangeHelper.SceneChangeTo(self.Root(), TankMapType.Game, $"level-{mapIndex}", self.Root().InstanceId);
@@ -75,6 +79,14 @@ namespace ET.Client
                     lockImage.SetActive(false);
                 }
             }
+        }
+
+        private static void LoadGameInfo(this TankUIGameModeComponent self)
+        {
+            var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
+            var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
+
+            gameInfoComponent.GameInfo.Gold = savedFileComponent.UserInfo.Gold;
         }
     }
 }

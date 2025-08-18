@@ -11,6 +11,7 @@ namespace ET.Client
             root.AddComponent<ResourcesLoaderComponent>();
             root.AddComponent<PlayerComponent>();
             root.AddComponent<CurrentScenesComponent>();
+            root.AddComponent<TankGameInfoComponent>();
             root.AddComponent<TankClientSavedFileComponent>();
             
             // 根据配置修改掉Main Fiber的SceneType

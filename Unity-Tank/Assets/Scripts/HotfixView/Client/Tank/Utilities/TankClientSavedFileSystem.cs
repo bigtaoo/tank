@@ -21,9 +21,13 @@ namespace ET
             }
         }
 
-        public static void UpdateCurrentMapIndex(this TankClientSavedFileComponent self, int mapIndex)
+        public static void UpdateGameInfo(this TankClientSavedFileComponent self, int mapIndex, int gold)
         {
-            self.UserInfo.CurrentMapIndex = mapIndex;
+            if (self.UserInfo.CurrentMapIndex < mapIndex)
+            {
+                self.UserInfo.CurrentMapIndex = mapIndex;
+            }
+            self.UserInfo.Gold = gold;
 
             LightObfuscation.SaveJson(self.FileName, JsonUtility.ToJson(self.UserInfo));
         }

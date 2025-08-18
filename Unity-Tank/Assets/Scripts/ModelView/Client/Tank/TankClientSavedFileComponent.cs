@@ -4,6 +4,6 @@ namespace ET
     public class TankClientSavedFileComponent : Entity, IAwake
     {
         public readonly string FileName = "tank.dat";
-        public TankUserInfo UserInfo;
+        public TankUserInfo UserInfo { get; set; }
     }
 }
