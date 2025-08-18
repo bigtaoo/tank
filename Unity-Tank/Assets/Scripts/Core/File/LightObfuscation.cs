@@ -8,14 +8,11 @@ public static class LightObfuscation
 {
     // Keep this secret and non-trivial; you can generate random bytes once and hardcode them.
     [StaticField]
-    [ThreadStatic]
     private static readonly byte[] Key = Encoding.UTF8.GetBytes("a7VZ\x13\x99\x02_ObfuSkaterKey!\x7F-tao-wang-is-super-great!!!");
 
     public static void SaveJson(string fileName, string json)
     {
         var bytes = Encoding.UTF8.GetBytes(json);
-        Log.Warning($"JSON: {json}");
-        Log.Warning($"bytes length: {bytes.Length}");
         for (int i = 0; i < bytes.Length; i++)
         {
             bytes[i] ^= Key[i % Key.Length];                // XOR
