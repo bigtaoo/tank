@@ -44,7 +44,8 @@ namespace ET.Client
             gameInfoComponent.EndGame(gameResultComponent.IsWin);
 
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
-            savedFileComponent.UpdateGameInfo(gameInfoComponent.GameInfo.MapIndex, gameInfoComponent.GameInfo.Gold);
+            var mapIndex = gameResultComponent.IsWin ? gameInfoComponent.GameInfo.MapIndex + 1 : gameInfoComponent.GameInfo.MapIndex;
+            savedFileComponent.UpdateGameInfo(mapIndex, gameInfoComponent.GameInfo.Gold);
         }
     }
 }
