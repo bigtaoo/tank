@@ -14,6 +14,8 @@ public static class LightObfuscation
     public static void SaveJson(string fileName, string json)
     {
         var bytes = Encoding.UTF8.GetBytes(json);
+        Log.Warning($"JSON: {json}");
+        Log.Warning($"bytes length: {bytes.Length}");
         for (int i = 0; i < bytes.Length; i++)
         {
             bytes[i] ^= Key[i % Key.Length];                // XOR

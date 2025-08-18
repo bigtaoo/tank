@@ -29,7 +29,10 @@ namespace ET
             }
             self.UserInfo.Gold = gold;
 
-            LightObfuscation.SaveJson(self.FileName, JsonUtility.ToJson(self.UserInfo));
+            var json = JsonUtility.ToJson(self.UserInfo);
+            Log.Warning($"COMEING JSON: {json}");
+
+            LightObfuscation.SaveJson(self.FileName, json);
         }
 
         public static int GetCurrentMapIndex(this TankClientSavedFileComponent self)

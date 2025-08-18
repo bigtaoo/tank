@@ -1,9 +1,10 @@
 namespace ET
 {
     [EnableClass]
+    [System.Serializable]
     public class TankUserInfo
     {
-        public int CurrentMapIndex { get; set; }
-        public int Gold {  get; set; }
+        public int CurrentMapIndex;
+        public int Gold;
     }
 }
