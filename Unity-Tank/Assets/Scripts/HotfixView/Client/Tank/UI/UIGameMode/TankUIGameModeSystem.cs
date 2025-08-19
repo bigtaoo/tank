@@ -86,7 +86,7 @@ namespace ET.Client
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
             var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
 
-            //gameInfoComponent.GameInfo.Gold = savedFileComponent.UserInfo.Gold;
+            gameInfoComponent.GameInfo.Gold = savedFileComponent.UserInfo.Gold;
         }
     }
 }
