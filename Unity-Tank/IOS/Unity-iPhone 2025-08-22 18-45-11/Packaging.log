@@ -1,0 +1,282 @@
+2025-08-22 16:44:55 +0000  Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0x7fe1ab391970; archive(resolved)="<IDEArchive: 0x7fe1a56fd220>", distributionTask(resolved)="2", distributionDestination(resolved)="1", distributionMethod(resolved)="<IDEDistributionMethodDevelopmentSigned: 0x7fe1d7a48cd0>", team(resolved)="<IDEProvisioningDisambiguatableBasicTeam: 0x7fe1d1686c10; teamID='C677KJH544', teamName='Tao Wang', teamType='Individual', username='tao.wang.go@gmail.com', isFreeProvisioningTeam='0'>">
+	Chain (14, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0x7fe1ab391970; archive = "<IDEArchive: 0x7fe1a56fd220>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x7fe1d7a48cd0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7fe1d1686c10; teamID='C677KJH544', teamName='Tao Wang', teamType='Individual', username='tao.wang.go@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionProcessingPipelineContext: 0x7fe1b2d35ef0; archive = "<IDEArchive: 0x7fe1a56fd220>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x7fe1d7a48cd0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7fe1d1686c10; teamID='C677KJH544', teamName='Tao Wang', teamType='Individual', username='tao.wang.go@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe162ca8080; archive = "<IDEArchive: 0x7fe1a56fd220>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x7fe1d7a48cd0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7fe1d1686c10; teamID='C677KJH544', teamName='Tao Wang', teamType='Individual', username='tao.wang.go@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe16f690990; archive = "<IDEArchive: 0x7fe1a56fd220>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x7fe1d7a48cd0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7fe1d1686c10; teamID='C677KJH544', teamName='Tao Wang', teamType='Individual', username='tao.wang.go@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe182577180; archive = "<IDEArchive: 0x7fe1a56fd220>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x7fe1d7a48cd0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7fe1d1686c10; teamID='C677KJH544', teamName='Tao Wang', teamType='Individual', username='tao.wang.go@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe182585de0; archive = "<IDEArchive: 0x7fe1a56fd220>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x7fe1d7a48cd0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7fe1d1686c10; teamID='C677KJH544', teamName='Tao Wang', teamType='Individual', username='tao.wang.go@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe162b21c00; archive = "<IDEArchive: 0x7fe1a56fd220>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x7fe1d7a48cd0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7fe1d1686c10; teamID='C677KJH544', teamName='Tao Wang', teamType='Individual', username='tao.wang.go@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe162bdcd40; archive = "<IDEArchive: 0x7fe1a56fd220>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x7fe1d7a48cd0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7fe1d1686c10; teamID='C677KJH544', teamName='Tao Wang', teamType='Individual', username='tao.wang.go@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe162cb8aa0; archive = "<IDEArchive: 0x7fe1a56fd220>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x7fe1d7a48cd0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7fe1d1686c10; teamID='C677KJH544', teamName='Tao Wang', teamType='Individual', username='tao.wang.go@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe162c04f60; archive = "<IDEArchive: 0x7fe1a56fd220>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x7fe1d7a48cd0>", team="(null)">
+	<IDEDistributionContext: 0x7fe16f667cb0; archive = "<IDEArchive: 0x7fe1a56fd220>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x7fe1d7a48cd0>", team="(null)">
+	<IDEDistributionContext: 0x7fe1705c6230; archive = "<IDEArchive: 0x7fe1a56fd220>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x7fe1d7a48cd0>", team="(null)">
+	<IDEDistributionContext: 0x7fe18248ee40; archive = "<IDEArchive: 0x7fe1a56fd220>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x7fe1d7a48cd0>", team="(null)">
+	<IDEDistributionContext: 0x7fe162cb86c0; archive = "<IDEArchive: 0x7fe1a56fd220>", distributionMethod="(null)", team="(null)">
+</IDEDistributionProcessingPipelineContext: 0x7fe1ab391970>
+2025-08-22 16:44:55 +0000  Processing step: IDEDistributionCreateDestRootStep
+2025-08-22 16:44:55 +0000  Processing step: IDEDistributionCopyItemStep
+2025-08-22 16:44:55 +0000  Running /usr/bin/ditto '-V' '/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app' '/var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/Root/Payload/Tank.app'
+2025-08-22 16:44:55 +0000  >>> Copying /Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app 
+2025-08-22 16:44:55 +0000  copying file ./_CodeSignature/CodeResources ... 
+2025-08-22 16:44:55 +0000  11189 bytes for ./_CodeSignature/CodeResources
+2025-08-22 16:44:55 +0000  copying file ./Tank ... 
+2025-08-22 16:44:55 +0000  86048 bytes for ./Tank
+2025-08-22 16:44:55 +0000  copying file ./LaunchScreen-iPhonePortrait.png ... 
+2025-08-22 16:44:55 +0000  138 bytes for ./LaunchScreen-iPhonePortrait.png
+copying file ./LaunchScreen-iPhoneLandscape.png ... 
+2025-08-22 16:44:55 +0000  138 bytes for ./LaunchScreen-iPhoneLandscape.png
+copying file ./AppIcon60x60@2x.png ... 
+2025-08-22 16:44:55 +0000  26997 bytes for ./AppIcon60x60@2x.png
+2025-08-22 16:44:55 +0000  copying file ./LaunchScreen-iPad.png ... 
+2025-08-22 16:44:55 +0000  138 bytes for ./LaunchScreen-iPad.png
+2025-08-22 16:44:55 +0000  copying file ./LaunchScreen-iPad.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib ... 
+2025-08-22 16:44:55 +0000  934 bytes for ./LaunchScreen-iPad.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib
+copying file ./LaunchScreen-iPad.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib ... 
+2025-08-22 16:44:55 +0000  2415 bytes for ./LaunchScreen-iPad.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib
+copying file ./LaunchScreen-iPad.storyboardc/Info.plist ... 
+2025-08-22 16:44:55 +0000  333 bytes for ./LaunchScreen-iPad.storyboardc/Info.plist
+2025-08-22 16:44:55 +0000  copying file ./Assets.car ... 
+2025-08-22 16:44:55 +0000  1400552 bytes for ./Assets.car
+copying file ./AppIcon76x76@2x~ipad.png ... 
+2025-08-22 16:44:55 +0000  41329 bytes for ./AppIcon76x76@2x~ipad.png
+2025-08-22 16:44:55 +0000  copying file ./LaunchScreen-iPhone.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib ... 
+2025-08-22 16:44:55 +0000  934 bytes for ./LaunchScreen-iPhone.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib
+copying file ./LaunchScreen-iPhone.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib ... 
+2025-08-22 16:44:55 +0000  2425 bytes for ./LaunchScreen-iPhone.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib
+2025-08-22 16:44:55 +0000  copying file ./LaunchScreen-iPhone.storyboardc/Info.plist ... 
+2025-08-22 16:44:55 +0000  333 bytes for ./LaunchScreen-iPhone.storyboardc/Info.plist
+2025-08-22 16:44:55 +0000  copying file ./Frameworks/UnityFramework.framework/_CodeSignature/CodeResources ... 
+2025-08-22 16:44:55 +0000  2034 bytes for ./Frameworks/UnityFramework.framework/_CodeSignature/CodeResources
+2025-08-22 16:44:55 +0000  copying file ./Frameworks/UnityFramework.framework/PrivacyInfo.xcprivacy ... 
+2025-08-22 16:44:55 +0000  1209 bytes for ./Frameworks/UnityFramework.framework/PrivacyInfo.xcprivacy
+copying file ./Frameworks/UnityFramework.framework/Info.plist ... 
+2025-08-22 16:44:55 +0000  807 bytes for ./Frameworks/UnityFramework.framework/Info.plist
+2025-08-22 16:44:55 +0000  copying file ./Frameworks/UnityFramework.framework/UnityFramework ... 
+2025-08-22 16:44:55 +0000  111264320 bytes for ./Frameworks/UnityFramework.framework/UnityFramework
+2025-08-22 16:44:55 +0000  copying file ./embedded.mobileprovision ... 
+12183 bytes for ./embedded.mobileprovision
+copying file ./Data/Managed/Resources/mscorlib.dll-resources.dat ... 
+2025-08-22 16:44:55 +0000  337563 bytes for ./Data/Managed/Resources/mscorlib.dll-resources.dat
+2025-08-22 16:44:55 +0000  copying file ./Data/Managed/Resources/NLog.dll-resources.dat ... 
+2025-08-22 16:44:55 +0000  68301 bytes for ./Data/Managed/Resources/NLog.dll-resources.dat
+2025-08-22 16:44:55 +0000  copying file ./Data/Managed/Resources/System.Data.dll-resources.dat ... 
+2025-08-22 16:44:55 +0000  93718 bytes for ./Data/Managed/Resources/System.Data.dll-resources.dat
+2025-08-22 16:44:55 +0000  copying file ./Data/Managed/mono/4.0/machine.config ... 
+2025-08-22 16:44:55 +0000  33598 bytes for ./Data/Managed/mono/4.0/machine.config
+2025-08-22 16:44:55 +0000  copying file ./Data/Managed/Metadata/global-metadata.dat ... 
+2025-08-22 16:44:56 +0000  20160088 bytes for ./Data/Managed/Metadata/global-metadata.dat
+2025-08-22 16:44:56 +0000  copying file ./Data/globalgamemanagers ... 
+2025-08-22 16:44:56 +0000  169924 bytes for ./Data/globalgamemanagers
+2025-08-22 16:44:56 +0000  copying file ./Data/boot.config ... 
+2025-08-22 16:44:56 +0000  275 bytes for ./Data/boot.config
+copying file ./Data/RuntimeInitializeOnLoads.json ... 
+2025-08-22 16:44:56 +0000  1986 bytes for ./Data/RuntimeInitializeOnLoads.json
+2025-08-22 16:44:56 +0000  copying file ./Data/resources.assets ... 
+2025-08-22 16:44:56 +0000  688168 bytes for ./Data/resources.assets
+2025-08-22 16:44:56 +0000  copying file ./Data/Resources/unity default resources ... 
+2025-08-22 16:44:56 +0000  1696580 bytes for ./Data/Resources/unity default resources
+2025-08-22 16:44:56 +0000  copying file ./Data/Resources/unity_builtin_extra ... 
+2025-08-22 16:44:56 +0000  410380 bytes for ./Data/Resources/unity_builtin_extra
+2025-08-22 16:44:56 +0000  copying file ./Data/ScriptingAssemblies.json ... 
+2025-08-22 16:44:56 +0000  3984 bytes for ./Data/ScriptingAssemblies.json
+2025-08-22 16:44:56 +0000  copying file ./Data/sharedassets0.assets.resS ... 
+2025-08-22 16:44:56 +0000  689360 bytes for ./Data/sharedassets0.assets.resS
+2025-08-22 16:44:56 +0000  copying file ./Data/sharedassets0.assets ... 
+2025-08-22 16:44:56 +0000  280524 bytes for ./Data/sharedassets0.assets
+2025-08-22 16:44:56 +0000  copying file ./Data/globalgamemanagers.assets.resS ... 
+2025-08-22 16:44:56 +0000  4171456 bytes for ./Data/globalgamemanagers.assets.resS
+2025-08-22 16:44:56 +0000  copying file ./Data/level0 ... 
+2025-08-22 16:44:56 +0000  6384 bytes for ./Data/level0
+2025-08-22 16:44:56 +0000  copying file ./Data/resources.assets.resS ... 
+2025-08-22 16:44:56 +0000  1214240 bytes for ./Data/resources.assets.resS
+2025-08-22 16:44:56 +0000  copying file ./Data/globalgamemanagers.assets ... 
+2025-08-22 16:44:56 +0000  880076 bytes for ./Data/globalgamemanagers.assets
+2025-08-22 16:44:56 +0000  copying file ./Info.plist ... 
+2025-08-22 16:44:56 +0000  1659 bytes for ./Info.plist
+2025-08-22 16:44:56 +0000  copying file ./PkgInfo ... 
+2025-08-22 16:44:56 +0000  8 bytes for ./PkgInfo
+2025-08-22 16:44:56 +0000  /usr/bin/ditto exited with 0
+2025-08-22 16:44:56 +0000  Processing step: IDEDistributionEmbedProfileStep
+2025-08-22 16:44:56 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fe180a878c0; bundleID='com.unity3d.framework', path='<DVTFilePath:0x7fe1919fd520:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app/Frameworks/UnityFramework.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fe162c22e00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fe1b2ebc9e0; name='Apple Development: Tao Wang (9K4B544GLL)', hash='984459EE16FC23840CDEC76A5F23D1C93D966996', serialNumber='7C6CCC9052DA3016870257193236C7E2', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-08-22 14:23:18 +0000''>', entitlements='(null)', teamID='C677KJH544', identifier='com.unity3d.framework', executablePath='<DVTFilePath:0x7fe172f319c0:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app/Frameworks/UnityFramework.framework/UnityFramework'>', hardenedRuntime='0'>'>
+2025-08-22 16:44:56 +0000  Processing step: IDEDistributionInfoPlistStep
+2025-08-22 16:44:56 +0000  Skipping step: IDEDistributionInfoPlistStep because it said so
+2025-08-22 16:44:56 +0000  Skipping step: IDEDistributionInfoPlistStep because it said so
+2025-08-22 16:44:56 +0000  Processing step: IDEDistributionAppThinningPlistStep
+2025-08-22 16:44:56 +0000  Skipping step: IDEDistributionAppThinningPlistStep because it said so
+2025-08-22 16:44:56 +0000  Processing step: IDEDistributionCompileBitcodeStep
+2025-08-22 16:44:56 +0000  Skipping step: IDEDistributionCompileBitcodeStep because it said so
+2025-08-22 16:44:56 +0000  Processing step: IDEDistributionCodeSlimmingStep
+2025-08-22 16:44:56 +0000  Processing step: IDEDistributionCopyBCSymbolMapsStep
+2025-08-22 16:44:56 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2025-08-22 16:44:56 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2025-08-22 16:44:56 +0000  Processing step: IDEDistributionSymbolsStep
+2025-08-22 16:44:56 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2025-08-22 16:44:56 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2025-08-22 16:44:56 +0000  Processing step: IDEDistributionAppThinningStep
+2025-08-22 16:44:56 +0000  Skipping step: IDEDistributionAppThinningStep because it said so
+2025-08-22 16:44:56 +0000  Processing step: IDEDistributionArchThinningStep
+2025-08-22 16:44:56 +0000  Running /Applications/Development/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/Root/Payload/Tank.app/Frameworks/UnityFramework.framework/UnityFramework' '-verify_arch' 'arm64e'
+2025-08-22 16:44:56 +0000  /Applications/Development/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2025-08-22 16:44:56 +0000  Skipping architecture thinning for item "UnityFramework" because arch "arm64e" wasn't found
+2025-08-22 16:44:56 +0000  Running /Applications/Development/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/Root/Payload/Tank.app/Tank' '-verify_arch' 'arm64e'
+2025-08-22 16:44:56 +0000  /Applications/Development/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2025-08-22 16:44:56 +0000  Skipping architecture thinning for item "Tank" because arch "arm64e" wasn't found
+2025-08-22 16:44:56 +0000  Processing step: IDEDistributionODRStep
+2025-08-22 16:44:56 +0000  Processing step: IDEDistributionStripXattrsStep
+2025-08-22 16:44:56 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fe180a878c0; bundleID='com.unity3d.framework', path='<DVTFilePath:0x7fe1919fd520:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app/Frameworks/UnityFramework.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fe162c22e00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fe162cd25f0; name='Apple Development: Tao Wang (9K4B544GLL)', hash='984459EE16FC23840CDEC76A5F23D1C93D966996', serialNumber='7C6CCC9052DA3016870257193236C7E2', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-08-22 14:23:18 +0000''>', entitlements='(null)', teamID='C677KJH544', identifier='com.unity3d.framework', executablePath='<DVTFilePath:0x7fe172f319c0:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app/Frameworks/UnityFramework.framework/UnityFramework'>', hardenedRuntime='0'>'>
+2025-08-22 16:44:56 +0000  Running /usr/bin/xattr '-crs' '/var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/Root/Payload/Tank.app'
+2025-08-22 16:44:56 +0000  /usr/bin/xattr exited with 0
+2025-08-22 16:44:56 +0000  Processing step: IDEDistributionCodesignStep
+2025-08-22 16:44:56 +0000  Entitlements for <IDEDistributionItem: 0x7fe180a878c0; bundleID='com.unity3d.framework', path='<DVTFilePath:0x7fe1919fd520:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app/Frameworks/UnityFramework.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fe162c22e00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fe162caa130; name='Apple Development: Tao Wang (9K4B544GLL)', hash='984459EE16FC23840CDEC76A5F23D1C93D966996', serialNumber='7C6CCC9052DA3016870257193236C7E2', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-08-22 14:23:18 +0000''>', entitlements='(null)', teamID='C677KJH544', identifier='com.unity3d.framework', executablePath='<DVTFilePath:0x7fe172f319c0:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app/Frameworks/UnityFramework.framework/UnityFramework'>', hardenedRuntime='0'>'>: {
+}
+2025-08-22 16:44:56 +0000  Entitlements for <IDEDistributionItem: 0x7fe180a878c0; bundleID='com.unity3d.framework', path='<DVTFilePath:0x7fe1919fd520:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app/Frameworks/UnityFramework.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fe162c22e00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fe1629281e0; name='Apple Development: Tao Wang (9K4B544GLL)', hash='984459EE16FC23840CDEC76A5F23D1C93D966996', serialNumber='7C6CCC9052DA3016870257193236C7E2', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-08-22 14:23:18 +0000''>', entitlements='(null)', teamID='C677KJH544', identifier='com.unity3d.framework', executablePath='<DVTFilePath:0x7fe172f319c0:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app/Frameworks/UnityFramework.framework/UnityFramework'>', hardenedRuntime='0'>'> are: {
+}
+2025-08-22 16:44:56 +0000  Writing entitlements for <IDEDistributionItem: 0x7fe180a878c0; bundleID='com.unity3d.framework', path='<DVTFilePath:0x7fe1919fd520:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app/Frameworks/UnityFramework.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fe162c22e00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fe162cceb00; name='Apple Development: Tao Wang (9K4B544GLL)', hash='984459EE16FC23840CDEC76A5F23D1C93D966996', serialNumber='7C6CCC9052DA3016870257193236C7E2', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-08-22 14:23:18 +0000''>', entitlements='(null)', teamID='C677KJH544', identifier='com.unity3d.framework', executablePath='<DVTFilePath:0x7fe172f319c0:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app/Frameworks/UnityFramework.framework/UnityFramework'>', hardenedRuntime='0'>'> to: /var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/entitlements~~~gcpAxr
+2025-08-22 16:44:56 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '984459EE16FC23840CDEC76A5F23D1C93D966996' '--entitlements' '/var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/entitlements~~~gcpAxr' '--generate-entitlement-der' '--preserve-metadata=identifier,flags,runtime' '/var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/Root/Payload/Tank.app/Frameworks/UnityFramework.framework'
+2025-08-22 16:44:56 +0000  /var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/Root/Payload/Tank.app/Frameworks/UnityFramework.framework: replacing existing signature
+2025-08-22 16:44:56 +0000  /var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/Root/Payload/Tank.app/Frameworks/UnityFramework.framework: signed bundle with Mach-O thin (arm64) [com.unity3d.framework]
+2025-08-22 16:44:56 +0000  /usr/bin/codesign exited with 0
+2025-08-22 16:44:56 +0000  Entitlements for <IDEDistributionItem: 0x7fe17054ba00; bundleID='com.taowang.tank-the-future', path='<DVTFilePath:0x7fe19169e4c0:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fe1d7a35790; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fe162cf3200; name='Apple Development: Tao Wang (9K4B544GLL)', hash='984459EE16FC23840CDEC76A5F23D1C93D966996', serialNumber='7C6CCC9052DA3016870257193236C7E2', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-08-22 14:23:18 +0000''>', entitlements='{
+    "application-identifier" = "C677KJH544.com.taowang.tank-the-future";
+    "com.apple.developer.team-identifier" = C677KJH544;
+    "get-task-allow" = 1;
+}', teamID='C677KJH544', identifier='com.taowang.tank-the-future', executablePath='<DVTFilePath:0x7fe1826ca140:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app/Tank'>', hardenedRuntime='0'>'>: {
+    "application-identifier" = "C677KJH544.com.taowang.tank-the-future";
+    "com.apple.developer.team-identifier" = C677KJH544;
+    "get-task-allow" = 1;
+}
+2025-08-22 16:44:56 +0000  Entitlements for <IDEDistributionItem: 0x7fe17054ba00; bundleID='com.taowang.tank-the-future', path='<DVTFilePath:0x7fe19169e4c0:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fe1d7a35790; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fe162be24e0; name='Apple Development: Tao Wang (9K4B544GLL)', hash='984459EE16FC23840CDEC76A5F23D1C93D966996', serialNumber='7C6CCC9052DA3016870257193236C7E2', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-08-22 14:23:18 +0000''>', entitlements='{
+    "application-identifier" = "C677KJH544.com.taowang.tank-the-future";
+    "com.apple.developer.team-identifier" = C677KJH544;
+    "get-task-allow" = 1;
+}', teamID='C677KJH544', identifier='com.taowang.tank-the-future', executablePath='<DVTFilePath:0x7fe1826ca140:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app/Tank'>', hardenedRuntime='0'>'> are: {
+    "application-identifier" = "C677KJH544.com.taowang.tank-the-future";
+    "com.apple.developer.team-identifier" = C677KJH544;
+    "get-task-allow" = 1;
+}
+2025-08-22 16:44:56 +0000  Writing entitlements for <IDEDistributionItem: 0x7fe17054ba00; bundleID='com.taowang.tank-the-future', path='<DVTFilePath:0x7fe19169e4c0:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fe1d7a35790; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fe162de6c10; name='Apple Development: Tao Wang (9K4B544GLL)', hash='984459EE16FC23840CDEC76A5F23D1C93D966996', serialNumber='7C6CCC9052DA3016870257193236C7E2', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-08-22 14:23:18 +0000''>', entitlements='{
+    "application-identifier" = "C677KJH544.com.taowang.tank-the-future";
+    "com.apple.developer.team-identifier" = C677KJH544;
+    "get-task-allow" = 1;
+}', teamID='C677KJH544', identifier='com.taowang.tank-the-future', executablePath='<DVTFilePath:0x7fe1826ca140:'/Users/wangtao/Library/Developer/Xcode/Archives/2025-08-22/Unity-iPhone 22.08.25, 17.43.xcarchive/Products/Applications/Tank.app/Tank'>', hardenedRuntime='0'>'> to: /var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/entitlements~~~dWbuxV
+2025-08-22 16:44:56 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '984459EE16FC23840CDEC76A5F23D1C93D966996' '--entitlements' '/var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/entitlements~~~dWbuxV' '--generate-entitlement-der' '--preserve-metadata=identifier,flags,runtime' '/var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/Root/Payload/Tank.app'
+2025-08-22 16:44:56 +0000  /var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/Root/Payload/Tank.app: replacing existing signature
+2025-08-22 16:44:57 +0000  /var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/Root/Payload/Tank.app: signed app bundle with Mach-O thin (arm64) [com.taowang.tank-the-future]
+2025-08-22 16:44:57 +0000  /usr/bin/codesign exited with 0
+2025-08-22 16:44:57 +0000  Processing step: IDEDistributionZipODRItemStep
+2025-08-22 16:44:57 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2025-08-22 16:44:57 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2025-08-22 16:44:57 +0000  Processing step: IDEDistributionCreateIPAStep
+2025-08-22 16:44:57 +0000  Running /usr/bin/ditto '-V' '-c' '-k' '--norsrc' '/var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/Root' '/var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/Packages/Tank.ipa'
+2025-08-22 16:44:57 +0000  >>> Copying /var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/Root 
+2025-08-22 16:44:57 +0000  copying file ./Payload/Tank.app/_CodeSignature/CodeResources ... 
+2025-08-22 16:44:57 +0000  11189 bytes for ./Payload/Tank.app/_CodeSignature/CodeResources
+copying file ./Payload/Tank.app/Tank ... 
+2025-08-22 16:44:57 +0000  86048 bytes for ./Payload/Tank.app/Tank
+copying file ./Payload/Tank.app/LaunchScreen-iPhonePortrait.png ... 
+2025-08-22 16:44:57 +0000  138 bytes for ./Payload/Tank.app/LaunchScreen-iPhonePortrait.png
+copying file ./Payload/Tank.app/LaunchScreen-iPhoneLandscape.png ... 
+138 bytes for ./Payload/Tank.app/LaunchScreen-iPhoneLandscape.png
+copying file ./Payload/Tank.app/AppIcon60x60@2x.png ... 
+2025-08-22 16:44:57 +0000  26997 bytes for ./Payload/Tank.app/AppIcon60x60@2x.png
+copying file ./Payload/Tank.app/LaunchScreen-iPad.png ... 
+2025-08-22 16:44:57 +0000  138 bytes for ./Payload/Tank.app/LaunchScreen-iPad.png
+copying file ./Payload/Tank.app/LaunchScreen-iPad.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib ... 
+2025-08-22 16:44:57 +0000  934 bytes for ./Payload/Tank.app/LaunchScreen-iPad.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib
+copying file ./Payload/Tank.app/LaunchScreen-iPad.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib ... 
+2025-08-22 16:44:57 +0000  2415 bytes for ./Payload/Tank.app/LaunchScreen-iPad.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib
+copying file ./Payload/Tank.app/LaunchScreen-iPad.storyboardc/Info.plist ... 
+333 bytes for ./Payload/Tank.app/LaunchScreen-iPad.storyboardc/Info.plist
+2025-08-22 16:44:57 +0000  copying file ./Payload/Tank.app/Assets.car ... 
+2025-08-22 16:44:57 +0000  1400552 bytes for ./Payload/Tank.app/Assets.car
+copying file ./Payload/Tank.app/AppIcon76x76@2x~ipad.png ... 
+2025-08-22 16:44:57 +0000  41329 bytes for ./Payload/Tank.app/AppIcon76x76@2x~ipad.png
+2025-08-22 16:44:57 +0000  copying file ./Payload/Tank.app/LaunchScreen-iPhone.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib ... 
+2025-08-22 16:44:57 +0000  934 bytes for ./Payload/Tank.app/LaunchScreen-iPhone.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib
+copying file ./Payload/Tank.app/LaunchScreen-iPhone.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib ... 
+2025-08-22 16:44:57 +0000  2425 bytes for ./Payload/Tank.app/LaunchScreen-iPhone.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib
+2025-08-22 16:44:57 +0000  copying file ./Payload/Tank.app/LaunchScreen-iPhone.storyboardc/Info.plist ... 
+333 bytes for ./Payload/Tank.app/LaunchScreen-iPhone.storyboardc/Info.plist
+2025-08-22 16:44:57 +0000  copying file ./Payload/Tank.app/Frameworks/UnityFramework.framework/_CodeSignature/CodeResources ... 
+2025-08-22 16:44:57 +0000  2034 bytes for ./Payload/Tank.app/Frameworks/UnityFramework.framework/_CodeSignature/CodeResources
+copying file ./Payload/Tank.app/Frameworks/UnityFramework.framework/PrivacyInfo.xcprivacy ... 
+2025-08-22 16:44:57 +0000  1209 bytes for ./Payload/Tank.app/Frameworks/UnityFramework.framework/PrivacyInfo.xcprivacy
+copying file ./Payload/Tank.app/Frameworks/UnityFramework.framework/Info.plist ... 
+807 bytes for ./Payload/Tank.app/Frameworks/UnityFramework.framework/Info.plist
+2025-08-22 16:44:57 +0000  copying file ./Payload/Tank.app/Frameworks/UnityFramework.framework/UnityFramework ... 
+2025-08-22 16:45:01 +0000  111264576 bytes for ./Payload/Tank.app/Frameworks/UnityFramework.framework/UnityFramework
+2025-08-22 16:45:01 +0000  copying file ./Payload/Tank.app/embedded.mobileprovision ... 
+12183 bytes for ./Payload/Tank.app/embedded.mobileprovision
+copying file ./Payload/Tank.app/Data/Managed/Resources/mscorlib.dll-resources.dat ... 
+2025-08-22 16:45:01 +0000  337563 bytes for ./Payload/Tank.app/Data/Managed/Resources/mscorlib.dll-resources.dat
+2025-08-22 16:45:01 +0000  copying file ./Payload/Tank.app/Data/Managed/Resources/NLog.dll-resources.dat ... 
+2025-08-22 16:45:01 +0000  68301 bytes for ./Payload/Tank.app/Data/Managed/Resources/NLog.dll-resources.dat
+copying file ./Payload/Tank.app/Data/Managed/Resources/System.Data.dll-resources.dat ... 
+2025-08-22 16:45:01 +0000  93718 bytes for ./Payload/Tank.app/Data/Managed/Resources/System.Data.dll-resources.dat
+2025-08-22 16:45:01 +0000  copying file ./Payload/Tank.app/Data/Managed/mono/4.0/machine.config ... 
+2025-08-22 16:45:01 +0000  33598 bytes for ./Payload/Tank.app/Data/Managed/mono/4.0/machine.config
+2025-08-22 16:45:01 +0000  copying file ./Payload/Tank.app/Data/Managed/Metadata/global-metadata.dat ... 
+2025-08-22 16:45:02 +0000  20160088 bytes for ./Payload/Tank.app/Data/Managed/Metadata/global-metadata.dat
+2025-08-22 16:45:02 +0000  copying file ./Payload/Tank.app/Data/globalgamemanagers ... 
+2025-08-22 16:45:02 +0000  169924 bytes for ./Payload/Tank.app/Data/globalgamemanagers
+copying file ./Payload/Tank.app/Data/boot.config ... 
+2025-08-22 16:45:02 +0000  275 bytes for ./Payload/Tank.app/Data/boot.config
+copying file ./Payload/Tank.app/Data/RuntimeInitializeOnLoads.json ... 
+1986 bytes for ./Payload/Tank.app/Data/RuntimeInitializeOnLoads.json
+copying file ./Payload/Tank.app/Data/resources.assets ... 
+2025-08-22 16:45:02 +0000  688168 bytes for ./Payload/Tank.app/Data/resources.assets
+2025-08-22 16:45:02 +0000  copying file ./Payload/Tank.app/Data/Resources/unity default resources ... 
+2025-08-22 16:45:02 +0000  1696580 bytes for ./Payload/Tank.app/Data/Resources/unity default resources
+copying file ./Payload/Tank.app/Data/Resources/unity_builtin_extra ... 
+2025-08-22 16:45:02 +0000  410380 bytes for ./Payload/Tank.app/Data/Resources/unity_builtin_extra
+copying file ./Payload/Tank.app/Data/ScriptingAssemblies.json ... 
+2025-08-22 16:45:02 +0000  3984 bytes for ./Payload/Tank.app/Data/ScriptingAssemblies.json
+copying file ./Payload/Tank.app/Data/sharedassets0.assets.resS ... 
+2025-08-22 16:45:02 +0000  689360 bytes for ./Payload/Tank.app/Data/sharedassets0.assets.resS
+copying file ./Payload/Tank.app/Data/sharedassets0.assets ... 
+2025-08-22 16:45:02 +0000  280524 bytes for ./Payload/Tank.app/Data/sharedassets0.assets
+copying file ./Payload/Tank.app/Data/globalgamemanagers.assets.resS ... 
+2025-08-22 16:45:02 +0000  4171456 bytes for ./Payload/Tank.app/Data/globalgamemanagers.assets.resS
+copying file ./Payload/Tank.app/Data/level0 ... 
+2025-08-22 16:45:03 +0000  6384 bytes for ./Payload/Tank.app/Data/level0
+copying file ./Payload/Tank.app/Data/resources.assets.resS ... 
+2025-08-22 16:45:03 +0000  1214240 bytes for ./Payload/Tank.app/Data/resources.assets.resS
+copying file ./Payload/Tank.app/Data/globalgamemanagers.assets ... 
+2025-08-22 16:45:03 +0000  880076 bytes for ./Payload/Tank.app/Data/globalgamemanagers.assets
+copying file ./Payload/Tank.app/Info.plist ... 
+2025-08-22 16:45:03 +0000  1659 bytes for ./Payload/Tank.app/Info.plist
+copying file ./Payload/Tank.app/PkgInfo ... 
+8 bytes for ./Payload/Tank.app/PkgInfo
+2025-08-22 16:45:03 +0000  /usr/bin/ditto exited with 0
+2025-08-22 16:45:03 +0000  Processing step: IDEDistributionAppStoreInformationStep
+2025-08-22 16:45:03 +0000  Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2025-08-22 16:45:03 +0000  Processing step: IDEDistributionGenerateProcessedDistributionItems
+2025-08-22 16:45:03 +0000  IDEDistributionItem init <DVTFilePath:0x7fe16f666380:'/var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/Root/Payload/Tank.app/Frameworks/UnityFramework.framework'>
+2025-08-22 16:45:03 +0000  IDEDistributionItem init <DVTFilePath:0x7fe16f6505f0:'/var/folders/t7/rrpkp6mj085bypkhqq1xfvs40000gn/T/XcodeDistPipeline.~~~Ev3BK6/Root/Payload/Tank.app'>
+2025-08-22 16:45:03 +0000  Processing step: IDEDistributionCreateManifestStep
