@@ -171,6 +171,7 @@
     <Compile Include="Assets/Scripts/Core/World/Module/Actor/IMHandler.cs" />
     <Compile Include="Assets/Scripts/Core/World/Module/Log/ILog.cs" />
     <Compile Include="Assets/Scripts/Core/MultiMap.cs" />
+    <Compile Include="Assets/Scripts/Core/File/AtlasManager.cs" />
     <Compile Include="Assets/Scripts/Core/ListComponent.cs" />
     <Compile Include="Assets/Scripts/Core/UnOrderMultiMap.cs" />
     <Compile Include="Assets/Scripts/Core/Network/IPEndPointNonAlloc.cs" />
