@@ -13,10 +13,11 @@ namespace ET.Client
             ReferenceCollector rc = self.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
 
             self.Config = rc.Get<GameObject>("Config").GetComponent<GameModeConfig>();
-            self.DigitDisplay = rc.Get<GameObject>("DigitDisplay");
             self.MapIndex = rc.Get<GameObject>("MapIndex");
             self.MapIndex.SetActive(true);
-            self.MapIndex.GetComponent<Button>().onClick.AddListener(() => { self.StartSingleMode(1).Coroutine(); });
+            self.MapIndex.GetComponent<Button>().onClick.AddListener(() => { self.StartSingleMode(1).Coroutine(); });          
+            var digitDisplay = self.MapIndex.GetComponentInChildren<DigitDisplay>();
+            digitDisplay.DisplayNumber(1);
 
             self.DisplayMapIndex();
             self.LoadGameInfo();
