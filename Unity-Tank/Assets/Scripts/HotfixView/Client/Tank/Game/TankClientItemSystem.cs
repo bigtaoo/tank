@@ -75,7 +75,7 @@ namespace ET
                 gameObject.transform.position = new Vector3(
                     item.Position.X - TankConsts.TileOffset,
                     item.Position.Y - TankConsts.TileOffset,
-                    gameObject.transform.position.z);
+                    -2.0f);
 
                 Log.Info($"Create item id: {item.ItemId}, type: {item.ItemType}, position: {gameObject.transform.position.ToString()}, active: {gameObject.activeInHierarchy}");
             }
@@ -103,7 +103,7 @@ namespace ET
             var spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
             var spriteName = itemType switch
             {
-                TankItemType.BaseWallUpgrade => "baseupgrade",
+                TankItemType.BaseWallUpgrade => "baseupgrad",
                 TankItemType.Bomb => "bomb",
                 TankItemType.Gold => "gold",
                 TankItemType.PlayerLife => "life",
