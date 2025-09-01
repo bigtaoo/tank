@@ -21,7 +21,7 @@ namespace ET
                     var buff = tankBuff[i];
                     if (buff.RemoveTime <  currentTime)
                     {
-                        //Log.Warning($"Remove buff: {buff.Type}");
+                        Log.Info($"Remove buff: {buff.Type}");
                         tankBuff.RemoveAt(i);
                     }
                 }

@@ -33,7 +33,7 @@ namespace ET
         public static void SpawnItem(this TankItemComponent self, TankPosition position)
         {
             var spawnItemRate = RandomGenerator.RandUInt32() % 100;
-            Log.Warning($"Item spawn rate: {spawnItemRate}");
+            Log.Info($"Item spawn rate: {spawnItemRate}");
             if (spawnItemRate > TankConsts.SpawnItemRate)
             {
                 return;
@@ -50,7 +50,7 @@ namespace ET
             };
             self.Items[item.ItemId] = item;
             self.ItemsToAdd.Add(item);
-            Log.Warning($"Spawn item: {item.ToJson()}");
+            Log.Info($"Spawn item: {item.ToJson()}");
         }
 
         private static void PickUpItem(this TankItemComponent self)

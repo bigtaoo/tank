@@ -19,7 +19,7 @@ namespace ET.Client
             self.TileWidth = tileWidth;
             self.TileHeight = tileHeight;
 
-            Log.Warning($"width: {tileWidth}, height: {tileHeight}, tiles: {tiles.ToJson()},");
+            Log.Info($"width: {tileWidth}, height: {tileHeight}, tiles: {tiles.ToJson()},");
         }
 
         public static bool IsInMap(this TankMapTilesComponent self, TankPosition position, float collision)

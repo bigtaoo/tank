@@ -28,7 +28,7 @@ namespace ET.Client
             self.SpawnPosition = spawnPosition;
             self.Position = spawnPosition;
             self.Rotation = 0;
-            Log.Warning($"Initia tank position: x: {self.Position.X}, y: {self.Position.Y}");
+            Log.Info($"Initia tank position: x: {self.Position.X}, y: {self.Position.Y}");
         }
 
         public static void SetMoveDirection(this TankPlayerComponent self, TankDirection moveDirection)
