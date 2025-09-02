@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3c6106255df2248bc04f2b7340d438, type: 3}
   m_Name: TankTile_Fog
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 4acf6c47cff7b514e92cb012bd30ead6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: daf0199821bd94b40974922359ad4ac1, type: 3}
   m_Color: {r: 0.85178584, g: 0.89465624, b: 0.9308176, a: 1}
   m_Transform:
     e00: 1
