@@ -16,6 +16,7 @@ namespace ET
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             var robotComponent = self.Root().GetComponent<TankRobotComponent>();
             var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
+            var buffComponent = self.Root().GetComponent<TankBuffComponent>();
 
             foreach (var bulletId in bulletComponent.Bullets.Keys)
             {
@@ -24,9 +25,14 @@ namespace ET
                 {
                     if (TankDamageHelper.BulletHitTank(bullet.Position, playerComponent.Position))
                     {
-                        //Log.Warning("Player was hit");
-                        playerComponent.TankLevel -= 1;
+                        //Log.Warning("Player was hit");                        
                         bulletComponent.HitTank(bulletId);
+
+                        var invincibleBuff = buffComponent.GetBuff(TankConsts.PlayerIndex, TankBuffType.Invincible);
+                        if (invincibleBuff == null)
+                        {
+                            playerComponent.TankLevel -= 1;
+                        }
                         return;
                     }
                 }
@@ -36,8 +42,14 @@ namespace ET
                     {
                         if (TankDamageHelper.BulletHitTank(bullet.Position, robot.Position))
                         {
-                            robot.HealthPoint -= 1;
                             bulletComponent.HitTank(bulletId);
+
+                            var invincibleBuff = buffComponent.GetBuff(robot.RobotId, TankBuffType.Invincible);
+                            if (invincibleBuff == null)
+                            {
+                                robot.HealthPoint -= 1;
+                            }
+
                             return;
                         }
                     }

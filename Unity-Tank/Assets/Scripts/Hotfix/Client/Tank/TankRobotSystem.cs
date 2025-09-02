@@ -188,6 +188,9 @@ namespace ET
                 return;
             }
             var currentTime = TimeInfo.Instance.ClientFrameTime();
+
+            var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+
             foreach (var spawnInfo in self.SpawnInfos)
             {
                 if (spawnInfo.SpawnTime == 0 || spawnInfo.SpawnTime + spawnInfo.SpawnInterval < currentTime)
@@ -213,6 +216,8 @@ namespace ET
                     self.RobotsToAdd.Add(robot);
                     self.FindNextTargetPosition(robot);
                     self.RemainingSpawnRobots[robot.Level - 1]--;
+
+                    buffComponent.AddBuff(robot.RobotId, TankBuffType.Invincible, 5000);
                 }
             }
         }
