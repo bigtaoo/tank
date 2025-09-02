@@ -75,7 +75,7 @@ namespace ET.Client
                 Left = topleft.x + TankConsts.TileOffset,
                 Right = buttomright.x + TankConsts.TileOffset,
             };
-            Log.Warning($"map bound: {tankMapTileComponent.MapBound.ToJson()}");
+            Log.Info($"map bound: {tankMapTileComponent.MapBound.ToJson()}");
         }
     }
 }

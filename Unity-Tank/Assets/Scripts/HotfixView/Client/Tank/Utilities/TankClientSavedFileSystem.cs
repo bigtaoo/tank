@@ -30,7 +30,7 @@ namespace ET
             self.UserInfo.Gold = gold;
 
             var json = JsonUtility.ToJson(self.UserInfo);
-            Log.Warning($"COMEING JSON: {json}");
+            Log.Info($"Save game info: {json}");
 
             LightObfuscation.SaveJson(self.FileName, json);
         }
