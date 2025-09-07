@@ -78,6 +78,12 @@ namespace ET.Client
 
         private static void MoveTank(this TankUIGameMainComponent self, TankDirection direction)
         {
+            var gameResultComponent = self.Root().GetComponent<TankGameResultComponent>();
+            if (gameResultComponent.IsGameEnd)
+            {
+                return;
+            }
+            
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             playerComponent.SetMoveDirection(direction);
             playerComponent.CurrentDirection = direction;
@@ -97,6 +103,12 @@ namespace ET.Client
 
         private static void TankShoot(this  TankUIGameMainComponent self)
         {
+            var gameResultComponent = self.Root().GetComponent<TankGameResultComponent>();
+            if (gameResultComponent.IsGameEnd)
+            {
+                return;
+            }
+            
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             playerComponent.Shoot();
         }
