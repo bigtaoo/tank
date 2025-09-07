@@ -733,6 +733,10 @@
       <HintPath>Assets/Plugins/MongoDB/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json/Runtime/Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="DnsClient">
       <HintPath>Assets/Plugins/MongoDB/DnsClient.dll</HintPath>
       <Private>False</Private>
@@ -751,10 +755,6 @@
     </Reference>
     <Reference Include="MongoDB.Driver">
       <HintPath>Assets/Plugins/MongoDB/MongoDB.Driver.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json/Runtime/Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">

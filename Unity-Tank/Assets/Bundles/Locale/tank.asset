@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: tank
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: 7b3c44bf3f08943d0a7cf67078ef29d3, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: f56b94f91340b4656bb2b4cab601960f, type: 2}
+  - {fileID: 11400000, guid: f3be3dd21c7c447d1b8f7bbce5ba8b0c, type: 2}
+  - {fileID: 11400000, guid: 5f14428f508c14faeb499db30562d600, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []
