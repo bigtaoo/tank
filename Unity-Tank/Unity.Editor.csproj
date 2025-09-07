@@ -67,14 +67,9 @@
     <Analyzer Include="/Users/wangtao/Desktop/Tank/Unity-Tank/Library/PackageCache/com.cysharp.memorypack/Runtime/MemoryPack.Generator/MemoryPack.Generator.Roslyn3.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/ITypeDrawer.cs" />
     <Compile Include="Assets/Scripts/Editor/Plugins/HybridCLR/HybridCLREditor.cs" />
-    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/ComponentViewEditor.cs" />
     <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/BoolTypeDrawer.cs" />
     <Compile Include="Assets/Scripts/Editor/Helper/DockDefine.cs" />
-    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/LongTypeDrawer.cs" />
-    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawerAttribute.cs" />
-    <Compile Include="Assets/Scripts/Editor/Helper/EditorResHelper.cs" />
     <Compile Include="Assets/Scripts/Editor/Helper/ShellHelper.cs" />
     <Compile Include="Assets/Scripts/Editor/BuildEditor/BuildEditor.cs" />
     <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/ISceneTypeDrawer.cs" />
@@ -82,13 +77,9 @@
     <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/Vector3TypeDrawer.cs" />
     <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/IntTypeDrawer.cs" />
     <Compile Include="Assets/Scripts/Editor/Assembly/AssemblyEditor.cs" />
-    <Compile Include="Assets/Scripts/Editor/GlobalConfigEditor/GlobalConfigEditor.cs" />
     <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/FloatTypeDrawer.cs" />
-    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/RectTypeDrawer.cs" />
     <Compile Include="Assets/Scripts/Editor/RecastNavDataExporter/NavMeshExporter.cs" />
     <Compile Include="Assets/Scripts/Editor/Plugins/Example/ExampleEditor.cs" />
-    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/DoubleTypeDrawer.cs" />
-    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/Float4TypeDrawer.cs" />
     <Compile Include="Assets/Scripts/Editor/Helper/EditorLogHelper.cs" />
     <Compile Include="Assets/Scripts/Editor/ServerCommandLineEditor/ServerCommandLineEditor.cs" />
     <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/QuaternionTypeDrawer.cs" />
@@ -96,22 +87,31 @@
     <Compile Include="Assets/Scripts/Editor/Assembly/AssemblyTool.cs" />
     <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/Float2TypeDrawer.cs" />
     <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/DateTimeTypeDrawer.cs" />
-    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/Vector4TypeDrawer.cs" />
     <Compile Include="Assets/Scripts/Editor/LogRedirection/LogRedirection.cs" />
+    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/AnimationCurveTypeDrawer.cs" />
+    <Compile Include="Assets/Scripts/Editor/Plugins/Example/Editor.cs" />
+    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/DictionaryIntLongTypeDrawer.cs" />
+    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/UnityObjectTypeDrawer.cs" />
+    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/ITypeDrawer.cs" />
+    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/ComponentViewEditor.cs" />
+    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/LongTypeDrawer.cs" />
+    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawerAttribute.cs" />
+    <Compile Include="Assets/Scripts/Editor/Helper/EditorResHelper.cs" />
+    <Compile Include="Assets/Scripts/Editor/GlobalConfigEditor/GlobalConfigEditor.cs" />
+    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/RectTypeDrawer.cs" />
+    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/DoubleTypeDrawer.cs" />
+    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/Float4TypeDrawer.cs" />
+    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/Vector4TypeDrawer.cs" />
     <Compile Include="Assets/Scripts/Editor/ReferenceCollectorEditor/ReferenceCollectorEditor.cs" />
     <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/ColorTypeDrawer.cs" />
     <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/EnumTypeDrawer.cs" />
     <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/BoundsTypeDrawer.cs" />
-    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/AnimationCurveTypeDrawer.cs" />
     <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/EntityRefTypeDrawer.cs" />
     <Compile Include="Assets/Scripts/Editor/ToolEditor/ToolsEditor.cs" />
     <Compile Include="Assets/Scripts/Editor/AssetPostProcessor/OnGenerateCSProjectProcessor.cs" />
-    <Compile Include="Assets/Scripts/Editor/Plugins/Example/Editor.cs" />
     <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/StringTypeDrawer.cs" />
-    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/DictionaryIntLongTypeDrawer.cs" />
     <Compile Include="Assets/Scripts/Editor/BuildEditor/BuildHelper.cs" />
     <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/Float3TypeDrawer.cs" />
-    <Compile Include="Assets/Scripts/Editor/ComponentViewEditor/TypeDrawer/UnityObjectTypeDrawer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Scripts/Editor/Unity.Editor.asmdef" />
@@ -675,6 +675,10 @@
     </Reference>
     <Reference Include="MongoDB.Driver">
       <HintPath>Assets/Plugins/MongoDB/MongoDB.Driver.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json/Runtime/Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">

@@ -67,28 +67,28 @@
     <Analyzer Include="/Users/wangtao/Desktop/Tank/Unity-Tank/Library/PackageCache/com.cysharp.memorypack/Runtime/MemoryPack.Generator/MemoryPack.Generator.Roslyn3.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Scripts/Loader/Helper/PathHelper.cs" />
-    <Compile Include="Assets/Scripts/Loader/RecastFileReader.cs" />
-    <Compile Include="Assets/Scripts/Loader/Resource/StreamingAssetsHelper/BuildinFileManifest.cs" />
-    <Compile Include="Assets/Scripts/Loader/MonoBehaviour/GizmosDebug.cs" />
-    <Compile Include="Assets/Scripts/Loader/MonoBehaviour/GlobalConfig.cs" />
     <Compile Include="Assets/Scripts/Loader/Plugins/Example/MonoScript.cs" />
     <Compile Include="Assets/Scripts/Loader/AssemblyReference.cs" />
     <Compile Include="Assets/Scripts/Loader/Resource/ResourcesComponent.cs" />
     <Compile Include="Assets/Scripts/Loader/Resource/StreamingAssetsHelper/StreamingAssetsHelper.cs" />
     <Compile Include="Assets/Scripts/Loader/UnityLogger.cs" />
     <Compile Include="Assets/Scripts/Loader/MonoBehaviour/CanvasConfig.cs" />
-    <Compile Include="Assets/Scripts/Loader/CodeLoader.cs" />
     <Compile Include="Assets/Scripts/Loader/GlobalComponent.cs" />
+    <Compile Include="Assets/Scripts/Loader/Helper/AcceptAllCertificate.cs" />
+    <Compile Include="Assets/Scripts/Loader/Helper/CoroutineHelper.cs" />
+    <Compile Include="Assets/Scripts/Loader/Helper/PathHelper.cs" />
+    <Compile Include="Assets/Scripts/Loader/RecastFileReader.cs" />
+    <Compile Include="Assets/Scripts/Loader/Resource/StreamingAssetsHelper/BuildinFileManifest.cs" />
+    <Compile Include="Assets/Scripts/Loader/MonoBehaviour/GizmosDebug.cs" />
+    <Compile Include="Assets/Scripts/Loader/MonoBehaviour/GlobalConfig.cs" />
+    <Compile Include="Assets/Scripts/Loader/CodeLoader.cs" />
     <Compile Include="Assets/Scripts/Loader/MonoBehaviour/ReferenceCollector.cs" />
     <Compile Include="Assets/Scripts/Loader/Define.cs" />
     <Compile Include="Assets/Scripts/Loader/Resource/StreamingAssetsHelper/StreamingAssetsDefine.cs" />
     <Compile Include="Assets/Scripts/Loader/Plugins/HybridCLR/Generated/AOTGenericReferences.cs" />
-    <Compile Include="Assets/Scripts/Loader/Helper/AcceptAllCertificate.cs" />
     <Compile Include="Assets/Scripts/Loader/ConfigLoaderInvoker.cs" />
     <Compile Include="Assets/Scripts/Loader/MonoBehaviour/UILayerScript.cs" />
     <Compile Include="Assets/Scripts/Loader/MonoBehaviour/Init.cs" />
-    <Compile Include="Assets/Scripts/Loader/Helper/CoroutineHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Scripts/Loader/Plugins/HybridCLR/Generated/link.xml" />
@@ -621,6 +621,10 @@
     </Reference>
     <Reference Include="MongoDB.Driver">
       <HintPath>Assets/Plugins/MongoDB/MongoDB.Driver.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json/Runtime/Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">

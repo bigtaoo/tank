@@ -68,27 +68,52 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/Hotfix/Share/Module/Move/MoveComponentSystem.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankBaseSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Move/M2C_PathfindingResultHandler.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Share/Module/AI/AIComponentSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Share/Plugins/Example/HotfixShare.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/Room2C_EnterMapHandler.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Console/ReloadDllConsoleHandler.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Recast/PathfindingComponentSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/A2NetClient_MessageHandler.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Message/SessionAcceptTimeoutComponentSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/Router/RouterConnectorSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Tank/Helper/TankDamageHelper.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/LSClientUpdaterSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Share/LockStep/LSInputComponentSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Plugins/Example/HotfixClient.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Actor/MessageHandler.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/Router/RouterCheckComponentSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/OneFrameInputsHandler.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Unit/UnitSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Share/LockStep/RoomSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankPlayerSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Actor/MailBoxType_UnOrderedMessageHandler.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Move/M2C_StopHandler.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Login/EnterMapHelper.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Unit/M2C_RemoveUnitsHandler.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Unit/UnitComponentSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Numeric/NumericWatcher_Hp_ShowUI.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankItemSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/LSReplayUpdaterSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/FiberInit_NetClient.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Unit/M2C_CreateMyUnitHandler.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Share/FiberInit_Main.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Move/MoveHelper.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Message/SessionIdleCheckerComponentSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/AI/XunLuoPathComponentSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankBaseSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Module/Message/ClientSessionErrorComponentSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Unit/UnitHelper.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Share/Module/AI/AIComponentSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Scene/M2C_StartSceneChangeHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/LockStep/LSUnitFactory.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/Main2NetClient_LoginHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/Ping/PingComponentSystem.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Share/Plugins/Example/HotfixShare.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/ClientSenderComponentSystem.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/Room2C_EnterMapHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Unit/M2C_CreateUnitsHandler.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Recast/PathfindingComponentSystem.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Console/ReloadDllConsoleHandler.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/A2NetClient_MessageHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/Room2C_AdjustUpdateTimeHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/Room2C_CheckHashFailHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/Module/Actor/MailBoxType_OrderedMessageHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/AI/AI_Attack.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Message/SessionAcceptTimeoutComponentSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Module/Message/NetComponentOnReadInvoker_NetClient.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/Module/Console/ConsoleComponentSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/Router/RouterHelper.cs" />
@@ -99,51 +124,26 @@
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/AI/AI_XunLuo.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/Module/Console/ReloadConfigConsoleHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/G2C_ChangeSceneHandler.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/Router/RouterConnectorSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/NetClient2Main_SessionDisposeHandler.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Tank/Helper/TankDamageHelper.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/LSClientUpdaterSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/LSClientHelper.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/A2NetClient_RequestHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/LoginHelper.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Share/LockStep/LSInputComponentSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/LSSceneChangeHelper.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Plugins/Example/HotfixClient.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Actor/MessageHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankDamageSystem.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/Router/RouterCheckComponentSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankRobotSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Scene/SceneChangeHelper.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/Router/HttpClientHelper.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/OneFrameInputsHandler.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Unit/UnitSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/ConstValue.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Share/LockStep/RoomSystem.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankPlayerSystem.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Actor/MailBoxType_UnOrderedMessageHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/Router/RouterAddressComponentSystem.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Move/M2C_StopHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Unit/UnitFactory.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Login/EnterMapHelper.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/G2C_ReconnectHandler.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Unit/M2C_RemoveUnitsHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankBulletSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankMapTilesSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Tank/Helper/TankSceneChangeHelper.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Scene/CurrentSceneFactory.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Unit/UnitComponentSystem.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Numeric/NumericWatcher_Hp_ShowUI.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankItemSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/Module/Scene/CurrentScenesComponentSystem.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/LSReplayUpdaterSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/Module/Numeric/NumericChangeEvent_NotifyWatcher.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/Module/Message/NetComponentSystem.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/FiberInit_NetClient.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Unit/M2C_CreateMyUnitHandler.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Share/FiberInit_Main.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Move/MoveHelper.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Share/Module/Message/SessionIdleCheckerComponentSystem.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Demo/AI/XunLuoPathComponentSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Scripts/Hotfix/Unity.Hotfix.asmdef" />
@@ -215,6 +215,10 @@
     </Reference>
     <Reference Include="MongoDB.Driver">
       <HintPath>Assets/Plugins/MongoDB/MongoDB.Driver.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json/Runtime/Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">

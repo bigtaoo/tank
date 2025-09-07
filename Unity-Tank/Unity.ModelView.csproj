@@ -67,47 +67,47 @@
     <Analyzer Include="/Users/wangtao/Desktop/Tank/Unity-Tank/Library/PackageCache/com.cysharp.memorypack/Runtime/MemoryPack.Generator/MemoryPack.Generator.Roslyn3.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Scripts/ModelView/Client/Demo/UI/UIType.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Demo/UI/UILobby/UILobbyComponent.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/UIGlobalComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Empty.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/UIComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankClientRobotComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/LockStep/UI/UILSLobby/UILSLobbyComponent.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/Demo/UI/UILoading/UILoadingComponent.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/Module/Resource/ResourcesLoaderComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/UI.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Demo/UI/UILogin/UILoginComponent.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/Tank/UIType.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/Demo/Unit/GameObjectComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/UIEventComponent.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankUIGameMainComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Plugins/Example/ModelView.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/LockStep/UI/UILSRoom/UILSRoomComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankUIGameResultComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankClientBulletComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/LockStep/Camera/LSCameraComponent.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/AUIEvent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/LayerNames.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/LockStep/LSOperaComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Demo/Unit/AnimatorComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankClientItemComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/LockStep/LSUnitView.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Demo/UI/UIHelp/UIHelpComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/UIEventAttribute.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/LockStep/LSUnitViewComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Demo/UI/UIType.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/UIGlobalComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/UIComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Demo/UI/UILoading/UILoadingComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Module/Resource/ResourcesLoaderComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Tank/UIType.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Demo/Unit/GameObjectComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankUIGameMainComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/LockStep/UI/UILSRoom/UILSRoomComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/AUIEvent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankInitializeConfigComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankClientSavedFileComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankClientGameInfoComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Demo/Opera/OperaComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankCameraComponent.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/LockStep/LSOperaComponent.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/Demo/Unit/AnimatorComponent.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankClientItemComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankUIGameModeComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/LockStep/UI/UILSLogin/UILSLoginComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankClientEffectComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/LockStep/UI/UIType.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/LockStep/LSUnitView.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/Demo/UI/UIHelp/UIHelpComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankClientTileMapComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/LockStep/LSAnimatorComponent.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/UIEventAttribute.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankClientPlayerTankComponent.cs" />
-    <Compile Include="Assets/Scripts/ModelView/Client/LockStep/LSUnitViewComponent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Scripts/ModelView/Unity.ModelView.asmdef" />
@@ -619,6 +619,10 @@
     </Reference>
     <Reference Include="MongoDB.Driver">
       <HintPath>Assets/Plugins/MongoDB/MongoDB.Driver.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json/Runtime/Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
