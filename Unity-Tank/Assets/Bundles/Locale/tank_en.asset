@@ -22,6 +22,10 @@ MonoBehaviour:
     m_Localized: "Gold \u2014 in-game currency for pre-battle items."
     m_Metadata:
       m_Items: []
+  - m_Id: 384993527324672
+    m_Localized: "Shield \u2014 grants invincibility for 3 seconds."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

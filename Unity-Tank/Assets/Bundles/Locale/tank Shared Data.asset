@@ -19,6 +19,10 @@ MonoBehaviour:
     m_Key: ui_gamemode_gold_description
     m_Metadata:
       m_Items: []
+  - m_Id: 384993527324672
+    m_Key: ui_gamemode_shield_description
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

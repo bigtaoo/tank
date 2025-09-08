@@ -22,6 +22,10 @@ MonoBehaviour:
     m_Localized: "Gold \u2014 W\xE4hrung zum Kauf von Items vor einem neuen Spiel."
     m_Metadata:
       m_Items: []
+  - m_Id: 384993527324672
+    m_Localized: "Schild \u2014 macht dich f\xFCr 3 Sekunden unbesiegbar."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

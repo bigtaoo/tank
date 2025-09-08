@@ -113,6 +113,7 @@
     <Compile Include="Assets/Scripts/Core/TileMap/TankMapTileType.cs" />
     <Compile Include="Assets/Scripts/Core/World/Module/EventSystem/IEvent.cs" />
     <Compile Include="Assets/Scripts/Core/MultiMap.cs" />
+    <Compile Include="Assets/Scripts/Core/Helper/LocalizeTMPBinder.cs" />
     <Compile Include="Assets/Scripts/Core/ListComponent.cs" />
     <Compile Include="Assets/Scripts/Core/Fiber/Module/CoroutineLock/CoroutineLock.cs" />
     <Compile Include="Assets/Scripts/Core/World/Module/Log/Log.cs" />
@@ -1288,6 +1289,10 @@
     </Reference>
     <Reference Include="Unity.ResourceManager">
       <HintPath>Library/ScriptAssemblies/Unity.ResourceManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.UI">
