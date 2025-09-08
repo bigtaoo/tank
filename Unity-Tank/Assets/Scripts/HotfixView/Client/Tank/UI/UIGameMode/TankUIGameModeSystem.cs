@@ -15,12 +15,19 @@ namespace ET.Client
             self.Config = rc.Get<GameObject>("Config").GetComponent<GameModeConfig>();
             self.MapIndex = rc.Get<GameObject>("MapIndex");
             self.MapIndex.SetActive(true);
-            self.MapIndex.GetComponent<Button>().onClick.AddListener(() => { self.StartSingleMode(1).Coroutine(); });          
+            self.MapIndex.GetComponent<Button>().onClick.AddListener(() => { self.StartSingleMode(1).Coroutine(); });
             var digitDisplay = self.MapIndex.GetComponentInChildren<DigitDisplay>();
             digitDisplay.DisplayNumber(1);
 
             self.DisplayMapIndex();
             self.LoadGameInfo();
+
+            self.EN = rc.Get<GameObject>("EN");
+            self.EN.GetComponent<Button>().onClick.AddListener(() => { LocaleHelper.Instance.SetEN(); });
+            self.DE = rc.Get<GameObject>("DE");
+            self.DE.GetComponent<Button>().onClick.AddListener(() => { LocaleHelper.Instance.SetDE(); });
+            self.ZH = rc.Get<GameObject>("ZH");
+            self.ZH.GetComponent<Button>().onClick.AddListener(() => { LocaleHelper.Instance.SetZH(); });
         }
 
         public static async ETTask StartSingleMode(this TankUIGameModeComponent self, int mapIndex)

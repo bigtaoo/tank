@@ -7,5 +7,8 @@ namespace ET.Client
     {
         public GameObject MapIndex;
         public GameModeConfig Config;
+        public GameObject EN;
+        public GameObject DE;
+        public GameObject ZH;
     }
 }

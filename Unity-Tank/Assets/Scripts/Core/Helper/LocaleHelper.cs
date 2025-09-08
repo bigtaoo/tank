@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Linq;
+using ET;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
@@ -7,8 +8,19 @@ using UnityEngine.Localization.Settings;
 public class LocaleHelper : MonoBehaviour
 {
     const string PrefKey = "language";
+    public static LocaleHelper Instance { get; private set; }
 
-    void Awake() => StartCoroutine(Initialize());
+    void Awake()
+    {
+        if (Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); 
+        } else {
+            Destroy(gameObject);
+        }
+
+        StartCoroutine(Initialize());
+    }
 
     IEnumerator Initialize()
     {
@@ -17,6 +29,7 @@ public class LocaleHelper : MonoBehaviour
 
         // Use saved choice if present, else derive from system language
         string code = PlayerPrefs.HasKey(PrefKey) ? PlayerPrefs.GetString(PrefKey) : SystemDefaultCode();
+        Log.Info($"locale: default locale is {code}");
         yield return SetLocaleByCode(code);
     }
 
@@ -26,10 +39,17 @@ public class LocaleHelper : MonoBehaviour
 
     IEnumerator SetLocaleByCode(string code)
     {
+        Log.Info($"locale: switching to {code}");
         yield return LocalizationSettings.InitializationOperation;
 
         var locales = LocalizationSettings.AvailableLocales.Locales;
+        foreach (var locale in locales)
+        {
+            Log.Info($"locale: available locales include {locale}");
+        }
+        
         Locale target = locales.FirstOrDefault(l => Matches(l, code)) ?? locales.FirstOrDefault();
+        Log.Info($"locale: target locale is {target}");
 
         if (target != null && LocalizationSettings.SelectedLocale != target)
         {
