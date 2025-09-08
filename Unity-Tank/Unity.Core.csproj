@@ -93,6 +93,7 @@
     <Compile Include="Assets/Scripts/Core/DoubleMap.cs" />
     <Compile Include="Assets/Scripts/Core/Network/KService.cs" />
     <Compile Include="Assets/Scripts/Core/Fiber/MailBoxComponent.cs" />
+    <Compile Include="Assets/Scripts/Core/Helper/LocaleHelper.cs" />
     <Compile Include="Assets/Scripts/Core/Method/IStaticMethod.cs" />
     <Compile Include="Assets/Scripts/Core/Helper/EnumHelper.cs" />
     <Compile Include="Assets/Scripts/Core/Object/DisposeObject.cs" />
@@ -1279,6 +1280,14 @@
     </Reference>
     <Reference Include="MemoryPack">
       <HintPath>Library/ScriptAssemblies/MemoryPack.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Localization">
+      <HintPath>Library/ScriptAssemblies/Unity.Localization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>Library/ScriptAssemblies/Unity.ResourceManager.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.UI">

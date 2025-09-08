@@ -4,7 +4,9 @@
     "references": [
         "Unity.ThirdParty",
         "Unity.Mathematics",
-        "MemoryPack"
+        "MemoryPack",
+        "Unity.Localization",
+        "Unity.ResourceManager"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
