@@ -21,7 +21,7 @@ namespace ET
             }
         }
 
-                [EntitySystem]
+        [EntitySystem]
         private static void Update(this TankClientRobotComponent self)
         {
             self.AddRobot();

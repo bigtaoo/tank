@@ -23,6 +23,38 @@ MonoBehaviour:
     m_Key: ui_gamemode_shield_description
     m_Metadata:
       m_Items: []
+  - m_Id: 704678798024704
+    m_Key: ui_gamemode_timestopper_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 705333520490496
+    m_Key: ui_gamemode_ironcladwalls_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 705711561498624
+    m_Key: ui_gamemode_life_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 705961156141056
+    m_Key: ui_gamemode_levelup_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706179629047808
+    m_Key: ui_gamemode_bomb_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706474706722816
+    m_Key: ui_gamemode_base_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706719788294144
+    m_Key: ui_gamemode_cloud_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 707043622117376
+    m_Key: ui_gamemode_blocker_description
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

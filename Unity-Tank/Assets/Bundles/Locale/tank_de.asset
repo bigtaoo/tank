@@ -26,6 +26,38 @@ MonoBehaviour:
     m_Localized: "Schild \u2014 macht dich f\xFCr 3 Sekunden unbesiegbar."
     m_Metadata:
       m_Items: []
+  - m_Id: 704678798024704
+    m_Localized: "Zeitstopper \u2014 friert Gegner f\xFCr 5 Sekunden ein."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 705333520490496
+    m_Localized: "Eiserne Mauern \u2014 verst\xE4rkt die Verteidigung der Basis."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 705711561498624
+    m_Localized: "Leben \u2014 du erh\xE4ltst ein zus\xE4tzliches Leben."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 705961156141056
+    m_Localized: "Level Up \u2014 verbessere deinen Panzer auf die n\xE4chste Stufe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706179629047808
+    m_Localized: "Bombe \u2014 vernichtet sofort alle Gegner."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706474706722816
+    m_Localized: "Basis \u2014 wenn sie zerst\xF6rt wird, verlierst du."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706719788294144
+    m_Localized: "Wolke \u2014 verdeckt alles darunter."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 707043622117376
+    m_Localized: "Blocker \u2014 Kugeln gehen durch, Panzer bleiben drau\xDFen."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

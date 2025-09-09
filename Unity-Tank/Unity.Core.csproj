@@ -92,8 +92,8 @@
     <Compile Include="Assets/Scripts/Core/Fiber/Module/Actor/ProcessInnerSender.cs" />
     <Compile Include="Assets/Scripts/Core/DoubleMap.cs" />
     <Compile Include="Assets/Scripts/Core/Network/KService.cs" />
-    <Compile Include="Assets/Scripts/Core/Fiber/MailBoxComponent.cs" />
     <Compile Include="Assets/Scripts/Core/Helper/LocaleHelper.cs" />
+    <Compile Include="Assets/Scripts/Core/Fiber/MailBoxComponent.cs" />
     <Compile Include="Assets/Scripts/Core/Method/IStaticMethod.cs" />
     <Compile Include="Assets/Scripts/Core/Helper/EnumHelper.cs" />
     <Compile Include="Assets/Scripts/Core/Object/DisposeObject.cs" />

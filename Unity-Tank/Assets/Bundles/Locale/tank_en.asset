@@ -26,6 +26,38 @@ MonoBehaviour:
     m_Localized: "Shield \u2014 grants invincibility for 3 seconds."
     m_Metadata:
       m_Items: []
+  - m_Id: 704678798024704
+    m_Localized: "Time Stopper \u2014 freezes enemies for 5 seconds."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 705333520490496
+    m_Localized: "Ironclad Walls \u2014 upgrades the base defenses."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 705711561498624
+    m_Localized: "Life \u2014 gain an extra life."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 705961156141056
+    m_Localized: "Level Up \u2014 upgrade your tank to the next level."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706179629047808
+    m_Localized: "Bomb \u2014 instantly wipes out all enemies."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706474706722816
+    m_Localized: "Base \u2014 lose if it\u2019s destroyed."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706719788294144
+    m_Localized: "Cloud \u2014 hides everything beneath it."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 707043622117376
+    m_Localized: "Blocker \u2014 bullets pass, tanks stay out."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
