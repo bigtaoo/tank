@@ -123,6 +123,7 @@
     <Compile Include="Assets/Scripts/Core/Fiber/Module/Timer/ATimer.cs" />
     <Compile Include="Assets/Scripts/Core/Helper/FileHelper.cs" />
     <Compile Include="Assets/Scripts/Core/World/Singleton.cs" />
+    <Compile Include="Assets/Scripts/Core/UI/TankDirection.cs" />
     <Compile Include="Assets/Scripts/Core/Network/Circularbuffer.cs" />
     <Compile Include="Assets/Scripts/Core/Entity/SceneType.cs" />
     <Compile Include="Assets/Scripts/Core/Serialize/MemoryPackHelper.cs" />
@@ -143,6 +144,7 @@
     <Compile Include="Assets/Scripts/Core/Network/ResponseTypeAttribute.cs" />
     <Compile Include="Assets/Scripts/Core/World/Module/Actor/MessageHandlerAttribute.cs" />
     <Compile Include="Assets/Scripts/Core/Serialize/MongoHelper.cs" />
+    <Compile Include="Assets/Scripts/Core/UI/CenterJoystick.cs" />
     <Compile Include="Assets/Scripts/Core/Network/AChannel.cs" />
     <Compile Include="Assets/Scripts/Core/World/Module/EventSystem/EventSystem.cs" />
     <Compile Include="Assets/Scripts/Core/Analyzer/ChildOfAttribute.cs" />
