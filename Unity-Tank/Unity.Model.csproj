@@ -95,6 +95,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankBuff.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/AI/AIDispatcherComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Demo/NetClient/Router/RouterAddressComponent.cs" />
+    <Compile Include="Assets/Scripts/Model/Share/Tank/Enums/TankAttachedEffectType.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/LSConstValue.cs" />
     <Compile Include="Assets/Scripts/Model/Share/MongoRegister.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Move/MoveComponent.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankGameInfo.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankBullet.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Module/Message/ClientSessionErrorComponent.cs" />
+    <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankAttachedEffect.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Demo/NetClient/Router/RouterConnector.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/LSEntitySystemSingleton.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankBulletComponent.cs" />

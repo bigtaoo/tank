@@ -50,6 +50,12 @@ namespace ET
                 Type = type,
                 RemoveTime = TimeInfo.Instance.ClientFrameTime() + persistTimeMS,
             };
+
+            if (type == TankBuffType.Invincible)
+            {
+                
+            }
+
             tankBuff.Add(newBuff);
         }
 
