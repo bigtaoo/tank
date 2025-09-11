@@ -36,13 +36,17 @@ namespace ET.Client
             self.Right = rc.Get<GameObject>("right");
             var rightHoldButton = self.Right.GetComponent<HoldButton>();
             rightHoldButton.onPress = () => { self.MoveTank(TankDirection.Right); };
-            rightHoldButton.onRelease= self.StopTank;
+            rightHoldButton.onRelease = self.StopTank;
             self.Down = rc.Get<GameObject>("down");
             var downHoldButton = self.Down.GetComponent<HoldButton>();
             downHoldButton.onPress = () => { self.MoveTank(TankDirection.Down); };
             downHoldButton.onRelease = self.StopTank;
             self.Shoot = rc.Get<GameObject>("shoot");
             self.Shoot.GetComponent<Button>().onClick.AddListener(() => { self.TankShoot(); });
+
+            self.Center = rc.Get<GameObject>("center");
+            var centerButton = self.Center.GetComponent<CenterJoystick>();
+            centerButton.onDirectionChanged.AddListener((direction) => self.OnJoystickDirectionChanged(direction));
         }
 
         [EntitySystem]
@@ -83,7 +87,7 @@ namespace ET.Client
             {
                 return;
             }
-            
+
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             playerComponent.SetMoveDirection(direction);
             playerComponent.CurrentDirection = direction;
@@ -101,16 +105,33 @@ namespace ET.Client
             gameInfoComponent.InputMutex = false;
         }
 
-        private static void TankShoot(this  TankUIGameMainComponent self)
+        private static void TankShoot(this TankUIGameMainComponent self)
         {
             var gameResultComponent = self.Root().GetComponent<TankGameResultComponent>();
             if (gameResultComponent.IsGameEnd)
             {
                 return;
             }
-            
+
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             playerComponent.Shoot();
+        }
+
+        private static void OnJoystickDirectionChanged(this TankUIGameMainComponent self, TankJoystickDirection direction)
+        {
+            switch (direction)
+            {
+                case TankJoystickDirection.Left:
+                    self.MoveTank(TankDirection.Left); break;
+                case TankJoystickDirection.Right:
+                    self.MoveTank(TankDirection.Right); break;
+                case TankJoystickDirection.Up:
+                    self.MoveTank(TankDirection.Up); break;
+                case TankJoystickDirection.Down:
+                    self.MoveTank(TankDirection.Down); break;
+                case TankJoystickDirection.Stop:
+                    self.StopTank(); break;
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-public enum TankDirection
+public enum TankJoystickDirection
 {
     Stop = 0,
     Left = 1,

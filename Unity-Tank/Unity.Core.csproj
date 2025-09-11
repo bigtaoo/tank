@@ -123,7 +123,6 @@
     <Compile Include="Assets/Scripts/Core/Fiber/Module/Timer/ATimer.cs" />
     <Compile Include="Assets/Scripts/Core/Helper/FileHelper.cs" />
     <Compile Include="Assets/Scripts/Core/World/Singleton.cs" />
-    <Compile Include="Assets/Scripts/Core/UI/TankDirection.cs" />
     <Compile Include="Assets/Scripts/Core/Network/Circularbuffer.cs" />
     <Compile Include="Assets/Scripts/Core/Entity/SceneType.cs" />
     <Compile Include="Assets/Scripts/Core/Serialize/MemoryPackHelper.cs" />
@@ -192,6 +191,7 @@
     <Compile Include="Assets/Scripts/Core/Analyzer/DisableNewAttribute.cs" />
     <Compile Include="Assets/Scripts/Core/Fiber/EntitySystem.cs" />
     <Compile Include="Assets/Scripts/Core/Object/HandlerObject.cs" />
+    <Compile Include="Assets/Scripts/Core/UI/TankJoystickDirection.cs" />
     <Compile Include="Assets/Scripts/Core/Entity/ILateUpdateSystem.cs" />
     <Compile Include="Assets/Scripts/Core/Helper/WinPeriod.cs" />
     <Compile Include="Assets/Scripts/Core/World/Module/Code/CodeAttribute.cs" />

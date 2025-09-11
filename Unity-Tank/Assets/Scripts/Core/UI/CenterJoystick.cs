@@ -24,7 +24,7 @@ public class CenterJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler, 
     [SerializeField] private float returnSpeed = 12f;
 
     [System.Serializable]
-    public class DirectionEvent : UnityEvent<TankDirection> {}
+    public class DirectionEvent : UnityEvent<TankJoystickDirection> {}
 
     [Header("Events")]
     public DirectionEvent onDirectionChanged;
@@ -32,13 +32,13 @@ public class CenterJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler, 
     // Output (read-only)
     public Vector2 RawDirection { get; private set; }   // normalized analog (not snapped)
     public float Magnitude01 { get; private set; }      // 0..1 (after clamp)
-    public TankDirection CurrentDirection => _currentDirection;
+    public TankJoystickDirection CurrentDirection => _currentDirection;
 
     // internals
     private Canvas _canvas;
     private Camera _uiCam;
     private bool _dragging;
-    private TankDirection _currentDirection = TankDirection.Stop;
+    private TankJoystickDirection _currentDirection = TankJoystickDirection.Stop;
 
     private void Reset()
     {
@@ -54,7 +54,7 @@ public class CenterJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler, 
         _canvas = GetComponentInParent<Canvas>();
         _uiCam = _canvas && _canvas.renderMode != RenderMode.ScreenSpaceOverlay ? _canvas.worldCamera : null;
         CenterHandleImmediate();
-        SetDirection(TankDirection.Stop); // fire initial if desired (or comment out)
+        SetDirection(TankJoystickDirection.Stop); // fire initial if desired (or comment out)
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -102,14 +102,14 @@ public class CenterJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler, 
         if (Magnitude01 < deadZone)
         {
             RawDirection = Vector2.zero;
-            SetDirection(TankDirection.Stop);
+            SetDirection(TankJoystickDirection.Stop);
             return;
         }
 
         RawDirection = delta.normalized;
 
         // Snap to 4 directions
-        TankDirection snapped = Snap4(RawDirection);
+        TankJoystickDirection snapped = Snap4(RawDirection);
         SetDirection(snapped);
     }
 
@@ -123,11 +123,11 @@ public class CenterJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler, 
             RawDirection = Vector2.zero;
             Magnitude01 = 0f;
             // Emit Stop only once when state changes; SetDirection handles that.
-            SetDirection(TankDirection.Stop);
+            SetDirection(TankJoystickDirection.Stop);
             yield return null;
         }
         CenterHandleImmediate();
-        SetDirection(TankDirection.Stop);
+        SetDirection(TankJoystickDirection.Stop);
     }
 
     private void CenterHandleImmediate()
@@ -137,19 +137,19 @@ public class CenterJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler, 
         Magnitude01 = 0f;
     }
 
-    private void SetDirection(TankDirection newDir)
+    private void SetDirection(TankJoystickDirection newDir)
     {
         if (newDir == _currentDirection) return; // emit only on change
         _currentDirection = newDir;
         onDirectionChanged?.Invoke(_currentDirection);
     }
 
-    private static TankDirection Snap4(Vector2 dir)
+    private static TankJoystickDirection Snap4(Vector2 dir)
     {
-        if (dir == Vector2.zero) return TankDirection.Stop;
+        if (dir == Vector2.zero) return TankJoystickDirection.Stop;
         if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
-            return dir.x > 0 ? TankDirection.Right : TankDirection.Left;
+            return dir.x > 0 ? TankJoystickDirection.Right : TankJoystickDirection.Left;
         else
-            return dir.y > 0 ? TankDirection.Up : TankDirection.Down;
+            return dir.y > 0 ? TankJoystickDirection.Up : TankJoystickDirection.Down;
     }
 }
