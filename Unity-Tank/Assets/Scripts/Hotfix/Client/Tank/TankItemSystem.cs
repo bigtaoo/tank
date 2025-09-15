@@ -121,6 +121,8 @@ namespace ET
                     {
                         var buffComponent = self.Root().GetComponent<TankBuffComponent>();
                         buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.Invincible, 3000);
+                        var attachedEffectComponent = self.Root().GetComponent<TankAttachedEffectComponent>();
+                        attachedEffectComponent.AddAttachedEffect(TankAttachedEffectType.InvincibleShield, 3000, null, true);
                         break;
                     }
                 case TankItemType.TimeStop:

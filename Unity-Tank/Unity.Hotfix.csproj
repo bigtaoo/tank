@@ -133,6 +133,7 @@
     <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankRobotSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Scene/SceneChangeHelper.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/Router/HttpClientHelper.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankAttachedEffectSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/ConstValue.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/Router/RouterAddressComponentSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Unit/UnitFactory.cs" />

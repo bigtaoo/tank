@@ -190,6 +190,7 @@ namespace ET
             var currentTime = TimeInfo.Instance.ClientFrameTime();
 
             var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+            var attachedEffectComponent = self.Root().GetComponent<TankAttachedEffectComponent>();
 
             foreach (var spawnInfo in self.SpawnInfos)
             {
@@ -218,6 +219,7 @@ namespace ET
                     self.RemainingSpawnRobots[robot.Level - 1]--;
 
                     buffComponent.AddBuff(robot.RobotId, TankBuffType.Invincible, 5000);
+                    attachedEffectComponent.AddAttachedEffect(TankAttachedEffectType.InvincibleShield, 5000, robot);
                 }
             }
         }
