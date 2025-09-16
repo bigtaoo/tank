@@ -32,7 +32,7 @@ namespace ET
         private static void UpdataPosition(this TankClientRobotComponent self)
         {
             var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-            foreach (var robot in robotComponent.Robots)
+            foreach (var robot in robotComponent.Robots.Values)
             {
                 var robotGameObject = self.Robots[robot.RobotId];
                 var currentPosition = robotGameObject.transform.position;

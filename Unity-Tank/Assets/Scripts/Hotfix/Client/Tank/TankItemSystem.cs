@@ -83,7 +83,7 @@ namespace ET
                 case TankItemType.Bomb:
                     {
                         var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-                        var selectedRobot = robotComponent.Robots.Take(3).ToList();
+                        var selectedRobot = robotComponent.Robots.Values.Take(3).ToList();
                         foreach (var robot in selectedRobot)
                         {
                             robot.HealthPoint = -1;
@@ -129,7 +129,7 @@ namespace ET
                     {
                         var robotComponent = self.Root().GetComponent<TankRobotComponent>();
                         var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                        foreach (var robot in robotComponent.Robots)
+                        foreach (var robot in robotComponent.Robots.Values)
                         {
                             buffComponent.AddBuff(robot.RobotId, TankBuffType.CanNotMove, 3000);
                         }

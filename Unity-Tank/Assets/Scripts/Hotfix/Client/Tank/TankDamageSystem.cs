@@ -38,7 +38,7 @@ namespace ET
                 }
                 else
                 {
-                    foreach (var robot in robotComponent.Robots)
+                    foreach (var robot in robotComponent.Robots.Values)
                     {
                         if (TankDamageHelper.BulletHitTank(bullet.Position, robot.Position))
                         {

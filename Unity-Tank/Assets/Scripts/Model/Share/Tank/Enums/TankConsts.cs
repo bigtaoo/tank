@@ -7,5 +7,6 @@ namespace ET
         public const int RobotStartIndex = 10;
         public const int SpawnItemRate = 100;
         public const long ItemLivingMS = 10 * 1000;
+        public const float AttachedEffectZ = -3.0f;
     }
 }

@@ -92,7 +92,7 @@ namespace ET
             var Y = PositionToTile(direction, position.Y);
 
             var robotComponent = root.GetComponent<TankRobotComponent>();
-            foreach (var robot in robotComponent.Robots)
+            foreach (var robot in robotComponent.Robots.Values)
             {
                 if (robot.RobotId == tankId)
                 {

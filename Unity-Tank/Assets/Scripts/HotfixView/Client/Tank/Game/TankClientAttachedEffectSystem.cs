@@ -66,8 +66,16 @@ namespace ET
                     if (effect.IsattachedToPlayer)
                     {
                         var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-                        gameObject.transform.localPosition = new Vector3(playerComponent.Position.X - TankConsts.TileOffset,
-                            playerComponent.Position.Y - TankConsts.TileOffset, -2.0f);
+                        gameObject.transform.position = new Vector3(playerComponent.Position.X - TankConsts.TileOffset,
+                            playerComponent.Position.Y - TankConsts.TileOffset, TankConsts.AttachedEffectZ);
+                    }
+                    else
+                    {
+                        var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+                        // Log.Warning($"Effect update, robot id: {effect.TankId}");
+                        var robot = robotComponent.Robots[effect.TankId];
+                        gameObject.transform.position = new Vector3(robot.Position.X - TankConsts.TileOffset,
+                            robot.Position.Y - TankConsts.TileOffset, TankConsts.AttachedEffectZ);
                     }
                 }
                 else
@@ -90,6 +98,10 @@ namespace ET
                 gameObject = new GameObject("effect");
                 var spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
                 spriteRenderer.sprite = self.InvincibleBuffSprite;
+                Color c = spriteRenderer.color;
+                c.a = 0.7f;
+                spriteRenderer.color = c;
+                gameObject.transform.localScale = new Vector3(2, 2, 1);
             }
 
             gameObject.SetActive(true);

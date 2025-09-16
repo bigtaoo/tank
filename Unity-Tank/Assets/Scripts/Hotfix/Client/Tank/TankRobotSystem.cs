@@ -1,6 +1,7 @@
 using ET.Client;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ET
 {
@@ -31,16 +32,16 @@ namespace ET
 
         public static void CheckRobotAlive(this TankRobotComponent self)
         {
-            for (int i = self.Robots.Count - 1; i >= 0; i--)
+            foreach(var key in self.Robots.Keys.ToList())
             {
-                var robot = self.Robots[i];
+                var robot = self.Robots[key];
                 if (robot.HealthPoint <= 0)
                 {
                     self.SpawnItem(robot);
 
                     self.SpawnInfos[robot.SpawnPointId].SpawnTime = 0;
                     self.RobotsToRemove.Add(robot);
-                    self.Robots.RemoveAt(i);
+                    self.Robots.Remove(key);
                     self.RemainingRobotsCount[robot.Level - 1]--;
                 }
             }
@@ -56,7 +57,7 @@ namespace ET
         {
             var currentTime = TimeInfo.Instance.ClientFrameTime();
 
-            foreach (var robot in self.Robots)
+            foreach (var robot in self.Robots.Values)
             {
                 if (robot.ShootTime < currentTime)
                 {
@@ -83,7 +84,7 @@ namespace ET
             var buffComponent = self.Root().GetComponent<TankBuffComponent>();
             var mapTilesComponent = self.Root().GetComponent<TankMapTilesComponent>();
 
-            foreach (var robot in self.Robots)
+            foreach (var robot in self.Robots.Values)
             {
                 if (buffComponent.GetBuff(robot.RobotId, TankBuffType.CanNotMove) != null)
                 {
@@ -213,7 +214,7 @@ namespace ET
                         Level = spawnInfo.RobotLevel,
                     };
                     //Log.Warning($"Spawn robot, {robot.ToJson()}, spawn info: {spawnInfo.ToJson()}");
-                    self.Robots.Add(robot);
+                    self.Robots[robot.RobotId] = robot;
                     self.RobotsToAdd.Add(robot);
                     self.FindNextTargetPosition(robot);
                     self.RemainingSpawnRobots[robot.Level - 1]--;
