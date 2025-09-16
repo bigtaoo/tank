@@ -121,6 +121,7 @@
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientRobotSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientEffectSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIGameMain/TankUIGameMainSystem.cs" />
+    <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientAttachedEffectSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankCameraSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/LockStep/LSUnitViewSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/EntryEvent3_InitClient.cs" />

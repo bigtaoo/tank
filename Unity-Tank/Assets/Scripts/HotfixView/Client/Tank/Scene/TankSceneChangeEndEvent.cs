@@ -28,6 +28,7 @@ namespace ET.Client
             scene.AddComponent<TankBuffComponent>();
             scene.AddComponent<TankGameResultComponent>();
             scene.AddComponent<TankItemComponent>();
+            scene.AddComponent<TankAttachedEffectComponent>();
 
             // Client
             scene.AddComponent<TankCameraComponent>();
@@ -40,6 +41,7 @@ namespace ET.Client
             scene.AddComponent<TankBaseComponent>();
             scene.AddComponent<TankClientItemComponent>();
             scene.AddComponent<TankClientGameInfoComponent>();
+            scene.AddComponent<TankClientAttachedEffectComponent>();
         }
     }
 }
