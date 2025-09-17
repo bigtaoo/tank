@@ -74,6 +74,7 @@
     <Compile Include="Assets/Scripts/Core/Entity/EntityHelper.cs" />
     <Compile Include="Assets/Scripts/Core/World/Module/EventSystem/InvokeAttribute.cs" />
     <Compile Include="Assets/Scripts/Core/Analyzer/EntitySystemOf.cs" />
+    <Compile Include="Assets/Scripts/Core/TileMap/TankTileResource.cs" />
     <Compile Include="Assets/Scripts/Core/UI/DigitDisplay.cs" />
     <Compile Include="Assets/Scripts/Core/Network/MessageSerializeHelper.cs" />
     <Compile Include="Assets/Scripts/Core/Entity/Entity.cs" />

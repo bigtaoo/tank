@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 286351135}
   - component: {fileID: 286351134}
   - component: {fileID: 286351136}
+  - component: {fileID: 286351137}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -321,6 +322,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ad1e3ad2c1f4a05a5c6b9e993d87e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &286351137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286351133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb7dc4dcc5d0b4366b5e851c9b4682f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallTile: {fileID: 11400000, guid: 4383617a107bdac45a1a7f2be9b5b510, type: 2}
+  waterTile: {fileID: 11400000, guid: 23e8653e631e84b488ecd19cbcf7fc8d, type: 2}
+  steelTile: {fileID: 11400000, guid: b82b95c3c73881f4c9b96e54d182d913, type: 2}
+  grassTile: {fileID: 11400000, guid: 971e5de2850b5ab4484b0baf719a3238, type: 2}
 --- !u!1 &429867060
 GameObject:
   m_ObjectHideFlags: 0

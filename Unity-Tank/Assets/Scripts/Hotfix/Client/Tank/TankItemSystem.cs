@@ -41,6 +41,8 @@ namespace ET
             var itemIndex = RandomGenerator.RandUInt32() % self.SpawnItemTypes.Length;
             var itemType = self.SpawnItemTypes[itemIndex];
 
+            itemType = TankItemType.BaseWallUpgrade;
+
             var item = new TankItem
             {
                 ItemId = self.ItemId++,

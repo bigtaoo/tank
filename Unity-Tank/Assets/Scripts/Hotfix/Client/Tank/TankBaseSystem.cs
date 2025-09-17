@@ -41,7 +41,7 @@ namespace ET
 
         public static void UpgradeBaseWalls(this TankBaseComponent self)
         {
-            self.BaseWallUpgradeEndTime = TimeInfo.Instance.ClientFrameTime() + 3000;
+            self.BaseWallUpgradeEndTime = TimeInfo.Instance.ClientFrameTime() + 15000;
             var mapTileComponent = self.Root().GetComponent<TankMapTilesComponent>();
             foreach (var position in self.BaseWalls)
             {

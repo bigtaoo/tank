@@ -27,11 +27,20 @@ namespace ET.Client
             var mapTileComponent = self.Root().GetComponent<TankMapTilesComponent>();
             if (mapTileComponent.TilesToUpdate.Count > 0)
             {
-                foreach(var tile in mapTileComponent.TilesToUpdate)
+                foreach (var tile in mapTileComponent.TilesToUpdate)
                 {
+                    var position = new Vector3Int(tile.X - TankConsts.TileOffset, tile.Y - TankConsts.TileOffset, 0);
                     if (tile.Type == TankMapTileType.None)
                     {
-                        self.Tilemap.SetTile(new Vector3Int(tile.X - TankConsts.TileOffset, tile.Y - TankConsts.TileOffset, 0), null);
+                        self.Tilemap.SetTile(position, null);
+                    }
+                    else if (tile.Type == TankMapTileType.Steel)
+                    {
+                        self.Tilemap.SetTile(position, TankTileResource.Instance.GetTileResource(TankMapTileType.Steel));
+                    }
+                    else if (tile.Type == TankMapTileType.Wall)
+                    {
+                        self.Tilemap.SetTile(position, TankTileResource.Instance.GetTileResource(TankMapTileType.Wall));
                     }
                 }
                 mapTileComponent.TilesToUpdate.Clear();
