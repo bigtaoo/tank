@@ -1,3 +1,5 @@
+using ET.Client;
+
 namespace ET
 {
     [EntitySystemOf(typeof(TankBaseComponent))]
@@ -34,7 +36,8 @@ namespace ET
                 var mapTileComponent = self.Root().GetComponent<TankMapTilesComponent>();
                 foreach (var position in self.BaseWalls)
                 {
-                    mapTileComponent.TilesToUpdate.Add(new TankMapTile { Type = TankMapTileType.Wall, X = (int)position.X, Y = (int)position.Y });
+                    mapTileComponent.TilesToUpdate.Add(new TankMapTile((int)position.X, (int)position.Y, TankMapTileType.Wall));
+                    mapTileComponent.SetTileType((int)position.X, (int)position.Y, TankMapTileType.Wall);
                 }
             }
         }
@@ -45,7 +48,8 @@ namespace ET
             var mapTileComponent = self.Root().GetComponent<TankMapTilesComponent>();
             foreach (var position in self.BaseWalls)
             {
-                mapTileComponent.TilesToUpdate.Add(new TankMapTile { Type = TankMapTileType.Steel, X = (int)position.X, Y = (int)position.Y });
+                mapTileComponent.TilesToUpdate.Add(new TankMapTile((int)position.X, (int)position.Y, TankMapTileType.Steel));
+                mapTileComponent.SetTileType((int)position.X, (int)position.Y, TankMapTileType.Steel);
             }
         }
     }

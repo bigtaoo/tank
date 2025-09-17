@@ -61,12 +61,7 @@ namespace ET.Client
                     var tile = self.Tilemap.GetTile(tilePosition);
                     if (tile != null && tile is TankTile tankTile)
                     {
-                        var tankMapTile = new TankMapTile
-                        {
-                            X = x + TankConsts.TileOffset,
-                            Y = y + TankConsts.TileOffset,
-                            Type = tankTile.TileType,
-                        };
+                        var tankMapTile = new TankMapTile(x + TankConsts.TileOffset, y + TankConsts.TileOffset, tankTile.TileType);
                         tiles.Add(tankMapTile);
                     }
                 }

@@ -32,5 +32,19 @@ namespace ET.Client
         {
             return self.Tiles.Where(t => t.X == (int)position.X && t.Y == (int)position.Y).FirstOrDefault();
         }
+
+        public static void SetTileType(this TankMapTilesComponent self, int x, int y, TankMapTileType tileType)
+        {
+            var tile = self.Tiles.FirstOrDefault(t => t.X == x && t.Y == y);
+            if (tile == null)
+            {
+                tile = new TankMapTile(x, y, tileType);
+                self.Tiles.Add(tile);
+            }
+            else
+            {
+                tile.Type = tileType;
+            }
+        }
     }
 }
