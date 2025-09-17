@@ -115,6 +115,7 @@
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/Unit/AnimatorComponentSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIGameMode/TankUIChooseGameMode_AppStartInitFinish.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Module/TrueSync/TrueSyncExtensions.cs" />
+    <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Utilities/TankHelper.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIGameMain/TankUIGameMainEvent.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientItemSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/Unit/AfterUnitCreate_CreateUnitView.cs" />

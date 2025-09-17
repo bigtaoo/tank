@@ -68,6 +68,7 @@ namespace ET
                         var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
                         gameObject.transform.position = new Vector3(playerComponent.Position.X - TankConsts.TileOffset,
                             playerComponent.Position.Y - TankConsts.TileOffset, TankConsts.AttachedEffectZ);
+                        gameObject.transform.rotation = Quaternion.Euler(0f, 0f, TankHelper.TankDirectionToRotation(playerComponent.MoveDirection));
                     }
                     else
                     {
@@ -76,6 +77,7 @@ namespace ET
                         var robot = robotComponent.Robots[effect.TankId];
                         gameObject.transform.position = new Vector3(robot.Position.X - TankConsts.TileOffset,
                             robot.Position.Y - TankConsts.TileOffset, TankConsts.AttachedEffectZ);
+                        gameObject.transform.rotation = Quaternion.Euler(0f, 0f, TankHelper.TankDirectionToRotation(robot.Direction));
                     }
                 }
                 else
@@ -101,7 +103,7 @@ namespace ET
                 Color c = spriteRenderer.color;
                 c.a = 0.7f;
                 spriteRenderer.color = c;
-                gameObject.transform.localScale = new Vector3(2, 2, 1);
+                gameObject.transform.localScale = new Vector3(2.8f, 2.8f, 1.0f);
             }
 
             gameObject.SetActive(true);
