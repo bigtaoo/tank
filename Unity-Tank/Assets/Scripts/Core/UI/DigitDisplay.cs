@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 #if UNITY_EDITOR
 using UnityEditor;
+// using UnityEditor.SceneManagement; // not needed for this fix
 #endif
 
 [ExecuteAlways]
@@ -34,10 +35,21 @@ public class DigitDisplay : MonoBehaviour
     private readonly List<GameObject> digits = new();
     private bool isUpdating = false;
 
+#if UNITY_EDITOR
+    // NEW: only operate in a scene, not on prefab assets
+    private bool IsInSceneContext()
+    {
+        if (Application.isPlaying) return true;
+        if (!gameObject.scene.IsValid()) return false; // not in a scene
+        if (PrefabUtility.IsPartOfPrefabAsset(gameObject)) return false; // this is a prefab asset
+        return true;
+    }
+#endif
+
     private void OnEnable()
     {
 #if UNITY_EDITOR
-        if (!Application.isPlaying && updateInEditor && !isUpdating)
+        if (!Application.isPlaying && updateInEditor && !isUpdating && IsInSceneContext())
         {
             EditorSafeDisplay();
         }
@@ -51,7 +63,7 @@ public class DigitDisplay : MonoBehaviour
         {
             EditorApplication.delayCall += () =>
             {
-                if (this != null)
+                if (this != null && IsInSceneContext())
                     EditorSafeDisplay();
             };
         }
@@ -61,7 +73,8 @@ public class DigitDisplay : MonoBehaviour
 #if UNITY_EDITOR
     private void EditorSafeDisplay()
     {
-        if (isUpdating || digitSprites == null || digitSprites.Length < 10 || digitImagePrefab == null)
+        if (isUpdating || !IsInSceneContext() ||
+            digitSprites == null || digitSprites.Length < 10 || digitImagePrefab == null)
             return;
 
         isUpdating = true;
@@ -119,23 +132,24 @@ public class DigitDisplay : MonoBehaviour
             {
                 obj = Instantiate(digitImagePrefab, transform);
                 digits.Add(obj);
-                //Debug.LogWarning("Create a new digit object");
-            }
-            else
-            {
-                //Debug.LogWarning("Using exist digit object");
             }
             obj.transform.SetParent(transform, false);
             return obj;
         }
 
 #if UNITY_EDITOR
-        GameObject newObj = PrefabUtility.InstantiatePrefab(digitImagePrefab, transform) as GameObject;
-        if (newObj == null)
+        // NEW: Don’t parent directly during instantiation; spawn into the scene, then SetParent.
+        if (!IsInSceneContext()) return null;
+
+        var spawned = PrefabUtility.InstantiatePrefab(digitImagePrefab, gameObject.scene) as GameObject;
+        if (spawned == null)
         {
             Debug.LogWarning("DigitDisplay: Failed to instantiate digitImagePrefab in Editor.");
+            return null;
         }
-        return newObj;
+        var tr = spawned.transform as RectTransform;
+        tr.SetParent(transform, false);
+        return spawned;
 #else
         return Instantiate(digitImagePrefab, transform);
 #endif
@@ -146,6 +160,8 @@ public class DigitDisplay : MonoBehaviour
 #if UNITY_EDITOR
         if (!Application.isPlaying)
         {
+            if (!IsInSceneContext()) return; // NEW: don’t edit prefab assets
+
             for (int i = transform.childCount - 1; i >= 0; i--)
             {
                 GameObject child = transform.GetChild(i).gameObject;
@@ -163,7 +179,6 @@ public class DigitDisplay : MonoBehaviour
         foreach (GameObject obj in digits)
         {
             obj.SetActive(false);
-            //Debug.LogWarning("Set object active to false");
         }
     }
 }
