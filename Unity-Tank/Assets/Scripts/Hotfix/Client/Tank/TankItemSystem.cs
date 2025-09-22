@@ -1,3 +1,4 @@
+using ET.Client;
 using MongoDB.Bson;
 using System.Linq;
 using Unity.Mathematics;
@@ -56,7 +57,7 @@ namespace ET
         private static void PickUpItem(this TankItemComponent self)
         {
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-            var playerPosition = playerComponent.Position;
+            var playerPosition = playerComponent.GetPlayerPosition();
 
             foreach (var item in self.Items.Values)
             {
@@ -99,10 +100,7 @@ namespace ET
                 case TankItemType.PlayerTankLevelUp:
                     {
                         var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-                        if (playerComponent.TankLevel <= 3)
-                        {
-                            playerComponent.TankLevel++;
-                        }
+                        playerComponent.UpdatePlayerTankLevel(1);
                         break;
                     }
                 case TankItemType.Gold:
@@ -114,7 +112,7 @@ namespace ET
                 case TankItemType.PlayerLife:
                     {
                         var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-                        playerComponent.PlayerLifes++;
+                        playerComponent.UpdatePlayerLifes(1);
                         break;
                     }
                 case TankItemType.Shield:

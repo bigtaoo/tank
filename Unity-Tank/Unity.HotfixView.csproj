@@ -111,7 +111,6 @@
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/Unit/ChangePosition_SyncGameObjectPos.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Empty.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/LockStep/UI/UILSLobby/LoginFinish_CreateUILSLobby.cs" />
-    <Compile Include="Assets/Scripts/HotfixView/Client/Plugins/Example/HotfixView.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/Unit/AnimatorComponentSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIGameMode/TankUIChooseGameMode_AppStartInitFinish.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Module/TrueSync/TrueSyncExtensions.cs" />

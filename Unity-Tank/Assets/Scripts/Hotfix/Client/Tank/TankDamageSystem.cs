@@ -1,3 +1,5 @@
+using ET.Client;
+
 namespace ET
 {
     [EntitySystemOf(typeof(TankDamageComponent))]
@@ -23,7 +25,7 @@ namespace ET
                 var bullet = bulletComponent.Bullets[bulletId];
                 if (bullet.Camp == TankCamp.Enemy)
                 {
-                    if (TankDamageHelper.BulletHitTank(bullet.Position, playerComponent.Position))
+                    if (TankDamageHelper.BulletHitTank(bullet.Position, playerComponent.GetPlayerPosition()))
                     {
                         //Log.Warning("Player was hit");                        
                         bulletComponent.HitTank(bulletId);
@@ -31,7 +33,7 @@ namespace ET
                         var invincibleBuff = buffComponent.GetBuff(TankConsts.PlayerIndex, TankBuffType.Invincible);
                         if (invincibleBuff == null)
                         {
-                            playerComponent.TankLevel -= 1;
+                            playerComponent.UpdatePlayerTankLevel(-1);
                         }
                         return;
                     }

@@ -33,6 +33,8 @@ namespace ET.Client
 
         public static void SetMoveDirection(this TankPlayerComponent self, TankDirection moveDirection)
         {
+            self.CurrentDirection = moveDirection;
+
             var buffComponent = self.Root().GetComponent<TankBuffComponent>();
             var spawnBuff = buffComponent.GetBuff(TankConsts.PlayerIndex, TankBuffType.Spwan);
             if (spawnBuff != null)
@@ -96,7 +98,7 @@ namespace ET.Client
             self.Rotation = rotation;
 
             var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-            foreach(var robot in robotComponent.Robots)
+            foreach (var robot in robotComponent.Robots)
             {
                 if (TankMovementHelper.PositionHasTank(self.Root(), position, self.MoveDirection, TankConsts.PlayerIndex))
                 {
@@ -106,7 +108,7 @@ namespace ET.Client
 
             if (TankMovementHelper.CanTankMoveToPosition(self.Root(), position, self.CurrentDirection))
             {
-                self.Position = position;              
+                self.Position = position;
             }
         }
 
@@ -136,7 +138,7 @@ namespace ET.Client
             {
                 var position = self.Position;
                 position.X = TankMovementHelper.PositionToTile(self.CurrentDirection, self.Position.X);
-                if ( position.X != self.Position.X)
+                if (position.X != self.Position.X)
                 {
                     var time = Math.Abs(position.X - self.Position.X) * 1000 / self.MoveSpeed / 2;
                     buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.AddTween, (int)time);
@@ -144,6 +146,39 @@ namespace ET.Client
                     self.Position = position;
                 }
             }
+        }
+
+        public static TankPosition GetPlayerPosition(this TankPlayerComponent self)
+        {
+            return self.Position;
+        }
+
+        public static int GetPlayerRotation(this TankPlayerComponent self)
+        {
+            return self.Rotation;
+        }
+
+        public static int GetPlayerLifes(this TankPlayerComponent self)
+        {
+            return self.PlayerLifes;
+        }
+
+        public static void UpdatePlayerTankLevel(this TankPlayerComponent self, int level)
+        {
+            self.TankLevel += level;
+            if (self.TankLevel > 3)
+            {
+                self.TankLevel = 3;
+            }
+            if (self.TankLevel < 1)
+            {
+                self.TankLevel = 1;
+            }
+        }
+
+        public static void UpdatePlayerLifes(this TankPlayerComponent self, int lifes)
+        {
+            self.PlayerLifes += lifes;
         }
     }
 }

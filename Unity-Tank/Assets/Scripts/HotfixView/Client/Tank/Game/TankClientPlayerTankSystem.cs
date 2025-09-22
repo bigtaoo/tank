@@ -28,7 +28,7 @@ namespace ET.Client
             }
 
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-            if (playerComponent.PlayerLifes <= 0)
+            if (playerComponent.GetPlayerLifes() <= 0)
             {
                 gameResultComponent.IsGameEnd = true;
                 gameResultComponent.IsWin = false;
@@ -38,7 +38,8 @@ namespace ET.Client
 
             var transform = self.TankPlayer1.GetComponent<Transform>();
             var currentPosition = transform.position;
-            var targetPosition = new Vector3(playerComponent.Position.X - TankConsts.TileOffset, playerComponent.Position.Y - TankConsts.TileOffset, currentPosition.z);
+            var playerPosition = playerComponent.GetPlayerPosition();
+            var targetPosition = new Vector3(playerPosition.X - TankConsts.TileOffset, playerPosition.Y - TankConsts.TileOffset, currentPosition.z);
 
             var buffComponent = self.Root().GetComponent<TankBuffComponent>();
             var addTweenBuff = buffComponent.GetBuff(TankConsts.PlayerIndex, TankBuffType.AddTween);
@@ -65,7 +66,7 @@ namespace ET.Client
                 transform.position = targetPosition;
             }
 
-            var rotation = Quaternion.Euler(new Vector3(0, 0, playerComponent.Rotation));
+            var rotation = Quaternion.Euler(new Vector3(0, 0, playerComponent.GetPlayerRotation()));
             if (transform.rotation != rotation)
             {
                 transform.rotation = rotation;
@@ -81,22 +82,18 @@ namespace ET.Client
                 if (Input.GetKey(KeyCode.UpArrow))
                 {
                     playerComponent.SetMoveDirection(TankDirection.Up);
-                    playerComponent.CurrentDirection = TankDirection.Up;
                 }
                 else if (Input.GetKey(KeyCode.DownArrow))
                 {
                     playerComponent.SetMoveDirection(TankDirection.Down);
-                    playerComponent.CurrentDirection = TankDirection.Down;
                 }
                 else if (Input.GetKey(KeyCode.LeftArrow))
                 {
                     playerComponent.SetMoveDirection(TankDirection.Left);
-                    playerComponent.CurrentDirection = TankDirection.Left;
                 }
                 else if (Input.GetKey(KeyCode.RightArrow))
                 {
                     playerComponent.SetMoveDirection(TankDirection.Right);
-                    playerComponent.CurrentDirection = TankDirection.Right;
                 }
                 else
                 {
