@@ -34,6 +34,10 @@ namespace ET
 
         public static void CreateBullet(this TankBulletComponent self, TankBullet bullet)
         {
+            if (bullet.MoveDirection == TankDirection.None)
+            {
+                Log.Error("Bullet move direction can not be none!");
+            }
             self.IdCounter++;
             self.Bullets.Add(self.IdCounter, bullet);
             self.BulletsToAdd.Add(self.IdCounter);
@@ -159,7 +163,7 @@ namespace ET
             var distance = bullet.Speed * deltaTime / 1000;
             var position = bullet.Position;
 
-            //Log.Warning($"Update bullet: distance: {distance}, direction: {bullet.MoveDirection}, x:{position.X}, y:{position.Y}");
+            // Log.Warning($"Update bullet: distance: {distance}, direction: {bullet.MoveDirection}, x:{position.X}, y:{position.Y}");
 
             switch (bullet.MoveDirection)
             {
@@ -190,7 +194,7 @@ namespace ET
                     }
             }
             bullet.Position = position;
-            //Log.Warning($"After update: x:{bullet.Position.X}, y:{bullet.Position.Y}");
+            // Log.Warning($"After update: x:{bullet.Position.X}, y:{bullet.Position.Y}");
         }
     }
 }

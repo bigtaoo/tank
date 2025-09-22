@@ -33,7 +33,10 @@ namespace ET.Client
 
         public static void SetMoveDirection(this TankPlayerComponent self, TankDirection moveDirection)
         {
-            self.CurrentDirection = moveDirection;
+            if (moveDirection != TankDirection.None)
+            {
+                self.CurrentDirection = moveDirection;
+            }
 
             var buffComponent = self.Root().GetComponent<TankBuffComponent>();
             var spawnBuff = buffComponent.GetBuff(TankConsts.PlayerIndex, TankBuffType.Spwan);
