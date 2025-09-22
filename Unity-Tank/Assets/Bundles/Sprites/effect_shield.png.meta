@@ -1,100 +1,46 @@
 fileFormatVersion: 2
-guid: 759cd9afcc49f429e98640766c951a80
+guid: a3ac1e474c06f4880aedc508ee06d37f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3539239903689849795
-    second: effect_shield_0
+      213: -4161722904563835759
+    second: effect_shield 1_0
   - first:
-      213: 6904716203974144598
-    second: effect_shield_1
+      213: 4030274229813244457
+    second: effect_shield 1_1
   - first:
-      213: -4099717435346333642
-    second: effect_shield_2
+      213: -3953333201400006625
+    second: effect_shield 1_2
   - first:
-      213: -2385942865691472622
-    second: effect_shield_3
+      213: -171040038111073015
+    second: effect_shield 1_3
   - first:
-      213: -2425726038915569207
-    second: effect_shield_4
+      213: -7311945893372479218
+    second: effect_shield 1_4
   - first:
-      213: 9074580745322291930
-    second: effect_shield_5
+      213: 2596874233791510969
+    second: effect_shield 1_5
   - first:
-      213: -346919366548870167
-    second: effect_shield_6
+      213: 4261146885894857101
+    second: effect_shield 1_6
   - first:
-      213: -7580659879239701176
-    second: effect_shield_7
+      213: 1956840574868567617
+    second: effect_shield 1_7
   - first:
-      213: 5149692580505143482
-    second: effect_shield_8
+      213: -3721474559250158168
+    second: effect_shield 1_8
   - first:
-      213: 3262433771053328674
-    second: effect_shield_9
+      213: -4862961886779561097
+    second: effect_shield 1_9
   - first:
-      213: -8446058288358913915
-    second: effect_shield_10
+      213: 8889005708266391738
+    second: effect_shield 1_10
   - first:
-      213: -4276389445451784202
-    second: effect_shield_11
+      213: -5838688647120885676
+    second: effect_shield 1_11
   - first:
-      213: 4683924439140931881
-    second: effect_shield_12
-  - first:
-      213: -5163970205190375826
-    second: effect_shield_13
-  - first:
-      213: 7922838876877834931
-    second: effect_shield_14
-  - first:
-      213: 4753778905341049465
-    second: effect_shield_15
-  - first:
-      213: 1115666171573544390
-    second: effect_shield_16
-  - first:
-      213: -2038953628354718288
-    second: effect_shield_17
-  - first:
-      213: 9143964124852217101
-    second: effect_shield_18
-  - first:
-      213: 4884963012507060660
-    second: effect_shield_19
-  - first:
-      213: -4236245881286855451
-    second: effect_shield_20
-  - first:
-      213: -6240550338762645636
-    second: effect_shield_21
-  - first:
-      213: -3765252785578433008
-    second: effect_shield_22
-  - first:
-      213: 6859121314298970901
-    second: effect_shield_23
-  - first:
-      213: 5038409456794562568
-    second: effect_shield_24
-  - first:
-      213: 5544076176385262557
-    second: effect_shield_25
-  - first:
-      213: 7233145255968157003
-    second: effect_shield_26
-  - first:
-      213: 6113702886688890519
-    second: effect_shield_27
-  - first:
-      213: 7628692130418399025
-    second: effect_shield_28
-  - first:
-      213: 824410458106191379
-    second: effect_shield_29
-  - first:
-      213: -1037564159815877597
-    second: effect_shield_30
+      213: -9168824280920375928
+    second: effect_shield 1_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -165,7 +111,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -216,189 +162,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: effect_shield_0
+      name: effect_shield 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 507
-        width: 18
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d34cdad2f0812eec0800000000000000
-      internalID: -3539239903689849795
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_1
-      rect:
-        serializedVersion: 2
-        x: 212
-        y: 502
-        width: 147
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 65233c40eca72df50800000000000000
-      internalID: 6904716203974144598
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_2
-      rect:
-        serializedVersion: 2
-        x: 440
-        y: 474
-        width: 72
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 630d4bab6b0ea17c0800000000000000
-      internalID: -4099717435346333642
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 47
-        width: 512
-        height: 437
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 21d051cda9d63eed0800000000000000
-      internalID: -2385942865691472622
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_4
-      rect:
-        serializedVersion: 2
-        x: 186
-        y: 468
-        width: 208
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c9a5080507165ed0800000000000000
-      internalID: -2425726038915569207
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_5
-      rect:
-        serializedVersion: 2
-        x: 418
-        y: 479
-        width: 16
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ad2e882db136fed70800000000000000
-      internalID: 9074580745322291930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_6
-      rect:
-        serializedVersion: 2
-        x: 489
-        y: 453
-        width: 9
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9eba6279cae7f2bf0800000000000000
-      internalID: -346919366548870167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_7
-      rect:
-        serializedVersion: 2
-        x: 506
-        y: 376
-        width: 6
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 84dacdef0061cc690800000000000000
-      internalID: -7580659879239701176
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_8
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 390
+        x: 301
+        y: 442
         width: 7
-        height: 13
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -407,20 +177,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ab849732e12677740800000000000000
-      internalID: 5149692580505143482
+      spriteID: 19c9ddb61179e36c0800000000000000
+      internalID: -4161722904563835759
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: effect_shield_9
+      name: effect_shield 1_1
       rect:
         serializedVersion: 2
-        x: 26
-        y: 299
+        x: 81
+        y: 73
+        width: 364
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 922fd670f096ee730800000000000000
+      internalID: 4030274229813244457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effect_shield 1_2
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 424
         width: 8
-        height: 25
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -429,107 +221,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2292fdaca3e764d20800000000000000
-      internalID: 3262433771053328674
+      spriteID: f187bc32660f229c0800000000000000
+      internalID: -3953333201400006625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: effect_shield_10
+      name: effect_shield 1_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 280
-        width: 10
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5888f126cb299ca80800000000000000
-      internalID: -8446058288358913915
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_11
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 106
-        width: 13
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6ffdd96e47637a4c0800000000000000
-      internalID: -4276389445451784202
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_12
-      rect:
-        serializedVersion: 2
-        x: 507
-        y: 109
-        width: 5
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 92914cdf574a00140800000000000000
-      internalID: 4683924439140931881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_13
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 70
-        width: 30
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e663de05574e558b0800000000000000
-      internalID: -5163970205190375826
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_14
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 11
+        x: 61
+        y: 298
+        width: 8
         height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -539,195 +243,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3ba45f44bf393fd60800000000000000
-      internalID: 7922838876877834931
+      spriteID: 90d2506ddf750adf0800000000000000
+      internalID: -171040038111073015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: effect_shield_15
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 42
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 97a39915ab0d8f140800000000000000
-      internalID: 4753778905341049465
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_16
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 42
-        width: 31
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6c5af84d874ab7f00800000000000000
-      internalID: 1115666171573544390
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_17
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 43
-        width: 24
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0b55c645a7e24b3e0800000000000000
-      internalID: -2038953628354718288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_18
-      rect:
-        serializedVersion: 2
-        x: 317
-        y: 47
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d056bbcbce2e5ee70800000000000000
-      internalID: 9143964124852217101
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_19
-      rect:
-        serializedVersion: 2
-        x: 331
-        y: 45
-        width: 15
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4b9c76d6affdac340800000000000000
-      internalID: 4884963012507060660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_20
+      name: effect_shield 1_4
       rect:
         serializedVersion: 2
         x: 442
-        y: 44
-        width: 19
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5e47fa8c0d4d535c0800000000000000
-      internalID: -4236245881286855451
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_21
-      rect:
-        serializedVersion: 2
-        x: 177
-        y: 40
-        width: 29
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c7fdb1fd78c1569a0800000000000000
-      internalID: -6240550338762645636
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_22
-      rect:
-        serializedVersion: 2
-        x: 222
-        y: 34
-        width: 80
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0162c0a6a822fbbc0800000000000000
-      internalID: -3765252785578433008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_23
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 30
-        width: 40
+        y: 288
+        width: 7
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -737,20 +265,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 513c9128e7e703f50800000000000000
-      internalID: 6859121314298970901
+      spriteID: e0938a843ffb68a90800000000000000
+      internalID: -7311945893372479218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: effect_shield_24
+      name: effect_shield 1_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 13
-        width: 11
-        height: 13
+        x: 70
+        y: 263
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -759,18 +287,150 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8007531d4b60ce540800000000000000
-      internalID: 5038409456794562568
+      spriteID: 9b9f1875b53f90420800000000000000
+      internalID: 2596874233791510969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: effect_shield_25
+      name: effect_shield 1_6
       rect:
         serializedVersion: 2
-        x: 51
-        y: 21
+        x: 431
+        y: 235
+        width: 20
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8166852482a22b30800000000000000
+      internalID: 4261146885894857101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effect_shield 1_7
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 244
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 146bc139228182b10800000000000000
+      internalID: 1956840574868567617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effect_shield 1_8
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 192
+        width: 23
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8adad370b9aaa5cc0800000000000000
+      internalID: -3721474559250158168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effect_shield 1_9
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 188
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77bad36dde9438cb0800000000000000
+      internalID: -4862961886779561097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effect_shield 1_10
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 172
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab843af78971c5b70800000000000000
+      internalID: 8889005708266391738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effect_shield 1_11
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 159
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 458e0423c9fc8fea0800000000000000
+      internalID: -5838688647120885676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effect_shield 1_12
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 135
         width: 7
         height: 7
       alignment: 0
@@ -781,118 +441,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd3462d98e380fc40800000000000000
-      internalID: 5544076176385262557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_26
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 38
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b4da8c6994b416460800000000000000
-      internalID: 7233145255968157003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_27
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 0
-        width: 147
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 79e1f57326c38d450800000000000000
-      internalID: 6113702886688890519
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_28
-      rect:
-        serializedVersion: 2
-        x: 394
-        y: 1
-        width: 19
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1371866f21f8ed960800000000000000
-      internalID: 7628692130418399025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_29
-      rect:
-        serializedVersion: 2
-        x: 461
-        y: 0
-        width: 17
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 31e598891f4e07b00800000000000000
-      internalID: 824410458106191379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect_shield_30
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 0
-        width: 16
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32c7f76d4e4d991f0800000000000000
-      internalID: -1037564159815877597
+      spriteID: 88db3cf15eac1c080800000000000000
+      internalID: -9168824280920375928
       vertices: []
       indices: 
       edges: []
@@ -911,37 +461,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      effect_shield_0: -3539239903689849795
-      effect_shield_1: 6904716203974144598
-      effect_shield_10: -8446058288358913915
-      effect_shield_11: -4276389445451784202
-      effect_shield_12: 4683924439140931881
-      effect_shield_13: -5163970205190375826
-      effect_shield_14: 7922838876877834931
-      effect_shield_15: 4753778905341049465
-      effect_shield_16: 1115666171573544390
-      effect_shield_17: -2038953628354718288
-      effect_shield_18: 9143964124852217101
-      effect_shield_19: 4884963012507060660
-      effect_shield_2: -4099717435346333642
-      effect_shield_20: -4236245881286855451
-      effect_shield_21: -6240550338762645636
-      effect_shield_22: -3765252785578433008
-      effect_shield_23: 6859121314298970901
-      effect_shield_24: 5038409456794562568
-      effect_shield_25: 5544076176385262557
-      effect_shield_26: 7233145255968157003
-      effect_shield_27: 6113702886688890519
-      effect_shield_28: 7628692130418399025
-      effect_shield_29: 824410458106191379
-      effect_shield_3: -2385942865691472622
-      effect_shield_30: -1037564159815877597
-      effect_shield_4: -2425726038915569207
-      effect_shield_5: 9074580745322291930
-      effect_shield_6: -346919366548870167
-      effect_shield_7: -7580659879239701176
-      effect_shield_8: 5149692580505143482
-      effect_shield_9: 3262433771053328674
+      effect_shield 1_0: -4161722904563835759
+      effect_shield 1_1: 4030274229813244457
+      effect_shield 1_10: 8889005708266391738
+      effect_shield 1_11: -5838688647120885676
+      effect_shield 1_12: -9168824280920375928
+      effect_shield 1_2: -3953333201400006625
+      effect_shield 1_3: -171040038111073015
+      effect_shield 1_4: -7311945893372479218
+      effect_shield 1_5: 2596874233791510969
+      effect_shield 1_6: 4261146885894857101
+      effect_shield 1_7: 1956840574868567617
+      effect_shield 1_8: -3721474559250158168
+      effect_shield 1_9: -4862961886779561097
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
