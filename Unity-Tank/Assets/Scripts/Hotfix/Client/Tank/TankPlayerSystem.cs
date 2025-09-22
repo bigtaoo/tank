@@ -163,6 +163,11 @@ namespace ET.Client
             return self.PlayerLifes;
         }
 
+        public static TankDirection GetPlayerMoveDirection(this TankPlayerComponent self)
+        {
+            return self.MoveDirection;
+        }
+
         public static void UpdatePlayerTankLevel(this TankPlayerComponent self, int level)
         {
             self.TankLevel += level;

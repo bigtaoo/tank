@@ -1,3 +1,4 @@
+using ET.Client;
 using UnityEngine;
 
 namespace ET
@@ -66,11 +67,13 @@ namespace ET
                     if (effect.IsattachedToPlayer)
                     {
                         var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-                        gameObject.transform.position = new Vector3(playerComponent.Position.X - TankConsts.TileOffset,
-                            playerComponent.Position.Y - TankConsts.TileOffset, TankConsts.AttachedEffectZ);
-                        gameObject.transform.rotation = Quaternion.Euler(0f, 0f, TankHelper.TankDirectionToRotation(playerComponent.MoveDirection));
+                        var playerPosition = playerComponent.GetPlayerPosition();
+                        gameObject.transform.position = new Vector3(playerPosition.X - TankConsts.TileOffset,
+                            playerPosition.Y - TankConsts.TileOffset, TankConsts.AttachedEffectZ);
+                        gameObject.transform.rotation = Quaternion.Euler(0f, 0f, TankHelper.TankDirectionToRotation(
+                            playerComponent.GetPlayerMoveDirection()));
                     }
-                    else
+                    else  
                     {
                         var robotComponent = self.Root().GetComponent<TankRobotComponent>();
                         // Log.Warning($"Effect update, robot id: {effect.TankId}");

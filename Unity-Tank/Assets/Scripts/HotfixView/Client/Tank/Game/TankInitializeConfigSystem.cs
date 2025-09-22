@@ -1,3 +1,4 @@
+using ET.Client;
 using UnityEngine;
 
 namespace ET
@@ -52,7 +53,7 @@ namespace ET
             }
 
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-            playerComponent.PlayerLifes = initiaConfig.PlayerHP;
+            playerComponent.UpdatePlayerLifes(initiaConfig.PlayerHP);
         }
     }
 }
