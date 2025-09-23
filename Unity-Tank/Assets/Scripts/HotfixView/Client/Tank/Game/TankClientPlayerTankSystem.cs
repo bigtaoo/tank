@@ -117,8 +117,8 @@ namespace ET.Client
             }
             playerComponent.ResetUpdateSprite();
 
-            var spriteRenderer = self.TankPlayer1.GetComponent<SpriteRenderer>();
             Sprite sprite = null;
+            var scale = new Vector3(1, 1, 1);
             if (playerComponent.GetTankLevel() == 2)
             {
                 if (self.TankLevel2Sprite == null)
@@ -126,6 +126,7 @@ namespace ET.Client
                     self.TankLevel2Sprite = AtlasManager.Instance.GetSprite("tank-level-2");
                 }
                 sprite = self.TankLevel2Sprite;
+                scale = new Vector3(1.3f, 1.3f, 1.0f);
             }
             else if (playerComponent.GetTankLevel() == 3)
             {
@@ -134,6 +135,7 @@ namespace ET.Client
                     self.TankLevel3Sprite = AtlasManager.Instance.GetSprite("tank-level-3");
                 }
                 sprite = self.TankLevel3Sprite;
+                scale = new Vector3(1.5f, 1.5f, 1.0f);
             }
             else
             {
@@ -148,7 +150,12 @@ namespace ET.Client
                 Log.Error("Update tank sprite failed!");
                 return;
             }
+
+            var spriteRenderer = self.TankPlayer1.GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = sprite;
+
+            var transform = self.TankPlayer1.GetComponent<Transform>();
+            transform.localScale = scale;
         }
     }
 }
