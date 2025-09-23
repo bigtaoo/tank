@@ -183,10 +183,6 @@ namespace ET.Client
             {
                 self.TankLevel = 3;
             }
-            if (self.TankLevel < 1)
-            {
-                self.TankLevel = 1;
-            }
             self.UpdateSprite = true;
         }
 

@@ -126,7 +126,7 @@ namespace ET.Client
                     self.TankLevel2Sprite = AtlasManager.Instance.GetSprite("tank-level-2");
                 }
                 sprite = self.TankLevel2Sprite;
-                scale = new Vector3(1.3f, 1.3f, 1.0f);
+                scale = new Vector3(1.2f, 1.2f, 1.0f);
             }
             else if (playerComponent.GetTankLevel() == 3)
             {
