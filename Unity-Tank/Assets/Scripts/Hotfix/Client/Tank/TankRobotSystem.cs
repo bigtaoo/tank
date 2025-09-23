@@ -195,6 +195,10 @@ namespace ET
 
             foreach (var spawnInfo in self.SpawnInfos)
             {
+                if (self.RemainingSpawnRobots[spawnInfo.RobotLevel - 1] <= 0)
+                {
+                    continue;
+                }
                 if (spawnInfo.SpawnTime == 0 || spawnInfo.SpawnTime + spawnInfo.SpawnInterval < currentTime)
                 {
                     ++self.RobotId;
@@ -215,7 +219,7 @@ namespace ET
                     };
                     robot.UpdateSprite = robot.Level != 1;
                     // Log.Warning($"Spawn robot, {robot.ToJson()}, spawn info: {spawnInfo.ToJson()}");
-                    Log.Warning($"Spawn robot level: {robot.Level}");
+                    // Log.Warning($"Spawn robot level: {robot.Level}");
                     self.Robots[robot.RobotId] = robot;
                     self.RobotsToAdd.Add(robot);
                     self.FindNextTargetPosition(robot);
