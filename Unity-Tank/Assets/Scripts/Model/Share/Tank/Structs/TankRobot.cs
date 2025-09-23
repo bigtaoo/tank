@@ -13,8 +13,8 @@ namespace ET
         public float MoveSpeed { get; set; }
         public int Rotation { get; set; }
         public TankPosition TargetPosition { get; set; }
-        public int HealthPoint { get; set; }
         public int Level { get; set; }
+        public int SpawnLevel { get; set; }
         public bool UpdateSprite { get; set; }
     }
 }

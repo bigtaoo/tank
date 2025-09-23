@@ -49,7 +49,11 @@ namespace ET
                             var invincibleBuff = buffComponent.GetBuff(robot.RobotId, TankBuffType.Invincible);
                             if (invincibleBuff == null)
                             {
-                                robot.HealthPoint -= 1;
+                                robot.Level -= 1;
+                                if (robot.Level > 0)
+                                {
+                                    robot.UpdateSprite = true;
+                                }
                             }
 
                             return;

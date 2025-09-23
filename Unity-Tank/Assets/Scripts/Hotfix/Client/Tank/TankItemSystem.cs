@@ -87,7 +87,7 @@ namespace ET
                         var selectedRobot = robotComponent.Robots.Values.Take(3).ToList();
                         foreach (var robot in selectedRobot)
                         {
-                            robot.HealthPoint = -1;
+                            robot.Level = 0;
                         }
                         break;
                     }

@@ -35,14 +35,14 @@ namespace ET
             foreach(var key in self.Robots.Keys.ToList())
             {
                 var robot = self.Robots[key];
-                if (robot.HealthPoint <= 0)
+                if (robot.Level <= 0)
                 {
                     self.SpawnItem(robot);
 
                     self.SpawnInfos[robot.SpawnPointId].SpawnTime = 0;
                     self.RobotsToRemove.Add(robot);
                     self.Robots.Remove(key);
-                    self.RemainingRobotsCount[robot.Level - 1]--;
+                    self.RemainingRobotsCount[robot.SpawnLevel - 1]--;
                 }
             }
         }
@@ -210,8 +210,8 @@ namespace ET
                         SpawnPointId = spawnInfo.SpawnPointId,
                         MoveSpeed = 1.8f,
                         Rotation = spawnInfo.Rotation,
-                        HealthPoint = 1,
                         Level = spawnInfo.RobotLevel,
+                        SpawnLevel = spawnInfo.RobotLevel,
                     };
                     robot.UpdateSprite = robot.Level != 1;
                     // Log.Warning($"Spawn robot, {robot.ToJson()}, spawn info: {spawnInfo.ToJson()}");
@@ -219,7 +219,7 @@ namespace ET
                     self.Robots[robot.RobotId] = robot;
                     self.RobotsToAdd.Add(robot);
                     self.FindNextTargetPosition(robot);
-                    self.RemainingSpawnRobots[robot.Level - 1]--;
+                    self.RemainingSpawnRobots[robot.SpawnLevel - 1]--;
 
                     buffComponent.AddBuff(robot.RobotId, TankBuffType.Invincible, 3000);
                     attachedEffectComponent.AddAttachedEffect(TankAttachedEffectType.InvincibleShield, 3000, robot);
