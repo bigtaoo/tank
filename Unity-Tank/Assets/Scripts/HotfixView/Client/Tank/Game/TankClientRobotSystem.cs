@@ -16,7 +16,7 @@ namespace ET
                 if (spawnPoint != null)
                 {
                     self.RecycledRobots.Push(spawnPoint);
-                    self.robotGameObject = spawnPoint;
+                    self.RobotGameObject = spawnPoint;
                 }
             }
         }
@@ -48,6 +48,8 @@ namespace ET
                 {
                     robotGameObject.transform.rotation = rotation;
                 }
+
+                self.UpdateRobotSprite(robot);
             }
         }
 
@@ -59,7 +61,7 @@ namespace ET
                 //Log.Warning($"recycled robots: {self.RecycledRobots.Count}");
                 var robotGameObject = self.RecycledRobots.Count > 0 ?
                     self.RecycledRobots.Pop() :
-                    GameObject.Instantiate(self.robotGameObject);
+                    GameObject.Instantiate(self.RobotGameObject);
                 robotGameObject.SetActive(true);
                 self.Robots[robot.RobotId] = robotGameObject;
 
@@ -97,6 +99,53 @@ namespace ET
                 gameResultComponent.IsGameEnd = true;
                 UIHelper.Create(self.Root(), UIType.TankUIGameResult, UILayer.High).Coroutine();
             }
+        }
+
+        private static void UpdateRobotSprite(this TankClientRobotComponent self, TankRobot robot)
+        {
+            if (!robot.UpdateSprite)
+            {
+                return;
+            }
+            Sprite sprite = null;
+            var scale = new Vector3(1, 1, 1);
+            if (robot.Level == 2)
+            {
+                if (self.SpriteLevel2 == null)
+                {
+                    self.SpriteLevel2 = AtlasManager.Instance.GetSprite("tank-level-2");
+                }
+                sprite = self.SpriteLevel2;
+                scale = new Vector3(1.1f, 1.1f, 1.0f);
+            }
+            else if (robot.Level == 3)
+            {
+                if (self.SpriteLevel3 == null)
+                {
+                    self.SpriteLevel3 = AtlasManager.Instance.GetSprite("tank-level-3");
+                }
+                sprite = self.SpriteLevel3;
+                scale = new Vector3(1.2f, 1.2f, 1.0f);
+            }
+            else
+            {
+                if (self.SpriteLevel1 == null)
+                {
+                    self.SpriteLevel1 = AtlasManager.Instance.GetSprite("tank");
+                }
+                sprite = self.SpriteLevel1;
+            }
+            if (sprite == null)
+            {
+                Log.Error("Update tank sprite failed!");
+                return;
+            }
+
+            var robotObject = self.Robots[robot.RobotId];
+            var renderer = robotObject.GetComponent<SpriteRenderer>();
+            renderer.sprite = sprite;
+            var transform = robotObject.GetComponent<Transform>();
+            transform.localScale = scale;
         }
     }
 }

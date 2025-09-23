@@ -213,14 +213,16 @@ namespace ET
                         HealthPoint = 1,
                         Level = spawnInfo.RobotLevel,
                     };
-                    //Log.Warning($"Spawn robot, {robot.ToJson()}, spawn info: {spawnInfo.ToJson()}");
+                    robot.UpdateSprite = robot.Level != 1;
+                    // Log.Warning($"Spawn robot, {robot.ToJson()}, spawn info: {spawnInfo.ToJson()}");
+                    Log.Warning($"Spawn robot level: {robot.Level}");
                     self.Robots[robot.RobotId] = robot;
                     self.RobotsToAdd.Add(robot);
                     self.FindNextTargetPosition(robot);
                     self.RemainingSpawnRobots[robot.Level - 1]--;
 
-                    buffComponent.AddBuff(robot.RobotId, TankBuffType.Invincible, 5000);
-                    attachedEffectComponent.AddAttachedEffect(TankAttachedEffectType.InvincibleShield, 5000, robot);
+                    buffComponent.AddBuff(robot.RobotId, TankBuffType.Invincible, 3000);
+                    attachedEffectComponent.AddAttachedEffect(TankAttachedEffectType.InvincibleShield, 3000, robot);
                 }
             }
         }

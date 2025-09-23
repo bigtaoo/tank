@@ -15,5 +15,6 @@ namespace ET
         public TankPosition TargetPosition { get; set; }
         public int HealthPoint { get; set; }
         public int Level { get; set; }
+        public bool UpdateSprite { get; set; }
     }
 }
