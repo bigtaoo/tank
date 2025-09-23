@@ -58,8 +58,9 @@ namespace ET.Client
                 return;
             }
 
+            self.UpdateTankSprite();
             self.UpdateInput();
-                  
+
             if (targetPosition != currentPosition)
             {
                 //Log.Warning($"Update position: oldX: {currentPosition.x}, oldY:{currentPosition.y}, oldz:{currentPosition.z}, x:{targetPosition.x}, y:{targetPosition.y}");
@@ -105,6 +106,49 @@ namespace ET.Client
             {
                 playerComponent.Shoot();
             }
+        }
+
+        private static void UpdateTankSprite(this TankClientPlayerTankComponent self)
+        {
+            var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+            if (!playerComponent.NeedUpdateSprite())
+            {
+                return;
+            }
+            playerComponent.ResetUpdateSprite();
+
+            var spriteRenderer = self.TankPlayer1.GetComponent<SpriteRenderer>();
+            Sprite sprite = null;
+            if (playerComponent.GetTankLevel() == 2)
+            {
+                if (self.TankLevel2Sprite == null)
+                {
+                    self.TankLevel2Sprite = AtlasManager.Instance.GetSprite("tank-level-2");
+                }
+                sprite = self.TankLevel2Sprite;
+            }
+            else if (playerComponent.GetTankLevel() == 3)
+            {
+                if (self.TankLevel3Sprite == null)
+                {
+                    self.TankLevel3Sprite = AtlasManager.Instance.GetSprite("tank-level-3");
+                }
+                sprite = self.TankLevel3Sprite;
+            }
+            else
+            {
+                if (self.TankLevel1Sprite == null)
+                {
+                    self.TankLevel1Sprite = AtlasManager.Instance.GetSprite("tank");
+                }
+                sprite = self.TankLevel1Sprite;
+            }
+            if (sprite == null)
+            {
+                Log.Error("Update tank sprite failed!");
+                return;
+            }
+            spriteRenderer.sprite = sprite;
         }
     }
 }

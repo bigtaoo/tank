@@ -6,5 +6,8 @@ namespace ET.Client
     public class TankClientPlayerTankComponent : Entity, IAwake, IUpdate
     {
         public GameObject TankPlayer1;
+        public Sprite TankLevel1Sprite;
+        public Sprite TankLevel2Sprite;
+        public Sprite TankLevel3Sprite;
     }
 }

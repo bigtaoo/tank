@@ -42,6 +42,8 @@ namespace ET
             var itemIndex = RandomGenerator.RandUInt32() % self.SpawnItemTypes.Length;
             var itemType = self.SpawnItemTypes[itemIndex];
 
+            itemType = TankItemType.PlayerTankLevelUp;
+
             var item = new TankItem
             {
                 ItemId = self.ItemId++,

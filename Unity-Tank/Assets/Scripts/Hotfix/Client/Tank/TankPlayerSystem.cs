@@ -171,6 +171,11 @@ namespace ET.Client
             return self.MoveDirection;
         }
 
+        public static int GetTankLevel(this TankPlayerComponent self)
+        {
+            return self.TankLevel;
+        }
+
         public static void UpdatePlayerTankLevel(this TankPlayerComponent self, int level)
         {
             self.TankLevel += level;
@@ -182,11 +187,22 @@ namespace ET.Client
             {
                 self.TankLevel = 1;
             }
+            self.UpdateSprite = true;
         }
 
         public static void UpdatePlayerLifes(this TankPlayerComponent self, int lifes)
         {
             self.PlayerLifes += lifes;
+        }
+
+        public static bool NeedUpdateSprite(this TankPlayerComponent self)
+        {
+            return self.UpdateSprite;
+        }
+
+        public static void ResetUpdateSprite(this TankPlayerComponent self)
+        {
+            self.UpdateSprite = false;
         }
     }
 }
