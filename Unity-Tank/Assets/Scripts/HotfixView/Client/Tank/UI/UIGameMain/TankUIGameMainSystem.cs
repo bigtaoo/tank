@@ -58,22 +58,22 @@ namespace ET.Client
                 return;
             }
 
-            self.PlayerHp.GetComponent<TMP_Text>().text = playerComponent.PlayerLifes.ToString();
+            self.PlayerHp.GetComponent<TMP_Text>().text = playerComponent.GetPlayerLifes().ToString();
 
             var robotComponent = self.Root().GetComponent<TankRobotComponent>();
             for (int i = 0; i < self.RobotUICount; i++)
             {
                 var remainingRotot = robotComponent.RemainingRobotsCount[i];
                 //Log.Warning($"remaining robot: {remainingRotot}, index: {i}");
-                if (remainingRotot > 0)
-                {
+                // if (remainingRotot > 0)
+                // {
                     self.RobotRemainingCounts[i].GetComponent<TMP_Text>().text = remainingRotot.ToString();
-                }
-                else
-                {
-                    self.RobotRemainingCounts[i].SetActive(false);
-                    self.RobotImages[i].SetActive(false);
-                }
+                // }
+                // else
+                // {
+                //     self.RobotRemainingCounts[i].SetActive(false);
+                //     self.RobotImages[i].SetActive(false);
+                // }
             }
 
             var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
@@ -90,7 +90,6 @@ namespace ET.Client
 
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             playerComponent.SetMoveDirection(direction);
-            playerComponent.CurrentDirection = direction;
 
             var gameInfoComponent = self.Root().GetComponent<TankClientGameInfoComponent>();
             gameInfoComponent.InputMutex = true;
