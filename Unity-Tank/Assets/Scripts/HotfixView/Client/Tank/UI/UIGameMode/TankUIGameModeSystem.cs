@@ -54,7 +54,7 @@ namespace ET.Client
             var currentMapIndex = savedFileComponent.GetCurrentMapIndex();
 
             var mapCount = self.Config.MapCount;
-            //Log.Warning($"Map Count: {mapCount}");
+            Log.Warning($"Map Count: {mapCount}");
             const int mapCountInRow = 5;
             const int width = 180 + 10;
             const int height = 135 + 10;
