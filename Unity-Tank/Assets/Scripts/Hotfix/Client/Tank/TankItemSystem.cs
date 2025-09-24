@@ -84,7 +84,9 @@ namespace ET
                 case TankItemType.Bomb:
                     {
                         var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-                        var selectedRobot = robotComponent.Robots.Values.Take(3).ToList();
+                        var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+                        var selectedRobot = robotComponent.Robots.Values.Where(r => buffComponent.GetBuff(r.RobotId, TankBuffType.Invincible) == null)
+                            .Take(3).ToList();
                         foreach (var robot in selectedRobot)
                         {
                             robot.Level = 0;
