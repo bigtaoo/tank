@@ -81,7 +81,11 @@ namespace ET.Client
                 self.MoveDirection = TankDirection.None;
 
                 var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.Spwan, 2000);
+                buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.Spwan, 1000);
+                buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.Invincible, 3000);
+
+                var attachedEffectComponent = self.Root().GetComponent<TankAttachedEffectComponent>();
+                attachedEffectComponent.AddAttachedEffect(TankAttachedEffectType.InvincibleShield, 3000, null, true);
             }
         }
 
