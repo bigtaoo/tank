@@ -1,3 +1,4 @@
+using System;
 using ET.Client;
 using UnityEngine;
 
@@ -36,15 +37,24 @@ namespace ET
                         RobotCount = initiaConfig.RobotCount(i),
                         RobotLevel = initiaConfig.RobotLevel(i),
                         Rotation = (int)spawnPoint.transform.rotation.eulerAngles.z,
-                        SpawnInterval = 50 * 1000,
+                        SpawnInterval = initiaConfig.RobotSpawnInterval,
                         SpawnPosition = new TankPosition
                         {
                             X = spawnPoint.transform.position.x + TankConsts.TileOffset,
                             Y = spawnPoint.transform.position.y + TankConsts.TileOffset,
                         },
                         SpawnTime = 0,
-                        ShootInterval = 3 * 1000,
+                        ShootInterval = initiaConfig.RobotShootInterval,
+                        MoveSpeed = initiaConfig.RobotMoveSpeed,
+                        BulletMoveSpeed = initiaConfig.RobotBulletMoveSpeed,
                     };
+                    spawnInfo.ShootInterval = Math.Clamp(spawnInfo.ShootInterval, 0, 3000);
+                    spawnInfo.SpawnInterval = Math.Clamp(spawnInfo.SpawnInterval,10 * 1000, 50 * 1000);
+                    spawnInfo.MoveSpeed = Math.Clamp(spawnInfo.MoveSpeed, 1000, 3000);
+                    spawnInfo.BulletMoveSpeed = Math.Clamp(spawnInfo.BulletMoveSpeed, 5 * 1000, 15 * 1000);
+                    spawnInfo.RobotCount = Math.Clamp(spawnInfo.RobotCount, 3, 30);
+                    spawnInfo.RobotLevel = Math.Clamp(spawnInfo.RobotLevel, 1, 3);
+                    
                     robotComponent.SpawnInfos.Add(spawnInfo);
                     spawnPoint.SetActive(false);
                     robotComponent.RemainingRobotsCount[initiaConfig.RobotLevel(i) - 1] += initiaConfig.RobotCount(i);

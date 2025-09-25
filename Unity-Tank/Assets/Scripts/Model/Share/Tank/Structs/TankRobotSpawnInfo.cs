@@ -4,12 +4,14 @@ namespace ET
     public class TankRobotSpawnInfo
     {
         public int SpawnPointId { get; set; }
-        public TankPosition SpawnPosition {  get; set; }
+        public TankPosition SpawnPosition { get; set; }
         public int Rotation { get; set; }
         public int RobotCount { get; set; }
         public long SpawnInterval { get; set; }
         public int RobotLevel { get; set; }
         public long SpawnTime { get; set; }
         public long ShootInterval { get; set; }
+        public int MoveSpeed { get; set; }
+        public int BulletMoveSpeed { get; set; }
     }
 }

@@ -69,7 +69,7 @@ namespace ET
                         Camp = TankCamp.Enemy,
                         MoveDirection = robot.Direction,
                         Position = robot.Position,
-                        Speed = robot.MoveSpeed * 3,
+                        Speed = robot.BulletMoveSpeed,
                     });
                 }
             }
@@ -212,12 +212,14 @@ namespace ET
                         ShootInterval = spawnInfo.ShootInterval,
                         ShootTime = currentTime + spawnInfo.ShootInterval + RandomGenerator.RandInt32() % self.BasicShootInterval,
                         SpawnPointId = spawnInfo.SpawnPointId,
-                        MoveSpeed = 1.8f,
+                        MoveSpeed = spawnInfo.MoveSpeed / 1000.0f,
+                        BulletMoveSpeed = spawnInfo.BulletMoveSpeed / 1000.0f,
                         Rotation = spawnInfo.Rotation,
                         Level = spawnInfo.RobotLevel,
                         SpawnLevel = spawnInfo.RobotLevel,
                     };
                     robot.UpdateSprite = robot.Level != 1;
+
                     // Log.Warning($"Spawn robot, {robot.ToJson()}, spawn info: {spawnInfo.ToJson()}");
                     // Log.Warning($"Spawn robot level: {robot.Level}");
                     self.Robots[robot.RobotId] = robot;

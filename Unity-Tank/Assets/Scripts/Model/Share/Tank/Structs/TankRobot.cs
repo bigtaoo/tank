@@ -11,6 +11,7 @@ namespace ET
         public long ShootInterval { get; set; }
         public long ShootTime { get; set; }
         public float MoveSpeed { get; set; }
+        public float BulletMoveSpeed { get; set; }
         public int Rotation { get; set; }
         public TankPosition TargetPosition { get; set; }
         public int Level { get; set; }
