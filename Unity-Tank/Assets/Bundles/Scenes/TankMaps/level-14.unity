@@ -3705,7 +3705,7 @@ MonoBehaviour:
   robotMoveSpeed: 2200
   robotBulletMoveSpeed: 7000
   robotSpawnInterval: 39000
-  robotShootInterval: 2000
+  robotShootInterval: 1000
 --- !u!1 &1569546294
 GameObject:
   m_ObjectHideFlags: 0

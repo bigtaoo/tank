@@ -4118,10 +4118,10 @@ MonoBehaviour:
   playerHP: 3
   robotCount: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000
   robotLevel: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
-  robotMoveSpeed: 2000
+  robotMoveSpeed: 2800
   robotBulletMoveSpeed: 6000
-  robotSpawnInterval: 39000
-  robotShootInterval: 2000
+  robotSpawnInterval: 30000
+  robotShootInterval: 800
 --- !u!1 &1569546294
 GameObject:
   m_ObjectHideFlags: 0
