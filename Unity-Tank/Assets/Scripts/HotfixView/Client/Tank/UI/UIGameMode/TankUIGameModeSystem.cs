@@ -32,6 +32,8 @@ namespace ET.Client
 
         public static async ETTask StartSingleMode(this TankUIGameModeComponent self, int mapIndex)
         {
+            SoundManager.Instance.PlayButtonClick();
+
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
             var currentMapIndex = savedFileComponent.GetCurrentMapIndex();
             if (mapIndex > currentMapIndex)
