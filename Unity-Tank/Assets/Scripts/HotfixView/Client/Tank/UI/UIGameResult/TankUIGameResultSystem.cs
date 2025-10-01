@@ -21,6 +21,8 @@ namespace ET.Client
 
         public static async ETTask BackToGameModeUI(this TankUIGameResultComponent self)
         {
+            SoundManager.Instance.PlayButtonClick();
+
             await TankSceneChangeHelper.SceneChangeTo(self.Root(), TankMapType.UI, "init", self.Root().InstanceId);
             var scene = self.Root();
             await UIHelper.Create(scene, UIType.TankUIGameMode, UILayer.Mid);
