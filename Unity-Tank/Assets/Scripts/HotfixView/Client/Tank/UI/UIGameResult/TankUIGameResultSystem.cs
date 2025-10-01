@@ -34,10 +34,14 @@ namespace ET.Client
             if (gameResultComponent.IsWin)
             {
                 self.Result.GetComponent<TMP_Text>().text = "Win";
+
+                SoundManager.Instance.PlayGameEnd(true);
             }
             else
             {
                 self.Result.GetComponent<TMP_Text>().text = "Loss";
+
+                SoundManager.Instance.PlayGameEnd(false);
             }
 
             var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();

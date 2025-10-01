@@ -105,6 +105,8 @@ namespace ET.Client
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 playerComponent.Shoot();
+
+                SoundManager.Instance.PlayShoot();
             }
         }
 

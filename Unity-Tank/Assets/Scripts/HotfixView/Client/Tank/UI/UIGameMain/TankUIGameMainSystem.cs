@@ -114,6 +114,8 @@ namespace ET.Client
 
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             playerComponent.Shoot();
+
+            SoundManager.Instance.PlayShoot();
         }
 
         private static void OnJoystickDirectionChanged(this TankUIGameMainComponent self, TankJoystickDirection direction)

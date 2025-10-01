@@ -39,6 +39,8 @@ namespace ET
                 explosion.GetComponent<Animator>().Play("explosion", -1, 0f);
 
                 self.ExistExplosion[effect.RemoveTime] = explosion;
+
+                SoundManager.Instance.PlayExplosion();
             }
             effectComponent.ExplosionEffects.Clear();
         }

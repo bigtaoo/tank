@@ -150,8 +150,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonClickSound: {fileID: 8300000, guid: e5cafa76c20304eb290a8fbcc8c8a0dc, type: 3}
-  shootSound: {fileID: 8300000, guid: 46ff2786c305e4fef91d921f78fb7001, type: 3}
+  shootSound: {fileID: 8300000, guid: a11eaef994e484b779afecc8964f6006, type: 3}
   explosionSound: {fileID: 8300000, guid: d69f01c3d60c54e9e9ab6bbe987e73e2, type: 3}
+  gameWinSound: {fileID: 8300000, guid: 988b13c8c2afb46b0a92752a299f843b, type: 3}
+  gameLoseSound: {fileID: 8300000, guid: 8254df36a8d7e41358b6743b68c5e2c6, type: 3}
+  itemPickupSound: {fileID: 8300000, guid: 8bab59660652043eeb511539acf477e6, type: 3}
   backgroundMusic: {fileID: 8300000, guid: 46ed25884d180488ba134f275e00f6c0, type: 3}
 --- !u!4 &217715554
 Transform:

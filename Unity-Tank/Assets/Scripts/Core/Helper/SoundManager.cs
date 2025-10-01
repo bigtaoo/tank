@@ -12,11 +12,14 @@ public class SoundManager : MonoBehaviour
     [Header("UI Sounds")]
     public AudioClip buttonClickSound;
 
-    [Header("Player Sounds")]
+    [Header("Gameplay Sounds")]
     public AudioClip shootSound;
     public AudioClip explosionSound;
+    public AudioClip gameWinSound;
+    public AudioClip gameLoseSound;
+    public AudioClip itemPickupSound;
 
-    [Header("Music")]
+    [Header("Background Music")]
     public AudioClip backgroundMusic;
 
     void Awake()
@@ -51,7 +54,7 @@ public class SoundManager : MonoBehaviour
     }
 
     // --- Music ---
-    public void PlayMusic(AudioClip clip)
+    private void PlayMusic(AudioClip clip)
     {
         if (clip != null)
         {
@@ -72,7 +75,7 @@ public class SoundManager : MonoBehaviour
     }
 
     // --- SFX ---
-    public void PlaySFX(AudioClip clip)
+    private void PlaySFX(AudioClip clip)
     {
         if (clip != null)
             sfxSource.PlayOneShot(clip);
@@ -91,5 +94,22 @@ public class SoundManager : MonoBehaviour
     public void PlayExplosion()
     {
         PlaySFX(explosionSound);
+    }
+
+    public void PlayGameEnd(bool isWin)
+    {
+        if (isWin)
+        {
+            PlaySFX(gameWinSound);
+        }
+        else
+        {
+            PlaySFX(gameLoseSound);
+        }
+    }
+
+    public void PlayItemPickUp()
+    {
+        PlaySFX(itemPickupSound);
     }
 }

@@ -57,6 +57,8 @@ namespace ET
                 self.Items.Remove(item.ItemId);
                 self.AvaiableItemResources[item.ItemType].Add(gameObject);
 
+                SoundManager.Instance.PlayItemPickUp();
+
                 Log.Info($"Remove item id: {item.ItemId} type: {item.ItemType}");
             }
             itemComponent.ItemsToRemove.Clear();
