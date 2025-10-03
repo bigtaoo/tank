@@ -41,6 +41,7 @@ namespace ET
                     item.Position.X - TankConsts.TileOffset,
                     item.Position.Y - TankConsts.TileOffset,
                     -2.0f);
+                gameObject.transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
 
                 Log.Info($"Create item id: {item.ItemId}, type: {item.ItemType}, position: {gameObject.transform.position.ToString()}, active: {gameObject.activeInHierarchy}");
             }
