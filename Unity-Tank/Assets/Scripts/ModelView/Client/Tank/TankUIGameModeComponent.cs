@@ -10,5 +10,7 @@ namespace ET.Client
         public GameObject EN;
         public GameObject DE;
         public GameObject ZH;
+        public GameObject TankConfig;
+        public GameObject Settings;
     }
 }

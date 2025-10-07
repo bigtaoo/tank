@@ -28,9 +28,27 @@ namespace ET.Client
             self.DE.GetComponent<Button>().onClick.AddListener(() => { LocaleHelper.Instance.SetDE(); });
             self.ZH = rc.Get<GameObject>("ZH");
             self.ZH.GetComponent<Button>().onClick.AddListener(() => { LocaleHelper.Instance.SetZH(); });
+
+            self.TankConfig = rc.Get<GameObject>("TankConfig");
+            self.TankConfig.GetComponent<Button>().onClick.AddListener(() => { self.OpenTankConfigPage().Coroutine(); });
+
+            self.Settings = rc.Get<GameObject>("Settings");
+            self.Settings.GetComponent<Button>().onClick.AddListener(() => self.OpenSettingsPage().Coroutine());
         }
 
-        public static async ETTask StartSingleMode(this TankUIGameModeComponent self, int mapIndex)
+        private static async ETTask OpenTankConfigPage(this TankUIGameModeComponent self)
+        {
+            await UIHelper.Create(self.Root(), UIType.TankUITankConfig, UILayer.Mid);
+            await UIHelper.Remove(self.Root(), UIType.TankUIGameMode);
+        }
+
+        private static async ETTask OpenSettingsPage(this TankUIGameModeComponent self)
+        {
+            await UIHelper.Create(self.Root(), UIType.TankUISettings, UILayer.Mid);
+            await UIHelper.Remove(self.Root(), UIType.TankUIGameMode);
+        }
+
+        private static async ETTask StartSingleMode(this TankUIGameModeComponent self, int mapIndex)
         {
             SoundManager.Instance.PlayButtonClick();
 
