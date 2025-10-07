@@ -72,6 +72,7 @@
     <Compile Include="Assets/Scripts/HotfixView/Client/LockStep/UI/UILSLogin/UILSLoginEvent.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Module/Resource/GameObjectHelper.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientBaseSystem.cs" />
+    <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UISettings/TankUISettingsSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/Unit/ChangeRotation_SyncGameObjectRotation.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/UI/UIHelper.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/UI/UILogin/AppStartInitFinish_CreateLoginUI.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/Scene/SceneChangeStart_AddComponent.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/Scene/AfterCreateClientScene_AddComponent.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Scene/TankSceneChangeStartEvent.cs" />
+    <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UITankConfig/TankUITankConfigEvent.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/LockStep/Scene/AfterCreateClientScene_LSAddComponent.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/Unit/ChangePosition_SyncGameObjectPos.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Empty.cs" />
@@ -99,9 +101,11 @@
     <Compile Include="Assets/Scripts/HotfixView/Client/Module/TrueSync/TrueSyncExtensions.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Utilities/TankHelper.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIGameMain/TankUIGameMainEvent.cs" />
+    <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UISettings/TankUISettingsEvent.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientItemSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/Unit/AfterUnitCreate_CreateUnitView.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientRobotSystem.cs" />
+    <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UITankConfig/TankUITankConfigSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientEffectSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIGameMain/TankUIGameMainSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientAttachedEffectSystem.cs" />

@@ -74,6 +74,7 @@
     <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/UIGlobalComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/UIComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Demo/UI/UILoading/UILoadingComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankUITankConfigComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Module/Resource/ResourcesLoaderComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/UIType.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Demo/Unit/GameObjectComponent.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankClientEffectComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/LockStep/UI/UIType.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankClientTileMapComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankUISettingsComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/LockStep/LSAnimatorComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankClientPlayerTankComponent.cs" />
   </ItemGroup>
