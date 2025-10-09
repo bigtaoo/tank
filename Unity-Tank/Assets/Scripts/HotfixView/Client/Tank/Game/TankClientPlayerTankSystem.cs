@@ -13,9 +13,15 @@ namespace ET.Client
             self.TankPlayer1 = GameObject.Find("tank_player");
             //Log.Warning($"Tank player is null: {self.TankPlayer1 == null}");
 
+            var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
+            var moveSpeed = TankConsts.TankInitialMoveSpeed + gameInfoComponent.TankMoveSpeedLevel * TankConsts.TankMoveSpeedAddedPerLevel;
+            var shootCoolDownTime = TankConsts.TankInitialShootCoolDownMS - gameInfoComponent.TankShootSpeedLevel * TankConsts.TankShootCoolDownReducePerLevel;
+            var bulletSpeed = TankConsts.BulletInitialMoveSpeed + gameInfoComponent.BulletMoveSpeedLevel * TankConsts.BulletMoveSpeedAddedPerLevel;
+
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             var position = self.TankPlayer1.GetComponent<Transform>().position;
-            playerComponent.InilializePlayer(new TankPosition { X = position.x + TankConsts.TileOffset, Y = position.y + TankConsts.TileOffset });
+            playerComponent.InilializePlayer(new TankPosition { X = position.x + TankConsts.TileOffset, Y = position.y + TankConsts.TileOffset },
+                moveSpeed, shootCoolDownTime, bulletSpeed);
         }
 
         [EntitySystem]

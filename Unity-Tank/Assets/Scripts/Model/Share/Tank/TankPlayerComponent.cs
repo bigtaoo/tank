@@ -7,6 +7,7 @@ namespace ET
         public TankDirection MoveDirection;
         public TankPosition Position;
         public float MoveSpeed;
+        public float BulletSpeed;
         public int Rotation;
         public long LastFrameTime;
         public TankDirection CurrentDirection = TankDirection.Up;

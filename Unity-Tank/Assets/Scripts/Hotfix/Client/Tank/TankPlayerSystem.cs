@@ -9,10 +9,11 @@ namespace ET.Client
         [EntitySystem]
         private static void Awake(this TankPlayerComponent self)
         {
-            self.MoveSpeed = 3.3f;
+            self.MoveSpeed = 3.0f;
             self.LastFrameTime = TimeInfo.Instance.ClientFrameTime();
             self.MoveDirection = TankDirection.None;
             self.ShootCoolDownTime = 500;
+            self.BulletSpeed = 10.0f;
         }
 
         [EntitySystem]
@@ -23,12 +24,17 @@ namespace ET.Client
             self.AdjustStopPosition();
         }
 
-        public static void InilializePlayer(this TankPlayerComponent self, TankPosition spawnPosition)
+        public static void InilializePlayer(this TankPlayerComponent self, TankPosition spawnPosition,
+            int TankMoveSpeed, int ShootCoolDownTime, int BulletMoveSpeed)
         {
             self.SpawnPosition = spawnPosition;
             self.Position = spawnPosition;
             self.Rotation = 0;
-            Log.Info($"Initia tank position: x: {self.Position.X}, y: {self.Position.Y}");
+            self.MoveSpeed = TankMoveSpeed / 1000.0f;
+            self.ShootCoolDownTime = ShootCoolDownTime;
+            self.BulletSpeed = BulletMoveSpeed / 1000.0f;
+            Log.Info($"Initia tank position: x: {self.Position.X}, y: {self.Position.Y}, " +
+                $"move speed: {self.MoveSpeed}, shoot cooldown time: {self.ShootCoolDownTime}, bullet move speed: {self.BulletSpeed}");
         }
 
         public static void SetMoveDirection(this TankPlayerComponent self, TankDirection moveDirection)
@@ -62,7 +68,7 @@ namespace ET.Client
                 Camp = TankCamp.Player,
                 MoveDirection = self.CurrentDirection,
                 Position = self.Position,
-                Speed = self.MoveSpeed * 3,
+                Speed = self.BulletSpeed,
             });
         }
 
