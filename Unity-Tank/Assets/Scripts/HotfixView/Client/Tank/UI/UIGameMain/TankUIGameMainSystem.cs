@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -43,6 +44,8 @@ namespace ET.Client
             downHoldButton.onRelease = self.StopTank;
             self.Shoot = rc.Get<GameObject>("shoot");
             self.Shoot.GetComponent<Button>().onClick.AddListener(() => { self.TankShoot(); });
+            self.ShootCoolDown = rc.Get<GameObject>("ShootCoolDown");
+            self.ShootCoolDown.SetActive(false);
 
             self.Center = rc.Get<GameObject>("center");
             var centerButton = self.Center.GetComponent<CenterJoystick>();
@@ -116,6 +119,35 @@ namespace ET.Client
             playerComponent.Shoot();
 
             SoundManager.Instance.PlayShoot();
+
+            self.ShootCoolDown.SetActive(true);
+            self.ShootCoolDownUIAnimation(playerComponent.GetShootCoolDownTime()).Coroutine();
+        }
+
+        private static async ETTask ShootCoolDownUIAnimation(this TankUIGameMainComponent self, long totalCoolDownTime)
+        {
+            var cooldownImage = self.ShootCoolDown.GetComponent<Image>();
+            if (cooldownImage == null)
+            {
+                Log.Error("CooldownImage missing on ShootCoolDown UI");
+                return;
+            }
+
+            cooldownImage.fillAmount = 1f;
+
+            long startTime = TimeInfo.Instance.ClientFrameTime();
+            long endTime = startTime + totalCoolDownTime;
+            var timerComponent = self.Root().GetComponent<TimerComponent>();
+
+            while (TimeInfo.Instance.ClientFrameTime() < endTime)
+            {
+                float t = (float)(TimeInfo.Instance.ClientFrameTime() - startTime) / totalCoolDownTime;
+                cooldownImage.fillAmount = 1f - t;
+                await timerComponent.WaitFrameAsync();
+            }
+
+            cooldownImage.fillAmount = 0f;
+            self.ShootCoolDown.SetActive(false);
         }
 
         private static void OnJoystickDirectionChanged(this TankUIGameMainComponent self, TankJoystickDirection direction)

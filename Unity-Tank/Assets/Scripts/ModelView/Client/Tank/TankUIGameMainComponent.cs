@@ -19,6 +19,7 @@ namespace ET.Client
         public GameObject Down;
         public GameObject Center;
         public GameObject Shoot;
+        public GameObject ShootCoolDown;
 
         public readonly int RobotUICount = 3;
     }

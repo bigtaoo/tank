@@ -210,5 +210,10 @@ namespace ET.Client
         {
             self.UpdateSprite = false;
         }
+
+        public static long GetShootCoolDownTime(this TankPlayerComponent self)
+        {
+            return self.ShootCoolDownTime;
+        }
     }
 }
