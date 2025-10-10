@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace ET
 {
+    record userinfo;
     [EntitySystemOf(typeof(TankClientSavedFileComponent))]
     [FriendOf(typeof(TankClientSavedFileComponent))]
     public static partial class TankClientSavedFileSystem
@@ -38,6 +39,11 @@ namespace ET
         public static int GetCurrentMapIndex(this TankClientSavedFileComponent self)
         {
             return self.UserInfo.CurrentMapIndex;
+        }
+
+        public static TankUserInfo GetUserInfo(this TankClientSavedFileComponent self)
+        {
+            return self.UserInfo;
         }
     }
 }

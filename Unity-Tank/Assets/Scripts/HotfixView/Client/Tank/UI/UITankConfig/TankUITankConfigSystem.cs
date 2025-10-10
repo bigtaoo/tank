@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +24,10 @@ namespace ET.Client
             self.ShootSpeedValue = rc.Get<GameObject>("ShootSpeedValue");
             self.ShootSpeedBuy = rc.Get<GameObject>("ShootSpeedBuy");
             self.ShootSpeedLevel = rc.Get<GameObject>("ShootSpeedLevel");
+
+            self.GoldInfo = rc.Get<GameObject>("GoldNumber");
+
+            self.DisplayInitialInfo();
         }
 
         private static async ETTask BackToGameModeUI(this TankUITankConfigComponent self)
@@ -36,7 +41,20 @@ namespace ET.Client
 
         private static void DisplayInitialInfo(this TankUITankConfigComponent self)
         {
-            var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
+            var gameInfoComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
+            var moveSpeed = TankConsts.TankInitialMoveSpeed + gameInfoComponent.UserInfo.TankMoveSpeedLevel * TankConsts.TankMoveSpeedAddedPerLevel;
+            var shootCoolDownTime = TankConsts.TankInitialShootCoolDownMS - gameInfoComponent.UserInfo.TankShootSpeedLevel * TankConsts.TankShootCoolDownReducePerLevel;
+            var bulletSpeed = TankConsts.BulletInitialMoveSpeed + gameInfoComponent.UserInfo.BulletMoveSpeedLevel * TankConsts.BulletMoveSpeedAddedPerLevel;
+
+            self.MoveSpeedValue.GetComponent<TMP_Text>().text = (moveSpeed / 1000.0f).ToString("F2");
+            self.BulletSpeedValue.GetComponent<TMP_Text>().text = (bulletSpeed / 1000.0f).ToString("F2");
+            self.ShootSpeedValue.GetComponent<TMP_Text>().text = (1000.0f / shootCoolDownTime).ToString("F2");
+
+            self.MoveSpeedLevel.GetComponent<TMP_Text>().text = gameInfoComponent.UserInfo.TankMoveSpeedLevel.ToString();
+            self.BulletSpeedLevel.GetComponent<TMP_Text>().text = gameInfoComponent.UserInfo.BulletMoveSpeedLevel.ToString();
+            self.ShootSpeedLevel.GetComponent<TMP_Text>().text = gameInfoComponent.UserInfo.TankShootSpeedLevel.ToString();
+
+            self.GoldInfo.GetComponent<TMP_Text>().text = gameInfoComponent.UserInfo.Gold.ToString();
         }
     }
 }
