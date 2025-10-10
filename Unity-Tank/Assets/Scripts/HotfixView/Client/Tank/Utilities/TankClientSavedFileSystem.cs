@@ -41,9 +41,10 @@ namespace ET
             return self.UserInfo.CurrentMapIndex;
         }
 
-        public static TankUserInfo GetUserInfo(this TankClientSavedFileComponent self)
+        public static void SaveTankConfigResult(this TankClientSavedFileComponent self)
         {
-            return self.UserInfo;
+            var json = JsonUtility.ToJson(self.UserInfo);
+            LightObfuscation.SaveJson(self.FileName, json);
         }
     }
 }

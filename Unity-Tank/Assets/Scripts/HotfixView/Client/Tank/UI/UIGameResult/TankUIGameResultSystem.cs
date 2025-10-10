@@ -51,6 +51,9 @@ namespace ET.Client
 
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
             var mapIndex = gameResultComponent.IsWin ? gameInfoComponent.GameInfo.MapIndex + 1 : gameInfoComponent.GameInfo.MapIndex;
+
+            // if (savedFileComponent.UserInfo.Gold < 100) gameInfoComponent.GameInfo.Gold = 88888;
+
             savedFileComponent.UpdateGameInfo(mapIndex, gameInfoComponent.GameInfo.Gold);
         }
     }

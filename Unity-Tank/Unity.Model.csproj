@@ -61,6 +61,7 @@
     <Compile Include="Assets/Scripts/Model/Client/LockStep/LSClientUpdater.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankGameInfoComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Scene/CurrentScenesComponent.cs" />
+    <Compile Include="Assets/Scripts/Model/Share/Tank/Enums/TankConfigType.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankItemComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Numeric/NumericType.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Demo/NetClient/A2NetClient_Message.cs" />
