@@ -44,6 +44,7 @@ namespace ET
         public static void SaveTankConfigResult(this TankClientSavedFileComponent self)
         {
             var json = JsonUtility.ToJson(self.UserInfo);
+            Log.Info($"Save game info from tank config: {json}");
             LightObfuscation.SaveJson(self.FileName, json);
         }
     }
