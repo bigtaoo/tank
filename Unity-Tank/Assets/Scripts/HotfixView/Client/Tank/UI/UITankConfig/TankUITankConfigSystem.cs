@@ -24,6 +24,12 @@ namespace ET.Client
             self.ShootSpeedValue = rc.Get<GameObject>("ShootSpeedValue");
             self.ShootSpeedBuy = rc.Get<GameObject>("ShootSpeedBuy");
             self.ShootSpeedLevel = rc.Get<GameObject>("ShootSpeedLevel");
+            self.MoveSpeedMaxLevel = rc.Get<GameObject>("MoveSpeedMaxLevel");
+            self.MoveSpeedMaxLevel.SetActive(false);
+            self.BulletSpeedMaxLevel = rc.Get<GameObject>("BulletSpeedMaxLevel");
+            self.BulletSpeedMaxLevel.SetActive(false);
+            self.ShootSpeedMaxLevel = rc.Get<GameObject>("ShootSpeedMaxLevel");
+            self.ShootSpeedMaxLevel.SetActive(false);
 
             self.GoldInfo = rc.Get<GameObject>("GoldNumber");
 
@@ -59,6 +65,22 @@ namespace ET.Client
             self.ShootSpeedLevel.GetComponent<TMP_Text>().text = savedFileComponent.UserInfo.TankShootSpeedLevel.ToString();
 
             self.GoldInfo.GetComponent<TMP_Text>().text = savedFileComponent.UserInfo.Gold.ToString();
+
+            if (savedFileComponent.UserInfo.TankMoveSpeedLevel >= 100)
+            {
+                self.MoveSpeedBuy.SetActive(false);
+                self.MoveSpeedMaxLevel.SetActive(true);
+            }
+            if (savedFileComponent.UserInfo.BulletMoveSpeedLevel >= 100)
+            {
+                self.BulletSpeedBuy.SetActive(false);
+                self.BulletSpeedMaxLevel.SetActive(true);
+            }
+            if (savedFileComponent.UserInfo.TankShootSpeedLevel >= 100)
+            {
+                self.ShootSpeedBuy.SetActive(false);
+                self.ShootSpeedMaxLevel.SetActive(true);
+            }
         }
 
         private static void ProcessBuyItem(this TankUITankConfigComponent self, TankConfigType type)
@@ -75,16 +97,31 @@ namespace ET.Client
             {
                 case TankConfigType.TankMoveSpeed:
                     {
+                        if (savedFileComponent.UserInfo.TankMoveSpeedLevel >= 100)
+                        {
+                            Log.Warning($"Max level reached, can not upgrade {type}");
+                            return;
+                        }
                         savedFileComponent.UserInfo.TankMoveSpeedLevel++;
                         break;
                     }
                 case TankConfigType.TankShootSpeed:
                     {
+                        if (savedFileComponent.UserInfo.TankShootSpeedLevel >= 100)
+                        {
+                            Log.Warning($"Max level reached, can not upgrade {type}");
+                            return;
+                        }
                         savedFileComponent.UserInfo.TankShootSpeedLevel++;
                         break;
                     }
                 case TankConfigType.BulletMoveSpeed:
                     {
+                        if (savedFileComponent.UserInfo.BulletMoveSpeedLevel >= 100)
+                        {
+                            Log.Warning($"Max level reached, can not upgrade {type}");
+                            return;
+                        }
                         savedFileComponent.UserInfo.BulletMoveSpeedLevel++;
                         break;
                     }

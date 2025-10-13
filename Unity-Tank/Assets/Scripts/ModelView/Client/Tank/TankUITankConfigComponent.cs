@@ -15,6 +15,9 @@ namespace ET.Client
         public GameObject BulletSpeedBuy;
         public GameObject ShootSpeedValue;
         public GameObject ShootSpeedBuy;
+        public GameObject MoveSpeedMaxLevel;
+        public GameObject BulletSpeedMaxLevel;
+        public GameObject ShootSpeedMaxLevel;
 
         public GameObject MoveSpeedLevel;
         public GameObject BulletSpeedLevel;
