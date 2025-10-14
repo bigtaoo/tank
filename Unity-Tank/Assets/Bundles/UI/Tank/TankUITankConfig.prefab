@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1431576037130298801}
   - component: {fileID: 1431576037130298803}
   - component: {fileID: 114905074804487618}
+  - component: {fileID: 5185789941606369267}
   m_Layer: 5
   m_Name: TankUITankConfig
   m_TagString: Untagged
@@ -164,6 +165,34 @@ MonoBehaviour:
     gameObject: {fileID: 8225866077497369434}
   - key: SelectedSkillLevel
     gameObject: {fileID: 2645610179503472738}
+--- !u!114 &5185789941606369267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386170326414932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &69502325581349842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,6 +1131,8 @@ GameObject:
   - component: {fileID: 6542355517887590687}
   - component: {fileID: 4876991423352634033}
   - component: {fileID: 3687101482992263536}
+  - component: {fileID: 8191534687266806398}
+  - component: {fileID: 4854136886353606588}
   m_Layer: 5
   m_Name: LifeSkillDescription
   m_TagString: Untagged
@@ -1156,7 +1187,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Get an extra life every <color=#FFD700>130</color> seconds.
+  m_text: Get an extra life every {time} seconds.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1227,6 +1258,46 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8191534687266806398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161288696863263924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:7b3c44bf3f08943d0a7cf67078ef29d3
+    m_TableEntryReference:
+      m_KeyId: 13376091119935488
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &4854136886353606588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161288696863263924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e47b43f16e214c3b8e042246c61f359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Core::LocalizeTMPBinder
 --- !u!1 &1172943155741651220
 GameObject:
   m_ObjectHideFlags: 0
