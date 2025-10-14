@@ -37,7 +37,10 @@ namespace ET.Client
             self.ShootSpeedBuy.GetComponent<Button>().onClick.AddListener(() => { self.ProcessBuyItem(TankConfigType.TankShootSpeed); });
             self.BulletSpeedBuy.GetComponent<Button>().onClick.AddListener(() => { self.ProcessBuyItem(TankConfigType.BulletMoveSpeed); });
 
+            self.AwakeSkillConfig();
+
             self.DisplayInitialInfo();
+            self.DisplaySkillInfo();
         }
 
         private static async ETTask BackToGameModeUI(this TankUITankConfigComponent self)

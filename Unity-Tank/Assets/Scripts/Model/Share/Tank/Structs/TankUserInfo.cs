@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ET
 {
     [EnableClass]
@@ -9,5 +11,7 @@ namespace ET
         public int TankMoveSpeedLevel;
         public int BulletMoveSpeedLevel;
         public int TankShootSpeedLevel;
+        public TankSkillType SelectedSkillType;
+        public Dictionary<TankSkillType, int> SkillLevel;
     }
 }

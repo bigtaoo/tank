@@ -105,6 +105,7 @@
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientItemSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/Unit/AfterUnitCreate_CreateUnitView.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientRobotSystem.cs" />
+    <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UITankConfig/TankUISkillConfigSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UITankConfig/TankUITankConfigSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientEffectSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIGameMain/TankUIGameMainSystem.cs" />

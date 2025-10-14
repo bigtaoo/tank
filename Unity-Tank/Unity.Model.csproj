@@ -132,6 +132,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankBuffComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankItem.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/IRoomMessage.cs" />
+    <Compile Include="Assets/Scripts/Model/Share/Tank/Enums/TankSkillType.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Numeric/NumericWatcherComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Plugins/Example/ModelClient.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankBaseComponent.cs" />

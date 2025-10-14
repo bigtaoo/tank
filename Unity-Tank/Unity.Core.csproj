@@ -209,6 +209,7 @@
     <Compile Include="Assets/Scripts/Core/MultiMapSet.cs" />
     <Compile Include="Assets/Scripts/Core/Fiber/Fiber.cs" />
     <Compile Include="Assets/Scripts/Core/Analyzer/EnableAccessEntiyChildAttribute.cs" />
+    <Compile Include="Assets/Scripts/Core/UI/ClickEvent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Scripts/Core/Unity.Core.asmdef" />

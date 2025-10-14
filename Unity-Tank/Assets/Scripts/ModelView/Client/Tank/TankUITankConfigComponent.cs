@@ -22,5 +22,11 @@ namespace ET.Client
         public GameObject MoveSpeedLevel;
         public GameObject BulletSpeedLevel;
         public GameObject ShootSpeedLevel;
+        public GameObject SelectedSkillImage;
+        public GameObject SelectedSkillLevel;
+
+        public GameObject LifeSkillPanel;
+        public GameObject LifeSkillBuy;
+        public GameObject LifeSkillDescription;
     }
 }
