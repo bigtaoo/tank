@@ -75,7 +75,7 @@ namespace ET.Client
                 savedFileComponent.UserInfo.SkillLevels.Add(tankSkill);
             }
 
-            Log.Warning($"current skill level: {tankSkill.SkillLevel}");
+            // Log.Warning($"current skill level: {tankSkill.SkillLevel}");
             savedFileComponent.UserInfo.Gold -= skillPrice;
             tankSkill.SkillLevel++;
             savedFileComponent.UserInfo.SelectedSkillType = skillType;
