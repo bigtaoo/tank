@@ -76,7 +76,6 @@
     <Compile Include="Assets/Scripts/Core/Fiber/Module/Actor/ProcessInnerSender.cs" />
     <Compile Include="Assets/Scripts/Core/DoubleMap.cs" />
     <Compile Include="Assets/Scripts/Core/Network/KService.cs" />
-    <Compile Include="Assets/Scripts/Core/Helper/LocaleHelper.cs" />
     <Compile Include="Assets/Scripts/Core/Fiber/MailBoxComponent.cs" />
     <Compile Include="Assets/Scripts/Core/Method/IStaticMethod.cs" />
     <Compile Include="Assets/Scripts/Core/Helper/EnumHelper.cs" />
@@ -97,7 +96,6 @@
     <Compile Include="Assets/Scripts/Core/TileMap/TankMapTileType.cs" />
     <Compile Include="Assets/Scripts/Core/World/Module/EventSystem/IEvent.cs" />
     <Compile Include="Assets/Scripts/Core/MultiMap.cs" />
-    <Compile Include="Assets/Scripts/Core/Helper/LocalizeTMPBinder.cs" />
     <Compile Include="Assets/Scripts/Core/ListComponent.cs" />
     <Compile Include="Assets/Scripts/Core/Fiber/Module/CoroutineLock/CoroutineLock.cs" />
     <Compile Include="Assets/Scripts/Core/World/Module/Log/Log.cs" />
@@ -169,6 +167,7 @@
     <Compile Include="Assets/Scripts/Core/World/Module/Fiber/ThreadPoolScheduler.cs" />
     <Compile Include="Assets/Scripts/Core/Fiber/Module/Navmesh/NavmeshComponent.cs" />
     <Compile Include="Assets/Scripts/Core/UI/GameModeConfig.cs" />
+    <Compile Include="Assets/Scripts/Core/Localization/TankSkillTimeUpdater.cs" />
     <Compile Include="Assets/Scripts/Core/Network/OpcodeRangeDefine.cs" />
     <Compile Include="Assets/Scripts/Core/Entity/EntitySceneFactory.cs" />
     <Compile Include="Assets/Scripts/Core/Network/KChannel.cs" />
@@ -180,6 +179,7 @@
     <Compile Include="Assets/Scripts/Core/Entity/ILateUpdateSystem.cs" />
     <Compile Include="Assets/Scripts/Core/Helper/WinPeriod.cs" />
     <Compile Include="Assets/Scripts/Core/World/Module/Code/CodeAttribute.cs" />
+    <Compile Include="Assets/Scripts/Core/Localization/LocalizeTMPBinder.cs" />
     <Compile Include="Assets/Scripts/Core/Helper/ObjectHelper.cs" />
     <Compile Include="Assets/Scripts/Core/World/Module/IdGenerater/IdGenerater.cs" />
     <Compile Include="Assets/Scripts/Core/Network/OpcodeType.cs" />
@@ -194,6 +194,7 @@
     <Compile Include="Assets/Scripts/Core/Network/IPEndPointNonAlloc.cs" />
     <Compile Include="Assets/Scripts/Core/World/Module/Fiber/MainThreadScheduler.cs" />
     <Compile Include="Assets/Scripts/Core/Analyzer/UniqueIdAttribute.cs" />
+    <Compile Include="Assets/Scripts/Core/Localization/LocaleHelper.cs" />
     <Compile Include="Assets/Scripts/Core/TileMap/TankInitialConfig.cs" />
     <Compile Include="Assets/Scripts/Core/Network/IMessage.cs" />
     <Compile Include="Assets/Scripts/Core/Fiber/Module/CoroutineLock/CoroutineLockQueue.cs" />
