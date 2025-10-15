@@ -129,24 +129,14 @@ MonoBehaviour:
     gameObject: {fileID: 1161288696863263924}
   - key: LifeSkillBuy
     gameObject: {fileID: 379964102305831738}
-  - key: BombSkillImage
-    gameObject: {fileID: 3310990464125297813}
   - key: BombSkillBuy
     gameObject: {fileID: 2000243175577128436}
-  - key: ShieldSkillImage
-    gameObject: {fileID: 4618186046377796904}
   - key: ShieldSkillBuy
     gameObject: {fileID: 4542284149393022341}
-  - key: TimeStopSkillImage
-    gameObject: {fileID: 1597700837586546814}
   - key: TimeStopSkillBuy
     gameObject: {fileID: 8695428694989008764}
-  - key: TankLevelUpSkillImage
-    gameObject: {fileID: 6439266163998850092}
   - key: TankLevelUpSkillBuy
     gameObject: {fileID: 7593125779231999031}
-  - key: WallUpgradeSkillImage
-    gameObject: {fileID: 5464129610102408604}
   - key: WallUpgradeSkillBuy
     gameObject: {fileID: 1172943155741651220}
   - key: LifeSkill
@@ -165,6 +155,16 @@ MonoBehaviour:
     gameObject: {fileID: 2169521954821457239}
   - key: WallUpgradeSkill
     gameObject: {fileID: 1772596193908986655}
+  - key: BombSkillDescription
+    gameObject: {fileID: 4010226702706489324}
+  - key: ShieldSkillDescription
+    gameObject: {fileID: 7954893254618045095}
+  - key: TimeStopSkillDescription
+    gameObject: {fileID: 7224548174609656377}
+  - key: TankLevelUpSkillDescription
+    gameObject: {fileID: 2147699614430394128}
+  - key: WallUpgradeSkillDescription
+    gameObject: {fileID: 1150637889947160855}
 --- !u!114 &5185789941606369267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3426,7 +3426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 51, y: 0}
+  m_AnchoredPosition: {x: 51, y: -2}
   m_SizeDelta: {x: 621.7327, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1002881259752689975

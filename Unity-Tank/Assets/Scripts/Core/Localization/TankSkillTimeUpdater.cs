@@ -1,3 +1,4 @@
+using ET;
 using UnityEngine;
 using UnityEngine.Localization.Components;
 using UnityEngine.Localization.SmartFormat.PersistentVariables;
@@ -5,24 +6,15 @@ using UnityEngine.Localization.SmartFormat.PersistentVariables;
 [RequireComponent(typeof(LocalizeStringEvent))]
 public class TankSkillTimeUpdater : MonoBehaviour
 {
-    public static TankSkillTimeUpdater Instance { get; private set; }
     private LocalizeStringEvent stringEvent;
 
     void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
         stringEvent = GetComponent<LocalizeStringEvent>();
 
         var localizedString = stringEvent.StringReference;
         localizedString.Add("time", new IntVariable { Value = 130 });
+        // Log.Info($"Skill time updater: {localizedString.GetLocalizedString()}");
     }
 
     public void UpdateSkillTime(int timeInSeconds)

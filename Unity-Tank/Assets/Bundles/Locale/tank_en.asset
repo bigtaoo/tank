@@ -82,11 +82,13 @@ MonoBehaviour:
   - m_Id: 13758551523581952
     m_Localized: "Levels up the player\u2019s tank every {time} seconds."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 2257703391918293060
   - m_Id: 13759002872635392
     m_Localized: Upgrade base walls every {time} seconds.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 2257703391918293060
   references:
     version: 2
     RefIds:
@@ -99,3 +101,5 @@ MonoBehaviour:
         - id: 13756774824796160
         - id: 13757355983364096
         - id: 13758017756454912
+        - id: 13758551523581952
+        - id: 13759002872635392

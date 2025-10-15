@@ -83,11 +83,13 @@ MonoBehaviour:
   - m_Id: 13758551523581952
     m_Localized: Steigert alle {time} Sekunden das Level des Spielerpanzers.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 2257703391918293061
   - m_Id: 13759002872635392
     m_Localized: "Verbessert die Basisw\xE4nde alle {time} Sekunden."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 2257703391918293061
   references:
     version: 2
     RefIds:
@@ -100,3 +102,5 @@ MonoBehaviour:
         - id: 13756774824796160
         - id: 13757355983364096
         - id: 13758017756454912
+        - id: 13758551523581952
+        - id: 13759002872635392

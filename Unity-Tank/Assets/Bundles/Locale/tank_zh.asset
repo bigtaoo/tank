@@ -84,11 +84,13 @@ MonoBehaviour:
   - m_Id: 13758551523581952
     m_Localized: "\u6BCF\u9694 {time} \u79D2\u63D0\u5347\u73A9\u5BB6\u5766\u514B\u7684\u7B49\u7EA7\u3002"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 2257703391918293059
   - m_Id: 13759002872635392
     m_Localized: "\u6BCF\u9694 {time} \u79D2\u5347\u7EA7\u57FA\u5730\u56F4\u5899\u3002"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 2257703391918293059
   references:
     version: 2
     RefIds:
@@ -101,3 +103,5 @@ MonoBehaviour:
         - id: 13756774824796160
         - id: 13757355983364096
         - id: 13758017756454912
+        - id: 13758551523581952
+        - id: 13759002872635392
