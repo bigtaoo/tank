@@ -12,34 +12,6 @@ namespace ET
         public int BulletMoveSpeedLevel;
         public int TankShootSpeedLevel;
         public TankSkillType SelectedSkillType;
-
-        public List<SkillLevelEntry> skillLevels = new();
-
-        [System.NonSerialized]
-        public Dictionary<TankSkillType, int> SkillLevel = new();
-
-        [System.Serializable]
-        [EnableClass]
-        public class SkillLevelEntry
-        {
-            public TankSkillType SkillType;
-            public int Level;
-        }
-
-        // Call before saving
-        public void SyncToList()
-        {
-            skillLevels.Clear();
-            foreach (var kvp in SkillLevel)
-                skillLevels.Add(new SkillLevelEntry { SkillType = kvp.Key, Level = kvp.Value });
-        }
-
-        // Call after loading
-        public void SyncFromList()
-        {
-            SkillLevel = new Dictionary<TankSkillType, int>();
-            foreach (var entry in skillLevels)
-                SkillLevel[entry.SkillType] = entry.Level;
-        }
+        public List<TankSkill> SkillLevels = new();
     }
 }

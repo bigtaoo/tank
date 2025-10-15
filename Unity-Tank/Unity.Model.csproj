@@ -95,6 +95,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Module/Scene/FiberParentComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Enums/TankCamp.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Message/NetComponent.cs" />
+    <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankSkill.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankGameInfo.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankBullet.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Module/Message/ClientSessionErrorComponent.cs" />

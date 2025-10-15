@@ -19,7 +19,6 @@ namespace ET
             else
             {
                 self.UserInfo = JsonUtility.FromJson<TankUserInfo>(file);
-                self.UserInfo.SyncFromList();
             }
         }
 
@@ -42,10 +41,21 @@ namespace ET
             return self.UserInfo.CurrentMapIndex;
         }
 
+        public static int GetSkillLevel(this TankClientSavedFileComponent self, TankSkillType skillType)
+        {
+            foreach (var skill in self.UserInfo.SkillLevels)
+            {
+                if (skill.SkillType == skillType)
+                {
+                    return skill.SkillLevel;
+                }
+            }
+            return 0;
+        }
+
         public static void SaveTankConfigResult(this TankClientSavedFileComponent self)
         {
-            self.UserInfo.SyncToList();
-            Log.Warning($"List count: {self.UserInfo.skillLevels.Count}");
+            Log.Warning($"skill levels count: {self.UserInfo.SkillLevels.Count}");
             var json = JsonUtility.ToJson(self.UserInfo);
             Log.Info($"Save game info from tank config: {json}");
             LightObfuscation.SaveJson(self.FileName, json);

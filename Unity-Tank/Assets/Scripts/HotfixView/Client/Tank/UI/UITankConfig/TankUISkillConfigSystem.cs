@@ -31,20 +31,12 @@ namespace ET.Client
             }
             self.SelectedSkillImage.GetComponent<Image>().sprite = AtlasManager.Instance.GetSprite(self.GetSkillSpriteName(selectedSkillType));
 
-            if (savedFileComponent.UserInfo.SkillLevel == null)
-            {
-                savedFileComponent.UserInfo.SkillLevel = new System.Collections.Generic.Dictionary<TankSkillType, int>();
-                savedFileComponent.UserInfo.SkillLevel[TankSkillType.LifeSkill] = 1;
-            }
-            if (!savedFileComponent.UserInfo.SkillLevel.TryGetValue(selectedSkillType, out var level))
-            {
-                level = 0;
-            }
-            self.SelectedSkillLevel.GetComponent<TMP_Text>().text = level.ToString();
+            self.SelectedSkillLevel.GetComponent<TMP_Text>().text = savedFileComponent.GetSkillLevel(selectedSkillType).ToString();
 
             foreach (TankSkillType skill in Enum.GetValues(typeof(TankSkillType)))
             {
-                if (savedFileComponent.UserInfo.SkillLevel.TryGetValue(skill, out var skillLevel) && skillLevel > 0)
+                var skillLevel = savedFileComponent.GetSkillLevel(skill);
+                if (skillLevel > 0)
                 {
                     var skillTime = TankConsts.SkillInitialTime - skillLevel;
                     var timeUpdater = self.GetTankSkillTimeUpdater(skill);
@@ -64,13 +56,28 @@ namespace ET.Client
             {
                 Log.Warning($"Don't have enough money to buy the skill. Current money is {savedFileComponent.UserInfo.Gold}");
             }
-            if (!savedFileComponent.UserInfo.SkillLevel.TryGetValue(skillType, out var level))
+            TankSkill tankSkill = null;
+            foreach (var skill in savedFileComponent.UserInfo.SkillLevels)
             {
-                level = 0;
+                if (skill.SkillType == skillType)
+                {
+                    tankSkill = skill;
+                    break;
+                }
+            }
+            if (tankSkill == null)
+            {
+                tankSkill = new TankSkill
+                {
+                    SkillType = skillType,
+                    SkillLevel = 0,
+                };
+                savedFileComponent.UserInfo.SkillLevels.Add(tankSkill);
             }
 
+            Log.Warning($"current skill level: {tankSkill.SkillLevel}");
             savedFileComponent.UserInfo.Gold -= skillPrice;
-            savedFileComponent.UserInfo.SkillLevel[skillType] = level++;
+            tankSkill.SkillLevel++;
             savedFileComponent.UserInfo.SelectedSkillType = skillType;
 
             self.DisplaySkillInfo();
