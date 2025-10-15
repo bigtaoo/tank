@@ -18,15 +18,15 @@ public class TankSkillTimeUpdater: MonoBehaviour
             Destroy(gameObject);
         }
 
-        Initialize();
-    }
-
-    void Initialize()
-    {
         stringEvent = GetComponent<LocalizeStringEvent>();
 
         var localizedString = stringEvent.StringReference;
         localizedString.Add("time", new IntVariable { Value = 130 });
+    }
+
+    void Start()
+    {
+        var localizedString = stringEvent.StringReference;
         localizedString.RefreshString();
     }
     

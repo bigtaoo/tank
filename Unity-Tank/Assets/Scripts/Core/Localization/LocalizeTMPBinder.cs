@@ -7,7 +7,7 @@ using UnityEngine.Localization.Components;
 public class LocalizeTMPBinder : MonoBehaviour
 {
     void Reset() => Bind();
-    void Awake() => Bind();
+    void Start() => Bind();
 
     void Bind()
     {
