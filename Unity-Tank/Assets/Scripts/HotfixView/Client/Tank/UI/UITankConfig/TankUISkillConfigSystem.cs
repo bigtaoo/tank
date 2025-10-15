@@ -104,6 +104,11 @@ namespace ET.Client
                 };
                 savedFileComponent.UserInfo.SkillLevels.Add(tankSkill);
             }
+            if (tankSkill.SkillLevel >= 100)
+            {
+                Log.Warning("Already upgraded to the maximum level!");
+                return;
+            }
 
             // Log.Warning($"current skill level: {tankSkill.SkillLevel}");
             savedFileComponent.UserInfo.Gold -= skillPrice;
