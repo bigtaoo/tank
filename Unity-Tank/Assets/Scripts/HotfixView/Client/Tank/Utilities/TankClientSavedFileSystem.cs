@@ -19,6 +19,7 @@ namespace ET
             else
             {
                 self.UserInfo = JsonUtility.FromJson<TankUserInfo>(file);
+                self.UserInfo.SyncFromList();
             }
         }
 
@@ -43,6 +44,8 @@ namespace ET
 
         public static void SaveTankConfigResult(this TankClientSavedFileComponent self)
         {
+            self.UserInfo.SyncToList();
+            Log.Warning($"List count: {self.UserInfo.skillLevels.Count}");
             var json = JsonUtility.ToJson(self.UserInfo);
             Log.Info($"Save game info from tank config: {json}");
             LightObfuscation.SaveJson(self.FileName, json);

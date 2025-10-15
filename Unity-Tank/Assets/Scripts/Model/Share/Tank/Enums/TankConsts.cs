@@ -14,5 +14,6 @@ namespace ET
         public const int TankShootCoolDownReducePerLevel = 10;
         public const int BulletInitialMoveSpeed = 10000;
         public const int BulletMoveSpeedAddedPerLevel = 50;
+        public const int SkillInitialTime = 130;
     }
 }
