@@ -19,6 +19,36 @@ namespace ET.Client
             self.LifeSkillPanel = rc.Get<GameObject>("LifeSkill");
             self.LifeSkillBuy.GetComponent<Button>().onClick.AddListener(() => self.ProcessBuySkill(TankSkillType.LifeSkill));
             self.LifeSkillPanel.GetComponent<ClickEvent>().OnClick = () => self.UpdateSelectedSkill(TankSkillType.LifeSkill);
+
+            self.BombSkillBuy = rc.Get<GameObject>("BombSkillBuy");
+            self.BombSkillDescription = rc.Get<GameObject>("BombSkillDescription");
+            self.BombSkillPanel = rc.Get<GameObject>("BombSkill");
+            self.BombSkillBuy.GetComponent<Button>().onClick.AddListener(() => self.ProcessBuySkill(TankSkillType.BombSkill));
+            self.BombSkillPanel.GetComponent<ClickEvent>().OnClick = () => self.UpdateSelectedSkill(TankSkillType.BombSkill);
+
+            self.ShieldSkillBuy = rc.Get<GameObject>("ShieldSkillBuy");
+            self.ShieldSkillDescription = rc.Get<GameObject>("ShieldSkillDescription");
+            self.ShieldSkillPanel = rc.Get<GameObject>("ShieldSkill");
+            self.ShieldSkillBuy.GetComponent<Button>().onClick.AddListener(() => self.ProcessBuySkill(TankSkillType.ShieldSkill));
+            self.ShieldSkillPanel.GetComponent<ClickEvent>().OnClick = () => self.UpdateSelectedSkill(TankSkillType.ShieldSkill);
+
+            self.TimeStopSkillBuy = rc.Get<GameObject>("TimeStopSkillBuy");
+            self.TimeStopSkillDescription = rc.Get<GameObject>("TimeStopSkillDescription");
+            self.TimeStopSkillPanel = rc.Get<GameObject>("TimeStopSkill");
+            self.TimeStopSkillBuy.GetComponent<Button>().onClick.AddListener(() => self.ProcessBuySkill(TankSkillType.TimeStopSkill));
+            self.TimeStopSkillPanel.GetComponent<ClickEvent>().OnClick = () => self.UpdateSelectedSkill(TankSkillType.TimeStopSkill);
+
+            self.TankLevelUpSkillBuy = rc.Get<GameObject>("TankLevelUpSkillBuy");
+            self.TankLevelUpSkillDescription = rc.Get<GameObject>("TankLevelUpSkillDescription");
+            self.TankLevelUpSkillPanel = rc.Get<GameObject>("TankLevelUpSkill");
+            self.TankLevelUpSkillBuy.GetComponent<Button>().onClick.AddListener(() => self.ProcessBuySkill(TankSkillType.TankLevelUpSkill));
+            self.TankLevelUpSkillPanel.GetComponent<ClickEvent>().OnClick = () => self.UpdateSelectedSkill(TankSkillType.TankLevelUpSkill);
+
+            self.WallUpgradeSkillBuy = rc.Get<GameObject>("WallUpgradeSkillBuy");
+            self.WallUpgradeSkillDescription = rc.Get<GameObject>("WallUpgradeSkillDescription");
+            self.WallUpgradeSkillPanel = rc.Get<GameObject>("WallUpgradeSkill");
+            self.WallUpgradeSkillBuy.GetComponent<Button>().onClick.AddListener(() => self.ProcessBuySkill(TankSkillType.WallUpgradeSkill));
+            self.WallUpgradeSkillPanel.GetComponent<ClickEvent>().OnClick = () => self.UpdateSelectedSkill(TankSkillType.WallUpgradeSkill);
         }
 
         private static void DisplaySkillInfo(this TankUITankConfigComponent self)
@@ -100,7 +130,7 @@ namespace ET.Client
                 TankSkillType.WallUpgradeSkill => "baseupgrad",
                 TankSkillType.BombSkill => "bomb",
                 TankSkillType.LifeSkill => "life",
-                TankSkillType.TankUpgradeSkill => "levelup",
+                TankSkillType.TankLevelUpSkill => "levelup",
                 TankSkillType.ShieldSkill => "shield",
                 TankSkillType.TimeStopSkill => "timestoper",
                 _ => "bomb",
@@ -112,6 +142,11 @@ namespace ET.Client
             return skillType switch
             {
                 TankSkillType.LifeSkill => self.LifeSkillDescription.GetComponent<TankSkillTimeUpdater>(),
+                TankSkillType.BombSkill => self.BombSkillDescription.GetComponent<TankSkillTimeUpdater>(),
+                TankSkillType.ShieldSkill => self.ShieldSkillDescription.GetComponent<TankSkillTimeUpdater>(),
+                TankSkillType.TimeStopSkill => self.TimeStopSkillDescription.GetComponent<TankSkillTimeUpdater>(),
+                TankSkillType.TankLevelUpSkill => self.TankLevelUpSkillDescription.GetComponent<TankSkillTimeUpdater>(),
+                TankSkillType.WallUpgradeSkill => self.WallUpgradeSkillDescription.GetComponent<TankSkillTimeUpdater>(),
                 _ => null,
             };
         }

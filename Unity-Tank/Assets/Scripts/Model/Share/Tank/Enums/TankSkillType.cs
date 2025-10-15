@@ -5,7 +5,7 @@ public enum TankSkillType
     LifeSkill,
     BombSkill,
     WallUpgradeSkill,
-    TankUpgradeSkill,
+    TankLevelUpSkill,
     ShieldSkill,
     TimeStopSkill,
 }
