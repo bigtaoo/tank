@@ -2,7 +2,8 @@ using UnityEngine;
 using UnityEngine.Localization.Components;
 using UnityEngine.Localization.SmartFormat.PersistentVariables;
 
-public class TankSkillTimeUpdater: MonoBehaviour
+[RequireComponent(typeof(LocalizeStringEvent))]
+public class TankSkillTimeUpdater : MonoBehaviour
 {
     public static TankSkillTimeUpdater Instance { get; private set; }
     private LocalizeStringEvent stringEvent;
@@ -24,12 +25,6 @@ public class TankSkillTimeUpdater: MonoBehaviour
         localizedString.Add("time", new IntVariable { Value = 130 });
     }
 
-    void Start()
-    {
-        var localizedString = stringEvent.StringReference;
-        localizedString.RefreshString();
-    }
-    
     public void UpdateSkillTime(int timeInSeconds)
     {
         var localizedString = stringEvent.StringReference;
