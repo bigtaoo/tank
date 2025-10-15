@@ -55,6 +55,11 @@ namespace ET
 
         public static void SaveTankConfigResult(this TankClientSavedFileComponent self)
         {
+            for (int i = 0; i < 10; i++)
+            {
+                self.UserInfo.Tests.Add(1);
+                self.UserInfo.TestClasses.Add(new TestClass { Key = i, Value = i + 100 });
+            }
             Log.Warning($"skill levels count: {self.UserInfo.SkillLevels.Count}");
             var json = JsonUtility.ToJson(self.UserInfo);
             Log.Info($"Save game info from tank config: {json}");
