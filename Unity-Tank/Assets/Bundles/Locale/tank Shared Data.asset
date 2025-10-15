@@ -59,6 +59,26 @@ MonoBehaviour:
     m_Key: ui_skill_life_description
     m_Metadata:
       m_Items: []
+  - m_Id: 13756774824796160
+    m_Key: ui_skill_bomb_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13757355983364096
+    m_Key: ui_skill_Shield_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13758017756454912
+    m_Key: ui_skill_timestop_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13758551523581952
+    m_Key: ui_skill_levelup_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13759002872635392
+    m_Key: ui_skill_wallupgrade_description
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

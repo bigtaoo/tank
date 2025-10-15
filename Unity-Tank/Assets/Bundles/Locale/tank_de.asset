@@ -64,6 +64,30 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 2257703391918293061
+  - m_Id: 13756774824796160
+    m_Localized: "Zerst\xF6rt alle {time} Sekunden 3 Gegner."
+    m_Metadata:
+      m_Items:
+      - rid: 2257703391918293061
+  - m_Id: 13757355983364096
+    m_Localized: "Erh\xE4lt alle {time} Sekunden einen 5-sek\xFCndigen unverwundbaren
+      Schild."
+    m_Metadata:
+      m_Items:
+      - rid: 2257703391918293061
+  - m_Id: 13758017756454912
+    m_Localized: Stoppt alle {time} Sekunden die Bewegung aller Gegner.
+    m_Metadata:
+      m_Items:
+      - rid: 2257703391918293061
+  - m_Id: 13758551523581952
+    m_Localized: Steigert alle {time} Sekunden das Level des Spielerpanzers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13759002872635392
+    m_Localized: "Verbessert die Basisw\xE4nde alle {time} Sekunden."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
@@ -73,3 +97,6 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 13376091119935488
+        - id: 13756774824796160
+        - id: 13757355983364096
+        - id: 13758017756454912

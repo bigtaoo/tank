@@ -64,6 +64,29 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 2257703391918293060
+  - m_Id: 13756774824796160
+    m_Localized: Destroys 3 enemies every {time} seconds.
+    m_Metadata:
+      m_Items:
+      - rid: 2257703391918293060
+  - m_Id: 13757355983364096
+    m_Localized: Gains a 5-second invincible shield every {time} seconds.
+    m_Metadata:
+      m_Items:
+      - rid: 2257703391918293060
+  - m_Id: 13758017756454912
+    m_Localized: Stops the movement of all enemies every {time} seconds.
+    m_Metadata:
+      m_Items:
+      - rid: 2257703391918293060
+  - m_Id: 13758551523581952
+    m_Localized: "Levels up the player\u2019s tank every {time} seconds."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13759002872635392
+    m_Localized: Upgrade base walls every {time} seconds.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
@@ -73,3 +96,6 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 13376091119935488
+        - id: 13756774824796160
+        - id: 13757355983364096
+        - id: 13758017756454912
