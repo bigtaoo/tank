@@ -13,5 +13,19 @@ namespace ET
                 default: return 0.0f;
             }
         }
+
+        public static string GetSkillSpriteName(TankSkillType skillType)
+        {
+            return skillType switch
+            {
+                TankSkillType.WallUpgradeSkill => "baseupgrad",
+                TankSkillType.BombSkill => "bomb",
+                TankSkillType.LifeSkill => "life",
+                TankSkillType.TankLevelUpSkill => "levelup",
+                TankSkillType.ShieldSkill => "shield",
+                TankSkillType.TimeStopSkill => "timestoper",
+                _ => "bomb",
+            };
+        }
     }
 }

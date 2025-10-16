@@ -23,6 +23,8 @@ namespace ET.Client
 
         public GameObject Skill;
         public GameObject SkillCoolDown;
+        public long SkillCoolUpTimeMS;
+        public long SkillCoolDownTimeMS;
 
         public readonly int RobotUICount = 3;
     }

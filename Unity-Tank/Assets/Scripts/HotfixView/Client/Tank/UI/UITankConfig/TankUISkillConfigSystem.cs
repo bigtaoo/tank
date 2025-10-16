@@ -59,7 +59,7 @@ namespace ET.Client
             {
                 selectedSkillType = TankSkillType.LifeSkill;
             }
-            self.SelectedSkillImage.GetComponent<Image>().sprite = AtlasManager.Instance.GetSprite(self.GetSkillSpriteName(selectedSkillType));
+            self.SelectedSkillImage.GetComponent<Image>().sprite = AtlasManager.Instance.GetSprite(TankHelper.GetSkillSpriteName(selectedSkillType));
 
             self.SelectedSkillLevel.GetComponent<TMP_Text>().text = savedFileComponent.GetSkillLevel(selectedSkillType).ToString();
 
@@ -126,20 +126,6 @@ namespace ET.Client
 
             self.DisplaySkillInfo();
             savedFileComponent.SaveTankConfigResult();
-        }
-
-        private static string GetSkillSpriteName(this TankUITankConfigComponent self, TankSkillType skillType)
-        {
-            return skillType switch
-            {
-                TankSkillType.WallUpgradeSkill => "baseupgrad",
-                TankSkillType.BombSkill => "bomb",
-                TankSkillType.LifeSkill => "life",
-                TankSkillType.TankLevelUpSkill => "levelup",
-                TankSkillType.ShieldSkill => "shield",
-                TankSkillType.TimeStopSkill => "timestoper",
-                _ => "bomb",
-            };
         }
 
         private static TankSkillTimeUpdater GetTankSkillTimeUpdater(this TankUITankConfigComponent self, TankSkillType skillType)
