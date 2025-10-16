@@ -88,6 +88,8 @@ namespace ET.Client
 
         private static void ProcessBuyItem(this TankUITankConfigComponent self, TankConfigType type)
         {
+            SoundManager.Instance.PlayButtonClick();
+            
             var itemPrice = 50;
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
             if (savedFileComponent.UserInfo.Gold < itemPrice)

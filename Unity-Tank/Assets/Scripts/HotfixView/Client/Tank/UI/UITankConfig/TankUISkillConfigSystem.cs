@@ -80,6 +80,8 @@ namespace ET.Client
 
         private static void ProcessBuySkill(this TankUITankConfigComponent self, TankSkillType skillType)
         {
+            SoundManager.Instance.PlayButtonClick();
+
             var skillPrice = 50;
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
             if (savedFileComponent.UserInfo.Gold < skillPrice)
@@ -122,6 +124,8 @@ namespace ET.Client
 
         private static void UpdateSelectedSkill(this TankUITankConfigComponent self, TankSkillType skillType)
         {
+            SoundManager.Instance.PlayButtonClick();
+            
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
             savedFileComponent.UserInfo.SelectedSkillType = skillType;
 
