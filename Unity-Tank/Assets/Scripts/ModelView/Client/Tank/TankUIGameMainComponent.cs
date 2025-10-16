@@ -21,6 +21,9 @@ namespace ET.Client
         public GameObject Shoot;
         public GameObject ShootCoolDown;
 
+        public GameObject Skill;
+        public GameObject SkillCoolDown;
+
         public readonly int RobotUICount = 3;
     }
 }

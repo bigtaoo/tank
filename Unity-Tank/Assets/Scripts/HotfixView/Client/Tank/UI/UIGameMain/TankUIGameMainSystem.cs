@@ -50,6 +50,8 @@ namespace ET.Client
             self.Center = rc.Get<GameObject>("center");
             var centerButton = self.Center.GetComponent<CenterJoystick>();
             centerButton.onDirectionChanged.AddListener((direction) => self.OnJoystickDirectionChanged(direction));
+
+            self.AwakeSkill();
         }
 
         [EntitySystem]

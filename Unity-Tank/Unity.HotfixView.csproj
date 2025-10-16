@@ -61,6 +61,7 @@
     <Compile Include="Assets/Scripts/HotfixView/Client/LockStep/Camera/LSCameraComponentSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/UI/UIHelp/SceneChangeFinishEvent_CreateUIHelp.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/LockStep/UI/UILSRoom/UILSRoomEvent.cs" />
+    <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIGameMain/TankUIGameMainSkillSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientPlayerTankSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/UI/UILogin/LoginFinish_RemoveLoginUI.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/LockStep/LSSceneInitFinish_Finish.cs" />
