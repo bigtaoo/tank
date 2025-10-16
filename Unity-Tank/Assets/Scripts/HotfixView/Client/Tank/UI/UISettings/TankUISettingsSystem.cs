@@ -12,8 +12,13 @@ namespace ET.Client
         {
             ReferenceCollector rc = self.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             self.Back = rc.Get<GameObject>("Back");
-
             self.Back.GetComponent<Button>().onClick.AddListener(() => { self.BackToGameModeUI().Coroutine(); });
+
+            self.MusicVolume = rc.Get<GameObject>("MusicValue");
+            self.MusicVolume.GetComponent<Slider>().onValueChanged.AddListener(value => { SoundManager.Instance.SetMusicVolume(value); });
+
+            self.SoundVolume = rc.Get<GameObject>("SoundValue");
+            self.SoundVolume.GetComponent<Slider>().onValueChanged.AddListener(value => { SoundManager.Instance.SetSFXVolume(value); });
         }
 
         private static async ETTask BackToGameModeUI(this TankUISettingsComponent self)
