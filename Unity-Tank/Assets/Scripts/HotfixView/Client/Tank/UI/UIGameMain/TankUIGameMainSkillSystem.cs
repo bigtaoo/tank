@@ -30,7 +30,7 @@ namespace ET.Client
             }
             else
             {
-                float t = (currentTime - self.SkillCoolUpTimeMS) / self.SkillCoolDownTimeMS;
+                float t = (float)(currentTime - self.SkillCoolUpTimeMS) / self.SkillCoolDownTimeMS;
                 var cooldownImage = self.SkillCoolDown.GetComponent<Image>();
                 cooldownImage.fillAmount = 1 - t;
             }
