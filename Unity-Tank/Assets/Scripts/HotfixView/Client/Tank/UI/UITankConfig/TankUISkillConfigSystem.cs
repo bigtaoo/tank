@@ -85,6 +85,7 @@ namespace ET.Client
             if (savedFileComponent.UserInfo.Gold < skillPrice)
             {
                 Log.Warning($"Don't have enough money to buy the skill. Current money is {savedFileComponent.UserInfo.Gold}");
+                return;
             }
             TankSkill tankSkill = null;
             foreach (var skill in savedFileComponent.UserInfo.SkillLevels)
