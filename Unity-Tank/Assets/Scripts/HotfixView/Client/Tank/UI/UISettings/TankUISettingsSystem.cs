@@ -15,10 +15,14 @@ namespace ET.Client
             self.Back.GetComponent<Button>().onClick.AddListener(() => { self.BackToGameModeUI().Coroutine(); });
 
             self.MusicVolume = rc.Get<GameObject>("MusicValue");
-            self.MusicVolume.GetComponent<Slider>().onValueChanged.AddListener(value => { SoundManager.Instance.SetMusicVolume(value); });
+            self.MusicVolume.GetComponent<Slider>().onValueChanged.AddListener(value => { self.SetMusicVolume(value); });
 
             self.SoundVolume = rc.Get<GameObject>("SoundValue");
-            self.SoundVolume.GetComponent<Slider>().onValueChanged.AddListener(value => { SoundManager.Instance.SetSFXVolume(value); });
+            self.SoundVolume.GetComponent<Slider>().onValueChanged.AddListener(value => { self.SetSoundVolume(value); });
+
+            var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
+            self.MusicVolume.GetComponent<Slider>().value = savedFileComponent.UserInfo.MusicVolume / 1000.0f;
+            self.SoundVolume.GetComponent<Slider>().value = savedFileComponent.UserInfo.SoundVolume / 1000.0f;
         }
 
         private static async ETTask BackToGameModeUI(this TankUISettingsComponent self)
@@ -28,6 +32,24 @@ namespace ET.Client
             var scene = self.Root();
             await UIHelper.Create(scene, UIType.TankUIGameMode, UILayer.Mid);
             await UIHelper.Remove(scene, UIType.TankUISettings);
+        }
+
+        private static void SetMusicVolume(this TankUISettingsComponent self, float volume)
+        {
+            SoundManager.Instance.SetMusicVolume(volume);
+
+            var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
+            savedFileComponent.UserInfo.MusicVolume = (int)(volume * 1000);
+            savedFileComponent.SaveTankConfigResult();
+        }
+
+        private static void SetSoundVolume(this TankUISettingsComponent self, float volume)
+        {
+            SoundManager.Instance.SetSFXVolume(volume);
+
+            var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
+            savedFileComponent.UserInfo.SoundVolume = (int)(volume * 1000);
+            savedFileComponent.SaveTankConfigResult();
         }
     }
 }

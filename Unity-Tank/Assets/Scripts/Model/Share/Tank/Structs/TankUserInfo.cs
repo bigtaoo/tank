@@ -13,5 +13,7 @@ namespace ET
         public int TankShootSpeedLevel;
         public TankSkillType SelectedSkillType;
         public List<TankSkill> SkillLevels = new();
+        public int MusicVolume = 1000;
+        public int SoundVolume = 1000;
     }
 }

@@ -34,6 +34,17 @@ namespace ET.Client
 
             self.Settings = rc.Get<GameObject>("Settings");
             self.Settings.GetComponent<Button>().onClick.AddListener(() => self.OpenSettingsPage().Coroutine());
+
+            self.InitialSoundVolume();
+        }
+
+        private static void InitialSoundVolume(this TankUIGameModeComponent self)
+        {
+            var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
+            var musicVolume = (float)savedFileComponent.UserInfo.MusicVolume / 1000.0f;
+            SoundManager.Instance.SetMusicVolume(musicVolume);
+            var soundVolume = (float)savedFileComponent.UserInfo.SoundVolume / 1000.0f;
+            SoundManager.Instance.SetSFXVolume(soundVolume);
         }
 
         private static async ETTask OpenTankConfigPage(this TankUIGameModeComponent self)
