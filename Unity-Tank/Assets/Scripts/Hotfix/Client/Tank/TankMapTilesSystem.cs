@@ -1,7 +1,7 @@
 using MongoDB.Bson;
 using System.Linq;
 
-namespace ET.Client
+namespace ET
 {
     [EntitySystemOf(typeof(TankMapTilesComponent))]
     [FriendOf(typeof(TankMapTilesComponent))]

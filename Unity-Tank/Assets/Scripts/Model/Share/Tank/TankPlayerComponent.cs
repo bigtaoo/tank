@@ -4,8 +4,8 @@ namespace ET
     public class TankPlayerComponent : Entity, IAwake, IUpdate
     {
         public TankPosition SpawnPosition;
-        public TankDirection MoveDirection;
-        public TankPosition Position;
+        public TankDirection MoveDirection { get; set; }
+        public TankPosition Position { get; set; }
         public float MoveSpeed;
         public float BulletSpeed;
         public int Rotation;

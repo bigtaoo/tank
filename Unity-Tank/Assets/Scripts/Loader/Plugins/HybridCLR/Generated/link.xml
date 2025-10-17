@@ -45,12 +45,18 @@
     <type fullname="MongoDB.Bson.Serialization.IBsonSerializer`1" preserve="all" />
     <type fullname="MongoDB.Bson.Serialization.Options.DictionaryRepresentation" preserve="all" />
   </assembly>
+  <assembly fullname="Newtonsoft.Json">
+    <type fullname="Newtonsoft.Json.JsonConvert" preserve="all" />
+  </assembly>
   <assembly fullname="System">
+    <type fullname="System.CodeDom.Compiler.GeneratedCodeAttribute" preserve="all" />
     <type fullname="System.Collections.Generic.SortedDictionary`2" preserve="all" />
     <type fullname="System.Collections.Generic.SortedDictionary`2/Enumerator" preserve="all" />
     <type fullname="System.Collections.Generic.SortedDictionary`2/ValueCollection" preserve="all" />
     <type fullname="System.Collections.Generic.SortedDictionary`2/ValueCollection/Enumerator" preserve="all" />
     <type fullname="System.Collections.Generic.Stack`1" preserve="all" />
+    <type fullname="System.ComponentModel.EditorBrowsableAttribute" preserve="all" />
+    <type fullname="System.ComponentModel.EditorBrowsableState" preserve="all" />
     <type fullname="System.Net.EndPoint" preserve="all" />
     <type fullname="System.Net.IPAddress" preserve="all" />
     <type fullname="System.Net.IPEndPoint" preserve="all" />
@@ -70,6 +76,10 @@
     <type fullname="System.Runtime.CompilerServices.Unsafe" preserve="all" />
   </assembly>
   <assembly fullname="Unity.Core">
+    <type fullname="AtlasManager" preserve="all" />
+    <type fullname="CenterJoystick" preserve="all" />
+    <type fullname="CenterJoystick/DirectionEvent" preserve="all" />
+    <type fullname="ClickEvent" preserve="all" />
     <type fullname="DigitDisplay" preserve="all" />
     <type fullname="ET.AEvent`2" preserve="all" />
     <type fullname="ET.AInvokeHandler`1" preserve="all" />
@@ -195,9 +205,14 @@
     <type fullname="GameModeConfig" preserve="all" />
     <type fullname="HoldButton" preserve="all" />
     <type fullname="LightObfuscation" preserve="all" />
+    <type fullname="LocaleHelper" preserve="all" />
+    <type fullname="SoundManager" preserve="all" />
     <type fullname="TankInitialConfig" preserve="all" />
+    <type fullname="TankJoystickDirection" preserve="all" />
     <type fullname="TankMapTileType" preserve="all" />
+    <type fullname="TankSkillTimeUpdater" preserve="all" />
     <type fullname="TankTile" preserve="all" />
+    <type fullname="TankTileResource" preserve="all" />
   </assembly>
   <assembly fullname="Unity.Loader">
     <type fullname="ET.CodeLoader" preserve="all" />
@@ -251,9 +266,12 @@
     <type fullname="UnityEngine.Application" preserve="all" />
     <type fullname="UnityEngine.BoundsInt" preserve="all" />
     <type fullname="UnityEngine.Camera" preserve="all" />
+    <type fullname="UnityEngine.Color" preserve="all" />
     <type fullname="UnityEngine.Component" preserve="all" />
     <type fullname="UnityEngine.Events.UnityAction" preserve="all" />
+    <type fullname="UnityEngine.Events.UnityAction`1" preserve="all" />
     <type fullname="UnityEngine.Events.UnityEvent" preserve="all" />
+    <type fullname="UnityEngine.Events.UnityEvent`1" preserve="all" />
     <type fullname="UnityEngine.GameObject" preserve="all" />
     <type fullname="UnityEngine.KeyCode" preserve="all" />
     <type fullname="UnityEngine.LayerMask" preserve="all" />
@@ -263,6 +281,8 @@
     <type fullname="UnityEngine.Random" preserve="all" />
     <type fullname="UnityEngine.Ray" preserve="all" />
     <type fullname="UnityEngine.SceneManagement.LoadSceneMode" preserve="all" />
+    <type fullname="UnityEngine.Sprite" preserve="all" />
+    <type fullname="UnityEngine.SpriteRenderer" preserve="all" />
     <type fullname="UnityEngine.Time" preserve="all" />
     <type fullname="UnityEngine.Transform" preserve="all" />
     <type fullname="UnityEngine.Vector2" preserve="all" />
@@ -289,7 +309,10 @@
   <assembly fullname="UnityEngine.UI">
     <type fullname="UnityEngine.UI.Button" preserve="all" />
     <type fullname="UnityEngine.UI.Button/ButtonClickedEvent" preserve="all" />
+    <type fullname="UnityEngine.UI.Image" preserve="all" />
     <type fullname="UnityEngine.UI.InputField" preserve="all" />
+    <type fullname="UnityEngine.UI.Slider" preserve="all" />
+    <type fullname="UnityEngine.UI.Slider/SliderEvent" preserve="all" />
     <type fullname="UnityEngine.UI.Text" preserve="all" />
   </assembly>
   <assembly fullname="YooAsset">
@@ -312,6 +335,7 @@
     <type fullname="System.Attribute" preserve="all" />
     <type fullname="System.AttributeTargets" preserve="all" />
     <type fullname="System.AttributeUsageAttribute" preserve="all" />
+    <type fullname="System.Boolean" preserve="all" />
     <type fullname="System.Byte" preserve="all" />
     <type fullname="System.Collections.Generic.Dictionary`2" preserve="all" />
     <type fullname="System.Collections.Generic.Dictionary`2/Enumerator" preserve="all" />
@@ -319,6 +343,7 @@
     <type fullname="System.Collections.Generic.Dictionary`2/KeyCollection/Enumerator" preserve="all" />
     <type fullname="System.Collections.Generic.Dictionary`2/ValueCollection" preserve="all" />
     <type fullname="System.Collections.Generic.Dictionary`2/ValueCollection/Enumerator" preserve="all" />
+    <type fullname="System.Collections.Generic.EqualityComparer`1" preserve="all" />
     <type fullname="System.Collections.Generic.IEnumerable`1" preserve="all" />
     <type fullname="System.Collections.Generic.KeyValuePair`2" preserve="all" />
     <type fullname="System.Collections.Generic.List`1" preserve="all" />
@@ -328,17 +353,15 @@
     <type fullname="System.DateTime" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute/DebuggingModes" preserve="all" />
-    <type fullname="System.Diagnostics.DebuggerBrowsableAttribute" preserve="all" />
-    <type fullname="System.Diagnostics.DebuggerBrowsableState" preserve="all" />
     <type fullname="System.Diagnostics.DebuggerDisplayAttribute" preserve="all" />
     <type fullname="System.Diagnostics.DebuggerHiddenAttribute" preserve="all" />
-    <type fullname="System.Diagnostics.DebuggerStepThroughAttribute" preserve="all" />
     <type fullname="System.Enum" preserve="all" />
     <type fullname="System.Exception" preserve="all" />
     <type fullname="System.Func`1" preserve="all" />
     <type fullname="System.Func`2" preserve="all" />
     <type fullname="System.HashCode" preserve="all" />
     <type fullname="System.IDisposable" preserve="all" />
+    <type fullname="System.IEquatable`1" preserve="all" />
     <type fullname="System.IO.BinaryReader" preserve="all" />
     <type fullname="System.IO.File" preserve="all" />
     <type fullname="System.IO.MemoryStream" preserve="all" />
@@ -365,7 +388,6 @@
     <type fullname="System.Runtime.CompilerServices.RuntimeHelpers" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.TaskAwaiter" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.TaskAwaiter`1" preserve="all" />
-    <type fullname="System.Runtime.Versioning.TargetFrameworkAttribute" preserve="all" />
     <type fullname="System.RuntimeFieldHandle" preserve="all" />
     <type fullname="System.RuntimeTypeHandle" preserve="all" />
     <type fullname="System.Security.Permissions.SecurityAction" preserve="all" />
@@ -374,6 +396,7 @@
     <type fullname="System.Single" preserve="all" />
     <type fullname="System.String" preserve="all" />
     <type fullname="System.StringSplitOptions" preserve="all" />
+    <type fullname="System.Text.StringBuilder" preserve="all" />
     <type fullname="System.Threading.CancellationToken" preserve="all" />
     <type fullname="System.Threading.CancellationTokenSource" preserve="all" />
     <type fullname="System.Threading.Tasks.Task" preserve="all" />
