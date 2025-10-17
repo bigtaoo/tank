@@ -924,7 +924,7 @@ PlayerSettings:
     WebGL: UNITY;ENABLE_VIEW;DOTWEEN
     Windows Store Apps: DOTWEEN
     XboxOne: DOTWEEN
-    iPhone: UNITY;ENABLE_VIEW;DOTWEEN
+    iPhone: UNITY;ENABLE_VIEW;DOTWEEN;LEVELPLAY_DEPENDENCIES_INSTALLED
     tvOS: DOTWEEN
   additionalCompilerArguments: {}
   platformArchitecture:
