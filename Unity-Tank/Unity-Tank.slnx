@@ -1,0 +1,11 @@
+﻿<Solution>
+  <Project Path="Unity.Core.csproj" />
+  <Project Path="Unity.HotfixView.csproj" />
+  <Project Path="Unity.Hotfix.csproj" />
+  <Project Path="Unity.Model.csproj" />
+  <Project Path="Unity.ThirdParty.csproj" />
+  <Project Path="Unity.Editor.csproj" />
+  <Project Path="Unity.ModelView.csproj" />
+  <Project Path="Assembly-CSharp-firstpass.csproj" />
+  <Project Path="Unity.Loader.csproj" />
+</Solution>
