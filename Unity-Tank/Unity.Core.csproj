@@ -153,6 +153,7 @@
     <Compile Include="Assets/Scripts/Core/UI/HoldButton.cs" />
     <Compile Include="Assets/Scripts/Core/Entity/IDeserializeSystem.cs" />
     <Compile Include="Assets/Scripts/Core/Fiber/Module/CoroutineLock/CoroutineLockComponent.cs" />
+    <Compile Include="Assets/Scripts/Core/Ads/AdsManager.cs" />
     <Compile Include="Assets/Scripts/Core/Helper/SoundManager.cs" />
     <Compile Include="Assets/Scripts/Core/Entity/EntityRef.cs" />
     <Compile Include="Assets/Scripts/Core/Entity/ISystemType.cs" />
@@ -1330,6 +1331,10 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.LevelPlay">
+      <HintPath>Library/ScriptAssemblies/Unity.LevelPlay.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.UI">
