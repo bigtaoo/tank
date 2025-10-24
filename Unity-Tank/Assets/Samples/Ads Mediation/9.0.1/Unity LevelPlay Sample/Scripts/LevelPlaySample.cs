@@ -15,6 +15,8 @@ public class LevelPlaySample : MonoBehaviour
     public void Start()
     {
         Debug.Log("[LevelPlaySample] LevelPlay.ValidateIntegration");
+
+        
         LevelPlay.ValidateIntegration();
 
         Debug.Log($"[LevelPlaySample] Unity version {LevelPlay.UnityVersion}");

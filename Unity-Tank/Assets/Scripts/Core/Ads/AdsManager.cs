@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-// using Unity.LevelPlay;
+using Unity.Services.LevelPlay;
 
 public class AdsManager : MonoBehaviour
 {
@@ -12,8 +12,9 @@ public class AdsManager : MonoBehaviour
     [SerializeField] private string rewardedAdUnitId = "Rewarded_Android"; // Set these in Dashboard
     [SerializeField] private string interstitialAdUnitId = "Interstitial_Android";
 
-    // private IRewardedAd rewardedAd;
-    // private IInterstitialAd interstitialAd;
+    private LevelPlayBannerAd bannerAd;
+    private LevelPlayInterstitialAd interstitialAd;
+    private LevelPlayRewardedAd rewardedVideoAd;
 
     private float sessionStartTime;
     private bool rewardedReady = false;
