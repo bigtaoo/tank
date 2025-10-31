@@ -8,15 +8,19 @@ public class AtlasManager : MonoBehaviour
     public static AtlasManager Instance { get; private set; }
 
     void Awake() {
-        if (Instance == null) {
+        if (Instance == null)
+        {
             Instance = this;
-            DontDestroyOnLoad(gameObject); 
-        } else {
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
             Destroy(gameObject);
         }
     }
 
-    public Sprite GetSprite(string name) {
+    public Sprite GetSprite(string name)
+    {
         return ItemAtlas.GetSprite(name);
     }
 }

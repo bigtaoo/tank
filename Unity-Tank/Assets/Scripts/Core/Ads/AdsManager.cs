@@ -23,7 +23,7 @@ public class AdsManager : MonoBehaviour
 
     private Action onRewardEarned;
 
-    private void Start()
+    private void Awake()
     {
         if (Instance != null)
         {
