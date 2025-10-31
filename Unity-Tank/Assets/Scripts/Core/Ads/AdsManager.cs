@@ -21,14 +21,9 @@ public class AdsManager : MonoBehaviour
     private LevelPlayInterstitialAd interstitialAd;
     private LevelPlayRewardedAd rewardedVideoAd;
 
-    private float sessionStartTime;
-    private bool isAdsEnabled = false;
-    private bool rewardedReady = false;
-    private bool interstitialReady = false;
-
     private Action onRewardEarned;
 
-    public void Start()
+    private void Start()
     {
         if (Instance != null)
         {
@@ -50,13 +45,15 @@ public class AdsManager : MonoBehaviour
 
         // SDK init
         string appKey = androidAppKey;
-#if UNITY_IOS
-        string gameId = iosGameId;
+#if UNITY_ANDROIOD
+        appKey = androidAppKey;
+#elif UNITY_IOS
+        appKey = iosAppKey;
 #else
         Log.Warning("Ads not supported on this platform.");
 #endif
         Log.Info("[AdsManager] LevelPlay SDK initialization");
-        LevelPlay.Init(AdConfig.AppKey);
+        LevelPlay.Init(appKey);
     }
 
     void EnableAds()
@@ -65,7 +62,15 @@ public class AdsManager : MonoBehaviour
         LevelPlay.OnImpressionDataReady += ImpressionDataReadyEvent;
 
         // Create Rewarded Video object
-        rewardedVideoAd = new LevelPlayRewardedAd(AdConfig.RewardedVideoAdUnitId);
+        string rewardedVideoAdUnitId = androidRewardedAdUnitId;
+#if UNITY_ANDROIOD
+        rewardedVideoAdUnitId = androidRewardedAdUnitId;
+#elif UNITY_IOS
+        rewardedVideoAdUnitId = iosRewardedAdUnitId;
+#else
+        Log.Warning("Ads not supported on this platform.");
+#endif
+        rewardedVideoAd = new LevelPlayRewardedAd(rewardedVideoAdUnitId);
 
         // Register to Rewarded Video events
         rewardedVideoAd.OnAdLoaded += RewardedVideoOnLoadedEvent;
@@ -78,7 +83,15 @@ public class AdsManager : MonoBehaviour
         rewardedVideoAd.OnAdInfoChanged += RewardedVideoOnAdInfoChangedEvent;
 
         // Create Banner object
-        bannerAd = new LevelPlayBannerAd(AdConfig.BannerAdUnitId);
+        string bannerAdUnitId = androidBannerAdUnitId;
+#if UNITY_ANDROIOD
+        bannerAdUnitId = androidBannerAdUnitId;
+#elif UNITY_IOS
+        bannerAdUnitId = iosBannerAdUnitId;
+#else
+        Log.Warning("Ads not supported on this platform.");
+#endif
+        bannerAd = new LevelPlayBannerAd(bannerAdUnitId);
 
         // Register to Banner events
         bannerAd.OnAdLoaded += BannerOnAdLoadedEvent;
@@ -91,7 +104,15 @@ public class AdsManager : MonoBehaviour
         bannerAd.OnAdExpanded += BannerOnAdExpandedEvent;
 
         // Create Interstitial object
-        interstitialAd = new LevelPlayInterstitialAd(AdConfig.InterstitalAdUnitId);
+        string interstitalAdUnitId = androidInterstitialAdUnitId;
+#if UNITY_ANDROIOD
+        interstitalAdUnitId = androidInterstitialAdUnitId;
+#elif UNITY_IOS
+        interstitalAdUnitId = iosInterstitialAdUnitId;
+#else   
+        Log.Warning("Ads not supported on this platform.");
+#endif
+        interstitialAd = new LevelPlayInterstitialAd(interstitalAdUnitId);
 
         // Register to Interstitial events
         interstitialAd.OnAdLoaded += InterstitialOnAdLoadedEvent;
@@ -107,7 +128,6 @@ public class AdsManager : MonoBehaviour
     {
         Log.Info($"[AdsManager] Received SdkInitializationCompletedEvent with Config: {config}");
         EnableAds();
-        isAdsEnabled = true;
     }
 
     void SdkInitializationFailedEvent(LevelPlayInitError error)
