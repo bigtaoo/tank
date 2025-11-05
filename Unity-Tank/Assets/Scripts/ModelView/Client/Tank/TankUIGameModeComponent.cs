@@ -13,5 +13,6 @@ namespace ET.Client
         public GameObject TankConfig;
         public GameObject Settings;
         public int SelectedMapIndex;
+        public bool IsEnteringMap;
     }
 }

@@ -10,6 +10,7 @@ namespace ET.Client
         [EntitySystem]
         private static void Awake(this TankUIGameModeComponent self)
         {
+            self.IsEnteringMap = false;
             ReferenceCollector rc = self.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
 
             self.Config = rc.Get<GameObject>("Config").GetComponent<GameModeConfig>();
@@ -64,6 +65,11 @@ namespace ET.Client
 
         private static async ETTask StartSingleMode(this TankUIGameModeComponent self, int mapIndex)
         {
+            if (self.IsEnteringMap)
+            {
+                return;
+            }
+            self.IsEnteringMap = true;
             SoundManager.Instance.PlayButtonClick();
 
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
@@ -95,6 +101,7 @@ namespace ET.Client
             if (clientGameInfoComponent.ShouldPlayInterstitialAd())
             {
                 AdsManager.Instance.PlayInterstitialVideo();
+                self.IsEnteringMap = false;
                 return true;
             }
             return false;
