@@ -7,5 +7,7 @@ namespace ET.Client
     {
         public GameObject Result;
         public GameObject Back;
+        public GameObject GoldValue;
+        public GameObject LoadAd;
     }
 }

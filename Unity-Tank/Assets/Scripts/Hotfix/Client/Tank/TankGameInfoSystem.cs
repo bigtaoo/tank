@@ -17,6 +17,11 @@ namespace ET
             self.GameInfo.Gold++;
         }
 
+        public static int GetGold(this TankGameInfoComponent self)
+        {
+            return self.GameInfo.Gold;
+        }
+
         public static void StartNewGame(this TankGameInfoComponent self, int mapIndex)
         {
             self.GameInfo.MapIndex = mapIndex;

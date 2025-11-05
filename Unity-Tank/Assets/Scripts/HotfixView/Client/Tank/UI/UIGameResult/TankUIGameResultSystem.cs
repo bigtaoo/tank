@@ -14,8 +14,11 @@ namespace ET.Client
             ReferenceCollector rc = self.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             self.Result = rc.Get<GameObject>("Result");
             self.Back = rc.Get<GameObject>("Back");
-
             self.Back.GetComponent<Button>().onClick.AddListener(() => { self.BackToGameModeUI().Coroutine(); });
+            self.GoldValue = rc.Get<GameObject>("GoldValue");
+            self.LoadAd = rc.Get<GameObject>("LoadAd");
+            self.LoadAd.GetComponent<Button>().onClick.AddListener(() => { AdsManager.Instance.LoadRewardedVideo(); });
+
             self.ShowGameResult();
         }
 
@@ -49,10 +52,12 @@ namespace ET.Client
             var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
             gameInfoComponent.EndGame(gameResultComponent.IsWin);
 
+            self.GoldValue.GetComponent<TMP_Text>().text = gameInfoComponent.GetGold().ToString();
+
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
             var mapIndex = gameResultComponent.IsWin ? gameInfoComponent.GameInfo.MapIndex + 1 : gameInfoComponent.GameInfo.MapIndex;
 
-             if (savedFileComponent.UserInfo.Gold < 100) gameInfoComponent.GameInfo.Gold = 88888;
+            //  if (savedFileComponent.UserInfo.Gold < 100) gameInfoComponent.GameInfo.Gold = 88888;
 
             savedFileComponent.UpdateGameInfo(mapIndex, gameInfoComponent.GameInfo.Gold);
         }
