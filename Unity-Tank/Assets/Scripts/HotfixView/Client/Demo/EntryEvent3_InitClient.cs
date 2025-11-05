@@ -13,6 +13,7 @@ namespace ET.Client
             root.AddComponent<CurrentScenesComponent>();
             root.AddComponent<TankGameInfoComponent>();
             root.AddComponent<TankClientSavedFileComponent>();
+            root.AddComponent<TankClientGameInfoComponent>();
             
             // 根据配置修改掉Main Fiber的SceneType
             SceneType sceneType = EnumHelper.FromString<SceneType>(globalComponent.GlobalConfig.AppType.ToString());

@@ -64,6 +64,7 @@
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIGameMain/TankUIGameMainSkillSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientPlayerTankSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/UI/UILogin/LoginFinish_RemoveLoginUI.cs" />
+    <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientGameInfoSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/LockStep/LSSceneInitFinish_Finish.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIGameResult/TankUIGameResultSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Scene/TankSceneChangeEndEvent.cs" />

@@ -40,7 +40,6 @@ namespace ET.Client
             scene.AddComponent<TankInitializeConfigComponent>();
             scene.AddComponent<TankBaseComponent>();
             scene.AddComponent<TankClientItemComponent>();
-            scene.AddComponent<TankClientGameInfoComponent>();
             scene.AddComponent<TankClientAttachedEffectComponent>();
         }
     }
