@@ -101,7 +101,7 @@ namespace ET.Client
             playerComponent.SetMoveDirection(direction);
 
             var gameInfoComponent = self.Root().GetComponent<TankClientGameInfoComponent>();
-            gameInfoComponent.InputMutex = true;
+            gameInfoComponent.SetInputMutex(true);
         }
 
         private static void StopTank(this TankUIGameMainComponent self)
@@ -110,7 +110,7 @@ namespace ET.Client
             playerComponent.SetMoveDirection(TankDirection.None);
 
             var gameInfoComponent = self.Root().GetComponent<TankClientGameInfoComponent>();
-            gameInfoComponent.InputMutex = false;
+            gameInfoComponent.SetInputMutex(false);
         }
 
         private static void TankShoot(this TankUIGameMainComponent self)

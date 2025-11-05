@@ -21,7 +21,6 @@ namespace ET.Client
             digitDisplay.DisplayNumber(1);
 
             self.DisplayMapIndex();
-            self.LoadGameInfo();
 
             self.EN = rc.Get<GameObject>("EN");
             self.EN.GetComponent<Button>().onClick.AddListener(() => { LocaleHelper.Instance.SetEN(); });
@@ -152,14 +151,6 @@ namespace ET.Client
                     lockImage.SetActive(false);
                 }
             }
-        }
-
-        private static void LoadGameInfo(this TankUIGameModeComponent self)
-        {
-            var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
-            var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
-
-            gameInfoComponent.GameInfo.Gold = savedFileComponent.UserInfo.Gold;
         }
     }
 }

@@ -30,7 +30,7 @@ namespace ET
             {
                 self.UserInfo.CurrentMapIndex = mapIndex;
             }
-            self.UserInfo.Gold = gold;
+            self.UserInfo.Gold += gold;
 
             var json = JsonUtility.ToJson(self.UserInfo);
             Log.Info($"Save game info: {json}");

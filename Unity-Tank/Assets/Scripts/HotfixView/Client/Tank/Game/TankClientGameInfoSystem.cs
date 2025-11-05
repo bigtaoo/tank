@@ -24,5 +24,10 @@ namespace ET
             }
             return false;
         }
+
+        public static void SetInputMutex(this TankClientGameInfoComponent self, bool value)
+        {
+            self.InputMutex = value;
+        }
     }
 }
