@@ -38,6 +38,8 @@ namespace ET.Client
             self.InitialSoundVolume();
 
             AdsManager.Instance.DisplayBannerAd();
+            AdsManager.Instance.LoadInterstitialVideo();
+            AdsManager.Instance.LoadRewardedVideo();
         }
 
         private static void InitialSoundVolume(this TankUIGameModeComponent self)
@@ -72,6 +74,13 @@ namespace ET.Client
                 Log.Warning($"The map is locked. Try to join {mapIndex} but can only join until {currentMapIndex}");
                 return;
             }
+            self.SelectedMapIndex = mapIndex;
+
+            if (self.CheckAndPlayInterstitialAd())
+            {
+                Log.Info("It's time to play interstitial Ad.");
+                return;
+            }
 
             var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
             gameInfoComponent.StartNewGame(mapIndex);
@@ -81,7 +90,18 @@ namespace ET.Client
             await UIHelper.Remove(self.Root(), UIType.TankUIGameMode);
         }
 
-        private static void DisplayMapIndex(this  TankUIGameModeComponent self)
+        private static bool CheckAndPlayInterstitialAd(this TankUIGameModeComponent self)
+        {
+            var clientGameInfoComponent = self.Root().GetComponent<TankClientGameInfoComponent>();
+            if (clientGameInfoComponent.ShouldPlayInterstitialAd())
+            {
+                AdsManager.Instance.PlayInterstitialVideo();
+                return true;
+            }
+            return false;
+        }
+
+        private static void DisplayMapIndex(this TankUIGameModeComponent self)
         {
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
             var currentMapIndex = savedFileComponent.GetCurrentMapIndex();

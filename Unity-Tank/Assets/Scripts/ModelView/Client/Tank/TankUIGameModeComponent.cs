@@ -12,5 +12,6 @@ namespace ET.Client
         public GameObject ZH;
         public GameObject TankConfig;
         public GameObject Settings;
+        public int SelectedMapIndex;
     }
 }

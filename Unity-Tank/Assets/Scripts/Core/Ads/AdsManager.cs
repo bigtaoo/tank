@@ -6,6 +6,8 @@ using ET;
 public class AdsManager : MonoBehaviour
 {
     public static AdsManager Instance { get; private set; }
+    public Action PlayInterstitialAdEnd { get; set; }
+    public Action<bool> PlayRewardedAdEnd { get; set; }
 
     [Header("Unity Mediation Ad Unit IDs")]
     [SerializeField] private string androidAppKey = "YOUR_ANDROID_GAME_ID";
@@ -73,6 +75,7 @@ public class AdsManager : MonoBehaviour
         else
         {
             Debug.Log("[AdsManager] LevelPlay Rewarded Video Ad is not ready, giving a discount reward.");
+            PlayRewardedAdEnd?.Invoke(false);
         }
     }
 
@@ -93,6 +96,7 @@ public class AdsManager : MonoBehaviour
         else
         {
             Debug.Log("[AdsManager] LevelPlay Interstital Ad is not ready, skip it.");
+            PlayInterstitialAdEnd?.Invoke();
         }
     }
 
@@ -205,11 +209,15 @@ public class AdsManager : MonoBehaviour
     void RewardedVideoOnAdDisplayedFailedEvent(LevelPlayAdInfo adInfo, LevelPlayAdError error)
     {
         Debug.Log($"[AdsManager] Received RewardedVideoOnAdDisplayedFailedEvent With AdInfo: {adInfo} and Error: {error}");
+
+        PlayRewardedAdEnd?.Invoke(false);
     }
 
     void RewardedVideoOnAdRewardedEvent(LevelPlayAdInfo adInfo, LevelPlayReward reward)
     {
         Debug.Log($"[AdsManager] Received RewardedVideoOnAdRewardedEvent With AdInfo: {adInfo} and Reward: {reward}");
+
+        PlayRewardedAdEnd?.Invoke(true);
     }
 
     void RewardedVideoOnAdClickedEvent(LevelPlayAdInfo adInfo)
@@ -220,6 +228,8 @@ public class AdsManager : MonoBehaviour
     void RewardedVideoOnAdClosedEvent(LevelPlayAdInfo adInfo)
     {
         Debug.Log($"[AdsManager] Received RewardedVideoOnAdClosedEvent With AdInfo: {adInfo}");
+
+        PlayRewardedAdEnd?.Invoke(true);
     }
 
     void RewardedVideoOnAdInfoChangedEvent(LevelPlayAdInfo adInfo)
@@ -245,6 +255,8 @@ public class AdsManager : MonoBehaviour
     void InterstitialOnAdDisplayFailedEvent(LevelPlayAdInfo adInfo, LevelPlayAdError error)
     {
         Debug.Log($"[AdsManager] Received InterstitialOnAdDisplayFailedEvent With AdInfo: {adInfo} and Error: {error}");
+
+        PlayInterstitialAdEnd?.Invoke();
     }
 
     void InterstitialOnAdClickedEvent(LevelPlayAdInfo adInfo)
@@ -255,6 +267,8 @@ public class AdsManager : MonoBehaviour
     void InterstitialOnAdClosedEvent(LevelPlayAdInfo adInfo)
     {
         Debug.Log($"[AdsManager] Received InterstitialOnAdClosedEvent With AdInfo: {adInfo}");
+
+        PlayInterstitialAdEnd?.Invoke();
     }
 
     void InterstitialOnAdInfoChangedEvent(LevelPlayAdInfo adInfo)
@@ -313,86 +327,4 @@ public class AdsManager : MonoBehaviour
         bannerAd?.DestroyAd();
         interstitialAd?.DestroyAd();
     }
-
-    //     // ---------------- Rewarded ----------------
-    //     private void RegisterRewardedEvents()
-    //     {
-    //         rewardedAd.OnLoaded += () => rewardedReady = true;
-    //         rewardedAd.OnFailedLoad += (error, msg) =>
-    //         {
-    //             rewardedReady = false;
-    //             Debug.Log($"Rewarded load failed: {msg}");
-    //         };
-
-    //         rewardedAd.OnShowed += () => Debug.Log("Rewarded ad shown");
-    //         rewardedAd.OnClosed += (args) =>
-    //         {
-    //             if (args.AdShowCompletionState == AdShowCompletionState.COMPLETED)
-    //             {
-    //                 Debug.Log("Rewarded ad completed!");
-    //                 onRewardEarned?.Invoke();
-    //             }
-    //             rewardedAd.LoadAsync();
-    //         };
-    //     }
-
-    //     public bool IsRewardedReady() => rewardedReady;
-
-    //     public async void ShowRewardedAd(Action onRewarded = null)
-    //     {
-    // #if UNITY_WEBGL
-    //         Debug.Log("Simulating rewarded ad (WebGL).");
-    //         onRewarded?.Invoke();
-    // #else
-    //         if (rewardedReady)
-    //         {
-    //             onRewardEarned = onRewarded;
-    //             await rewardedAd.ShowAsync();
-    //         }
-    //         else
-    //         {
-    //             Debug.Log("Rewarded ad not ready.");
-    //             await rewardedAd.LoadAsync();
-    //         }
-    // #endif
-    //     }
-
-    //     // ---------------- Interstitial ----------------
-    //     private void RegisterInterstitialEvents()
-    //     {
-    //         interstitialAd.OnLoaded += () => interstitialReady = true;
-    //         interstitialAd.OnClosed += () =>
-    //         {
-    //             Debug.Log("Interstitial closed, reloading...");
-    //             interstitialAd.LoadAsync();
-    //         };
-    //         interstitialAd.OnFailedLoad += (error, msg) =>
-    //         {
-    //             interstitialReady = false;
-    //             Debug.Log($"Interstitial load failed: {msg}");
-    //         };
-    //     }
-
-    //     public bool ShouldShowInterstitial()
-    //     {
-    //         return Time.time - sessionStartTime >= 600f; // 10 minutes
-    //     }
-
-    //     public async void ShowInterstitial()
-    //     {
-    // #if UNITY_WEBGL
-    //         Debug.Log("Simulating interstitial (WebGL).");
-    // #else
-    //         if (interstitialReady)
-    //         {
-    //             await interstitialAd.ShowAsync();
-    //         }
-    //         else
-    //         {
-    //             Debug.Log("Interstitial not ready, reloading...");
-    //             await interstitialAd.LoadAsync();
-    //         }
-    // #endif
-    //         sessionStartTime = Time.time;
-    //     }
 }
