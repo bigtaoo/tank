@@ -52,6 +52,8 @@ namespace ET.Client
             centerButton.onDirectionChanged.AddListener((direction) => self.OnJoystickDirectionChanged(direction));
 
             self.AwakeSkill();
+
+            AdsManager.Instance.HideBannerAd();
         }
 
         [EntitySystem]

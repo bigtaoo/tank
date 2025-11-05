@@ -36,6 +36,8 @@ namespace ET.Client
             self.Settings.GetComponent<Button>().onClick.AddListener(() => self.OpenSettingsPage().Coroutine());
 
             self.InitialSoundVolume();
+
+            AdsManager.Instance.DisplayBannerAd();
         }
 
         private static void InitialSoundVolume(this TankUIGameModeComponent self)

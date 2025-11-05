@@ -56,6 +56,58 @@ public class AdsManager : MonoBehaviour
         LevelPlay.Init(appKey);
     }
 
+    public void LoadRewardedVideo()
+    {
+        Debug.Log("[AdsManager] Start loading rewarded video.");
+        rewardedVideoAd.LoadAd();
+    }
+
+    public void PlayRewardedVideo()
+    {
+        Debug.Log("[AdsManager] Start playing rewarded video.");
+        if (rewardedVideoAd.IsAdReady())
+        {
+            Debug.Log("[AdsManager] Showing Rewarded Video Ad.");
+            rewardedVideoAd.ShowAd();
+        }
+        else
+        {
+            Debug.Log("[AdsManager] LevelPlay Rewarded Video Ad is not ready, giving a discount reward.");
+        }
+    }
+
+    public void LoadInterstitialVideo()
+    {
+        Debug.Log("[AdsManager] Start loading interstitial video.");
+        interstitialAd.LoadAd();
+    }
+
+    public void PlayInterstitialVideo()
+    {
+        Debug.Log("[AdsManager] Start playing interstitial video.");
+        if (interstitialAd.IsAdReady())
+        {
+            Debug.Log("[AdsManager] Showing Interstitial Ad.");
+            interstitialAd.ShowAd();
+        }
+        else
+        {
+            Debug.Log("[AdsManager] LevelPlay Interstital Ad is not ready, skip it.");
+        }
+    }
+
+    public void DisplayBannerAd()
+    {
+        Debug.Log("[AdsManager] Showing Banner Ad.");
+        bannerAd.LoadAd();
+    }
+    
+    public void HideBannerAd()
+    {
+        Debug.Log("[AdsManager] Hidding Banner Ad.");
+        bannerAd.HideAd();
+    }
+    
     void EnableAds()
     {
         // Register to ImpressionDataReadyEvent
