@@ -23,7 +23,7 @@ public class AdsManager : MonoBehaviour
 
     private Action onRewardEarned;
 
-    private void Awake()
+    private void Start()
     {
         if (Instance != null)
         {
@@ -33,13 +33,13 @@ public class AdsManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        Log.Info("[AdsManager] LevelPlay.ValidateIntegration");
+        Debug.Log("[AdsManager] LevelPlay.ValidateIntegration");
 
         LevelPlay.ValidateIntegration();
 
-        Log.Info($"[AdsManager] Unity version {LevelPlay.UnityVersion}");
+        Debug.Log($"[AdsManager] Unity version {LevelPlay.UnityVersion}");
 
-        Log.Info("[AdsManager] Register initialization callbacks");
+        Debug.Log("[AdsManager] Register initialization callbacks");
         LevelPlay.OnInitSuccess += SdkInitializationCompletedEvent;
         LevelPlay.OnInitFailed += SdkInitializationFailedEvent;
 
@@ -52,7 +52,7 @@ public class AdsManager : MonoBehaviour
 #else
         Log.Warning("Ads not supported on this platform.");
 #endif
-        Log.Info("[AdsManager] LevelPlay SDK initialization");
+        Debug.Log("[AdsManager] LevelPlay SDK initialization");
         LevelPlay.Init(appKey);
     }
 
@@ -126,134 +126,134 @@ public class AdsManager : MonoBehaviour
 
     void SdkInitializationCompletedEvent(LevelPlayConfiguration config)
     {
-        Log.Info($"[AdsManager] Received SdkInitializationCompletedEvent with Config: {config}");
+        Debug.Log($"[AdsManager] Received SdkInitializationCompletedEvent with Config: {config}");
         EnableAds();
     }
 
     void SdkInitializationFailedEvent(LevelPlayInitError error)
     {
-        Log.Info($"[AdsManager] Received SdkInitializationFailedEvent with Error: {error}");
+        Debug.Log($"[AdsManager] Received SdkInitializationFailedEvent with Error: {error}");
     }
 
     void RewardedVideoOnLoadedEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received RewardedVideoOnLoadedEvent With AdInfo: {adInfo}");
+        Debug.Log($"[AdsManager] Received RewardedVideoOnLoadedEvent With AdInfo: {adInfo}");
     }
 
     void RewardedVideoOnAdLoadFailedEvent(LevelPlayAdError error)
     {
-        Log.Info($"[AdsManager] Received RewardedVideoOnAdLoadFailedEvent With Error: {error}");
+        Debug.Log($"[AdsManager] Received RewardedVideoOnAdLoadFailedEvent With Error: {error}");
     }
 
     void RewardedVideoOnAdDisplayedEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received RewardedVideoOnAdDisplayedEvent With AdInfo: {adInfo}");
+        Debug.Log($"[AdsManager] Received RewardedVideoOnAdDisplayedEvent With AdInfo: {adInfo}");
     }
 
     void RewardedVideoOnAdDisplayedFailedEvent(LevelPlayAdInfo adInfo, LevelPlayAdError error)
     {
-        Log.Info($"[AdsManager] Received RewardedVideoOnAdDisplayedFailedEvent With AdInfo: {adInfo} and Error: {error}");
+        Debug.Log($"[AdsManager] Received RewardedVideoOnAdDisplayedFailedEvent With AdInfo: {adInfo} and Error: {error}");
     }
 
     void RewardedVideoOnAdRewardedEvent(LevelPlayAdInfo adInfo, LevelPlayReward reward)
     {
-        Log.Info($"[AdsManager] Received RewardedVideoOnAdRewardedEvent With AdInfo: {adInfo} and Reward: {reward}");
+        Debug.Log($"[AdsManager] Received RewardedVideoOnAdRewardedEvent With AdInfo: {adInfo} and Reward: {reward}");
     }
 
     void RewardedVideoOnAdClickedEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received RewardedVideoOnAdClickedEvent With AdInfo: {adInfo}");
+        Debug.Log($"[AdsManager] Received RewardedVideoOnAdClickedEvent With AdInfo: {adInfo}");
     }
 
     void RewardedVideoOnAdClosedEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received RewardedVideoOnAdClosedEvent With AdInfo: {adInfo}");
+        Debug.Log($"[AdsManager] Received RewardedVideoOnAdClosedEvent With AdInfo: {adInfo}");
     }
 
     void RewardedVideoOnAdInfoChangedEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received RewardedVideoOnAdInfoChangedEvent With AdInfo {adInfo}");
+        Debug.Log($"[AdsManager] Received RewardedVideoOnAdInfoChangedEvent With AdInfo {adInfo}");
     }
 
     void InterstitialOnAdLoadedEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received InterstitialOnAdLoadedEvent With AdInfo: {adInfo}");
+        Debug.Log($"[AdsManager] Received InterstitialOnAdLoadedEvent With AdInfo: {adInfo}");
     }
 
     void InterstitialOnAdLoadFailedEvent(LevelPlayAdError error)
     {
-        Log.Info($"[AdsManager] Received InterstitialOnAdLoadFailedEvent With Error: {error}");
+        Debug.Log($"[AdsManager] Received InterstitialOnAdLoadFailedEvent With Error: {error}");
     }
 
     void InterstitialOnAdDisplayedEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received InterstitialOnAdDisplayedEvent With AdInfo: {adInfo}");
+        Debug.Log($"[AdsManager] Received InterstitialOnAdDisplayedEvent With AdInfo: {adInfo}");
     }
 
     void InterstitialOnAdDisplayFailedEvent(LevelPlayAdInfo adInfo, LevelPlayAdError error)
     {
-        Log.Info($"[AdsManager] Received InterstitialOnAdDisplayFailedEvent With AdInfo: {adInfo} and Error: {error}");
+        Debug.Log($"[AdsManager] Received InterstitialOnAdDisplayFailedEvent With AdInfo: {adInfo} and Error: {error}");
     }
 
     void InterstitialOnAdClickedEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received InterstitialOnAdClickedEvent With AdInfo: {adInfo}");
+        Debug.Log($"[AdsManager] Received InterstitialOnAdClickedEvent With AdInfo: {adInfo}");
     }
 
     void InterstitialOnAdClosedEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received InterstitialOnAdClosedEvent With AdInfo: {adInfo}");
+        Debug.Log($"[AdsManager] Received InterstitialOnAdClosedEvent With AdInfo: {adInfo}");
     }
 
     void InterstitialOnAdInfoChangedEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received InterstitialOnAdInfoChangedEvent With AdInfo: {adInfo}");
+        Debug.Log($"[AdsManager] Received InterstitialOnAdInfoChangedEvent With AdInfo: {adInfo}");
     }
 
     void BannerOnAdLoadedEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received BannerOnAdLoadedEvent With AdInfo: {adInfo}");
+        Debug.Log($"[AdsManager] Received BannerOnAdLoadedEvent With AdInfo: {adInfo}");
     }
 
     void BannerOnAdLoadFailedEvent(LevelPlayAdError error)
     {
-        Log.Info($"[AdsManager] Received BannerOnAdLoadFailedEvent With Error: {error}");
+        Debug.Log($"[AdsManager] Received BannerOnAdLoadFailedEvent With Error: {error}");
     }
 
     void BannerOnAdClickedEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received BannerOnAdClickedEvent With AdInfo: {adInfo}");
+        Debug.Log($"[AdsManager] Received BannerOnAdClickedEvent With AdInfo: {adInfo}");
     }
 
     void BannerOnAdDisplayedEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received BannerOnAdDisplayedEvent With AdInfo: {adInfo}");
+        Debug.Log($"[AdsManager] Received BannerOnAdDisplayedEvent With AdInfo: {adInfo}");
     }
 
     void BannerOnAdDisplayFailedEvent(LevelPlayAdInfo adInfo, LevelPlayAdError error)
     {
-        Log.Info($"[AdsManager] Received BannerOnAdDisplayFailedEvent With AdInfo: {adInfo} and Error: {error}");
+        Debug.Log($"[AdsManager] Received BannerOnAdDisplayFailedEvent With AdInfo: {adInfo} and Error: {error}");
     }
 
     void BannerOnAdCollapsedEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received BannerOnAdCollapsedEvent With AdInfo: {adInfo}");
+        Debug.Log($"[AdsManager] Received BannerOnAdCollapsedEvent With AdInfo: {adInfo}");
     }
 
     void BannerOnAdLeftApplicationEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received BannerOnAdLeftApplicationEvent With AdInfo: {adInfo}");
+        Debug.Log($"[AdsManager] Received BannerOnAdLeftApplicationEvent With AdInfo: {adInfo}");
     }
 
     void BannerOnAdExpandedEvent(LevelPlayAdInfo adInfo)
     {
-        Log.Info($"[AdsManager] Received BannerOnAdExpandedEvent With AdInfo: {adInfo}");
+        Debug.Log($"[AdsManager] Received BannerOnAdExpandedEvent With AdInfo: {adInfo}");
     }
 
     void ImpressionDataReadyEvent(LevelPlayImpressionData impressionData)
     {
-        Log.Info($"[AdsManager] Received ImpressionDataReadyEvent ToString(): {impressionData}");
-        Log.Info($"[AdsManager] Received ImpressionDataReadyEvent allData: {impressionData.AllData}");
+        Debug.Log($"[AdsManager] Received ImpressionDataReadyEvent ToString(): {impressionData}");
+        Debug.Log($"[AdsManager] Received ImpressionDataReadyEvent allData: {impressionData.AllData}");
     }
 
     private void OnDisable()
@@ -269,15 +269,15 @@ public class AdsManager : MonoBehaviour
     //         rewardedAd.OnFailedLoad += (error, msg) =>
     //         {
     //             rewardedReady = false;
-    //             Log.Info($"Rewarded load failed: {msg}");
+    //             Debug.Log($"Rewarded load failed: {msg}");
     //         };
 
-    //         rewardedAd.OnShowed += () => Log.Info("Rewarded ad shown");
+    //         rewardedAd.OnShowed += () => Debug.Log("Rewarded ad shown");
     //         rewardedAd.OnClosed += (args) =>
     //         {
     //             if (args.AdShowCompletionState == AdShowCompletionState.COMPLETED)
     //             {
-    //                 Log.Info("Rewarded ad completed!");
+    //                 Debug.Log("Rewarded ad completed!");
     //                 onRewardEarned?.Invoke();
     //             }
     //             rewardedAd.LoadAsync();
@@ -289,7 +289,7 @@ public class AdsManager : MonoBehaviour
     //     public async void ShowRewardedAd(Action onRewarded = null)
     //     {
     // #if UNITY_WEBGL
-    //         Log.Info("Simulating rewarded ad (WebGL).");
+    //         Debug.Log("Simulating rewarded ad (WebGL).");
     //         onRewarded?.Invoke();
     // #else
     //         if (rewardedReady)
@@ -299,7 +299,7 @@ public class AdsManager : MonoBehaviour
     //         }
     //         else
     //         {
-    //             Log.Info("Rewarded ad not ready.");
+    //             Debug.Log("Rewarded ad not ready.");
     //             await rewardedAd.LoadAsync();
     //         }
     // #endif
@@ -311,13 +311,13 @@ public class AdsManager : MonoBehaviour
     //         interstitialAd.OnLoaded += () => interstitialReady = true;
     //         interstitialAd.OnClosed += () =>
     //         {
-    //             Log.Info("Interstitial closed, reloading...");
+    //             Debug.Log("Interstitial closed, reloading...");
     //             interstitialAd.LoadAsync();
     //         };
     //         interstitialAd.OnFailedLoad += (error, msg) =>
     //         {
     //             interstitialReady = false;
-    //             Log.Info($"Interstitial load failed: {msg}");
+    //             Debug.Log($"Interstitial load failed: {msg}");
     //         };
     //     }
 
@@ -329,7 +329,7 @@ public class AdsManager : MonoBehaviour
     //     public async void ShowInterstitial()
     //     {
     // #if UNITY_WEBGL
-    //         Log.Info("Simulating interstitial (WebGL).");
+    //         Debug.Log("Simulating interstitial (WebGL).");
     // #else
     //         if (interstitialReady)
     //         {
@@ -337,7 +337,7 @@ public class AdsManager : MonoBehaviour
     //         }
     //         else
     //         {
-    //             Log.Info("Interstitial not ready, reloading...");
+    //             Debug.Log("Interstitial not ready, reloading...");
     //             await interstitialAd.LoadAsync();
     //         }
     // #endif
