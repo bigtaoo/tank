@@ -38,8 +38,7 @@ namespace ET.Client
             self.InitialSoundVolume();
 
             AdsManager.Instance.DisplayBannerAd();
-            AdsManager.Instance.LoadInterstitialVideo();
-            AdsManager.Instance.LoadRewardedVideo();
+            AdsManager.Instance.PlayInterstitialAdEnd = self.OnInterstitialAdEnd;
         }
 
         private static void InitialSoundVolume(this TankUIGameModeComponent self)
@@ -99,6 +98,12 @@ namespace ET.Client
                 return true;
             }
             return false;
+        }
+
+        private static void OnInterstitialAdEnd(this TankUIGameModeComponent self)
+        {
+            self.StartSingleMode(self.SelectedMapIndex).Coroutine();
+            AdsManager.Instance.LoadInterstitialVideo();
         }
 
         private static void DisplayMapIndex(this TankUIGameModeComponent self)

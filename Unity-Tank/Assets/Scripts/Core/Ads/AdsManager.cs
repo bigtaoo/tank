@@ -184,6 +184,9 @@ public class AdsManager : MonoBehaviour
     {
         Debug.Log($"[AdsManager] Received SdkInitializationCompletedEvent with Config: {config}");
         EnableAds();
+
+        LoadInterstitialVideo();
+        LoadRewardedVideo();
     }
 
     void SdkInitializationFailedEvent(LevelPlayInitError error)

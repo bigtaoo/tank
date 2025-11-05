@@ -12,6 +12,10 @@ namespace ET
 
         public static bool ShouldPlayInterstitialAd(this TankClientGameInfoComponent self)
         {
+            if (self == null)
+            {
+                Log.Error("client game info is null");
+            }
             var clientTime = TimeInfo.Instance.ClientFrameTime();
             if (clientTime - self.InterstitialAdPlayedTime > 1 * 60 * 1000)
             {
