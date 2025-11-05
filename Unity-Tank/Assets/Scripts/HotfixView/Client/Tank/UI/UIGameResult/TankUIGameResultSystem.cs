@@ -17,7 +17,7 @@ namespace ET.Client
             self.Back.GetComponent<Button>().onClick.AddListener(() => { self.BackToGameModeUI().Coroutine(); });
             self.GoldValue = rc.Get<GameObject>("GoldValue");
             self.LoadAd = rc.Get<GameObject>("LoadAd");
-            self.LoadAd.GetComponent<Button>().onClick.AddListener(() => { AdsManager.Instance.LoadRewardedVideo(); });
+            self.LoadAd.GetComponent<Button>().onClick.AddListener(() => { AdsManager.Instance.PlayRewardedVideo(); });
 
             AdsManager.Instance.PlayRewardedAdEnd = self.AdRewared;
 
@@ -79,6 +79,8 @@ namespace ET.Client
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
             savedFileComponent.UserInfo.Gold += gold;
             savedFileComponent.SaveTankConfigResult();
+
+            AdsManager.Instance.LoadRewardedVideo();
         }
     }
 }
