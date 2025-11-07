@@ -9,5 +9,6 @@ namespace ET.Client
         public GameObject Back;
         public GameObject GoldValue;
         public GameObject LoadAd;
+        public bool RewardAdIsUsed;
     }
 }

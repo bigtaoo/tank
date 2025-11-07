@@ -17,7 +17,7 @@ namespace ET
                 Log.Error("client game info is null");
             }
             var clientTime = TimeInfo.Instance.ClientFrameTime();
-            if (clientTime - self.InterstitialAdPlayedTime > 1 * 60 * 1000)
+            if (clientTime - self.InterstitialAdPlayedTime > 10 * 60 * 1000)
             {
                 self.InterstitialAdPlayedTime = clientTime;
                 return true;

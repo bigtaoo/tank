@@ -20,6 +20,7 @@ namespace ET.Client
             self.LoadAd.GetComponent<Button>().onClick.AddListener(() => { AdsManager.Instance.PlayRewardedVideo(); });
 
             AdsManager.Instance.PlayRewardedAdEnd = self.AdRewared;
+            self.RewardAdIsUsed = false;
 
             self.ShowGameResult();
         }
@@ -66,6 +67,12 @@ namespace ET.Client
 
         private static void AdRewared(this TankUIGameResultComponent self, bool videoPlayed)
         {
+            if (self.RewardAdIsUsed)
+            {
+                return;
+            }
+            self.RewardAdIsUsed = true;
+
             var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
             var gold = gameInfoComponent.GetGold();
             if (gold < 30)
@@ -76,7 +83,7 @@ namespace ET.Client
             {
                 gold /= 2;
             }
-            Log.Warning($"Reward AD, gold: {gameInfoComponent.GetGold()}, actual gold: {gold}, video played: {videoPlayed}");
+            Log.Info($"Reward AD, gold: {gameInfoComponent.GetGold()}, actual gold: {gold}, video played: {videoPlayed}");
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
             savedFileComponent.UserInfo.Gold += gold;
             savedFileComponent.SaveTankConfigResult();
