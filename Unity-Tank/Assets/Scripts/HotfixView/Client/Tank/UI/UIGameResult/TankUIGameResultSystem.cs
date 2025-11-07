@@ -76,9 +76,14 @@ namespace ET.Client
             {
                 gold /= 2;
             }
+            Log.Warning($"Reward AD, gold: {gameInfoComponent.GetGold()}, actual gold: {gold}, video played: {videoPlayed}");
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
             savedFileComponent.UserInfo.Gold += gold;
             savedFileComponent.SaveTankConfigResult();
+
+            var clientGameInfoComponent = self.Root().GetComponent<TankClientGameInfoComponent>();
+            clientGameInfoComponent.SetNoteInfo($"You've earned extra {gold} gold.");
+            UIHelper.Create(self.Root(), UIType.TankUINote, UILayer.High).Coroutine();
 
             AdsManager.Instance.LoadRewardedVideo();
         }

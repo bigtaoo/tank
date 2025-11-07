@@ -16,13 +16,13 @@ namespace ET.Client
             self.Close.GetComponent<Button>().onClick.AddListener(() => { self.CloseNotePage().Coroutine(); });
 
             self.Info = rc.Get<GameObject>("Info");
-            self.Info.SetActive(false);
+            self.DisplayInfo();
         }
 
-        public static void SetInfo(this TankUINoteComponent self, string info)
+        private static void DisplayInfo(this TankUINoteComponent self)
         {
-            self.Info.SetActive(true);
-            self.Info.GetComponent<TMP_Text>().text = info;
+            var gameClientInfoComponent = self.Root().GetComponent<TankClientGameInfoComponent>();
+            self.Info.GetComponent<TMP_Text>().text = gameClientInfoComponent.GetNoteInfo();
         }
 
         private static async ETTask CloseNotePage(this TankUINoteComponent self)

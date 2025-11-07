@@ -5,5 +5,6 @@ namespace ET
     {
         public bool InputMutex;
         public long InterstitialAdPlayedTime;
+        public string NoteInfo;
     }
 }
