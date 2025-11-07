@@ -94,6 +94,8 @@ MonoBehaviour:
   data:
   - key: Close
     gameObject: {fileID: 899722670427233733}
+  - key: Info
+    gameObject: {fileID: 5803847018750688250}
 --- !u!1 &766647908966846832
 GameObject:
   m_ObjectHideFlags: 0

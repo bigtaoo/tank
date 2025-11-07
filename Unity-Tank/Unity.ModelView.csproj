@@ -65,6 +65,7 @@
     <Compile Include="Assets/Scripts/ModelView/Client/LockStep/LSOperaComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Demo/Unit/AnimatorComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankClientItemComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankUINoteComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankClientAttachedEffectComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/LockStep/LSUnitView.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Demo/UI/UIHelp/UIHelpComponent.cs" />
