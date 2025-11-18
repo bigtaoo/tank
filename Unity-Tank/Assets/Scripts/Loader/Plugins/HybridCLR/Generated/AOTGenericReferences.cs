@@ -169,6 +169,8 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// ET.StateMachineWrap<ET.Client.TankUIGameModeSystem.<StartSingleMode>d__4>
 	// ET.StateMachineWrap<ET.Client.TankUIGameResultEvent.<OnCreate>d__0>
 	// ET.StateMachineWrap<ET.Client.TankUIGameResultSystem.<BackToGameModeUI>d__1>
+	// ET.StateMachineWrap<ET.Client.TankUINoteEvent.<OnCreate>d__0>
+	// ET.StateMachineWrap<ET.Client.TankUINoteSystem.<CloseNotePage>d__2>
 	// ET.StateMachineWrap<ET.Client.TankUISettingsEvent.<OnCreate>d__0>
 	// ET.StateMachineWrap<ET.Client.TankUISettingsSystem.<BackToGameModeUI>d__1>
 	// ET.StateMachineWrap<ET.Client.TankUITankConfigEvent.<OnCreate>d__0>
@@ -759,6 +761,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.TankUIGameModeSystem.<OpenTankConfigPage>d__2>(object&,ET.Client.TankUIGameModeSystem.<OpenTankConfigPage>d__2&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.TankUIGameModeSystem.<StartSingleMode>d__4>(object&,ET.Client.TankUIGameModeSystem.<StartSingleMode>d__4&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.TankUIGameResultSystem.<BackToGameModeUI>d__1>(object&,ET.Client.TankUIGameResultSystem.<BackToGameModeUI>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.TankUINoteSystem.<CloseNotePage>d__2>(object&,ET.Client.TankUINoteSystem.<CloseNotePage>d__2&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.TankUISettingsSystem.<BackToGameModeUI>d__1>(object&,ET.Client.TankUISettingsSystem.<BackToGameModeUI>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.TankUITankConfigSystem.<BackToGameModeUI>d__6>(object&,ET.Client.TankUITankConfigSystem.<BackToGameModeUI>d__6&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.UILSLobbyComponentSystem.<EnterMap>d__1>(object&,ET.Client.UILSLobbyComponentSystem.<EnterMap>d__1&)
@@ -790,6 +793,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,ET.Client.TankUIGameMainEvent.<OnCreate>d__0>(object&,ET.Client.TankUIGameMainEvent.<OnCreate>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,ET.Client.TankUIGameModeEvent.<OnCreate>d__0>(object&,ET.Client.TankUIGameModeEvent.<OnCreate>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,ET.Client.TankUIGameResultEvent.<OnCreate>d__0>(object&,ET.Client.TankUIGameResultEvent.<OnCreate>d__0&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,ET.Client.TankUINoteEvent.<OnCreate>d__0>(object&,ET.Client.TankUINoteEvent.<OnCreate>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,ET.Client.TankUISettingsEvent.<OnCreate>d__0>(object&,ET.Client.TankUISettingsEvent.<OnCreate>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,ET.Client.TankUITankConfigEvent.<OnCreate>d__0>(object&,ET.Client.TankUITankConfigEvent.<OnCreate>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,ET.Client.UIComponentSystem.<Create>d__1>(object&,ET.Client.UIComponentSystem.<Create>d__1&)
@@ -871,6 +875,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.TankUIGameModeSystem.<OpenTankConfigPage>d__2>(ET.Client.TankUIGameModeSystem.<OpenTankConfigPage>d__2&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.TankUIGameModeSystem.<StartSingleMode>d__4>(ET.Client.TankUIGameModeSystem.<StartSingleMode>d__4&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.TankUIGameResultSystem.<BackToGameModeUI>d__1>(ET.Client.TankUIGameResultSystem.<BackToGameModeUI>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.TankUINoteSystem.<CloseNotePage>d__2>(ET.Client.TankUINoteSystem.<CloseNotePage>d__2&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.TankUISettingsSystem.<BackToGameModeUI>d__1>(ET.Client.TankUISettingsSystem.<BackToGameModeUI>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.TankUITankConfigSystem.<BackToGameModeUI>d__6>(ET.Client.TankUITankConfigSystem.<BackToGameModeUI>d__6&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.UIHelper.<Remove>d__1>(ET.Client.UIHelper.<Remove>d__1&)
@@ -913,6 +918,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.TankUIGameMainEvent.<OnCreate>d__0>(ET.Client.TankUIGameMainEvent.<OnCreate>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.TankUIGameModeEvent.<OnCreate>d__0>(ET.Client.TankUIGameModeEvent.<OnCreate>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.TankUIGameResultEvent.<OnCreate>d__0>(ET.Client.TankUIGameResultEvent.<OnCreate>d__0&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.TankUINoteEvent.<OnCreate>d__0>(ET.Client.TankUINoteEvent.<OnCreate>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.TankUISettingsEvent.<OnCreate>d__0>(ET.Client.TankUISettingsEvent.<OnCreate>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.TankUITankConfigEvent.<OnCreate>d__0>(ET.Client.TankUITankConfigEvent.<OnCreate>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.UIComponentSystem.<Create>d__1>(ET.Client.UIComponentSystem.<Create>d__1&)

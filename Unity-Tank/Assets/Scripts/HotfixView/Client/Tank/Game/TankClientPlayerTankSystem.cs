@@ -84,7 +84,7 @@ namespace ET.Client
         {
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
             var gameInfoComponent = self.Root().GetComponent<TankClientGameInfoComponent>();
-            if (!gameInfoComponent.InputMutex)
+            if (!gameInfoComponent.GetInputMutex())
             {
                 if (Input.GetKey(KeyCode.UpArrow))
                 {

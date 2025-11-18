@@ -30,6 +30,11 @@ namespace ET
             self.InputMutex = value;
         }
 
+        public static bool GetInputMutex(this TankClientGameInfoComponent self)
+        {
+            return self.InputMutex;
+        }
+
         public static void SetNoteInfo(this TankClientGameInfoComponent self, string info)
         {
             self.NoteInfo = info;

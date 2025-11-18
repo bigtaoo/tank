@@ -8,5 +8,4 @@
   <Project Path="Unity.ModelView.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
   <Project Path="Unity.Loader.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
 </Solution>
