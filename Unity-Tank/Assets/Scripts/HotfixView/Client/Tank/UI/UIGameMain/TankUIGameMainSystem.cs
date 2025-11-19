@@ -1,4 +1,3 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -51,6 +50,7 @@ namespace ET.Client
             var centerButton = self.Center.GetComponent<CenterJoystick>();
             centerButton.onDirectionChanged.AddListener((direction) => self.OnJoystickDirectionChanged(direction));
 
+            self.InitializeJoySticker();
             self.AwakeSkill();
 
             AdsManager.Instance.HideBannerAd();
@@ -71,16 +71,7 @@ namespace ET.Client
             for (int i = 0; i < self.RobotUICount; i++)
             {
                 var remainingRotot = robotComponent.RemainingRobotsCount[i];
-                //Log.Warning($"remaining robot: {remainingRotot}, index: {i}");
-                // if (remainingRotot > 0)
-                // {
-                    self.RobotRemainingCounts[i].GetComponent<TMP_Text>().text = remainingRotot.ToString();
-                // }
-                // else
-                // {
-                //     self.RobotRemainingCounts[i].SetActive(false);
-                //     self.RobotImages[i].SetActive(false);
-                // }
+                self.RobotRemainingCounts[i].GetComponent<TMP_Text>().text = remainingRotot.ToString();
             }
 
             var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
@@ -170,6 +161,27 @@ namespace ET.Client
                     self.MoveTank(TankDirection.Down); break;
                 case TankJoystickDirection.Stop:
                     self.StopTank(); break;
+            }
+        }
+
+        private static void InitializeJoySticker(this TankUIGameMainComponent self)
+        {
+            var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
+            if (savedFileComponent.UserInfo.JoyStickerType == TankJoyStickerType.Buttons)
+            {
+                self.Up.SetActive(true);
+                self.Down.SetActive(true);
+                self.Left.SetActive(true);
+                self.Right.SetActive(true);
+                self.Center.SetActive(false);               
+            }
+            else
+            {
+                self.Up.SetActive(false);
+                self.Down.SetActive(false);
+                self.Left.SetActive(false);
+                self.Right.SetActive(false);
+                self.Center.SetActive(true);
             }
         }
     }
