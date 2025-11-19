@@ -561,7 +561,7 @@ MonoBehaviour:
       height: 886.57935
     m_MinimalGUI: 1
   m_defaultScale: 0.6468682
-  m_LastWindowPixelSize: {x: 898.5, y: 594.5}
+  m_LastWindowPixelSize: {x: 1797, y: 1189}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -635,7 +635,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 255}
     m_SelectedIDs: a0bb0000
     m_LastClickedID: 48032
-    m_ExpandedIDs: 00000000acba0000
+    m_ExpandedIDs: 00000000b0ba0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -664,7 +664,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000acba0000
+    m_ExpandedIDs: 00000000b0ba0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
