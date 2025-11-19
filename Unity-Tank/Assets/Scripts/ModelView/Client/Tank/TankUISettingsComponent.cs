@@ -8,5 +8,7 @@ namespace ET.Client
         public GameObject Back;
         public GameObject MusicVolume;
         public GameObject SoundVolume;
+        public GameObject JoyStickerTraditionalCheck;
+        public GameObject JoyStickerButtonsCheck;
     }
 }

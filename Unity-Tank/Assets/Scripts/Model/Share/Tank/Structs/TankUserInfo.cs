@@ -15,5 +15,6 @@ namespace ET
         public List<TankSkill> SkillLevels = new();
         public int MusicVolume = 1000;
         public int SoundVolume = 1000;
+        public TankJoyStickerType JoyStickerType;
     }
 }

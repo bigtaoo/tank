@@ -20,9 +20,31 @@ namespace ET.Client
             self.SoundVolume = rc.Get<GameObject>("SoundValue");
             self.SoundVolume.GetComponent<Slider>().onValueChanged.AddListener(value => { self.SetSoundVolume(value); });
 
+            self.JoyStickerTraditionalCheck = rc.Get<GameObject>("TraditionalCheck");
+            self.JoyStickerTraditionalCheck.GetComponent<Toggle>().onValueChanged.AddListener(value => { self.SetJoySticker(TankJoyStickerType.Traditonal); });
+
+            self.JoyStickerButtonsCheck = rc.Get<GameObject>("ButtonsCheck");
+            self.JoyStickerButtonsCheck.GetComponent<Toggle>().onValueChanged.AddListener(value => { self.SetJoySticker(TankJoyStickerType.Buttons); });
+
+            self.InitializeSavedSettings();
+        }
+
+        private static void InitializeSavedSettings(this TankUISettingsComponent self)
+        {
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
             self.MusicVolume.GetComponent<Slider>().value = savedFileComponent.UserInfo.MusicVolume / 1000.0f;
             self.SoundVolume.GetComponent<Slider>().value = savedFileComponent.UserInfo.SoundVolume / 1000.0f;
+
+            if (savedFileComponent.UserInfo.JoyStickerType == TankJoyStickerType.Buttons)
+            {
+                self.JoyStickerButtonsCheck.GetComponent<Toggle>().isOn = true;
+                self.JoyStickerTraditionalCheck.GetComponent<Toggle>().isOn = false;
+            }
+            else
+            {
+                self.JoyStickerButtonsCheck.GetComponent<Toggle>().isOn = false;
+                self.JoyStickerTraditionalCheck.GetComponent<Toggle>().isOn = true;
+            }
         }
 
         private static async ETTask BackToGameModeUI(this TankUISettingsComponent self)
@@ -49,6 +71,24 @@ namespace ET.Client
 
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
             savedFileComponent.UserInfo.SoundVolume = (int)(volume * 1000);
+            savedFileComponent.SaveTankConfigResult();
+        }
+
+        private static void SetJoySticker(this TankUISettingsComponent self, TankJoyStickerType joyStickerType)
+        {
+            if (joyStickerType == TankJoyStickerType.Buttons)
+            {
+                self.JoyStickerButtonsCheck.GetComponent<Toggle>().isOn = true;
+                self.JoyStickerTraditionalCheck.GetComponent<Toggle>().isOn = false;
+            }
+            else
+            {
+                self.JoyStickerButtonsCheck.GetComponent<Toggle>().isOn = false;
+                self.JoyStickerTraditionalCheck.GetComponent<Toggle>().isOn = true;
+            }
+
+            var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
+            savedFileComponent.UserInfo.JoyStickerType = joyStickerType;
             savedFileComponent.SaveTankConfigResult();
         }
     }
