@@ -63,6 +63,7 @@ namespace ET.Client
             //  if (savedFileComponent.UserInfo.Gold < 100) gameInfoComponent.GameInfo.Gold = 88888;
 
             savedFileComponent.UpdateGameInfo(mapIndex, gameInfoComponent.GameInfo.Gold);
+            self.LoadAd.SetActive(true);
         }
 
         private static void AdRewared(this TankUIGameResultComponent self, bool videoPlayed)
@@ -83,6 +84,8 @@ namespace ET.Client
             {
                 gold /= 2;
             }
+            self.LoadAd.SetActive(false);
+            
             Log.Info($"Reward AD, gold: {gameInfoComponent.GetGold()}, actual gold: {gold}, video played: {videoPlayed}");
             var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
             savedFileComponent.UserInfo.Gold += gold;
