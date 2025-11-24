@@ -52,6 +52,11 @@ namespace ET.Analyzer
             {
                 return;
             }
+
+            if (namedTypeSymbol.GetNameSpace() == "TankLogic")
+            {
+                return;
+            }
             
             Diagnostic diagnostic = Diagnostic.Create(EntityClassDeclarationAnalyzerrRule.Rule, classDeclarationSyntax.Identifier.GetLocation(), namedTypeSymbol);
             context.ReportDiagnostic(diagnostic);
