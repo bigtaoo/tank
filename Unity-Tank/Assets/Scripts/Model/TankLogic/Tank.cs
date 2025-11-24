@@ -1,7 +1,9 @@
 namespace TankLogic
 {
-    public class Tank
+    public abstract class Tank
     {
+        protected TankData tankData;
+        
         public void Move()
         {
             
