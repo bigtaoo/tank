@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Assets/Scripts/Model/Share/Module/Console/ConsoleComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Demo/NetClient/Session/SessionComponent.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/PlayerTank.cs" />
     <Compile Include="Assets/Scripts/Model/Generate/Client/Config/UnitConfig.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Enums/TankConsts.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/LSInput.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Module/ObjectWait/ObjectWait.cs" />
     <Compile Include="Assets/Scripts/Model/Generate/Client/Message/LockStepOuter_C_11001.cs" />
     <Compile Include="Assets/Scripts/Model/Share/ConstFiberId.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Models/RobotData.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Message/MessageSessionHandlerAttribute.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankMapTile.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankBuffComponent.cs" />
