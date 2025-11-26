@@ -2,13 +2,15 @@ namespace TankLogic
 {
     public class Main
     {
-        public RobotManager RobotManager{ get; private set; }
-        public PlayerManager PlayerManager{ get; private set; }
+        public RobotManager RobotManager { get; private set; }
+        public PlayerManager PlayerManager { get; private set; }
+        public RandomGenerator Random { get; private set; }
 
-        public Main(int seed)
+        public Main(ulong seed)
         {
             RobotManager = new RobotManager(this);
             PlayerManager = new PlayerManager(this);
+            Random = new RandomGenerator(seed);
         }
     }
 }
