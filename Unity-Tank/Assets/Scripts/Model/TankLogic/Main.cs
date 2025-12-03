@@ -2,14 +2,14 @@ namespace TankLogic
 {
     public class Main
     {
-        public RobotManager RobotManager { get; private set; }
-        public PlayerManager PlayerManager { get; private set; }
-        public RandomGenerator Random { get; private set; }
-        public CommandManager CommandManager { get; private set; }
-        public ProjectileManager ProjectileManager { get; private set; }
-        public EffectManager EffectManager { get; private set; }
-        public uint Frame { get; private set; }
-        public const uint FrameTime = 20;
+        internal RobotManager RobotManager { get; private set; }
+        internal PlayerManager PlayerManager { get; private set; }
+        internal RandomGenerator Random { get; private set; }
+        internal CommandManager CommandManager { get; private set; }
+        internal ProjectileManager ProjectileManager { get; private set; }
+        internal EffectManager EffectManager { get; private set; }
+        internal uint Frame { get; private set; }
+        internal const uint FrameTime = 20;
 
         public Main(ulong seed)
         {

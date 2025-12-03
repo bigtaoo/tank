@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace TankLogic
 {
     public sealed class CommandManager

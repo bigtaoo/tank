@@ -1,8 +1,8 @@
 namespace TankLogic
 {
-    public class RobotTank : Tank<RobotData>
+    internal class RobotTank : Tank<RobotData>
     {
-        public RobotTank(RobotData data) : base(data)
+        internal RobotTank(RobotData data, Main main) : base(data, main)
         {
             
         }

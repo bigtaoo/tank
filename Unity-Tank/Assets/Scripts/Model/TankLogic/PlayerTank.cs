@@ -1,8 +1,8 @@
 namespace TankLogic
 {
-    public sealed class PlayerTank : Tank<PlayerData>
+    internal class PlayerTank : Tank<PlayerData>
     {
-       public PlayerTank(PlayerData playerData) : base(playerData)
+        internal PlayerTank(PlayerData playerData, Main main) : base(playerData, main)
         {
             
         }

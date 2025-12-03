@@ -1,10 +1,10 @@
 namespace TankLogic
 {
-    public class ProjectileManager
+    internal class ProjectileManager
     {
         private readonly Main _main;
 
-        public ProjectileManager(Main main)
+        internal ProjectileManager(Main main)
         {
             _main = main;
         }

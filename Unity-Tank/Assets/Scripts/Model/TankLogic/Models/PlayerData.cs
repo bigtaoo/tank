@@ -1,6 +1,6 @@
 namespace TankLogic
 {
-    public sealed class PlayerData : TankData
+    internal sealed class PlayerData : TankData
     {
         public int PlayerLifes { get; private set; }
     }

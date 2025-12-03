@@ -1,10 +1,10 @@
 namespace TankLogic
 {
-    public class EffectManager
+    internal class EffectManager
     {
         private readonly Main _main;
 
-        public EffectManager(Main main)
+        internal EffectManager(Main main)
         {
             _main = main;
         }

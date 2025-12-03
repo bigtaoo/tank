@@ -1,10 +1,10 @@
 namespace TankLogic
 {
-    public class RobotManager
+    internal class RobotManager
     {
         private readonly Main _main;
 
-        public RobotManager(Main main)
+        internal RobotManager(Main main)
         {
             _main = main;
         }

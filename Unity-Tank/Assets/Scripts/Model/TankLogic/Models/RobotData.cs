@@ -1,6 +1,6 @@
 namespace TankLogic
 {
-    public sealed class RobotData : TankData
+    internal sealed class RobotData : TankData
     {
         
     }

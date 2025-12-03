@@ -1,11 +1,11 @@
 namespace TankLogic
 {
-    public class RandomGenerator
+    internal class RandomGenerator
     {
         private ulong _state0;
         private ulong _state1;
 
-        public RandomGenerator(ulong seed)
+        internal RandomGenerator(ulong seed)
         {
             _state0 = SplitMix64(ref seed);
             _state1 = SplitMix64(ref seed);

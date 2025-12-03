@@ -1,10 +1,10 @@
 namespace TankLogic
 {
-    public class PlayerManager
+    internal class PlayerManager
     {
         private readonly Main _main;
 
-        public PlayerManager(Main main)
+        internal PlayerManager(Main main)
         {
             _main = main;
         }
