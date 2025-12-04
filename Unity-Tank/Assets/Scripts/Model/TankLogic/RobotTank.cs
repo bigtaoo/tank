@@ -2,9 +2,15 @@ namespace TankLogic
 {
     internal class RobotTank : Tank<RobotData>
     {
-        internal RobotTank(RobotData data, Main main) : base(data, main)
+        private readonly Main _main;
+        internal uint RobotId { get; private set; }
+        internal RobotData RobotData { get; private set; }
+
+        internal RobotTank(RobotData data, Main main, uint robotId) : base(data, main)
         {
-            
+            _main = main;
+            RobotData = data;
+            RobotId = robotId;
         }
     }
 }
