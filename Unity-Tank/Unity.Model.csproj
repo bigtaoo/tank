@@ -68,6 +68,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Module/Numeric/NumericType.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Demo/NetClient/A2NetClient_Message.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Console/IConsoleHandler.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Models/EffectType.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankUserInfo.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/LSUpdater.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Message/LogMsg.cs" />
@@ -84,7 +85,6 @@
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankBuff.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/AI/AIDispatcherComponent.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Main.cs" />
-    <Compile Include="Assets/Scripts/Model/TankLogic/Models/Effect.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Demo/NetClient/Router/RouterAddressComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Enums/TankAttachedEffectType.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/LSConstValue.cs" />
@@ -96,6 +96,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankRobot.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Console/ConsoleDispatcher.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankGameResultComponent.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Effect.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankDamageComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/FrameBuffer.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Unit/UnitType.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Assets/Scripts/Model/Client/Module/Message/ClientSessionErrorComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankAttachedEffect.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Models/Direction.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/BuffManager.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Demo/NetClient/Router/RouterConnector.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/LSEntitySystemSingleton.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankBulletComponent.cs" />
@@ -171,6 +173,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankPlayerComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Message/SessionAcceptTimeoutComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Demo/NetClient/Router/RouterCheckComponent.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Models/BuffType.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Models/BulletData.cs" />
     <Compile Include="Assets/Scripts/Model/Generate/Client/Message/OuterMessage_C_10001.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankRobotSpawnInfo.cs" />
@@ -178,6 +181,7 @@
     <Compile Include="Assets/Scripts/Model/Client/LockStep/WaitType.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/FixedTimeCounter.cs" />
     <Compile Include="Assets/Scripts/Model/Client/LockStep/LSReplayUpdater.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Buff.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Models/Command.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/PlayerManager.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Demo/Main/ClientSenderComponent.cs" />

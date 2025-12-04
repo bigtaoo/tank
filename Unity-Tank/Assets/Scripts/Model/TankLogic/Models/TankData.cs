@@ -2,14 +2,15 @@ namespace TankLogic
 {
     internal abstract class TankData
     {
-        public Position SpawnPosition { get; set; }
-        public Position CurrentPosition { get; set; }
-        public Direction MoveDirection { get; set; }
-        public Direction CurrentDirection { get; set; }
-        public uint MoveSpeed { get; set; }
-        public uint BulletSpeed { get; set; }
-        public uint Level { get; set; }
-        public uint LastShootTime { get; set; }
-        public uint ShootCoolDownTime { get; set; }
+        internal Position SpawnPosition { get; set; }
+        internal Position CurrentPosition { get; set; }
+        internal Direction MoveDirection { get; set; }
+        internal Direction CurrentDirection { get; set; }
+        internal uint MoveSpeed { get; set; }
+        internal uint BulletSpeed { get; set; }
+        internal uint Level { get; set; }
+        internal uint LastShootTime { get; set; }
+        internal uint ShootCoolDownTime { get; set; }
+        internal int Rotation { get; set; }
     }
 }

@@ -32,15 +32,6 @@ namespace TankLogic
 
             var bulletData = new BulletData(Camp.Player, _tankData.CurrentDirection, _tankData.CurrentPosition, _tankData.BulletSpeed);
             _main.ProjectileManager.AddBullet(bulletData);
-
-            // var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
-            // bulletComponent.CreateBullet(new TankBullet
-            // {
-            //     Camp = TankCamp.Player,
-            //     MoveDirection = self.CurrentDirection,
-            //     Position = self.Position,
-            //     Speed = self.BulletSpeed,
-            // });
         }
 
         public void Move()

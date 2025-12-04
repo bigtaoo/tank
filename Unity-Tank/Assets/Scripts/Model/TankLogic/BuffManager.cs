@@ -1,15 +1,15 @@
 namespace TankLogic
 {
-    internal class EffectManager
+    internal class BuffManager
     {
         private readonly Main _main;
 
-        internal EffectManager(Main main)
+        internal BuffManager(Main main)
         {
             _main = main;
         }
 
-        internal void AddEffect(Effect effect)
+        internal void AddBuff(Buff buff)
         {
             
         }
