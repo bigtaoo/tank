@@ -105,23 +105,23 @@ namespace TankLogic
                 case Direction.Left:
                     //Log.Warning($"Move left: x {position.X} y:{position.Y} up {mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y })}," +
                     //    $"down {mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y - 1 })}");
-                    return mapTilesComponent.GetTile(new Position { X = targetPosition.X - 1, Y = targetPosition.Y }) == null &&
-                        mapTilesComponent.GetTile(new Position { X = targetPosition.X - 1, Y = targetPosition.Y - 1 }) == null;
+                    return _main.TileManager.GetTile(new Position { X = targetPosition.X - 1, Y = targetPosition.Y }) == null &&
+                        _main.TileManager.GetTile(new Position { X = targetPosition.X - 1, Y = targetPosition.Y - 1 }) == null;
                 case Direction.Right:
                     //Log.Warning($"Move Right: x {position.X} y:{position.Y} up {mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y })}," +
                     //    $"down {mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y - 1 })}");
-                    return mapTilesComponent.GetTile(new Position { X = targetPosition.X, Y = targetPosition.Y }) == null &&
-                    mapTilesComponent.GetTile(new Position { X = targetPosition.X, Y = targetPosition.Y - 1 }) == null;
+                    return _main.TileManager.GetTile(new Position { X = targetPosition.X, Y = targetPosition.Y }) == null &&
+                    _main.TileManager.GetTile(new Position { X = targetPosition.X, Y = targetPosition.Y - 1 }) == null;
                 case Direction.Up:
                     //Log.Warning($"Move Up: x {position.X} y:{position.Y} right {mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y })}," +
                     //    $"left {mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y })}");
-                    return mapTilesComponent.GetTile(new Position { X = targetPosition.X, Y = targetPosition.Y }) == null &&
-                        mapTilesComponent.GetTile(new Position { X = targetPosition.X - 1, Y = targetPosition.Y }) == null;
+                    return _main.TileManager.GetTile(new Position { X = targetPosition.X, Y = targetPosition.Y }) == null &&
+                        _main.TileManager.GetTile(new Position { X = targetPosition.X - 1, Y = targetPosition.Y }) == null;
                 case Direction.Down:
                     //Log.Warning($"Move Down: x {position.X} y:{position.Y} right {mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y - 1 })}," +
                     //    $"left {mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y - 1 })}");
-                    return mapTilesComponent.GetTile(new Position { X = targetPosition.X, Y = targetPosition.Y - 1 }) == null &&
-                        mapTilesComponent.GetTile(new Position { X = targetPosition.X - 1, Y = targetPosition.Y - 1 }) == null;
+                    return _main.TileManager.GetTile(new Position { X = targetPosition.X, Y = targetPosition.Y - 1 }) == null &&
+                        _main.TileManager.GetTile(new Position { X = targetPosition.X - 1, Y = targetPosition.Y - 1 }) == null;
                 case Direction.None:
                 default:
                     return false;
