@@ -9,6 +9,7 @@ namespace TankLogic
         internal ProjectileManager ProjectileManager { get; private set; }
         internal EffectManager EffectManager { get; private set; }
         internal BuffManager BuffManager { get; private set; }
+        internal TileManager TileManager { get; private set; }
         internal uint Frame { get; private set; }
         internal const uint FrameTime = 20;
         internal uint GameTime { get; private set; }
@@ -23,6 +24,7 @@ namespace TankLogic
             ProjectileManager = new ProjectileManager(this);
             EffectManager = new EffectManager(this);
             BuffManager = new BuffManager(this);
+            TileManager = new TileManager(this);
         }
 
         internal uint GetId()

@@ -43,26 +43,17 @@ namespace TankLogic
                 return;
             }
 
-            var distance = _tankData.MoveSpeed * Main.FrameTime / 1000;
-            var (position, rotation) = TankMovementHelper.Move(self.Position, self.MoveDirection, distance);
-            self.Rotation = rotation;
+            var distance = (int)(_tankData.MoveSpeed * Main.FrameTime / 1000);
+            var (position, rotation) = Move(_tankData.CurrentPosition, _tankData.MoveDirection, distance);
+            _tankData.Rotation = rotation;
 
-            var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-            foreach (var robot in robotComponent.Robots)
+            if (CanTankMoveToPosition(position, _tankData.CurrentDirection))
             {
-                if (PositionHasTank(position, self.MoveDirection, TankConsts.PlayerIndex))
-                {
-                    return;
-                }
-            }
-
-            if (CanTankMoveToPosition(position, self.CurrentDirection))
-            {
-                self.Position = position;
+                _tankData.CurrentPosition = position;
             }
         }
 
-        public (Position, int) Move(Position currentPosition, Direction direction, float distance)
+        public (Position, int) Move(Position currentPosition, Direction direction, int distance)
         {
             var rotation = 0;
             switch (direction)
@@ -102,8 +93,7 @@ namespace TankLogic
 
         public bool CanTankMoveToPosition(Position targetPosition, Direction direction)
         {
-            var mapTilesComponent = null;
-            if (!mapTilesComponent.IsInMap(targetPosition, 1.0f))
+            if (!_main.TileManager.IsInMap(targetPosition, 1000))
             {
                 return false;
             }
