@@ -128,7 +128,7 @@ namespace TankLogic
             }
         }
 
-        public static int PositionToTile(Direction direction, float v)
+        protected int PositionToTile(Direction direction, float v)
         {
             return (direction == Direction.Up || direction == Direction.Right) ? (int)Math.Ceiling(v) : (int)Math.Floor(v);
         }
