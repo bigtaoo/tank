@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace TankLogic
 {
-    public class InitializeMapCommand
+    public class InitializeMapCommand : Command
     {
         internal MapBound MapBound { get; private set; }
         internal List<TileInfo> TileInfos { get; private set; } = new();

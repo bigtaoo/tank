@@ -1,6 +1,6 @@
 namespace TankLogic
 {
-    public class InitializePlayerCommand
+    public class InitializePlayerCommand : Command
     {
         internal Position SpwanPosition {get; private set; }
 

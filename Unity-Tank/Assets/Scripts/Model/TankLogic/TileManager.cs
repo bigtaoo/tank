@@ -6,7 +6,7 @@ namespace TankLogic
     {
         private readonly Main _main;
         private MapBound _mapBound;
-        private Dictionary<uint, Tile> _tiles = new();
+        private Dictionary<int, Tile> _tiles = new();
 
         internal TileManager(Main main)
         {
@@ -18,6 +18,13 @@ namespace TankLogic
             _mapBound = mapBound;
         }
 
+        public void AddTileInfo(TileType tileType, int x, int y)
+        {
+            var index = GetTileIndex(x, y);
+            var tile = new Tile(new Position(x, y), tileType);
+            _tiles.Add(index, tile);
+        }
+
         internal bool IsInMap(Position position, int collision)
         {
             return position.X >= _mapBound.Left + collision && position.X <= _mapBound.Right - collision &&
@@ -27,6 +34,11 @@ namespace TankLogic
         internal Tile GetTile(int X, int Y)
         {
             return null;
+        }
+
+        private int GetTileIndex(int x, int y)
+        {
+            return y * 10000 + x;
         }
     }
 }
