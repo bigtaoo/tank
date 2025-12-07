@@ -27,6 +27,11 @@ namespace TankLogic
             TileManager = new TileManager(this);
         }
 
+        public void Initialize(InitializeMapCommand initializeMap, InitializePlayerCommand initializePlayer)
+        {
+            
+        }
+
         internal uint GetId()
         {
             return ++IdGenerator;

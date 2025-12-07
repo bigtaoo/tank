@@ -24,7 +24,7 @@ namespace TankLogic
                 position.Y >= _mapBound.Bottom + collision && position.Y <= _mapBound.Top - collision;
         }
 
-        internal Tile GetTile(Position position)
+        internal Tile GetTile(int X, int Y)
         {
             return null;
         }

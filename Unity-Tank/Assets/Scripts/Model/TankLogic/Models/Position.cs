@@ -1,8 +1,14 @@
 namespace TankLogic
 {
-    public class Position
+    internal class Position
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        internal int X { get; set; }
+        internal int Y { get; set; }
+
+        internal Position(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
     }
 }

@@ -1,6 +1,6 @@
 namespace TankLogic
 {
-    internal enum TileType
+    public enum TileType
     {
         None,
         Wall,
