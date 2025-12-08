@@ -70,6 +70,7 @@
     <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/OneFrameInputsHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/Module/Unit/UnitSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/LockStep/RoomSystem.cs" />
+    <Compile Include="Assets/Scripts/Hotfix/Client/Tank/Helper/CommandHelper.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankPlayerSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/Module/Actor/MailBoxType_UnOrderedMessageHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Move/M2C_StopHandler.cs" />
