@@ -70,6 +70,9 @@ namespace ET.Client
             scene.RemoveComponent<TankBaseComponent>();
             scene.RemoveComponent<TankClientItemComponent>();
             scene.RemoveComponent<TankClientAttachedEffectComponent>();
+
+            // Logic
+            scene.RemoveComponent<TankLogicComponent>();
         }
     }
 }

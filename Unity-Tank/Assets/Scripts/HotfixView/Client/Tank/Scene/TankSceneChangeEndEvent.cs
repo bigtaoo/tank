@@ -41,6 +41,9 @@ namespace ET.Client
             scene.AddComponent<TankBaseComponent>();
             scene.AddComponent<TankClientItemComponent>();
             scene.AddComponent<TankClientAttachedEffectComponent>();
+
+            // Logic
+            scene.AddComponent<TankLogicComponent>();
         }
     }
 }

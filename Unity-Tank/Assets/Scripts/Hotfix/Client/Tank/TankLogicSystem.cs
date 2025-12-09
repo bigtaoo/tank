@@ -17,6 +17,13 @@ namespace ET
             {
                 initializeMapCommand.AddTileInfo(new TileInfo(CommandHelper.GetTileType(tile.Type), tile.X, tile.Y));
             }
+
+            var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+            var initialPlayerCommand = new InitializePlayerCommand((int)playerComponent.SpawnPosition.X, (int)playerComponent.SpawnPosition.Y,
+                (int)playerComponent.MoveSpeed, (uint)playerComponent.ShootCoolDownTime, (int)playerComponent.BulletSpeed);
+
+            self.tankLogic = new Main(1000);
+            self.tankLogic.Initialize(initializeMapCommand, initialPlayerCommand);
         }
         
         [EntitySystem]
