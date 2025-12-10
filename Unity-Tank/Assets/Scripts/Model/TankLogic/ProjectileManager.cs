@@ -16,5 +16,10 @@ namespace TankLogic
         {
             
         }
+
+        internal void UpdateProjectiles()
+        {
+            
+        }
     }
 }

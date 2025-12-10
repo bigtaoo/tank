@@ -13,12 +13,17 @@ namespace TankLogic
             _main = main;
         }
 
-        public void SetMapBound(MapBound mapBound)
+        internal void UpdateTiles()
+        {
+            
+        }
+
+        internal void SetMapBound(MapBound mapBound)
         {
             _mapBound = mapBound;
         }
 
-        public void AddTileInfo(TileType tileType, int x, int y)
+        internal void AddTileInfo(TileType tileType, int x, int y)
         {
             var index = GetTileIndex(x, y);
             var tile = new Tile(new Position(x, y), tileType);

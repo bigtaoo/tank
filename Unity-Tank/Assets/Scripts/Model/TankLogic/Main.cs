@@ -26,10 +26,28 @@ namespace TankLogic
             BuffManager = new BuffManager(this);
             TileManager = new TileManager(this);
         }
-
+ 
         public void Initialize(InitializeMapCommand initializeMap, InitializePlayerCommand initializePlayer)
         {
-            
+            initializeMap.Frame = 1;
+            initializePlayer.Frame = 1;
+
+            CommandManager.AddCommand(initializeMap);
+            CommandManager.AddCommand(initializePlayer);
+        }
+
+        public void Update()
+        {
+            ++Frame;
+            GameTime += FrameTime;
+
+            CommandManager.UpdateCommands();
+            PlayerManager.UpdatePlayers();
+            RobotManager.UpdateRobots();
+            ProjectileManager.UpdateProjectiles();
+            BuffManager.UpdateBuffs();
+            TileManager.UpdateTiles();
+            EffectManager.UpdateEffects();
         }
 
         internal uint GetId()

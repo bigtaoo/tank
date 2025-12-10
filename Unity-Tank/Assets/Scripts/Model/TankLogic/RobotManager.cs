@@ -11,5 +11,10 @@ namespace TankLogic
         {
             _main = main;
         }
+
+        internal void UpdateRobots()
+        {
+            
+        }
     }
 }

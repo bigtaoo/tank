@@ -13,5 +13,10 @@ namespace TankLogic
         {
             
         }
+
+        internal void UpdateEffects()
+        {
+            
+        }
     }
 }
