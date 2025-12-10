@@ -41,6 +41,8 @@ namespace TankLogic
                         }
                     case InitializePlayerCommand initializePlayer:
                         {
+                            _main.PlayerManager.SetInitiaInfo(initializePlayer.SpwanPosition, initializePlayer.MoveSpeed,
+                             initializePlayer.BulletMoveSpeed, initializePlayer.ShootCoolDownTime);
                             break;
                         }
                     case MoveCommand move:

@@ -13,6 +13,14 @@ namespace TankLogic
             _main = main;
         }
 
+        internal void SetInitiaInfo(Position spawnPostion, int moveSpeed, int bulletSpeed, uint shootCoolDownTime)
+        {
+            _tankData.SpawnPosition = spawnPostion;
+            _tankData.MoveSpeed = moveSpeed;
+            _tankData.BulletSpeed = bulletSpeed;
+            _tankData.ShootCoolDownTime = shootCoolDownTime;
+        }
+
         protected void SetMoveDirection(Direction moveDirection)
         {
             if (moveDirection != Direction.None)

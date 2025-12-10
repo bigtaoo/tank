@@ -16,5 +16,13 @@ namespace TankLogic
         {
             
         }
+
+        internal void SetInitiaInfo(Position spawnPostion, int moveSpeed, int bulletSpeed, uint shootCoolDownTime)
+        {
+            foreach (PlayerTank player in Players)
+            {
+                player.SetInitiaInfo(spawnPostion, moveSpeed, bulletSpeed, shootCoolDownTime);
+            }
+        }
     }
 }

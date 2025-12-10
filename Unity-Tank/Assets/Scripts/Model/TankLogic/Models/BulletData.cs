@@ -5,9 +5,9 @@ namespace TankLogic
         Camp Camp { get; set; }
         Direction Direction { get; set; }
         Position Position { get; set; }
-        uint Speed { get; set; }
+        int Speed { get; set; }
 
-        internal BulletData(Camp camp, Direction direction, Position position, uint speed)
+        internal BulletData(Camp camp, Direction direction, Position position, int speed)
         {
             Camp = camp;
             Direction = direction;
