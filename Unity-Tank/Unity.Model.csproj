@@ -147,6 +147,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankRobotComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Demo/EventType.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/ObjectWait/ObjectWait.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Commands/RobotSpawnInfo.cs" />
     <Compile Include="Assets/Scripts/Model/Generate/Client/Message/LockStepOuter_C_11001.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Commands/ShootCommand.cs" />
     <Compile Include="Assets/Scripts/Model/Share/ConstFiberId.cs" />
