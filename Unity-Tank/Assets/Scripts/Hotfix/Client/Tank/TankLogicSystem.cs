@@ -22,7 +22,8 @@ namespace ET
             var initialPlayerCommand = new InitializePlayerCommand((int)playerComponent.SpawnPosition.X, (int)playerComponent.SpawnPosition.Y,
                 (int)playerComponent.MoveSpeed, (uint)playerComponent.ShootCoolDownTime, (int)playerComponent.BulletSpeed);
 
-            self.tankLogic = new Main(1000);
+            var tankGameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
+            self.tankLogic = new Main(1000, tankGameInfoComponent.TankLogicUnityLogger);
             self.tankLogic.Initialize(initializeMapCommand, initialPlayerCommand);
         }
         

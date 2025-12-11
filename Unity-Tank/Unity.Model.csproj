@@ -106,6 +106,7 @@
     <Compile Include="Assets/Scripts/Model/TankLogic/Commands/InitializePlayerCommand.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Scene/FiberParentComponent.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Tank.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Models/ILogger.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Enums/TankCamp.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Commands/MapBound.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/RandomGenerator.cs" />

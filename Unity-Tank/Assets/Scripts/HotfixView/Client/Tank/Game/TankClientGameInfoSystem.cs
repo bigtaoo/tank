@@ -8,6 +8,12 @@ namespace ET
         private static void Awake(this TankClientGameInfoComponent self)
         {
             self.InterstitialAdPlayedTime = TimeInfo.Instance.ClientFrameTime();
+
+            var tankGameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
+            if (tankGameInfoComponent.TankLogicUnityLogger == null)
+            {
+                tankGameInfoComponent.TankLogicUnityLogger = new TankLogicUnityLogger();
+            }
         }
 
         public static bool ShouldPlayInterstitialAd(this TankClientGameInfoComponent self)

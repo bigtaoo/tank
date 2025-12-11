@@ -58,6 +58,7 @@
     <Compile Include="Assets/Scripts/ModelView/Client/Demo/UI/UILogin/UILoginComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/UIEventComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Plugins/Example/ModelView.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankLogicUnityLogger.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankUIGameResultComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankClientBulletComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/LockStep/Camera/LSCameraComponent.cs" />

@@ -10,13 +10,15 @@ namespace TankLogic
         internal EffectManager EffectManager { get; private set; }
         internal BuffManager BuffManager { get; private set; }
         internal TileManager TileManager { get; private set; }
+        internal ILogger Logger { get; private set; }
         internal uint Frame { get; private set; }
         internal const uint FrameTime = 20;
         internal uint GameTime { get; private set; }
         internal uint IdGenerator { get; private set; }
 
-        public Main(ulong seed)
+        public Main(ulong seed, ILogger logger)
         {
+            Logger = logger;
             RobotManager = new RobotManager(this);
             PlayerManager = new PlayerManager(this);
             Random = new RandomGenerator(seed);
@@ -25,6 +27,8 @@ namespace TankLogic
             EffectManager = new EffectManager(this);
             BuffManager = new BuffManager(this);
             TileManager = new TileManager(this);
+
+            Logger.Warning($"New Logic with seed: {seed}");
         }
  
         public void Initialize(InitializeMapCommand initializeMap, InitializePlayerCommand initializePlayer)
