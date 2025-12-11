@@ -177,6 +177,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Module/AI/AIConfig.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Enums/TankMapType.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Message/MessageSessionHandler.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Commands/InitializeRobotsCommand.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/RobotManager.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankPlayerComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Message/SessionAcceptTimeoutComponent.cs" />
