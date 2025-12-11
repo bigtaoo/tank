@@ -13,14 +13,15 @@ namespace TankLogic
         internal int MoveSpeed { get; private set; }
         internal int BulletMoveSpeed { get; private set; }
 
-        public RobotSpawnInfo(int spawnPointId, int spawnPositionX, int spawnPositionY, int rotation, int robotCount, uint spawnTime,
+        public RobotSpawnInfo(int spawnPointId, int spawnPositionX, int spawnPositionY, int rotation, int robotCount, uint spawnInterval,
             int robotLevel, uint shootInterval, int moveSpeed, int bulletSpeed)
         {
             SpawnPointId = spawnPointId;
             SpawnPosition = new Position(spawnPositionX, spawnPositionY);
             Rotation = rotation;
             RobotCount = robotCount;
-            SpawnTime = spawnTime;
+            SpawnTime = 0;
+            SpawnInterval = spawnInterval;
             BulletMoveSpeed = bulletSpeed;
             ShootInterval = shootInterval;
             MoveSpeed = moveSpeed;

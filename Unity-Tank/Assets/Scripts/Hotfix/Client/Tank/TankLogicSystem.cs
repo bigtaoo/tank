@@ -22,6 +22,15 @@ namespace ET
             var initialPlayerCommand = new InitializePlayerCommand((int)playerComponent.SpawnPosition.X, (int)playerComponent.SpawnPosition.Y,
                 (int)playerComponent.MoveSpeed, (uint)playerComponent.ShootCoolDownTime, (int)playerComponent.BulletSpeed);
 
+            var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+            var initialRobotsCommand = new InitializeRobotsCommand();
+            foreach(var robot in robotComponent.SpawnInfos)
+            {
+                initialRobotsCommand.AddRobotSpawnInfo(new RobotSpawnInfo(robot.SpawnPointId, (int)robot.SpawnPosition.X, (int)robot.SpawnPosition.Y,
+                    robot.Rotation, robot.RobotCount, (uint)robot.SpawnInterval, robot.RobotLevel, (uint)robot.ShootInterval, 
+                    robot.MoveSpeed, robot.BulletMoveSpeed));
+            }
+
             var tankGameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
             self.tankLogic = new Main(1000, tankGameInfoComponent.TankLogicUnityLogger);
             self.tankLogic.Initialize(initializeMapCommand, initialPlayerCommand);
