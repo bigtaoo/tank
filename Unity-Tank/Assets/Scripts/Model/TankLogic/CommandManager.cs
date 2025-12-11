@@ -45,6 +45,11 @@ namespace TankLogic
                              initializePlayer.BulletMoveSpeed, initializePlayer.ShootCoolDownTime);
                             break;
                         }
+                    case InitializeRobotsCommand initializeRobots:
+                        {
+                            _main.RobotManager.SetRobotSpawnInfos(initializeRobots.RobotSpawnInfos);
+                            break;
+                        }
                     case MoveCommand move:
                         {
                             break;
