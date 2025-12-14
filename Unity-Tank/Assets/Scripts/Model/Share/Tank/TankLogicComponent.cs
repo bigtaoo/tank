@@ -6,5 +6,6 @@ namespace ET
     public class TankLogicComponent : Entity, IAwake, IUpdate
     {
         public Main tankLogic;
+        public long lastUpdatedTime;
     }
 }

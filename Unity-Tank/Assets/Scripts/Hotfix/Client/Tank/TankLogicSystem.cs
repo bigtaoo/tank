@@ -34,12 +34,21 @@ namespace ET
             var tankGameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
             self.tankLogic = new Main(1000, tankGameInfoComponent.TankLogicUnityLogger);
             self.tankLogic.Initialize(initializeMapCommand, initialPlayerCommand);
+
+            self.lastUpdatedTime = TimeInfo.Instance.ClientFrameTime();
         }
         
         [EntitySystem]
         private static void Update(this TankLogicComponent self)
         {
+            var pastTime = TimeInfo.Instance.ClientFrameTime() - self.lastUpdatedTime;
+            while (pastTime > Main.FrameTime)
+            {
+                pastTime -= Main.FrameTime;
+                self.lastUpdatedTime += Main.FrameTime;
 
+                self.tankLogic.Update();
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TankLogic
         internal TileManager TileManager { get; private set; }
         internal ILogger Logger { get; private set; }
         internal uint Frame { get; private set; }
-        internal const uint FrameTime = 20;
+        public const uint FrameTime = 20;
         internal uint GameTime { get; private set; }
         internal uint IdGenerator { get; private set; }
 
