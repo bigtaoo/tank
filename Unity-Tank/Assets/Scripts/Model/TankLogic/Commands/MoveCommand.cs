@@ -4,9 +4,8 @@ namespace TankLogic
     {
         public Direction Direction { get; private set; }
 
-        public MoveCommand(uint frame, Direction direction)
+        public MoveCommand(Direction direction)
         {
-            Frame = frame;
             Direction = direction;
         }
     }

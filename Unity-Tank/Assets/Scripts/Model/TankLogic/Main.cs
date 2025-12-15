@@ -31,13 +31,15 @@ namespace TankLogic
             Logger.Warning($"New Logic with seed: {seed}");
         }
  
-        public void Initialize(InitializeMapCommand initializeMap, InitializePlayerCommand initializePlayer)
+        public void Initialize(InitializeMapCommand initializeMap, InitializePlayerCommand initializePlayer, InitializeRobotsCommand robotsCommand)
         {
             initializeMap.Frame = 1;
             initializePlayer.Frame = 1;
+            robotsCommand.Frame = 1;
 
             CommandManager.AddCommand(initializeMap);
             CommandManager.AddCommand(initializePlayer);
+            CommandManager.AddCommand(robotsCommand);
         }
 
         public void Update()
@@ -52,6 +54,12 @@ namespace TankLogic
             BuffManager.UpdateBuffs();
             TileManager.UpdateTiles();
             EffectManager.UpdateEffects();
+        }
+
+        public void AddCommand(Command command)
+        {
+            command.Frame = Frame + 1;
+            CommandManager.AddCommand(command);
         }
 
         internal uint GetId()

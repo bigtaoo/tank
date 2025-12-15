@@ -33,7 +33,7 @@ namespace ET
 
             var tankGameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
             self.tankLogic = new Main(1000, tankGameInfoComponent.TankLogicUnityLogger);
-            self.tankLogic.Initialize(initializeMapCommand, initialPlayerCommand);
+            self.tankLogic.Initialize(initializeMapCommand, initialPlayerCommand, initialRobotsCommand);
 
             self.lastUpdatedTime = TimeInfo.Instance.ClientFrameTime();
         }
@@ -49,6 +49,18 @@ namespace ET
 
                 self.tankLogic.Update();
             }
+        }
+
+        public static void SendMoveCommand(this TankLogicComponent self, Direction direction)
+        {
+            var moveCommand = new MoveCommand(direction);
+            self.tankLogic.AddCommand(moveCommand);
+        }
+
+        public static void SendShootCommand(this TankLogicComponent self)
+        {
+            var shootCommand = new ShootCommand();
+            self.tankLogic.AddCommand(shootCommand);
         }
     }
 }
