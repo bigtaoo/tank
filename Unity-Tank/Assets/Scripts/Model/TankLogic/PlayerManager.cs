@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TankLogic
 {
@@ -19,10 +20,26 @@ namespace TankLogic
 
         internal void SetInitiaInfo(Position spawnPostion, int moveSpeed, int bulletSpeed, uint shootCoolDownTime)
         {
-            foreach (PlayerTank player in Players)
+            var playerData = new PlayerData
             {
-                player.SetInitiaInfo(spawnPostion, moveSpeed, bulletSpeed, shootCoolDownTime);
-            }
+                SpawnPosition = spawnPostion,
+            };
+            var player = new PlayerTank(playerData, _main, _main.GetId());
+            Players.Add(player);  
+        }
+
+        internal void ExecuteMoveCommand(MoveCommand moveCommand)
+        {
+            var player = Players.First();
+            player.SetMoveDirection(moveCommand.Direction);
+
+            _main.Logger.Warning($"Move command: {moveCommand.Direction}");
+        }
+
+        internal void ExecuteShootCommand(ShootCommand shootCommand)
+        {
+            var player = Players.First();
+            player.Shoot();
         }
     }
 }

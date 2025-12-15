@@ -52,10 +52,12 @@ namespace TankLogic
                         }
                     case MoveCommand move:
                         {
+                            _main.PlayerManager.ExecuteMoveCommand(move);
                             break;
                         }
                     case ShootCommand shoot:
                         {
+                            _main.PlayerManager.ExecuteShootCommand(shoot);
                             break;
                         }
                     default:

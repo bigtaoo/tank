@@ -13,15 +13,15 @@ namespace TankLogic
             _main = main;
         }
 
-        internal void SetInitiaInfo(Position spawnPostion, int moveSpeed, int bulletSpeed, uint shootCoolDownTime)
-        {
-            _tankData.SpawnPosition = spawnPostion;
-            _tankData.MoveSpeed = moveSpeed;
-            _tankData.BulletSpeed = bulletSpeed;
-            _tankData.ShootCoolDownTime = shootCoolDownTime;
-        }
+        // internal void SetInitiaInfo(Position spawnPostion, int moveSpeed, int bulletSpeed, uint shootCoolDownTime)
+        // {
+        //     _tankData.SpawnPosition = spawnPostion;
+        //     _tankData.MoveSpeed = moveSpeed;
+        //     _tankData.BulletSpeed = bulletSpeed;
+        //     _tankData.ShootCoolDownTime = shootCoolDownTime;
+        // }
 
-        protected void SetMoveDirection(Direction moveDirection)
+        internal void SetMoveDirection(Direction moveDirection)
         {
             if (moveDirection != Direction.None)
             {
@@ -31,7 +31,7 @@ namespace TankLogic
             _tankData.MoveDirection = moveDirection;
         }
 
-        protected void Shoot()
+        internal void Shoot()
         {
             var currentTime = _main.GameTime;
             if (currentTime - _tankData.LastShootTime < _tankData.ShootCoolDownTime)

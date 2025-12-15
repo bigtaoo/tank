@@ -38,18 +38,27 @@ namespace ET
 
         public static void SetMoveDirection(this TankPlayerComponent self, TankDirection moveDirection)
         {
-            if (moveDirection != TankDirection.None)
-            {
-                self.CurrentDirection = moveDirection;
-            }
+            // if (moveDirection != TankDirection.None)
+            // {
+            //     self.CurrentDirection = moveDirection;
+            // }
 
-            var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-            var spawnBuff = buffComponent.GetBuff(TankConsts.PlayerIndex, TankBuffType.Spwan);
-            if (spawnBuff != null)
+            // var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+            // var spawnBuff = buffComponent.GetBuff(TankConsts.PlayerIndex, TankBuffType.Spwan);
+            // if (spawnBuff != null)
+            // {
+            //     return;
+            // }
+            // self.MoveDirection = moveDirection;
+
+            if (moveDirection == self.MoveDirection)
             {
                 return;
             }
             self.MoveDirection = moveDirection;
+
+            var logic = self.Root().GetComponent<TankLogicComponent>();
+            logic.SendMoveCommand(moveDirection);
         }
 
         public static void Shoot(this TankPlayerComponent self)
@@ -61,14 +70,17 @@ namespace ET
             }
             self.LastShootTime = currentTime;
 
-            var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
-            bulletComponent.CreateBullet(new TankBullet
-            {
-                Camp = TankCamp.Player,
-                MoveDirection = self.CurrentDirection,
-                Position = self.Position,
-                Speed = self.BulletSpeed,
-            });
+            var logic = self.Root().GetComponent<TankLogicComponent>();
+            logic.SendShootCommand();
+
+            // var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
+            // bulletComponent.CreateBullet(new TankBullet
+            // {
+            //     Camp = TankCamp.Player,
+            //     MoveDirection = self.CurrentDirection,
+            //     Position = self.Position,
+            //     Speed = self.BulletSpeed,
+            // });
         }
 
         private static void CheckHelth(this TankPlayerComponent self)

@@ -51,9 +51,17 @@ namespace ET
             }
         }
 
-        public static void SendMoveCommand(this TankLogicComponent self, Direction direction)
+        public static void SendMoveCommand(this TankLogicComponent self, TankDirection direction)
         {
-            var moveCommand = new MoveCommand(direction);
+            var dir = direction switch
+            {
+                TankDirection.Left => Direction.Left,
+                TankDirection.Right => Direction.Right,
+                TankDirection.Up => Direction.Up,
+                TankDirection.Down => Direction.Down,
+                _ => Direction.None,
+            };
+            var moveCommand = new MoveCommand(dir);
             self.tankLogic.AddCommand(moveCommand);
         }
 
