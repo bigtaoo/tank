@@ -1,7 +1,7 @@
 namespace ET
 {
     [ComponentOf(typeof(Scene))]
-    public class TankPlayerComponent : Entity, IAwake, IUpdate
+    public class TankPlayerComponent : Entity, IAwake
     {
         public TankPosition SpawnPosition { get; set; }
         public TankDirection MoveDirection { get; set; }

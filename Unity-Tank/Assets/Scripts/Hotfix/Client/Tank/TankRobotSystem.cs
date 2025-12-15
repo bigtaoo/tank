@@ -16,7 +16,6 @@ namespace ET
             self.RobotId = TankConsts.RobotStartIndex;
         }
 
-        [EntitySystem]
         private static void Update(this TankRobotComponent self)
         {
             var gameResultComponent = self.Root().GetComponent<TankGameResultComponent>();

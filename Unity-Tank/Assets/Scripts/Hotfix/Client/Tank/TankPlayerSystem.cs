@@ -16,7 +16,6 @@ namespace ET
             self.BulletSpeed = 10.0f;
         }
 
-        [EntitySystem]
         private static void Update(this TankPlayerComponent self)
         {
             self.CheckHelth();

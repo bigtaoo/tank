@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace ET
 {
     [ComponentOf(typeof(Scene))]
-    public class TankRobotComponent : Entity, IAwake, IUpdate
+    public class TankRobotComponent : Entity, IAwake
     {
         public Dictionary<int, TankRobot> Robots { get; set; } = new();
         public ListComponent<TankRobotSpawnInfo> SpawnInfos { get; set; } = new();
