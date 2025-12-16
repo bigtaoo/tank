@@ -23,6 +23,15 @@ namespace TankLogic
             var playerData = new PlayerData
             {
                 SpawnPosition = spawnPostion,
+                PlayerLifes = 3,
+                CurrentPosition = spawnPostion,
+                MoveDirection = Direction.None,
+                CurrentDirection = Direction.None,
+                MoveSpeed = moveSpeed,
+                BulletSpeed = bulletSpeed,
+                Level = 1,
+                LastShootTime = _main.GameTime,
+                ShootCoolDownTime = shootCoolDownTime,
             };
             var player = new PlayerTank(playerData, _main, _main.GetId());
             Players.Add(player);  
