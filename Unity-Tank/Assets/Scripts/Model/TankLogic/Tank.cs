@@ -44,7 +44,7 @@ namespace TankLogic
             _main.ProjectileManager.AddBullet(bulletData);
         }
 
-        private void UpdatePosition()
+        internal void UpdatePosition()
         {
             if (_tankData.MoveDirection == Direction.None)
             {
@@ -61,7 +61,7 @@ namespace TankLogic
             }
         }
 
-        public (Position, int) Move(Position currentPosition, Direction direction, int distance)
+        private (Position, int) Move(Position currentPosition, Direction direction, int distance)
         {
             var rotation = 0;
             switch (direction)

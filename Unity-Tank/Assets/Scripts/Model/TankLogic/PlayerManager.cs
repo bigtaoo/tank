@@ -15,7 +15,10 @@ namespace TankLogic
 
         internal void UpdatePlayers()
         {
-            
+            foreach (var player in Players)
+            {
+                player.UpdatePosition();
+            }
         }
 
         internal void SetInitiaInfo(Position spawnPostion, int moveSpeed, int bulletSpeed, uint shootCoolDownTime)

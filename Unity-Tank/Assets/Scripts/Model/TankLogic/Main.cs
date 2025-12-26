@@ -15,6 +15,7 @@ namespace TankLogic
         public const uint FrameTime = 20;
         internal uint GameTime { get; private set; }
         internal uint IdGenerator { get; private set; }
+        public SCCommand SCCommand { get; set; } = new();
 
         public Main(ulong seed, ILogger logger)
         {
@@ -54,6 +55,8 @@ namespace TankLogic
             BuffManager.UpdateBuffs();
             TileManager.UpdateTiles();
             EffectManager.UpdateEffects();
+
+            UpdateSCCommand();
         }
 
         public void AddCommand(Command command)
@@ -65,6 +68,21 @@ namespace TankLogic
         internal uint GetId()
         {
             return ++IdGenerator;
+        }
+
+        private void UpdateSCCommand()
+        {
+            foreach (var player in PlayerManager.Players)
+            {
+                SCTankInfo tankInfo = new()
+                {
+                    Id = player.PlayerId,
+                    PosX = player.PlayerData.CurrentPosition.X,
+                    PosY = player.PlayerData.CurrentPosition.Y,
+                    Direction = player.PlayerData.CurrentDirection,
+                };
+                SCCommand.TankInfos.Add(tankInfo);
+            }
         }
     }
 }

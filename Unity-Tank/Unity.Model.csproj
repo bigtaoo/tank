@@ -98,6 +98,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankEventType.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankRobot.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Console/ConsoleDispatcher.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Commands/SCCommand.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankGameResultComponent.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Effect.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankDamageComponent.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankBuffComponent.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Tile.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankItem.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Commands/SCTankInfo.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Models/TankData.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/IRoomMessage.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/RobotTank.cs" />
