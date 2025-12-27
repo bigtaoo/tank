@@ -20,16 +20,16 @@ namespace ET
             }
 
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-            var initialPlayerCommand = new InitializePlayerCommand((int)playerComponent.SpawnPosition.X, (int)playerComponent.SpawnPosition.Y,
-                (int)playerComponent.MoveSpeed, (uint)playerComponent.ShootCoolDownTime, (int)playerComponent.BulletSpeed);
+            var initialPlayerCommand = new InitializePlayerCommand((int)playerComponent.SpawnPosition.X * 1000, (int)playerComponent.SpawnPosition.Y * 1000,
+                (int)playerComponent.MoveSpeed * 1000, (uint)playerComponent.ShootCoolDownTime, (int)playerComponent.BulletSpeed * 1000);
 
             var robotComponent = self.Root().GetComponent<TankRobotComponent>();
             var initialRobotsCommand = new InitializeRobotsCommand();
             foreach(var robot in robotComponent.SpawnInfos)
             {
-                initialRobotsCommand.AddRobotSpawnInfo(new RobotSpawnInfo(robot.SpawnPointId, (int)robot.SpawnPosition.X, (int)robot.SpawnPosition.Y,
-                    robot.Rotation, robot.RobotCount, (uint)robot.SpawnInterval, robot.RobotLevel, (uint)robot.ShootInterval, 
-                    robot.MoveSpeed, robot.BulletMoveSpeed));
+                initialRobotsCommand.AddRobotSpawnInfo(new RobotSpawnInfo(robot.SpawnPointId, (int)robot.SpawnPosition.X * 1000,
+                    (int)robot.SpawnPosition.Y * 1000, robot.Rotation, robot.RobotCount, (uint)robot.SpawnInterval, robot.RobotLevel, 
+                    (uint)robot.ShootInterval, robot.MoveSpeed * 1000, robot.BulletMoveSpeed * 1000));
             }
 
             var tankGameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();

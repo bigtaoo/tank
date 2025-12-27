@@ -87,9 +87,11 @@ namespace ET
         public static void UpdatePlayerTankInfo(this TankPlayerComponent self, SCTankInfo tankInfo)
         {
             var position = self.Position;
-            position.X = tankInfo.PosX;
-            position.Y = tankInfo.PosY;
+            position.X = tankInfo.PosX / 1000.0f;
+            position.Y = tankInfo.PosY / 1000.0f;
             self.Position = position;
+
+            // Log.Warning($"New position: X {position.X}, Y {position.Y}");
         }
 
         // private static void CheckHelth(this TankPlayerComponent self)

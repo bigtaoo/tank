@@ -1,4 +1,5 @@
 using System;
+using ET;
 
 namespace TankLogic
 {
@@ -59,6 +60,7 @@ namespace TankLogic
             {
                 _tankData.CurrentPosition = position;
             }
+            // Log.Warning($"Move distance: {distance}, X: {position.X}, Y: {position.Y}");
         }
 
         private (Position, int) Move(Position currentPosition, Direction direction, int distance)
