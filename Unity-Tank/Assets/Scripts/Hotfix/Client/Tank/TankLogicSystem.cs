@@ -1,3 +1,4 @@
+using System.Linq;
 using TankLogic;
 
 namespace ET
@@ -49,6 +50,8 @@ namespace ET
 
                 self.tankLogic.Update();
             }
+
+            self.UpdateSCCommand();
         }
 
         public static void SendMoveCommand(this TankLogicComponent self, TankDirection direction)
@@ -69,6 +72,14 @@ namespace ET
         {
             var shootCommand = new ShootCommand();
             self.tankLogic.AddCommand(shootCommand);
+        }
+
+        private static void UpdateSCCommand(this TankLogicComponent self)
+        {
+            var tankInfo = self.tankLogic.SCCommand.TankInfos;
+            var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+            playerComponent.UpdatePlayerTankInfo(self.tankLogic.SCCommand.TankInfos.First());
+            self.tankLogic.SCCommand.ClearData();
         }
     }
 }
