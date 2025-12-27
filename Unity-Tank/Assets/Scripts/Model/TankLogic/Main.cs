@@ -1,3 +1,5 @@
+using ET;
+
 namespace TankLogic
 {
     public class Main
@@ -77,12 +79,15 @@ namespace TankLogic
                 SCTankInfo tankInfo = new()
                 {
                     Id = player.PlayerId,
+                    PlayerIndex = 1,
                     PosX = player.PlayerData.CurrentPosition.X,
                     PosY = player.PlayerData.CurrentPosition.Y,
                     Direction = player.PlayerData.CurrentDirection,
                 };
                 SCCommand.TankInfos.Add(tankInfo);
             }
+
+            // Log.Warning($"tank infos: {SCCommand.TankInfos.Count}");
         }
     }
 }

@@ -76,9 +76,21 @@ namespace ET
 
         private static void UpdateSCCommand(this TankLogicComponent self)
         {
-            var tankInfo = self.tankLogic.SCCommand.TankInfos;
+            var tankInfos = self.tankLogic.SCCommand.TankInfos;
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-            playerComponent.UpdatePlayerTankInfo(self.tankLogic.SCCommand.TankInfos.First());
+            // Log.Warning($"client tank info: {self.tankLogic.SCCommand.TankInfos.Count}");
+            foreach (var info in tankInfos)
+            {
+                if (info.PlayerIndex == 0)
+                {
+                    
+                }
+                else
+                {
+                    playerComponent.UpdatePlayerTankInfo(info);
+                }
+            }
+            
             self.tankLogic.SCCommand.ClearData();
         }
     }
