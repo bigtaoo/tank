@@ -1,10 +1,22 @@
 using ET.Client;
 using System;
+using TankLogic;
 
 namespace ET
 {
     public static class TankMovementHelper
     {
+        public static int DirectionToRotation(Direction direction)
+        {
+            return direction switch
+            {
+                Direction.Left => 90,
+                Direction.Right => 270,
+                Direction.Up => 0,
+                Direction.Down => 180,
+                _ => 0,
+            };
+        }
         public static (TankPosition, int) Move(TankPosition currentPosition, TankDirection direction, float distance)
         {
             var rotation = 0;

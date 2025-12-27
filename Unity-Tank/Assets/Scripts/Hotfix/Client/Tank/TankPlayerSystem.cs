@@ -91,6 +91,8 @@ namespace ET
             position.Y = tankInfo.PosY / 1000.0f;
             self.Position = position;
 
+            self.Rotation = TankMovementHelper.DirectionToRotation(tankInfo.Direction);
+
             // Log.Warning($"New position: X {position.X}, Y {position.Y}");
         }
 
