@@ -38,8 +38,13 @@ namespace TankLogic
                 y >= _mapBound.Bottom + collision && y <= _mapBound.Top - 1 - collision;
         }
 
-        internal Tile GetTile(int X, int Y)
+        internal Tile GetTile(int x, int y)
         {
+            int index = GetTileIndex(x, y);
+            if (_tiles.TryGetValue(index, out Tile tile))
+            {
+                return tile;
+            }
             return null;
         }
 
