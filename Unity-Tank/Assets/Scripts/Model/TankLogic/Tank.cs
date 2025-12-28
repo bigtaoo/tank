@@ -53,7 +53,7 @@ namespace TankLogic
             }
 
             var distance = (int)(_tankData.MoveSpeed * Main.FrameTime / 1000);
-            var position = Move(_tankData.CurrentPosition, _tankData.MoveDirection, distance);
+            var position = Move(distance);
 
             if (CanTankMoveToPosition(position.X, position.Y, _tankData.CurrentDirection))
             {
@@ -62,28 +62,29 @@ namespace TankLogic
             // Log.Warning($"Move distance: {distance}, X: {position.X}, Y: {position.Y}");
         }
 
-        private Position Move(Position currentPosition, Direction direction, int distance)
+        private Position Move(int distance)
         {
-            switch (direction)
+            var position = _tankData.CurrentPosition.Copy();
+            switch (_tankData.MoveDirection)
             {
                 case Direction.Left:
                     {
-                        currentPosition.X -= distance;
+                        position.X -= distance;
                         break;
                     }
                 case Direction.Right:
                     {
-                        currentPosition.X += distance;
+                        position.X += distance;
                         break;
                     }
                 case Direction.Up:
                     {
-                        currentPosition.Y += distance;
+                        position.Y += distance;
                         break;
                     }
                 case Direction.Down:
                     {
-                        currentPosition.Y -= distance;
+                        position.Y -= distance;
                         break;
                     }
                 case Direction.None:
@@ -92,7 +93,7 @@ namespace TankLogic
                         break;
                     }
             }
-            return currentPosition;
+            return position;
         }
 
         public bool CanTankMoveToPosition(int x, int y, Direction direction)

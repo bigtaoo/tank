@@ -34,8 +34,8 @@ namespace TankLogic
         {
             x /= 1000;
             y /= 1000;
-            return x >= _mapBound.Left + collision && x <= _mapBound.Right - collision &&
-                y >= _mapBound.Bottom + collision && y <= _mapBound.Top - collision;
+            return x >= _mapBound.Left + collision && x <= _mapBound.Right -1 - collision &&
+                y >= _mapBound.Bottom + collision && y <= _mapBound.Top - 1 - collision;
         }
 
         internal Tile GetTile(int X, int Y)

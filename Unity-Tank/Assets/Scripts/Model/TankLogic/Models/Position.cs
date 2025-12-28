@@ -10,5 +10,10 @@ namespace TankLogic
             X = x;
             Y = y;
         }
+
+        internal Position Copy()
+        {
+            return new Position(X, Y);
+        }
     }
 }
