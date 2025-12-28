@@ -55,11 +55,11 @@ namespace TankLogic
             var distance = (int)(_tankData.MoveSpeed * Main.FrameTime / 1000);
             var position = Move(_tankData.CurrentPosition, _tankData.MoveDirection, distance);
 
-            // if (CanTankMoveToPosition(position, _tankData.CurrentDirection))
+            if (CanTankMoveToPosition(position.X, position.Y, _tankData.CurrentDirection))
             {
                 _tankData.CurrentPosition = position;
             }
-            Log.Warning($"Move distance: {distance}, X: {position.X}, Y: {position.Y}");
+            // Log.Warning($"Move distance: {distance}, X: {position.X}, Y: {position.Y}");
         }
 
         private Position Move(Position currentPosition, Direction direction, int distance)
@@ -95,38 +95,38 @@ namespace TankLogic
             return currentPosition;
         }
 
-        public bool CanTankMoveToPosition(Position targetPosition, Direction direction)
+        public bool CanTankMoveToPosition(int x, int y, Direction direction)
         {
-            if (!_main.TileManager.IsInMap(targetPosition, 1))
+            if (!_main.TileManager.IsInMap(x, y, 1))
             {
                 Log.Warning("Tank is out of map!!");
                 return false;
             }
-            targetPosition.X = PositionToTile(direction, targetPosition.X);
-            targetPosition.Y = PositionToTile(direction, targetPosition.Y);
+            var tileX = PositionToTile(direction, x);
+            var tileY = PositionToTile(direction, y);
 
             switch (direction)
             {
                 case Direction.Left:
                     //Log.Warning($"Move left: x {position.X} y:{position.Y} up {mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y })}," +
                     //    $"down {mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y - 1 })}");
-                    return _main.TileManager.GetTile(targetPosition.X - 1, targetPosition.Y) == null &&
-                        _main.TileManager.GetTile(targetPosition.X - 1, targetPosition.Y - 1) == null;
+                    return _main.TileManager.GetTile(tileX- 1, tileY) == null &&
+                        _main.TileManager.GetTile(tileX - 1, tileY - 1) == null;
                 case Direction.Right:
                     //Log.Warning($"Move Right: x {position.X} y:{position.Y} up {mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y })}," +
                     //    $"down {mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y - 1 })}");
-                    return _main.TileManager.GetTile(targetPosition.X, targetPosition.Y) == null &&
-                    _main.TileManager.GetTile(targetPosition.X, targetPosition.Y - 1) == null;
+                    return _main.TileManager.GetTile(tileX, tileY) == null &&
+                    _main.TileManager.GetTile(tileX, tileY - 1) == null;
                 case Direction.Up:
                     //Log.Warning($"Move Up: x {position.X} y:{position.Y} right {mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y })}," +
                     //    $"left {mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y })}");
-                    return _main.TileManager.GetTile(targetPosition.X, targetPosition.Y) == null &&
-                        _main.TileManager.GetTile(targetPosition.X - 1, targetPosition.Y) == null;
+                    return _main.TileManager.GetTile(tileX, tileY) == null &&
+                        _main.TileManager.GetTile(tileX - 1, tileY) == null;
                 case Direction.Down:
                     //Log.Warning($"Move Down: x {position.X} y:{position.Y} right {mapTilesComponent.GetTile(new TankPosition { X = position.X, Y = position.Y - 1 })}," +
                     //    $"left {mapTilesComponent.GetTile(new TankPosition { X = position.X - 1, Y = position.Y - 1 })}");
-                    return _main.TileManager.GetTile(targetPosition.X, targetPosition.Y - 1) == null &&
-                        _main.TileManager.GetTile(targetPosition.X - 1, targetPosition.Y - 1) == null;
+                    return _main.TileManager.GetTile(tileX, tileY - 1) == null &&
+                        _main.TileManager.GetTile(tileX - 1, tileY - 1) == null;
                 case Direction.None:
                 default:
                     return false;

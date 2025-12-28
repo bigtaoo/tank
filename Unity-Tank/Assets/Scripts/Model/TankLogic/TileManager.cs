@@ -30,10 +30,10 @@ namespace TankLogic
             _tiles.Add(index, tile);
         }
 
-        internal bool IsInMap(Position position, int collision)
+        internal bool IsInMap(int x, int y, int collision)
         {
-            var x = position.X / 1000;
-            var y = position.Y / 1000;
+            x /= 1000;
+            y /= 1000;
             return x >= _mapBound.Left + collision && x <= _mapBound.Right - collision &&
                 y >= _mapBound.Bottom + collision && y <= _mapBound.Top - collision;
         }
