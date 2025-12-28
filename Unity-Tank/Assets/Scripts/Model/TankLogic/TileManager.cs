@@ -32,8 +32,10 @@ namespace TankLogic
 
         internal bool IsInMap(Position position, int collision)
         {
-            return position.X >= _mapBound.Left + collision && position.X <= _mapBound.Right - collision &&
-                position.Y >= _mapBound.Bottom + collision && position.Y <= _mapBound.Top - collision;
+            var x = position.X / 1000;
+            var y = position.Y / 1000;
+            return x >= _mapBound.Left + collision && x <= _mapBound.Right - collision &&
+                y >= _mapBound.Bottom + collision && y <= _mapBound.Top - collision;
         }
 
         internal Tile GetTile(int X, int Y)

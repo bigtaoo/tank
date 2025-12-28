@@ -26,7 +26,6 @@ namespace TankLogic
                 PlayerData.Level = 1;
                 --PlayerData.PlayerLifes;
                 PlayerData.CurrentPosition = PlayerData.SpawnPosition;
-                PlayerData.Rotation = 0;
                 PlayerData.MoveDirection = Direction.None;
 
                 var spawnBuff = new Buff(_main.GetId(), PlayerId, BuffType.Spwan, 1000);

@@ -11,6 +11,5 @@ namespace TankLogic
         internal uint Level { get; set; }
         internal uint LastShootTime { get; set; }
         internal uint ShootCoolDownTime { get; set; }
-        internal int Rotation { get; set; }
     }
 }

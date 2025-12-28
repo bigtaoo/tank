@@ -53,43 +53,37 @@ namespace TankLogic
             }
 
             var distance = (int)(_tankData.MoveSpeed * Main.FrameTime / 1000);
-            var (position, rotation) = Move(_tankData.CurrentPosition, _tankData.MoveDirection, distance);
-            _tankData.Rotation = rotation;
+            var position = Move(_tankData.CurrentPosition, _tankData.MoveDirection, distance);
 
-            if (CanTankMoveToPosition(position, _tankData.CurrentDirection))
+            // if (CanTankMoveToPosition(position, _tankData.CurrentDirection))
             {
                 _tankData.CurrentPosition = position;
             }
-            // Log.Warning($"Move distance: {distance}, X: {position.X}, Y: {position.Y}");
+            Log.Warning($"Move distance: {distance}, X: {position.X}, Y: {position.Y}");
         }
 
-        private (Position, int) Move(Position currentPosition, Direction direction, int distance)
+        private Position Move(Position currentPosition, Direction direction, int distance)
         {
-            var rotation = 0;
             switch (direction)
             {
                 case Direction.Left:
                     {
                         currentPosition.X -= distance;
-                        rotation = 90;
                         break;
                     }
                 case Direction.Right:
                     {
                         currentPosition.X += distance;
-                        rotation = 270;
                         break;
                     }
                 case Direction.Up:
                     {
                         currentPosition.Y += distance;
-                        rotation = 0;
                         break;
                     }
                 case Direction.Down:
                     {
                         currentPosition.Y -= distance;
-                        rotation = 180;
                         break;
                     }
                 case Direction.None:
@@ -98,13 +92,14 @@ namespace TankLogic
                         break;
                     }
             }
-            return (currentPosition, rotation);
+            return currentPosition;
         }
 
         public bool CanTankMoveToPosition(Position targetPosition, Direction direction)
         {
-            if (!_main.TileManager.IsInMap(targetPosition, 1000))
+            if (!_main.TileManager.IsInMap(targetPosition, 1))
             {
+                Log.Warning("Tank is out of map!!");
                 return false;
             }
             targetPosition.X = PositionToTile(direction, targetPosition.X);
@@ -140,7 +135,7 @@ namespace TankLogic
 
         protected int PositionToTile(Direction direction, float v)
         {
-            return (direction == Direction.Up || direction == Direction.Right) ? (int)Math.Ceiling(v) : (int)Math.Floor(v);
+            return (direction == Direction.Up || direction == Direction.Right) ? (int)Math.Ceiling(v / 1000.0f) : (int)Math.Floor(v / 1000.0f);
         }
 
         private bool PositionHasTank(Position position, Direction direction, uint tankId)
