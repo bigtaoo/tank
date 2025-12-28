@@ -1,5 +1,4 @@
 using System;
-using ET;
 
 namespace TankLogic
 {
@@ -100,7 +99,7 @@ namespace TankLogic
         {
             if (!_main.TileManager.IsInMap(x, y, 1))
             {
-                Log.Warning("Tank is out of map!!");
+                // _main.Logger.Warning("Tank is out of map!!");
                 return false;
             }
             var tileX = PositionToTile(direction, x);

@@ -45,7 +45,7 @@ namespace TankLogic
             var player = Players.First();
             player.SetMoveDirection(moveCommand.Direction);
 
-            _main.Logger.Warning($"Move command: {moveCommand.Direction}");
+            // _main.Logger.Warning($"Move command: {moveCommand.Direction}");
         }
 
         internal void ExecuteShootCommand(ShootCommand shootCommand)
