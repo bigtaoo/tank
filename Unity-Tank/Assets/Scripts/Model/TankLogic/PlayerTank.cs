@@ -53,29 +53,62 @@ namespace TankLogic
             if (_tankData.CurrentDirection == Direction.Up || _tankData.CurrentDirection == Direction.Down)
             {
                 var position = _tankData.CurrentPosition;
-                position.Y = PositionToTile(_tankData.CurrentDirection, _tankData.CurrentPosition.Y);
+                var targetY = PositionToTile(_tankData.CurrentDirection, _tankData.CurrentPosition.Y) * 1000;
                 //Log.Warning($"Ajust Y: current Y: {self.Position.Y}, target Y: {position.Y}");
-                if (position.Y != _tankData.CurrentPosition.Y)
+                if (position.Y != targetY)
                 {
-                    var time = Math.Abs(position.Y - _tankData.CurrentPosition.Y) * 1000 / _tankData.MoveSpeed / 2;
-                    //Log.Warning($"Player tank tween time: {time}, t: {position.Y}, c:{self.Position.Y}, s: {self.MoveSpeed}");
-                    var buff = new Buff(_main.GetId(), PlayerId, BuffType.AddTween, (uint)time);
-                    _main.BuffManager.AddBuff(buff);
+                    // var time = Math.Abs(position.Y - _tankData.CurrentPosition.Y) * 1000 / _tankData.MoveSpeed / 2;
+                    // //Log.Warning($"Player tank tween time: {time}, t: {position.Y}, c:{self.Position.Y}, s: {self.MoveSpeed}");
+                    // var buff = new Buff(_main.GetId(), PlayerId, BuffType.AddTween, (uint)time);
+                    // _main.BuffManager.AddBuff(buff);
 
-                    _tankData.CurrentPosition = position;
+                    // _tankData.CurrentPosition = position;
+                    var dis = (int)(_tankData.MoveSpeed * 2 * Main.FrameTime / 1000);
+                    if (Math.Abs(position.Y - targetY) < dis)
+                    {
+                        _tankData.CurrentPosition.Y = targetY;
+                    }
+                    else
+                    {
+                        if (_tankData.CurrentDirection == Direction.Up)
+                        {
+                            _tankData.CurrentPosition.Y += dis;
+                        }
+                        else
+                        {
+                            _tankData.CurrentPosition.Y -= dis;
+                        }
+                    }
                 }
             }
             else if (_tankData.CurrentDirection == Direction.Left || _tankData.CurrentDirection == Direction.Right)
             {
                 var position = _tankData.CurrentPosition;
-                position.X = PositionToTile(_tankData.CurrentDirection, _tankData.CurrentPosition.X);
-                if (position.X != _tankData.CurrentPosition.X)
+                var targetX = PositionToTile(_tankData.CurrentDirection, _tankData.CurrentPosition.X) * 1000;
+                if (position.X != targetX)
                 {
-                    var time = Math.Abs(position.X - _tankData.CurrentPosition.X) * 1000 / _tankData.MoveSpeed / 2;
-                    var buff = new Buff(_main.GetId(), PlayerId, BuffType.AddTween, (uint)time);
-                    _main.BuffManager.AddBuff(buff);
+                    // var time = Math.Abs(position.X - _tankData.CurrentPosition.X) * 1000 / _tankData.MoveSpeed / 2;
+                    // var buff = new Buff(_main.GetId(), PlayerId, BuffType.AddTween, (uint)time);
+                    // _main.BuffManager.AddBuff(buff);
 
-                    _tankData.CurrentPosition = position;
+                    // _tankData.CurrentPosition = position;
+
+                    var dis = (int)(_tankData.MoveSpeed * 2 * Main.FrameTime / 1000);
+                    if (Math.Abs(position.X - targetX) < dis)
+                    {
+                        _tankData.CurrentPosition.X = targetX;
+                    }
+                    else
+                    {
+                        if (_tankData.CurrentDirection == Direction.Left)
+                        {
+                            _tankData.CurrentPosition.X -= dis;
+                        }
+                        else
+                        {
+                            _tankData.CurrentPosition.X += dis;
+                        }
+                    }
                 }
             }
         }

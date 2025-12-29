@@ -108,8 +108,8 @@ namespace TankLogic
             switch (direction)
             {
                 case Direction.Left:
-                    _main.Logger.Warning($"Move left: x {tileX} y:{tileY} y {_main.TileManager.GetTile(tileX- 1, tileY) == null}," +
-                       $"y-1 {_main.TileManager.GetTile(tileX - 1, tileY - 1) == null}");
+                    // _main.Logger.Warning($"Move left: x {tileX} y:{tileY} y {_main.TileManager.GetTile(tileX- 1, tileY) == null}," +
+                    //    $"y-1 {_main.TileManager.GetTile(tileX - 1, tileY - 1) == null}");
                     return _main.TileManager.GetTile(tileX- 1, tileY) == null &&
                         _main.TileManager.GetTile(tileX - 1, tileY - 1) == null;
                 case Direction.Right:
