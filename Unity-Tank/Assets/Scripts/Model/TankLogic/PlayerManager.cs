@@ -18,6 +18,7 @@ namespace TankLogic
             foreach (var player in Players)
             {
                 player.UpdatePosition();
+                player.Update();
             }
         }
 

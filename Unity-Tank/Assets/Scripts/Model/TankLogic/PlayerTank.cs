@@ -15,6 +15,11 @@ namespace TankLogic
             PlayerId = tankId;
         }
 
+        internal void Update()
+        {
+            AdjustStopPosition();
+        }
+
         private void CheckHelth()
         {
             if (PlayerData.PlayerLifes <= 0)
