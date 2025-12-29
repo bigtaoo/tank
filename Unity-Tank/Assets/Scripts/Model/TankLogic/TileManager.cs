@@ -48,6 +48,16 @@ namespace TankLogic
             return null;
         }
 
+        internal void UpdateTile(int x, int y, TileType tileType)
+        {
+            int index = GetTileIndex(x, y);
+            _tiles.Remove(index);
+            if(tileType != TileType.None)
+            {
+                AddTileInfo(tileType, x, y);
+            }
+        }
+
         private int GetTileIndex(int x, int y)
         {
             return y * 10000 + x;

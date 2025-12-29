@@ -5,11 +5,13 @@ namespace TankLogic
         private readonly Main _main;
         private BulletData _bulletData;
         internal bool ToRemove { get; private set; }
+        internal uint Id { get; private set; }
 
-        internal Bullet(Main main, BulletData bulletData)
+        internal Bullet(Main main, BulletData bulletData, uint id)
         {
             _main = main;
             _bulletData = bulletData;
+            Id = id;
         }
 
         internal void Update()
@@ -82,7 +84,7 @@ namespace TankLogic
                             // mapTilesComponent.Tiles.Remove(tile);
                             // tile.Type = TankMapTileType.None;
                             // mapTilesComponent.TilesToUpdate.Add(tile);
-                            ToRemove = true;
+                            _main.TileManager.UpdateTile(tile.Position.X, tile.Position.Y, TileType.None);
                         }
                     }
                     if (neighborTile != null && neighborTile.TileType != TileType.Water)
@@ -97,7 +99,7 @@ namespace TankLogic
                             // mapTilesComponent.Tiles.Remove(neighborTile);
                             // neighborTile.Type = TankMapTileType.None;
                             // mapTilesComponent.TilesToUpdate.Add(neighborTile);
-                            ToRemove = true;
+                            _main.TileManager.UpdateTile(neighborTile.Position.X, neighborTile.Position.Y, TileType.None);
                         }
                     }
                     if (hit)
