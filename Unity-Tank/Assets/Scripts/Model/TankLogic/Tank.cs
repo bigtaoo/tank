@@ -40,7 +40,7 @@ namespace TankLogic
             }
             _tankData.LastShootTime = currentTime;
 
-            var bulletData = new BulletData(Camp.Player, _tankData.CurrentDirection, _tankData.CurrentPosition, _tankData.BulletSpeed, 1);
+            var bulletData = new BulletData(Camp.Player, _tankData.CurrentDirection, _tankData.CurrentPosition.Copy(), _tankData.BulletSpeed, 1);
             _main.ProjectileManager.AddBullet(bulletData);
         }
 
