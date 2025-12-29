@@ -175,6 +175,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Module/Unit/UnitComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Enums/TankDirection.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/EffectManager.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Commands/SCBulletInfo.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Numeric/NumericWatcherAttribute.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/AI/AIConfig.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Enums/TankMapType.cs" />
