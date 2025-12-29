@@ -8,7 +8,7 @@ namespace TankLogic
         internal PlayerManager PlayerManager { get; private set; }
         internal RandomGenerator Random { get; private set; }
         internal CommandManager CommandManager { get; private set; }
-        internal ProjectileManager ProjectileManager { get; private set; }
+        internal BulletManager ProjectileManager { get; private set; }
         internal EffectManager EffectManager { get; private set; }
         internal BuffManager BuffManager { get; private set; }
         internal TileManager TileManager { get; private set; }
@@ -26,7 +26,7 @@ namespace TankLogic
             PlayerManager = new PlayerManager(this);
             Random = new RandomGenerator(seed);
             CommandManager = new CommandManager(this);
-            ProjectileManager = new ProjectileManager(this);
+            ProjectileManager = new BulletManager(this);
             EffectManager = new EffectManager(this);
             BuffManager = new BuffManager(this);
             TileManager = new TileManager(this);

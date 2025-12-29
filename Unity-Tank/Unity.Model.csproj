@@ -83,7 +83,6 @@
     <Compile Include="Assets/Scripts/Model/Share/Module/Console/ModeContex.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Models/PlayerData.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/Room.cs" />
-    <Compile Include="Assets/Scripts/Model/TankLogic/ProjectileManager.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankBuff.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/AI/AIDispatcherComponent.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Main.cs" />
@@ -91,6 +90,7 @@
     <Compile Include="Assets/Scripts/Model/TankLogic/TileManager.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Enums/TankAttachedEffectType.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/LSConstValue.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/BulletManager.cs" />
     <Compile Include="Assets/Scripts/Model/Share/MongoRegister.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Move/MoveComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankPosition.cs" />

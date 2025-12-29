@@ -2,12 +2,12 @@ using System.Collections.Generic;
 
 namespace TankLogic
 {
-    internal class ProjectileManager
+    internal class BulletManager
     {
         private readonly Main _main;
         private readonly List<Bullet> _bullets = new();
 
-        internal ProjectileManager(Main main)
+        internal BulletManager(Main main)
         {
             _main = main;
         }
