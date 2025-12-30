@@ -90,6 +90,9 @@ namespace ET
                     playerComponent.UpdatePlayerTankInfo(info);
                 }
             }
+
+            var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
+            bulletComponent.UpdateSCBulletInfo(self.tankLogic.SCCommand.BulletInfos);
             
             self.tankLogic.SCCommand.ClearData();
         }

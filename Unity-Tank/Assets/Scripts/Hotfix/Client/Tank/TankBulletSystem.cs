@@ -1,6 +1,8 @@
 using ET.Client;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using TankLogic;
 
 namespace ET
 {
@@ -11,8 +13,8 @@ namespace ET
         [EntitySystem]
         private static void Awake(this TankBulletComponent self)
         {
-            self.IdCounter++;
-            self.LastFrameTime = TimeInfo.Instance.ClientFrameTime();
+            // self.IdCounter++;
+            // self.LastFrameTime = TimeInfo.Instance.ClientFrameTime();
         }
 
         // private static void Update(this TankBulletComponent self)
@@ -31,15 +33,62 @@ namespace ET
         //     self.CheckCollisionWithOtherBullets();
         // }
 
+        public static void UpdateSCBulletInfo(this TankBulletComponent self, List<SCBulletInfo> bulletInfos)
+        {
+            // To Remove
+            foreach (var id in self.Bullets.Keys.ToList())
+            {
+                var find = false;
+                foreach (var bullet in bulletInfos)
+                {
+                    if (id == bullet.Id)
+                    {
+                        find = true;
+                        break;
+                    }
+                }
+                if (!find)
+                {
+                    self.BulletsToRemove.Add(id);
+                    self.Bullets.Remove(id);
+                }
+            }
+
+            // To Update
+            foreach (var info in bulletInfos)
+            {
+                if (self.Bullets.TryGetValue(info.Id, out var bullet))
+                {
+                    var p = bullet.Position;
+                    p.X = info.PosX / 1000.0f;
+                    p.Y = info.PosY / 1000.0f;
+                    bullet.Position = p;
+                }
+                else
+                {
+                    bullet = new TankBullet
+                    {
+                        Position = new TankPosition
+                        {
+                            X = info.PosX / 1000.0f,
+                            Y = info.PosY / 1000.0f,
+                        },
+                    };
+                    self.Bullets.Add(info.Id, bullet);
+                    self.BulletsToAdd.Add(info.Id);
+                }
+            }
+        }
+
         public static void CreateBullet(this TankBulletComponent self, TankBullet bullet)
         {
             if (bullet.MoveDirection == TankDirection.None)
             {
                 Log.Error("Bullet move direction can not be none!");
             }
-            self.IdCounter++;
-            self.Bullets.Add(self.IdCounter, bullet);
-            self.BulletsToAdd.Add(self.IdCounter);
+            // self.IdCounter++;
+            // self.Bullets.Add(self.IdCounter, bullet);
+            // self.BulletsToAdd.Add(self.IdCounter);
         }
 
         // public static void HitTank(this TankBulletComponent self, long bulletId)
