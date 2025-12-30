@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace ET
 {
     [ComponentOf(typeof(Scene))]
-    public class TankBulletComponent : Entity, IAwake, IUpdate
+    public class TankBulletComponent : Entity, IAwake
     {
         public Dictionary<long, TankBullet> Bullets {  get; set; } = new Dictionary<long, TankBullet>();
         public ListComponent<long> BulletsToAdd { get; set; } = new();

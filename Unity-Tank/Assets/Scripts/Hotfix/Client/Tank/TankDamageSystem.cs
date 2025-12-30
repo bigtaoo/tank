@@ -28,7 +28,7 @@ namespace ET
                     if (TankDamageHelper.BulletHitTank(bullet.Position, playerComponent.GetPlayerPosition()))
                     {
                         //Log.Warning("Player was hit");                        
-                        bulletComponent.HitTank(bulletId);
+                        // bulletComponent.HitTank(bulletId);
 
                         var invincibleBuff = buffComponent.GetBuff(TankConsts.PlayerIndex, TankBuffType.Invincible);
                         if (invincibleBuff == null)
@@ -44,7 +44,7 @@ namespace ET
                     {
                         if (TankDamageHelper.BulletHitTank(bullet.Position, robot.Position))
                         {
-                            bulletComponent.HitTank(bulletId);
+                            // bulletComponent.HitTank(bulletId);
 
                             var invincibleBuff = buffComponent.GetBuff(robot.RobotId, TankBuffType.Invincible);
                             if (invincibleBuff == null)
