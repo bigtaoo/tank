@@ -34,5 +34,10 @@ namespace TankLogic
                 bullet.Update();
             }
         }
+
+        internal List<Bullet> GetBullets()
+        {
+            return _bullets.Values.ToList();
+        }
     }
 }

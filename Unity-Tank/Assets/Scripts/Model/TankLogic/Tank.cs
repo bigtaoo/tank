@@ -41,7 +41,7 @@ namespace TankLogic
             _tankData.LastShootTime = currentTime;
 
             var bulletData = new BulletData(Camp.Player, _tankData.CurrentDirection, _tankData.CurrentPosition.Copy(), _tankData.BulletSpeed, 1);
-            _main.ProjectileManager.AddBullet(bulletData);
+            _main.BulletManager.AddBullet(bulletData);
         }
 
         internal void UpdatePosition()

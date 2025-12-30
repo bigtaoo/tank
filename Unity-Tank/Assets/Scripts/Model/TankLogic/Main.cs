@@ -8,7 +8,7 @@ namespace TankLogic
         internal PlayerManager PlayerManager { get; private set; }
         internal RandomGenerator Random { get; private set; }
         internal CommandManager CommandManager { get; private set; }
-        internal BulletManager ProjectileManager { get; private set; }
+        internal BulletManager BulletManager { get; private set; }
         internal EffectManager EffectManager { get; private set; }
         internal BuffManager BuffManager { get; private set; }
         internal TileManager TileManager { get; private set; }
@@ -26,7 +26,7 @@ namespace TankLogic
             PlayerManager = new PlayerManager(this);
             Random = new RandomGenerator(seed);
             CommandManager = new CommandManager(this);
-            ProjectileManager = new BulletManager(this);
+            BulletManager = new BulletManager(this);
             EffectManager = new EffectManager(this);
             BuffManager = new BuffManager(this);
             TileManager = new TileManager(this);
@@ -53,7 +53,7 @@ namespace TankLogic
             CommandManager.UpdateCommands();
             PlayerManager.UpdatePlayers();
             RobotManager.UpdateRobots();
-            ProjectileManager.UpdateProjectiles();
+            BulletManager.UpdateProjectiles();
             BuffManager.UpdateBuffs();
             TileManager.UpdateTiles();
             EffectManager.UpdateEffects();
@@ -85,6 +85,16 @@ namespace TankLogic
                     Direction = player.PlayerData.CurrentDirection,
                 };
                 SCCommand.TankInfos.Add(tankInfo);
+            }
+            foreach (var bullet in BulletManager.GetBullets())
+            {
+                SCBulletInfo bulletInfo = new()
+                {
+                    Id = bullet.Id,
+                    PosX = bullet.BulletData.Position.X,
+                    PosY = bullet.BulletData.Position.Y,
+                };
+                SCCommand.BulletInfos.Add(bulletInfo);
             }
 
             // Log.Warning($"tank infos: {SCCommand.TankInfos.Count}");

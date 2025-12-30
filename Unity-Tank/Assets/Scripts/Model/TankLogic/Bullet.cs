@@ -3,14 +3,14 @@ namespace TankLogic
     internal class Bullet
     {
         private readonly Main _main;
-        private BulletData _bulletData;
+        internal BulletData BulletData {get; private set; }
         internal bool ToRemove { get; private set; }
         internal uint Id { get; private set; }
 
         internal Bullet(Main main, BulletData bulletData, uint id)
         {
             _main = main;
-            _bulletData = bulletData;
+            BulletData = bulletData;
             Id = id;
         }
 
@@ -21,12 +21,12 @@ namespace TankLogic
 
         private void UpdateBulletPosition()
         {
-            var distance = (int)(_bulletData.Speed * Main.FrameTime / 1000);
-            var position = _bulletData.Position;
+            var distance = (int)(BulletData.Speed * Main.FrameTime / 1000);
+            var position = BulletData.Position;
 
             // Log.Warning($"Update bullet: distance: {distance}, direction: {bullet.MoveDirection}, x:{position.X}, y:{position.Y}");
 
-            switch (_bulletData.Direction)
+            switch (BulletData.Direction)
             {
                 case Direction.Left:
                     {
@@ -60,12 +60,12 @@ namespace TankLogic
 
         private void CheckCollisionWithTiles()
         {
-            var tile = _main.TileManager.GetTile(_bulletData.Position.X, _bulletData.Position.Y);
-            var neighborTile = _bulletData.Direction == Direction.Up || _bulletData.Direction == Direction.Down ?
-                _main.TileManager.GetTile(_bulletData.Position.X - 1, _bulletData.Position.Y) :
-                _main.TileManager.GetTile(_bulletData.Position.X, _bulletData.Position.Y - 1);
+            var tile = _main.TileManager.GetTile(BulletData.Position.X, BulletData.Position.Y);
+            var neighborTile = BulletData.Direction == Direction.Up || BulletData.Direction == Direction.Down ?
+                _main.TileManager.GetTile(BulletData.Position.X - 1, BulletData.Position.Y) :
+                _main.TileManager.GetTile(BulletData.Position.X, BulletData.Position.Y - 1);
 
-                if (!_main.TileManager.IsInMap(_bulletData.Position.X, _bulletData.Position.Y, 1))
+                if (!_main.TileManager.IsInMap(BulletData.Position.X, BulletData.Position.Y, 1))
                 {
                     ToRemove = true;
                 }
@@ -75,7 +75,7 @@ namespace TankLogic
                     if (tile != null && tile.TileType != TileType.Water)
                     {
                         hit = true;
-                        if (tile.TileType == TileType.Steel && _bulletData.Level <= 3)
+                        if (tile.TileType == TileType.Steel && BulletData.Level <= 3)
                         {
                             // Stell only can be destroyed by level 3 bullet
                         }
@@ -90,7 +90,7 @@ namespace TankLogic
                     if (neighborTile != null && neighborTile.TileType != TileType.Water)
                     {
                         hit = true;
-                        if (neighborTile.TileType == TileType.Steel && _bulletData.Level <= 3)
+                        if (neighborTile.TileType == TileType.Steel && BulletData.Level <= 3)
                         {
                             // Stell only can be destroyed by level 3 bullet
                         }
