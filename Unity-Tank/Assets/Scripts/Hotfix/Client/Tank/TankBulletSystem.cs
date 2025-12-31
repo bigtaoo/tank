@@ -49,6 +49,7 @@ namespace ET
                 }
                 if (!find)
                 {
+                    Log.Warning($"Client delete bullet, id: {id}");
                     self.BulletsToRemove.Add(id);
                     self.Bullets.Remove(id);
                 }
@@ -74,6 +75,7 @@ namespace ET
                             Y = info.PosY / 1000.0f,
                         },
                     };
+                    Log.Warning($"Client add new bullet, id: {info.Id}");
                     self.Bullets.Add(info.Id, bullet);
                     self.BulletsToAdd.Add(info.Id);
                 }

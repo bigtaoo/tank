@@ -43,15 +43,20 @@ namespace ET
         private static void Update(this TankLogicComponent self)
         {
             var pastTime = TimeInfo.Instance.ClientFrameTime() - self.lastUpdatedTime;
+            var logicUpdated = false;
             while (pastTime > Main.FrameTime)
             {
                 pastTime -= Main.FrameTime;
                 self.lastUpdatedTime += Main.FrameTime;
 
                 self.tankLogic.Update();
+                logicUpdated = true;
             }
 
-            self.UpdateSCCommand();
+            if (logicUpdated)
+            {
+               self.UpdateSCCommand();
+            }
         }
 
         public static void SendMoveCommand(this TankLogicComponent self, TankDirection direction)
