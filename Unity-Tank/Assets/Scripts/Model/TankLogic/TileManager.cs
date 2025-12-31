@@ -7,6 +7,7 @@ namespace TankLogic
         private readonly Main _main;
         private MapBound _mapBound;
         private Dictionary<int, Tile> _tiles = new();
+        internal List<Tile> UpdatedTiles { get; private set; } = new();
 
         internal TileManager(Main main)
         {
@@ -56,6 +57,8 @@ namespace TankLogic
             {
                 AddTileInfo(tileType, x, y);
             }
+
+            UpdatedTiles.Add(new Tile(new Position(x, y), tileType));
         }
 
         private int GetTileIndex(int x, int y)

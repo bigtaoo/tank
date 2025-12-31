@@ -1,5 +1,3 @@
-using ET;
-
 namespace TankLogic
 {
     public class Main
@@ -96,6 +94,17 @@ namespace TankLogic
                 };
                 SCCommand.BulletInfos.Add(bulletInfo);
             }
+            foreach (var tile in TileManager.UpdatedTiles)
+            {
+                SCTileInfo tileInfo = new()
+                {
+                    PosX = tile.Position.X,
+                    PosY = tile.Position.Y,
+                    TileType = tile.TileType,
+                };
+                SCCommand.TileInfos.Add(tileInfo);
+            }
+            TileManager.UpdatedTiles.Clear();
 
             // Log.Warning($"tank infos: {SCCommand.TankInfos.Count}");
         }

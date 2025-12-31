@@ -143,6 +143,7 @@
     <Compile Include="Assets/Scripts/Model/Client/Demo/AI/XunLuoPathComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Numeric/INumericWatcher.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Commands/TileInfo.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Commands/SCTileInfo.cs" />
     <Compile Include="Assets/Scripts/Model/Client/LockStep/EventType.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Demo/Main/Scene/Wait_CreateMyUnit.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Message/ISessionMessage.cs" />
