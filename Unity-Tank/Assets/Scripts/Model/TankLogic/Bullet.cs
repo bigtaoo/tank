@@ -17,6 +17,7 @@ namespace TankLogic
         internal void Update()
         {
             UpdateBulletPosition();
+            CheckCollisionWithTiles();
         }
 
         private void UpdateBulletPosition()
@@ -65,51 +66,51 @@ namespace TankLogic
                 _main.TileManager.GetTile(BulletData.Position.X - 1, BulletData.Position.Y) :
                 _main.TileManager.GetTile(BulletData.Position.X, BulletData.Position.Y - 1);
 
-                if (!_main.TileManager.IsInMap(BulletData.Position.X, BulletData.Position.Y, 1))
+            if (!_main.TileManager.IsInMap(BulletData.Position.X, BulletData.Position.Y, 1))
+            {
+                ToRemove = true;
+            }
+            else if (tile != null || neighborTile != null)
+            {
+                var hit = false;
+                if (tile != null && tile.TileType != TileType.Water)
                 {
+                    hit = true;
+                    if (tile.TileType == TileType.Steel && BulletData.Level <= 3)
+                    {
+                        // Stell only can be destroyed by level 3 bullet
+                    }
+                    else
+                    {
+                        // mapTilesComponent.Tiles.Remove(tile);
+                        // tile.Type = TankMapTileType.None;
+                        // mapTilesComponent.TilesToUpdate.Add(tile);
+                        _main.TileManager.UpdateTile(tile.Position.X, tile.Position.Y, TileType.None);
+                    }
+                }
+                if (neighborTile != null && neighborTile.TileType != TileType.Water)
+                {
+                    hit = true;
+                    if (neighborTile.TileType == TileType.Steel && BulletData.Level <= 3)
+                    {
+                        // Stell only can be destroyed by level 3 bullet
+                    }
+                    else
+                    {
+                        // mapTilesComponent.Tiles.Remove(neighborTile);
+                        // neighborTile.Type = TankMapTileType.None;
+                        // mapTilesComponent.TilesToUpdate.Add(neighborTile);
+                        _main.TileManager.UpdateTile(neighborTile.Position.X, neighborTile.Position.Y, TileType.None);
+                    }
+                }
+                if (hit)
+                {
+                    // self.CreateExplosionEffect(bullet);
+                    // self.BulletsToRemove.Add(key);
+                    // self.Bullets.Remove(key);
                     ToRemove = true;
                 }
-                else if (tile != null || neighborTile != null)
-                {
-                    var hit = false;
-                    if (tile != null && tile.TileType != TileType.Water)
-                    {
-                        hit = true;
-                        if (tile.TileType == TileType.Steel && BulletData.Level <= 3)
-                        {
-                            // Stell only can be destroyed by level 3 bullet
-                        }
-                        else
-                        {
-                            // mapTilesComponent.Tiles.Remove(tile);
-                            // tile.Type = TankMapTileType.None;
-                            // mapTilesComponent.TilesToUpdate.Add(tile);
-                            _main.TileManager.UpdateTile(tile.Position.X, tile.Position.Y, TileType.None);
-                        }
-                    }
-                    if (neighborTile != null && neighborTile.TileType != TileType.Water)
-                    {
-                        hit = true;
-                        if (neighborTile.TileType == TileType.Steel && BulletData.Level <= 3)
-                        {
-                            // Stell only can be destroyed by level 3 bullet
-                        }
-                        else
-                        {
-                            // mapTilesComponent.Tiles.Remove(neighborTile);
-                            // neighborTile.Type = TankMapTileType.None;
-                            // mapTilesComponent.TilesToUpdate.Add(neighborTile);
-                            _main.TileManager.UpdateTile(neighborTile.Position.X, neighborTile.Position.Y, TileType.None);
-                        }
-                    }
-                    if (hit)
-                    {
-                        // self.CreateExplosionEffect(bullet);
-                        // self.BulletsToRemove.Add(key);
-                        // self.Bullets.Remove(key);
-                        ToRemove = true;
-                    }
-                }
             }
+        }
     }
 }
