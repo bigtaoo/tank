@@ -61,10 +61,10 @@ namespace TankLogic
 
         private void CheckCollisionWithTiles()
         {
-            var tile = _main.TileManager.GetTile(BulletData.Position.X, BulletData.Position.Y);
+            var tile = _main.TileManager.GetTile(BulletData.Position.X / 1000, BulletData.Position.Y / 1000);
             var neighborTile = BulletData.Direction == Direction.Up || BulletData.Direction == Direction.Down ?
-                _main.TileManager.GetTile(BulletData.Position.X - 1, BulletData.Position.Y) :
-                _main.TileManager.GetTile(BulletData.Position.X, BulletData.Position.Y - 1);
+                _main.TileManager.GetTile(BulletData.Position.X / 1000 - 1, BulletData.Position.Y / 1000) :
+                _main.TileManager.GetTile(BulletData.Position.X / 1000, BulletData.Position.Y / 1000 - 1);
 
             if (!_main.TileManager.IsInMap(BulletData.Position.X, BulletData.Position.Y, 1))
             {
