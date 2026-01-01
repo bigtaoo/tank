@@ -41,6 +41,10 @@ namespace ET
                 tile = new TankMapTile(x, y, tileType);
                 self.Tiles.Add(tile);
             }
+            else if (tileType == TankMapTileType.None)
+            {
+                self.Tiles.Remove(tile);
+            }
             else
             {
                 tile.Type = tileType;
