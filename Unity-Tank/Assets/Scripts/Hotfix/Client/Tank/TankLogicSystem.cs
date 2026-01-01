@@ -98,6 +98,20 @@ namespace ET
 
             var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
             bulletComponent.UpdateSCBulletInfo(self.tankLogic.SCCommand.BulletInfos);
+
+            var tileMapComponent = self.Root().GetComponent<TankMapTilesComponent>();
+            foreach(var tileMap in self.tankLogic.SCCommand.TileInfos)
+            {
+                var tileType = tileMap.TileType switch
+                {
+                    TileType.Wall => TankMapTileType.Wall,
+                    TileType.Water => TankMapTileType.Water,
+                    TileType.Steel => TankMapTileType.Steel,
+                    TileType.Grass => TankMapTileType.Grass,
+                    _ => TankMapTileType.None,  
+                };
+                tileMapComponent.SetTileType(tileMap.PosX, tileMap.PosY, tileType);
+            }
             
             self.tankLogic.SCCommand.ClearData();
         }
