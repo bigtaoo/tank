@@ -35,6 +35,7 @@ namespace ET
 
         public static void SetTileType(this TankMapTilesComponent self, int x, int y, TankMapTileType tileType)
         {
+            // Log.Warning($"Update client tile: x {x}, y: {y}, type: {tileType}");
             var tile = self.Tiles.FirstOrDefault(t => t.X == x && t.Y == y);
             if (tile == null)
             {
@@ -43,12 +44,16 @@ namespace ET
             }
             else if (tileType == TankMapTileType.None)
             {
+                // Log.Warning($"client logic remove tile: x {x}, y {y}");
+                tile.Type = TankMapTileType.None;
                 self.Tiles.Remove(tile);
             }
             else
             {
                 tile.Type = tileType;
             }
+
+            self.TilesToUpdate.Add(tile);
         }
     }
 }

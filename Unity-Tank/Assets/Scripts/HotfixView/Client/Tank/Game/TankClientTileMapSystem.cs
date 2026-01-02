@@ -29,9 +29,11 @@ namespace ET.Client
             {
                 foreach (var tile in mapTileComponent.TilesToUpdate)
                 {
+                    // Log.Warning($"Client UI Remove tile x {tile.X}, y: {tile.Y}, type: {tile.Type}");
                     var position = new Vector3Int(tile.X - TankConsts.TileOffset, tile.Y - TankConsts.TileOffset, 0);
                     if (tile.Type == TankMapTileType.None)
                     {
+                        // Log.Warning($"Client UI Remove tile x {tile.X}, y: {tile.Y}");
                         self.Tilemap.SetTile(position, null);
                     }
                     else if (tile.Type == TankMapTileType.Steel)
