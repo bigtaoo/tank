@@ -7,6 +7,7 @@ namespace TankLogic
         internal uint OwnerId { get; set; }
         internal uint Time { get; set; }
         internal Position Position { get; set; }
+        internal Direction Direction { get; set; }
 
         internal Effect(uint effectId, uint ownerId, Position position, EffectType effectType, uint time)
         {

@@ -112,8 +112,43 @@ namespace ET
                 };
                 tileMapComponent.SetTileType(tileMap.PosX, tileMap.PosY, tileType);
             }
+
+            foreach (var effect in self.tankLogic.SCCommand.EffectInfos)
+            {
+                switch (effect.EffectType)
+                {
+                    case EffectType.BulletExplosion: self.CreateExplosionEffect(effect); break;
+                    default: break;
+                }
+            }
             
             self.tankLogic.SCCommand.ClearData();
+        }
+
+        private static void CreateExplosionEffect(this TankLogicComponent self, SCEffectInfo effect)
+        {
+            var position = new TankPosition()
+            {
+                X = effect.PosX / 1000.0f,
+                Y = effect.PosY / 1000.0f,  
+            };
+            var rotation = 0;
+            switch (effect.Direction)
+            {
+                case Direction.Up: position.Y += 1.0f; rotation = 0;  break;
+                case Direction.Down: position.Y -= 1.0f; rotation = 180; break;
+                case Direction.Left: position.X -= 1.0f; rotation = 90; break;
+                case Direction.Right: position.X += 1.0f; rotation = 270; break;
+                default: break;
+            }
+
+            var effectComponent = self.Root().GetComponent<TankEffectComponent>();
+            effectComponent.ExplosionEffects.Add(new TankEffect
+            {
+                Position = position,
+                Rotation = rotation,
+                RemoveTime = TimeInfo.Instance.ClientFrameTime() + effect.Time,
+            });
         }
     }
 }

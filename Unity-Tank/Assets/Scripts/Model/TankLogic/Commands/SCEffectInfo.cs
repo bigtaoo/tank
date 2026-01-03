@@ -8,5 +8,6 @@ namespace TankLogic
         public uint Time { get; set; }
         public uint OwnerId { get; set; }
         public EffectType EffectType { get; set; }
+        public Direction Direction { get; set; }
     }
 }
