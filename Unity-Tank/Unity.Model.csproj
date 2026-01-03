@@ -80,6 +80,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Module/Message/IMessageSessionHandler.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankEffectComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankJoyStickerType.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Commands/SCEffectInfo.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Console/ModeContex.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Models/PlayerData.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/Room.cs" />

@@ -3,14 +3,16 @@ namespace TankLogic
     internal class Effect
     {
         internal EffectType EffectType { get; set; }
-        uint EffectId { get; set; }
-        uint TankId { get; set; }
-        uint Time { get; set; }
+        internal uint EffectId { get; set; }
+        internal uint OwnerId { get; set; }
+        internal uint Time { get; set; }
+        internal Position Position { get; set; }
 
-        internal Effect(uint effectId, uint tankId, EffectType effectType, uint time)
+        internal Effect(uint effectId, uint ownerId, Position position, EffectType effectType, uint time)
         {
             EffectId = effectId;
-            TankId = tankId;
+            OwnerId = ownerId;
+            Position = position;
             EffectType = effectType;
             Time = time;
         }

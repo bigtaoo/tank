@@ -1,8 +1,9 @@
 namespace TankLogic
 {
-    internal enum EffectType
+    public enum EffectType
     {
         None,
         InvincibleShield,
+        BulletExplosion,
     }
 }

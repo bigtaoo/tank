@@ -38,8 +38,8 @@ namespace TankLogic
                 var invincibleBuff = new Buff(_main.GetId(), PlayerId, BuffType.Invincible, 3000);
                 _main.BuffManager.AddBuff(invincibleBuff);
 
-                var effect = new Effect(_main.GetId(), PlayerId, EffectType.InvincibleShield, 3000);
-                _main.EffectManager.AddEffect(effect);
+                var effect = new Effect(_main.GetId(), PlayerId, null, EffectType.InvincibleShield, 3000);
+                _main.EffectManager.AddClientEffect(effect);
             }
         }
 

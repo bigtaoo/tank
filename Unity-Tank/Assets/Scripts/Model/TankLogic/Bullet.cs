@@ -109,6 +109,9 @@ namespace TankLogic
                     // self.BulletsToRemove.Add(key);
                     // self.Bullets.Remove(key);
                     ToRemove = true;
+
+                    var effect = new Effect(_main.GetId(), 0, BulletData.Position.Copy(), EffectType.BulletExplosion, 2000);
+                    _main.EffectManager.AddClientEffect(effect);
                 }
             }
         }

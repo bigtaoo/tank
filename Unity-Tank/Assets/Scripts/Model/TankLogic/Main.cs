@@ -105,6 +105,20 @@ namespace TankLogic
                 SCCommand.TileInfos.Add(tileInfo);
             }
             TileManager.UpdatedTiles.Clear();
+            foreach (var effect in EffectManager.ClientEffects)
+            {
+                SCEffectInfo effectInfo = new()
+                {
+                    Id = effect.EffectId,
+                    PosX = effect.Position.X,
+                    PosY = effect.Position.Y,
+                    EffectType = effect.EffectType,
+                    Time = effect.Time,
+                    OwnerId = effect.OwnerId,
+                };
+                SCCommand.EffectInfos.Add(effectInfo);
+            }
+            EffectManager.ClientEffects.Clear();
 
             // Log.Warning($"tank infos: {SCCommand.TankInfos.Count}");
         }
