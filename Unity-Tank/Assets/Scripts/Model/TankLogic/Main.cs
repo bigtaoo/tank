@@ -115,6 +115,7 @@ namespace TankLogic
                     EffectType = effect.EffectType,
                     Time = effect.Time,
                     OwnerId = effect.OwnerId,
+                    Direction = effect.Direction,
                 };
                 SCCommand.EffectInfos.Add(effectInfo);
             }

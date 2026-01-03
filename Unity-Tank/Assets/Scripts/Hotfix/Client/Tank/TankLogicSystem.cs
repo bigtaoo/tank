@@ -141,6 +141,7 @@ namespace ET
                 case Direction.Right: position.X += 1.0f; rotation = 270; break;
                 default: break;
             }
+            Log.Warning($"Explosion effect direction {effect.Direction}");
 
             var effectComponent = self.Root().GetComponent<TankEffectComponent>();
             effectComponent.ExplosionEffects.Add(new TankEffect

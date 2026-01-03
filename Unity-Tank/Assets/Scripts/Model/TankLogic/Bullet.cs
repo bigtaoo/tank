@@ -112,7 +112,7 @@ namespace TankLogic
 
                     var effect = new Effect(_main.GetId(), 0, BulletData.Position.Copy(), EffectType.BulletExplosion, 2000)
                     {
-                        Direction = BulletData.Direction
+                        Direction = BulletData.Direction,
                     };
                     _main.EffectManager.AddClientEffect(effect);
                 }
