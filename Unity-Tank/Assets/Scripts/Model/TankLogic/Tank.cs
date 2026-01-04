@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace TankLogic
 {
@@ -143,7 +144,7 @@ namespace TankLogic
             var X = PositionToTile(direction, position.X);
             var Y = PositionToTile(direction, position.Y);
 
-            foreach (var robot in _main.RobotManager.Robots)
+            foreach (var robot in _main.RobotManager.Robots.Values)
             {
                 if (robot.RobotId == tankId)
                 {

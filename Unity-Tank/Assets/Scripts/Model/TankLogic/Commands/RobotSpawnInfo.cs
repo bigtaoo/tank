@@ -7,14 +7,14 @@ namespace TankLogic
         internal int Rotation { get; private set; }
         internal int RobotCount { get; private set; }
         internal uint SpawnInterval { get; private set; }
-        internal int RobotLevel { get; private set; }
+        internal uint RobotLevel { get; private set; }
         internal uint SpawnTime { get; private set; }
         internal uint ShootInterval { get; private set; }
         internal int MoveSpeed { get; private set; }
         internal int BulletMoveSpeed { get; private set; }
 
         public RobotSpawnInfo(int spawnPointId, int spawnPositionX, int spawnPositionY, int rotation, int robotCount, uint spawnInterval,
-            int robotLevel, uint shootInterval, int moveSpeed, int bulletSpeed)
+            uint robotLevel, uint shootInterval, int moveSpeed, int bulletSpeed)
         {
             SpawnPointId = spawnPointId;
             SpawnPosition = new Position(spawnPositionX, spawnPositionY);
@@ -27,6 +27,11 @@ namespace TankLogic
             MoveSpeed = moveSpeed;
             BulletMoveSpeed = bulletSpeed;
             RobotLevel = robotLevel;
+        }
+
+        internal void UpdateSpawnTime(uint time)
+        {
+            SpawnTime = time;
         }
     }
 }

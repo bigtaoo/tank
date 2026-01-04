@@ -28,7 +28,7 @@ namespace ET
             foreach(var robot in robotComponent.SpawnInfos)
             {
                 initialRobotsCommand.AddRobotSpawnInfo(new RobotSpawnInfo(robot.SpawnPointId, (int)robot.SpawnPosition.X * 1000,
-                    (int)robot.SpawnPosition.Y * 1000, robot.Rotation, robot.RobotCount, (uint)robot.SpawnInterval, robot.RobotLevel, 
+                    (int)robot.SpawnPosition.Y * 1000, robot.Rotation, robot.RobotCount, (uint)robot.SpawnInterval, (uint)robot.RobotLevel, 
                     (uint)robot.ShootInterval, robot.MoveSpeed * 1000, robot.BulletMoveSpeed * 1000));
             }
 
