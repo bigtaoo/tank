@@ -17,6 +17,16 @@ namespace TankLogic
             RobotId = robotId;
         }
 
+        private void UpdateShooting()
+        {
+            if (RobotData.LastShootTime < _main.GameTime)
+            {
+                RobotData.LastShootTime = _main.GameTime + RobotData.ShootCoolDownTime + (uint)_main.Random.RandomInt(0, 3000);
+
+                Shoot();
+            }
+        }
+
         private void UpdateRobotPosition()
         {
             // if (buffComponent.GetBuff(robot.RobotId, TankBuffType.CanNotMove) != null)
