@@ -62,7 +62,7 @@ namespace TankLogic
             // Log.Warning($"Move distance: {distance}, X: {position.X}, Y: {position.Y}");
         }
 
-        private Position Move(int distance)
+        protected Position Move(int distance)
         {
             var position = _tankData.CurrentPosition.Copy();
             switch (_tankData.MoveDirection)
