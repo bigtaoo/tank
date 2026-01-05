@@ -139,7 +139,7 @@ namespace TankLogic
             return (direction == Direction.Up || direction == Direction.Right) ? (int)Math.Ceiling(v / 1000.0f) : (int)Math.Floor(v / 1000.0f);
         }
 
-        private bool PositionHasTank(Position position, Direction direction, uint tankId)
+        internal bool PositionHasTank(Position position, Direction direction, uint tankId)
         {
             var X = PositionToTile(direction, position.X);
             var Y = PositionToTile(direction, position.Y);
