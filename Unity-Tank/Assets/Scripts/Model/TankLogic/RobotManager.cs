@@ -8,7 +8,7 @@ namespace TankLogic
         internal Dictionary<uint, RobotTank> Robots { get; private set; } = new();
         internal List<RobotSpawnInfo> RobotSpawnInfos { get; private set; } = new();
         int[] RemainingRobotsCount { get; set; } = new int[10];
-        int[] RemainingSpawnRobots { get; set; } = new int[10];
+        private Dictionary<int, int> RemainingSpawnRobots { get; set; } = new();
 
         internal RobotManager(Main main)
         {
@@ -18,17 +18,27 @@ namespace TankLogic
         internal void SetRobotSpawnInfos(List<RobotSpawnInfo> robotSpawnInfos)
         {
             RobotSpawnInfos = robotSpawnInfos;
+
+            foreach (var info in RobotSpawnInfos)
+            {
+                RemainingSpawnRobots.Add(info.SpawnPointId, info.RobotCount);
+            }
         }
 
         internal void UpdateRobots()
         {
-            
+            SpawnRobot();
+
+            foreach (var robot in Robots.Values)
+            {
+                robot.UpdatePosition();
+            }
         }
 
         private void SpawnRobot()
         {
             var remaining = 0;
-            foreach (var count in RemainingSpawnRobots)
+            foreach (var count in RemainingSpawnRobots.Values)
             {
                 remaining += count;
             }
@@ -39,7 +49,7 @@ namespace TankLogic
 
             foreach (var spawnInfo in RobotSpawnInfos)
             {
-                if (RemainingSpawnRobots[spawnInfo.RobotLevel - 1] <= 0)
+                if (RemainingSpawnRobots[spawnInfo.SpawnPointId] <= 0)
                 {
                     continue;
                 }
@@ -60,7 +70,9 @@ namespace TankLogic
                     };
                     var robot = new RobotTank(robotData, _main, _main.GetId());
                     Robots.Add(robot.RobotId, robot);
-                    RemainingSpawnRobots[robotData.Level - 1]--;
+                    RemainingSpawnRobots[spawnInfo.SpawnPointId]--;
+
+                    _main.Logger.Warning($"Spawn robot id {robot.RobotId}");
 
                     // robot.UpdateSprite = robot.Level != 1;
 

@@ -84,6 +84,18 @@ namespace TankLogic
                 };
                 SCCommand.TankInfos.Add(tankInfo);
             }
+            foreach (var robot in RobotManager.Robots.Values)
+            {
+                SCTankInfo tankInfo = new()
+                {
+                    Id = robot.RobotId,
+                    PlayerIndex = 0,
+                    PosX = robot.RobotData.CurrentPosition.X,
+                    PosY = robot.RobotData.CurrentPosition.Y,
+                    Direction = robot.RobotData.CurrentDirection,
+                };
+                SCCommand.TankInfos.Add(tankInfo);
+            }
             foreach (var bullet in BulletManager.GetBullets())
             {
                 SCBulletInfo bulletInfo = new()
