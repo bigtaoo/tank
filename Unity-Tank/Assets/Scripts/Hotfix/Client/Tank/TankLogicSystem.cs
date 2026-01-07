@@ -89,7 +89,7 @@ namespace ET
             {
                 if (info.PlayerIndex == 0)
                 {
-                    
+                    robotComponent.UpdateRobotInfo(info);
                 }
                 else
                 {

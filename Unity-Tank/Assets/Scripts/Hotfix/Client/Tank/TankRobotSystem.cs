@@ -64,6 +64,7 @@ namespace ET
                 };
 
                 self.Robots.Add(tankInfo.Id, robot);
+                self.RobotsToAdd.Add(robot);
             }
         }
 
