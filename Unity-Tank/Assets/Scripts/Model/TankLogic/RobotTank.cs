@@ -15,9 +15,10 @@ namespace TankLogic
             _main = main;
             RobotData = data;
             RobotId = robotId;
+            TargetPosition = RobotData.CurrentPosition.Copy();
         }
 
-        private void UpdateShooting()
+        internal void UpdateShooting()
         {
             if (RobotData.LastShootTime < _main.GameTime)
             {
@@ -27,7 +28,7 @@ namespace TankLogic
             }
         }
 
-        private void UpdateRobotPosition()
+        internal void UpdateRobotPosition()
         {
             // if (buffComponent.GetBuff(robot.RobotId, TankBuffType.CanNotMove) != null)
             // {
@@ -56,7 +57,7 @@ namespace TankLogic
             }           
         }
 
-        void FindNextTargetPosition()
+        private void FindNextTargetPosition()
         {
             //Log.Warning($"Robot position x: {robot.Position.X}, y: {robot.Position.Y}, direction: {robot.Direction.ToString()}");
             var possiblePositions = new List<(Position, Direction)>();
