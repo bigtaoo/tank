@@ -83,6 +83,7 @@ namespace ET
         {
             var tankInfos = self.tankLogic.SCCommand.TankInfos;
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+            var robotComponent = self.Root().GetComponent<TankRobotComponent>();
             // Log.Warning($"client tank info: {self.tankLogic.SCCommand.TankInfos.Count}");
             foreach (var info in tankInfos)
             {

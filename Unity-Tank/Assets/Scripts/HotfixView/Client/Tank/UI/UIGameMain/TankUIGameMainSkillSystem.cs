@@ -52,14 +52,14 @@ namespace ET.Client
                     }
                 case TankSkillType.BombSkill:
                     {
-                        var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-                        var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                        var selectedRobot = robotComponent.Robots.Values.Where(r => buffComponent.GetBuff(r.RobotId, TankBuffType.Invincible) == null)
-                            .Take(3).ToList();
-                        foreach (var robot in selectedRobot)
-                        {
-                            robot.Level = 0;
-                        }
+                        // var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+                        // var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+                        // var selectedRobot = robotComponent.Robots.Values.Where(r => buffComponent.GetBuff(r.RobotId, TankBuffType.Invincible) == null)
+                        //     .Take(3).ToList();
+                        // foreach (var robot in selectedRobot)
+                        // {
+                        //     robot.Level = 0;
+                        // }
                         break;
                     }
                 case TankSkillType.ShieldSkill:
@@ -78,12 +78,12 @@ namespace ET.Client
                     }
                 case TankSkillType.TimeStopSkill:
                     {
-                        var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-                        var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                        foreach (var robot in robotComponent.Robots.Values)
-                        {
-                            buffComponent.AddBuff(robot.RobotId, TankBuffType.CanNotMove, 3000);
-                        }
+                        // var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+                        // var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+                        // foreach (var robot in robotComponent.Robots.Values)
+                        // {
+                        //     buffComponent.AddBuff(robot.RobotId, TankBuffType.CanNotMove, 3000);
+                        // }
                         break;
                     }
                 case TankSkillType.WallUpgradeSkill:

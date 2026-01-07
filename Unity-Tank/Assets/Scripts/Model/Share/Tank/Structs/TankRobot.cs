@@ -3,7 +3,7 @@ namespace ET
     [EnableClass]
     public class TankRobot
     {
-        public int RobotId { get; set; }
+        public uint RobotId { get; set; }
         public int SpawnPointId { get; set; }
         public TankPosition SpawnPosition { get; set; }
         public TankPosition Position { get; set; }

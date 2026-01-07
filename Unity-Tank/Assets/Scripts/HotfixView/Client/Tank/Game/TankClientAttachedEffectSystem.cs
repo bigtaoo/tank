@@ -78,14 +78,14 @@ namespace ET
                         var robotComponent = self.Root().GetComponent<TankRobotComponent>();
                         // Log.Warning($"Effect update, robot id: {effect.TankId}");
                         //var robot = robotComponent.Robots[effect.TankId];
-                        if (!robotComponent.Robots.TryGetValue(effect.TankId, out var robot))
-                        {
-                            Log.Error($"Can not find robot by id {effect.TankId} when updating client attached effect!");
-                            continue;
-                        }
-                        gameObject.transform.position = new Vector3(robot.Position.X - TankConsts.TileOffset,
-                            robot.Position.Y - TankConsts.TileOffset, TankConsts.AttachedEffectZ);
-                        gameObject.transform.rotation = Quaternion.Euler(0f, 0f, TankHelper.TankDirectionToRotation(robot.Direction));
+                        // if (!robotComponent.Robots.TryGetValue(effect.TankId, out var robot))
+                        // {
+                        //     Log.Error($"Can not find robot by id {effect.TankId} when updating client attached effect!");
+                        //     continue;
+                        // }
+                        // gameObject.transform.position = new Vector3(robot.Position.X - TankConsts.TileOffset,
+                        //     robot.Position.Y - TankConsts.TileOffset, TankConsts.AttachedEffectZ);
+                        // gameObject.transform.rotation = Quaternion.Euler(0f, 0f, TankHelper.TankDirectionToRotation(robot.Direction));
                     }
                 }
                 else

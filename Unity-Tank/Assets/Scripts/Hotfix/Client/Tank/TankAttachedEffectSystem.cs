@@ -47,7 +47,7 @@ namespace ET
             else
             {
                 effect.Position = robot.Position;
-                effect.TankId = robot.RobotId;
+                // effect.TankId = robot.RobotId;
             }
 
             self.EffectsToAdd.Add(effect);

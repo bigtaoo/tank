@@ -83,14 +83,14 @@ namespace ET
             {
                 case TankItemType.Bomb:
                     {
-                        var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-                        var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                        var selectedRobot = robotComponent.Robots.Values.Where(r => buffComponent.GetBuff(r.RobotId, TankBuffType.Invincible) == null)
-                            .Take(3).ToList();
-                        foreach (var robot in selectedRobot)
-                        {
-                            robot.Level = 0;
-                        }
+                        // var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+                        // var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+                        // var selectedRobot = robotComponent.Robots.Values.Where(r => buffComponent.GetBuff(r.RobotId, TankBuffType.Invincible) == null)
+                        //     .Take(3).ToList();
+                        // foreach (var robot in selectedRobot)
+                        // {
+                        //     robot.Level = 0;
+                        // }
                         break;
                     }
                 case TankItemType.BaseWallUpgrade:
@@ -127,12 +127,12 @@ namespace ET
                     }
                 case TankItemType.TimeStop:
                     {
-                        var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-                        var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                        foreach (var robot in robotComponent.Robots.Values)
-                        {
-                            buffComponent.AddBuff(robot.RobotId, TankBuffType.CanNotMove, 3000);
-                        }
+                        // var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+                        // var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+                        // foreach (var robot in robotComponent.Robots.Values)
+                        // {
+                        //     buffComponent.AddBuff(robot.RobotId, TankBuffType.CanNotMove, 3000);
+                        // }
                         break;
                     }
             }

@@ -46,15 +46,15 @@ namespace ET
                         {
                             // bulletComponent.HitTank(bulletId);
 
-                            var invincibleBuff = buffComponent.GetBuff(robot.RobotId, TankBuffType.Invincible);
-                            if (invincibleBuff == null)
-                            {
-                                robot.Level -= 1;
-                                if (robot.Level > 0)
-                                {
-                                    robot.UpdateSprite = true;
-                                }
-                            }
+                            // var invincibleBuff = buffComponent.GetBuff(robot.RobotId, TankBuffType.Invincible);
+                            // if (invincibleBuff == null)
+                            // {
+                            //     robot.Level -= 1;
+                            //     if (robot.Level > 0)
+                            //     {
+                            //         robot.UpdateSprite = true;
+                            //     }
+                            // }
 
                             return;
                         }
