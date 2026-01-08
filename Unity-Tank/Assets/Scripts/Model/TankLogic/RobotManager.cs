@@ -32,7 +32,7 @@ namespace TankLogic
             foreach (var robot in Robots.Values)
             {
                 robot.UpdateRobotPosition();
-                robot.UpdateShooting();
+                // robot.UpdateShooting();
             }
         }
 
@@ -74,12 +74,9 @@ namespace TankLogic
                     RemainingSpawnRobots[spawnInfo.SpawnPointId]--;
 
                     _main.Logger.Warning($"Spawn robot id {robot.RobotId}");
+                    break;
 
                     // robot.UpdateSprite = robot.Level != 1;
-
-                    // Log.Warning($"Spawn robot, {robot.ToJson()}, spawn info: {spawnInfo.ToJson()}");
-                    // Log.Warning($"Spawn robot level: {robot.Level}");
-                    // FindNextTargetPosition(robot);
 
                     // buffComponent.AddBuff(robot.RobotId, TankBuffType.Invincible, 3000);
                     // attachedEffectComponent.AddAttachedEffect(TankAttachedEffectType.InvincibleShield, 3000, robot);

@@ -22,9 +22,10 @@ namespace TankLogic
         {
             if (RobotData.LastShootTime < _main.GameTime)
             {
-                RobotData.LastShootTime = _main.GameTime + RobotData.ShootCoolDownTime + (uint)_main.Random.RandomInt(0, 3000);
+                RobotData.LastShootTime = _main.GameTime + (uint)_main.Random.RandomInt(2000, 7000);
 
-                Shoot();
+                var bulletData = new BulletData(Camp.Player, _tankData.CurrentDirection, _tankData.CurrentPosition.Copy(), _tankData.BulletSpeed, 1);
+                _main.BulletManager.AddBullet(bulletData);
             }
         }
 
@@ -34,10 +35,11 @@ namespace TankLogic
             // {
             //     continue;
             // }
-            var distance = (int)(_tankData.MoveSpeed * Main.FrameTime / 1000);
+            var distance = (int)(_tankData.MoveSpeed * Main.FrameTime / 1000 / 1000);
             var nearTarget = Math.Abs(RobotData.CurrentPosition.X - TargetPosition.X) <= distance &&
                 Math.Abs(RobotData.CurrentPosition.Y - TargetPosition.Y) <= distance;
-            //Log.Warning($"Near target:{nearTarget}, distance: {distance}, x:{Math.Abs(robot.Position.X - robot.TargetPosition.X)}, y: {Math.Abs(robot.Position.Y - robot.TargetPosition.Y)}");
+            _main.Logger.Warning($"Near target:{nearTarget}, distance: {distance}, x:{Math.Abs(RobotData.CurrentPosition.X - TargetPosition.X)}," +
+            $"y: {Math.Abs(RobotData.CurrentPosition.Y - TargetPosition.Y)}");
             if (nearTarget)
             {
                 RobotData.CurrentPosition = TargetPosition;
@@ -63,25 +65,26 @@ namespace TankLogic
             var possiblePositions = new List<(Position, Direction)>();
             var robotPosition = RobotData.CurrentPosition;
             Position sameDirection = null;
-            if (CanTankMoveToPosition(robotPosition.X - 1, robotPosition.Y, Direction.Left))
+            const int dis = 1000;
+            if (CanTankMoveToPosition(robotPosition.X - dis, robotPosition.Y, Direction.Left))
             {
-                possiblePositions.Add((new Position(robotPosition.X - 1, robotPosition.Y), Direction.Left));
-                if (RobotData.MoveDirection == Direction.Left) sameDirection = new Position(robotPosition.X - 1, robotPosition.Y);
+                possiblePositions.Add((new Position(robotPosition.X - dis, robotPosition.Y), Direction.Left));
+                if (RobotData.MoveDirection == Direction.Left) sameDirection = new Position(robotPosition.X - dis, robotPosition.Y);
             }
-            if (CanTankMoveToPosition(robotPosition.X + 1, robotPosition.Y, Direction.Right))
+            if (CanTankMoveToPosition(robotPosition.X + dis, robotPosition.Y, Direction.Right))
             {
-                possiblePositions.Add((new Position(robotPosition.X + 1, robotPosition.Y), Direction.Right));
-                if (RobotData.MoveDirection == Direction.Right) sameDirection = new Position(robotPosition.X + 1, robotPosition.Y);
+                possiblePositions.Add((new Position(robotPosition.X + dis, robotPosition.Y), Direction.Right));
+                if (RobotData.MoveDirection == Direction.Right) sameDirection = new Position(robotPosition.X + dis, robotPosition.Y);
             }
-            if (CanTankMoveToPosition(robotPosition.X, robotPosition.Y + 1, Direction.Up))
+            if (CanTankMoveToPosition(robotPosition.X, robotPosition.Y + dis, Direction.Up))
             {
-                possiblePositions.Add((new Position(robotPosition.X, robotPosition.Y + 1), Direction.Up));
-                if (RobotData.MoveDirection == Direction.Up) sameDirection = new Position(robotPosition.X, robotPosition.Y + 1);
+                possiblePositions.Add((new Position(robotPosition.X, robotPosition.Y + dis), Direction.Up));
+                if (RobotData.MoveDirection == Direction.Up) sameDirection = new Position(robotPosition.X, robotPosition.Y + dis);
             }
-            if (CanTankMoveToPosition(robotPosition.X, robotPosition.Y - 1, Direction.Down))
+            if (CanTankMoveToPosition(robotPosition.X, robotPosition.Y - dis, Direction.Down))
             {
-                possiblePositions.Add((new Position(robotPosition.X, robotPosition.Y - 1), Direction.Down));
-                if (RobotData.MoveDirection == Direction.Down) sameDirection = new Position(robotPosition.X, robotPosition.Y - 1);
+                possiblePositions.Add((new Position(robotPosition.X, robotPosition.Y - dis), Direction.Down));
+                if (RobotData.MoveDirection == Direction.Down) sameDirection = new Position(robotPosition.X, robotPosition.Y - dis);
             }
 
             if (possiblePositions.Count == 0)

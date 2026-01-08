@@ -92,7 +92,7 @@ namespace TankLogic
                     PlayerIndex = 0,
                     PosX = robot.RobotData.CurrentPosition.X,
                     PosY = robot.RobotData.CurrentPosition.Y,
-                    Direction = robot.RobotData.CurrentDirection,
+                    Direction = robot.RobotData.MoveDirection,
                 };
                 SCCommand.TankInfos.Add(tankInfo);
             }
