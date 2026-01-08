@@ -34,23 +34,26 @@ namespace ET
                 X = tankInfo.PosX / 1000.0f,
                 Y = tankInfo.PosY / 1000.0f,
             };
+            var direction = tankInfo.Direction switch
+            {
+                Direction.Right => TankDirection.Right,
+                Direction.Left => TankDirection.Left,
+                Direction.Up => TankDirection.Up,
+                Direction.Down => TankDirection.Down,
+                _ => TankDirection.None,
+            };
             if (self.Robots.TryGetValue(tankInfo.Id, out var robot))
             {
                 robot.Position = position;
+                robot.Direction = direction;
+                robot.Rotation = TankMovementHelper.DirectionToRotation(tankInfo.Direction);
             }
             else
             {
                 robot = new TankRobot
                 {
                     RobotId = tankInfo.Id,
-                    Direction = tankInfo.Direction switch
-                    {
-                        Direction.Right => TankDirection.Right,
-                        Direction.Left => TankDirection.Left,
-                        Direction.Up => TankDirection.Up,
-                        Direction.Down => TankDirection.Down,
-                        _ => TankDirection.None,
-                    },
+                    Direction = direction,
                     Position = position,
                     SpawnPosition = position,
                     ShootInterval = 3000,

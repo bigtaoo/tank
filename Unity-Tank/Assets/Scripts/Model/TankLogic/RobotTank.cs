@@ -38,8 +38,8 @@ namespace TankLogic
             var distance = (int)(_tankData.MoveSpeed * Main.FrameTime / 1000 / 1000);
             var nearTarget = Math.Abs(RobotData.CurrentPosition.X - TargetPosition.X) <= distance &&
                 Math.Abs(RobotData.CurrentPosition.Y - TargetPosition.Y) <= distance;
-            _main.Logger.Warning($"Near target:{nearTarget}, distance: {distance}, x:{Math.Abs(RobotData.CurrentPosition.X - TargetPosition.X)}," +
-            $"y: {Math.Abs(RobotData.CurrentPosition.Y - TargetPosition.Y)}");
+            // _main.Logger.Warning($"Near target:{nearTarget}, distance: {distance}, x:{Math.Abs(RobotData.CurrentPosition.X - TargetPosition.X)}," +
+            // $"y: {Math.Abs(RobotData.CurrentPosition.Y - TargetPosition.Y)}");
             if (nearTarget)
             {
                 RobotData.CurrentPosition = TargetPosition;
@@ -119,7 +119,7 @@ namespace TankLogic
             var index = _main.Random.RandomInt(0, possiblePositions.Count);
             TargetPosition = possiblePositions[index].Item1;
             RobotData.MoveDirection = possiblePositions[index].Item2;
-            //Log.Warning($"Find next positon: {robot.TargetPosition.X}  {robot.TargetPosition.Y}, direction: {robot.Direction.ToString()}");
+            // _main.Logger.Warning($"Find next positon: {TargetPosition.X}  {TargetPosition.Y}, direction: {RobotData.MoveDirection.ToString()}");
         }
     }
 }
