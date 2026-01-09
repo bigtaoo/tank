@@ -29,7 +29,7 @@ namespace ET
             {
                 initialRobotsCommand.AddRobotSpawnInfo(new RobotSpawnInfo(robot.SpawnPointId, (int)robot.SpawnPosition.X * 1000,
                     (int)robot.SpawnPosition.Y * 1000, robot.Rotation, robot.RobotCount, (uint)robot.SpawnInterval, (uint)robot.RobotLevel, 
-                    (uint)robot.ShootInterval, robot.MoveSpeed * 1000, robot.BulletMoveSpeed * 1000));
+                    (uint)robot.ShootInterval, robot.MoveSpeed, robot.BulletMoveSpeed));
             }
 
             var tankGameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();

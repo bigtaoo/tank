@@ -75,7 +75,7 @@ namespace ET
                             Y = info.PosY / 1000.0f,
                         },
                     };
-                    // Log.Warning($"Client add new bullet, id: {info.Id}");
+                    // Log.Warning($"Client add new bullet, id: {info.Id}, x: {bullet.Position.X}, y: {bullet.Position.Y}");
                     self.Bullets.Add(info.Id, bullet);
                     self.BulletsToAdd.Add(info.Id);
                 }

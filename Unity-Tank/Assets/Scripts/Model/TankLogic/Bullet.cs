@@ -66,8 +66,9 @@ namespace TankLogic
                 _main.TileManager.GetTile(BulletData.Position.X / 1000 - 1, BulletData.Position.Y / 1000) :
                 _main.TileManager.GetTile(BulletData.Position.X / 1000, BulletData.Position.Y / 1000 - 1);
 
-            if (!_main.TileManager.IsInMap(BulletData.Position.X, BulletData.Position.Y, 1))
+            if (!_main.TileManager.IsInMap(BulletData.Position.X, BulletData.Position.Y, 0))
             {
+                // _main.Logger.Warning("Remove bullet because it runs out of map.");
                 ToRemove = true;
             }
             else if (tile != null || neighborTile != null)

@@ -26,6 +26,7 @@ namespace TankLogic
 
                 var bulletData = new BulletData(Camp.Player, _tankData.CurrentDirection, _tankData.CurrentPosition.Copy(), _tankData.BulletSpeed, 1);
                 _main.BulletManager.AddBullet(bulletData);
+                // _main.Logger.Warning("Robot shooting!");
             }
         }
 
@@ -35,7 +36,7 @@ namespace TankLogic
             // {
             //     continue;
             // }
-            var distance = (int)(_tankData.MoveSpeed * Main.FrameTime / 1000 / 1000);
+            var distance = (int)(_tankData.MoveSpeed * Main.FrameTime / 1000);
             var nearTarget = Math.Abs(RobotData.CurrentPosition.X - TargetPosition.X) <= distance &&
                 Math.Abs(RobotData.CurrentPosition.Y - TargetPosition.Y) <= distance;
             // _main.Logger.Warning($"Near target:{nearTarget}, distance: {distance}, x:{Math.Abs(RobotData.CurrentPosition.X - TargetPosition.X)}," +

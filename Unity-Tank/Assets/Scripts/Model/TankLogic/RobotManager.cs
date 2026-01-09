@@ -32,7 +32,7 @@ namespace TankLogic
             foreach (var robot in Robots.Values)
             {
                 robot.UpdateRobotPosition();
-                // robot.UpdateShooting();
+                robot.UpdateShooting();
             }
         }
 
