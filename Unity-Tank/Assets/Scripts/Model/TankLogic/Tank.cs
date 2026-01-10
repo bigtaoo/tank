@@ -14,14 +14,6 @@ namespace TankLogic
             _main = main;
         }
 
-        // internal void SetInitiaInfo(Position spawnPostion, int moveSpeed, int bulletSpeed, uint shootCoolDownTime)
-        // {
-        //     _tankData.SpawnPosition = spawnPostion;
-        //     _tankData.MoveSpeed = moveSpeed;
-        //     _tankData.BulletSpeed = bulletSpeed;
-        //     _tankData.ShootCoolDownTime = shootCoolDownTime;
-        // }
-
         internal void SetMoveDirection(Direction moveDirection)
         {
             if (moveDirection != Direction.None)
@@ -30,36 +22,6 @@ namespace TankLogic
             }
 
             _tankData.MoveDirection = moveDirection;
-        }
-
-        internal void Shoot()
-        {
-            var currentTime = _main.GameTime;
-            if (currentTime - _tankData.LastShootTime < _tankData.ShootCoolDownTime)
-            {
-                return;
-            }
-            _tankData.LastShootTime = currentTime;
-
-            var bulletData = new BulletData(Camp.Player, _tankData.CurrentDirection, _tankData.CurrentPosition.Copy(), _tankData.BulletSpeed, 1);
-            _main.BulletManager.AddBullet(bulletData);
-        }
-
-        internal void UpdatePosition()
-        {
-            if (_tankData.MoveDirection == Direction.None)
-            {
-                return;
-            }
-
-            var distance = (int)(_tankData.MoveSpeed * Main.FrameTime / 1000);
-            var position = Move(distance);
-
-            if (CanTankMoveToPosition(position.X, position.Y, _tankData.CurrentDirection))
-            {
-                _tankData.CurrentPosition = position;
-            }
-            // Log.Warning($"Move distance: {distance}, X: {position.X}, Y: {position.Y}");
         }
 
         protected Position Move(int distance)

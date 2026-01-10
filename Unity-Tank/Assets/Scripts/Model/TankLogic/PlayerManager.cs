@@ -17,7 +17,7 @@ namespace TankLogic
         {
             foreach (var player in Players)
             {
-                player.UpdatePosition();
+                player.UpdatePlayerPosition();
                 player.Update();
             }
         }
@@ -52,7 +52,7 @@ namespace TankLogic
         internal void ExecuteShootCommand(ShootCommand shootCommand)
         {
             var player = Players.First();
-            player.Shoot();
+            player.PlayerShoot();
         }
     }
 }
