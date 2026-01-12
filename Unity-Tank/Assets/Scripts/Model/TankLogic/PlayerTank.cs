@@ -66,7 +66,8 @@ namespace TankLogic
             var distance = (int)(_tankData.MoveSpeed * Main.FrameTime / 1000);
             var position = Move(distance);
 
-            if (CanTankMoveToPosition(position.X, position.Y, _tankData.CurrentDirection))
+            if (CanTankMoveToPosition(position.X, position.Y, _tankData.CurrentDirection) &&
+                !PositionHasTank(position.Copy(), _tankData.CurrentDirection, PlayerId))
             {
                 _tankData.CurrentPosition = position;
             }

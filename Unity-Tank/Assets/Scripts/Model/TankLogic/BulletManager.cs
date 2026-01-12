@@ -27,7 +27,7 @@ namespace TankLogic
                 var bullet = _bullets[key];
                 if (bullet.ToRemove)
                 {
-                    _main.Logger.Warning($"Bullet to remove, id: {key}");
+                    // _main.Logger.Warning($"Bullet to remove, id: {key}");
                     _bullets.Remove(key);
                     continue;
                 }
