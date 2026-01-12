@@ -35,9 +35,35 @@ namespace TankLogic
         {
             x /= 1000;
             y /= 1000;
-            return x >= _mapBound.Left + collision && x <= _mapBound.Right -1 - collision &&
-                y >= _mapBound.Bottom + collision && y <= _mapBound.Top - 1 - collision;
+            return x >= _mapBound.Left + collision && x <= _mapBound.Right - collision &&
+                y >= _mapBound.Bottom + collision && y <= _mapBound.Top - collision;
         }
+
+        internal int GetTopBound()
+        {
+            return _mapBound.Top;
+        }
+
+        internal int GetRightBound()
+        {
+            return _mapBound.Right;
+        }
+
+        // internal bool IsTankOnTopOrRightEdge(int x, int y)
+        // {
+        //     x /= 1000;
+        //     y /= 1000;
+        //     _main.Logger.Warning($"x {x}, y {y}, top {_mapBound.Top}, right {_mapBound.Right}");
+        //     if (x == _mapBound.Right - 1)
+        //     {
+        //         return y >= _mapBound.Bottom && y <= _mapBound.Top;
+        //     }
+        //     else if (y == _mapBound.Top - 1)
+        //     {
+        //         return x <= _mapBound.Right && x >= _mapBound.Left;
+        //     }
+        //     return false;
+        // }
 
         internal Tile GetTile(int x, int y)
         {

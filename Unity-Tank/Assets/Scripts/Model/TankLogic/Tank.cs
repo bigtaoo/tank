@@ -68,6 +68,12 @@ namespace TankLogic
             var tileX = PositionToTile(direction, x);
             var tileY = PositionToTile(direction, y);
 
+            if (tileX >= _main.TileManager.GetRightBound() || tileY >= _main.TileManager.GetTopBound())
+            {
+                // _main.Logger.Warning($"tielx {tileX}, tiley {tileY}");
+                return false;
+            }
+
             switch (direction)
             {
                 case Direction.Left:
