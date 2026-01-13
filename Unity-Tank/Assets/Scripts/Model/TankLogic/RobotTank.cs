@@ -8,7 +8,9 @@ namespace TankLogic
         private readonly Main _main;
         internal uint RobotId { get; private set; }
         internal RobotData RobotData { get; private set; }
-        internal Position TargetPosition {get; set; }
+        internal Position TargetPosition { get; set; }
+        internal bool ToRemove { get; private set; }
+        internal bool UpdateSprite { get; private set; }
 
         internal RobotTank(RobotData data, Main main, uint robotId) : base(data, main)
         {
@@ -62,7 +64,15 @@ namespace TankLogic
 
         internal void OnRobotHit()
         {
-            
+            --RobotData.Level;
+            if (RobotData.Level < 1)
+            {
+                ToRemove = true;
+            }
+            else
+            {
+                UpdateSprite = true;
+            }
         }
 
         private void FindNextTargetPosition()

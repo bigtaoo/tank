@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TankLogic
 {
@@ -29,10 +30,18 @@ namespace TankLogic
         {
             SpawnRobot();
 
-            foreach (var robot in Robots.Values)
+            foreach (var id in Robots.Keys.ToList())
             {
-                robot.UpdateRobotPosition();
-                robot.UpdateShooting();
+                var robot = Robots[id];
+                if (robot.ToRemove)
+                {
+                    Robots.Remove(id);
+                }
+                else
+                {
+                    robot.UpdateRobotPosition();
+                    robot.UpdateShooting();
+                }
             }
         }
 
