@@ -24,7 +24,7 @@ namespace TankLogic
             {
                 RobotData.LastShootTime = _main.GameTime + (uint)_main.Random.RandomInt(2000, 7000);
 
-                var bulletData = new BulletData(Camp.Player, _tankData.MoveDirection, _tankData.CurrentPosition.Copy(), _tankData.BulletSpeed, 1);
+                var bulletData = new BulletData(Camp.Robot, _tankData.MoveDirection, _tankData.CurrentPosition.Copy(), _tankData.BulletSpeed, 1);
                 _main.BulletManager.AddBullet(bulletData);
                 // _main.Logger.Warning("Robot shooting!");
             }
@@ -58,6 +58,11 @@ namespace TankLogic
                 RobotData.CurrentPosition = RobotData.SpawnPosition;
                 FindNextTargetPosition();
             }           
+        }
+
+        internal void OnRobotHit()
+        {
+            
         }
 
         private void FindNextTargetPosition()

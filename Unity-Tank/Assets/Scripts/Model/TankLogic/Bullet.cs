@@ -1,3 +1,5 @@
+using System;
+
 namespace TankLogic
 {
     internal class Bullet
@@ -5,19 +7,20 @@ namespace TankLogic
         private readonly Main _main;
         internal BulletData BulletData {get; private set; }
         internal bool ToRemove { get; private set; }
-        internal uint Id { get; private set; }
+        internal uint BulletId { get; private set; }
 
         internal Bullet(Main main, BulletData bulletData, uint id)
         {
             _main = main;
             BulletData = bulletData;
-            Id = id;
+            BulletId = id;
         }
 
         internal void Update()
         {
             UpdateBulletPosition();
             CheckCollisionWithTiles();
+            CheckCollisionWithTanksAndBullets();
         }
 
         private void UpdateBulletPosition()
@@ -83,9 +86,6 @@ namespace TankLogic
                     }
                     else
                     {
-                        // mapTilesComponent.Tiles.Remove(tile);
-                        // tile.Type = TankMapTileType.None;
-                        // mapTilesComponent.TilesToUpdate.Add(tile);
                         _main.TileManager.UpdateTile(tile.Position.X, tile.Position.Y, TileType.None);
                     }
                 }
@@ -98,26 +98,73 @@ namespace TankLogic
                     }
                     else
                     {
-                        // mapTilesComponent.Tiles.Remove(neighborTile);
-                        // neighborTile.Type = TankMapTileType.None;
-                        // mapTilesComponent.TilesToUpdate.Add(neighborTile);
                         _main.TileManager.UpdateTile(neighborTile.Position.X, neighborTile.Position.Y, TileType.None);
                     }
                 }
                 if (hit)
                 {
-                    // self.CreateExplosionEffect(bullet);
-                    // self.BulletsToRemove.Add(key);
-                    // self.Bullets.Remove(key);
                     ToRemove = true;
-
-                    var effect = new Effect(_main.GetId(), 0, BulletData.Position.Copy(), EffectType.BulletExplosion, 2000)
-                    {
-                        Direction = BulletData.Direction,
-                    };
-                    _main.EffectManager.AddClientEffect(effect);
+                    CreateExplosionEffect();
                 }
             }
+        }
+
+        private void CheckCollisionWithTanksAndBullets()
+        {
+            foreach (var player in _main.PlayerManager.Players)
+            {
+                if (BulletData.Camp == Camp.Player)
+                {
+                    continue;
+                }
+                if (Hit(player.PlayerData.CurrentPosition))
+                {
+                    ToRemove = true;
+                    CreateExplosionEffect();
+                    player.OnPlayerHit();
+                }
+            }
+            foreach (var robot in _main.RobotManager.Robots.Values)
+            {
+                if (BulletData.Camp == Camp.Robot)
+                {
+                    continue;
+                }
+                if (Hit(robot.RobotData.CurrentPosition))
+                {
+                    ToRemove = true;
+                    CreateExplosionEffect();
+                    robot.OnRobotHit();
+                }
+            }
+            foreach (var bullet in _main.BulletManager.GetBullets())
+            {
+                if (bullet.ToRemove || bullet.BulletId == BulletId)
+                {
+                    continue;
+                }
+                if (Hit(bullet.BulletData.Position))
+                {
+                    ToRemove = true;
+                    bullet.ToRemove = true;
+                    CreateExplosionEffect();
+                }
+            }
+        }
+
+        private bool Hit(Position position)
+        {
+            return Math.Abs(position.X - BulletData.Position.X) < 500 && 
+                Math.Abs(position.Y - BulletData.Position.Y) < 500;
+        }
+
+        private void CreateExplosionEffect()
+        {
+            var effect = new Effect(_main.GetId(), 0, BulletData.Position.Copy(), EffectType.BulletExplosion, 2000)
+            {
+                Direction = BulletData.Direction,
+            };
+            _main.EffectManager.AddClientEffect(effect);
         }
     }
 }

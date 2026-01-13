@@ -100,7 +100,7 @@ namespace TankLogic
             {
                 SCBulletInfo bulletInfo = new()
                 {
-                    Id = bullet.Id,
+                    Id = bullet.BulletId,
                     PosX = bullet.BulletData.Position.X,
                     PosY = bullet.BulletData.Position.Y,
                 };

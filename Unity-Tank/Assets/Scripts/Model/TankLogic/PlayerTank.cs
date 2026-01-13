@@ -74,6 +74,11 @@ namespace TankLogic
             // Log.Warning($"Move distance: {distance}, X: {position.X}, Y: {position.Y}");
         }
 
+        internal void OnPlayerHit()
+        {
+            
+        }
+
         private void AdjustStopPosition()
         {
             if (_tankData.MoveDirection != Direction.None)

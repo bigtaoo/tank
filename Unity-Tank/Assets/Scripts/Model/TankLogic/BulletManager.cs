@@ -16,7 +16,7 @@ namespace TankLogic
         internal void AddBullet(BulletData data)
         {
             var bullet = new Bullet(_main, data, _main.GetId());
-            _bullets[bullet.Id] = bullet;
+            _bullets[bullet.BulletId] = bullet;
         }
 
         internal void UpdateProjectiles()
