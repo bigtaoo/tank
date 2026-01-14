@@ -188,6 +188,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Module/Message/SessionAcceptTimeoutComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Demo/NetClient/Router/RouterCheckComponent.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Models/BuffType.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Models/BuffData.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Models/BulletData.cs" />
     <Compile Include="Assets/Scripts/Model/Generate/Client/Message/OuterMessage_C_10001.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankRobotSpawnInfo.cs" />

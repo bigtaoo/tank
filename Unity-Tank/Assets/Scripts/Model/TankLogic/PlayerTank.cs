@@ -33,9 +33,9 @@ namespace TankLogic
                 PlayerData.CurrentPosition = PlayerData.SpawnPosition;
                 PlayerData.MoveDirection = Direction.None;
 
-                var spawnBuff = new Buff(_main.GetId(), PlayerId, BuffType.Spwan, 1000);
+                var spawnBuff = new BuffData(_main.GetId(), PlayerId, BuffType.Spwan, 1000);
                 _main.BuffManager.AddBuff(spawnBuff);
-                var invincibleBuff = new Buff(_main.GetId(), PlayerId, BuffType.Invincible, 3000);
+                var invincibleBuff = new BuffData(_main.GetId(), PlayerId, BuffType.Invincible, 3000);
                 _main.BuffManager.AddBuff(invincibleBuff);
 
                 var effect = new Effect(_main.GetId(), PlayerId, null, EffectType.InvincibleShield, 3000);

@@ -2,17 +2,15 @@ namespace TankLogic
 {
     internal class Buff
     {
-        internal uint BuffId { get; set; }
-        internal uint TankId { get; set; }
-        internal BuffType BuffType{ get; set; }
-        internal uint Time { get; set; }
+        private readonly Main _main;
+        internal BuffData BuffData { get; private set; }
+        internal uint RemoveTime { get; private set; }
 
-        internal Buff(uint buffId, uint tankId, BuffType buffType, uint time)
+        internal Buff(Main main, BuffData buffData)
         {
-            BuffId = buffId;
-            TankId = tankId;
-            BuffType = buffType;
-            Time = time;
+            _main = main;
+            BuffData = buffData;
+            RemoveTime = _main.GameTime + buffData.Time;
         }
     }
 }
