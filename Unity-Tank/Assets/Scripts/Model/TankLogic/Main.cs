@@ -81,6 +81,7 @@ namespace TankLogic
                     PosX = player.PlayerData.CurrentPosition.X,
                     PosY = player.PlayerData.CurrentPosition.Y,
                     Direction = player.PlayerData.CurrentDirection,
+                    Level = player.PlayerData.Level,
                 };
                 SCCommand.TankInfos.Add(tankInfo);
             }
@@ -93,6 +94,7 @@ namespace TankLogic
                     PosX = robot.RobotData.CurrentPosition.X,
                     PosY = robot.RobotData.CurrentPosition.Y,
                     Direction = robot.RobotData.MoveDirection,
+                    Level = robot.RobotData.Level,
                 };
                 SCCommand.TankInfos.Add(tankInfo);
             }
