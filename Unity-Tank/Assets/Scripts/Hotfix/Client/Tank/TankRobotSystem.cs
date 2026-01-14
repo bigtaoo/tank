@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using TankLogic;
 
@@ -68,6 +69,18 @@ namespace ET
 
                 self.Robots.Add(tankInfo.Id, robot);
                 self.RobotsToAdd.Add(robot);
+            }
+        }
+
+        public static void RemoveDeadRobots(this TankRobotComponent self, List<SCTankInfo> tankInfos)
+        {
+            foreach (var key in self.Robots.Keys.ToList())
+            {
+                if (tankInfos.FirstOrDefault(tank => tank.Id == key) == null)
+                {
+                    self.RobotsToRemove.Add(self.Robots[key]);
+                    self.Robots.Remove(key);
+                }
             }
         }
 
