@@ -36,5 +36,17 @@ namespace TankLogic
                 }
             }
         }
+
+        internal Buff GetBuff(uint tankId, BuffType buffType)
+        {
+            foreach (var buff in _buffs.Values)
+            {
+                if (buff.BuffData.TankId == tankId && buff.BuffData.BuffType == buffType)
+                {
+                    return buff;
+                }
+            }
+            return null;
+        }
     }
 }

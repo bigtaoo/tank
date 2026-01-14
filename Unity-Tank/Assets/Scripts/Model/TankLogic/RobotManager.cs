@@ -91,10 +91,11 @@ namespace TankLogic
                     Robots.Add(robot.RobotId, robot);
                     RemainingSpawnRobots[spawnInfo.SpawnPointId]--;
 
+                    var buffData = new BuffData(_main.GetId(), robot.RobotId, BuffType.Invincible, 3000);
+                    _main.BuffManager.AddBuff(buffData);
+
                     _main.Logger.Warning($"Spawn robot id {robot.RobotId}");
                     break;
-
-                    // robot.UpdateSprite = robot.Level != 1;
 
                     // buffComponent.AddBuff(robot.RobotId, TankBuffType.Invincible, 3000);
                     // attachedEffectComponent.AddAttachedEffect(TankAttachedEffectType.InvincibleShield, 3000, robot);

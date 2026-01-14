@@ -19,6 +19,7 @@ namespace TankLogic
             RobotData = data;
             RobotId = robotId;
             TargetPosition = RobotData.CurrentPosition.Copy();
+            UpdateSprite = data.Level != 1;
         }
 
         internal void UpdateShooting()
@@ -65,6 +66,12 @@ namespace TankLogic
 
         internal void OnRobotHit()
         {
+            var buff = _main.BuffManager.GetBuff(RobotId, BuffType.Invincible);
+            if (buff != null)
+            {
+                return;
+            }
+
             --RobotData.Level;
             if (RobotData.Level < 1)
             {
@@ -74,6 +81,11 @@ namespace TankLogic
             {
                 UpdateSprite = true;
             }
+        }
+
+        internal void SpriteUpdated()
+        {
+            UpdateSprite = false;
         }
 
         private void FindNextTargetPosition()
