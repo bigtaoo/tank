@@ -35,6 +35,14 @@ namespace TankLogic
                 var robot = Robots[id];
                 if (robot.ToRemove)
                 {
+                    foreach (var spawnInfo in RobotSpawnInfos)
+                    {
+                        if (spawnInfo.SpawnPointId == robot.SpawnPointId)
+                        {
+                            spawnInfo.UpdateSpawnTime(0);
+                            break;
+                        }
+                    }
                     Robots.Remove(id);
                 }
                 else
@@ -79,6 +87,7 @@ namespace TankLogic
                         LastShootTime = _main.GameTime + spawnInfo.ShootInterval + (uint)_main.Random.RandomInt(1000, 3000),
                     };
                     var robot = new RobotTank(robotData, _main, _main.GetId());
+                    robot.SpawnPointId = spawnInfo.SpawnPointId;
                     Robots.Add(robot.RobotId, robot);
                     RemainingSpawnRobots[spawnInfo.SpawnPointId]--;
 

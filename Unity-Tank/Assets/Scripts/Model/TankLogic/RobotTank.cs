@@ -11,6 +11,7 @@ namespace TankLogic
         internal Position TargetPosition { get; set; }
         internal bool ToRemove { get; private set; }
         internal bool UpdateSprite { get; private set; }
+        internal int SpawnPointId { get; set; }
 
         internal RobotTank(RobotData data, Main main, uint robotId) : base(data, main)
         {
