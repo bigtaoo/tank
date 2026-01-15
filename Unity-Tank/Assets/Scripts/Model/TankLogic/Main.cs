@@ -97,6 +97,7 @@ namespace TankLogic
                     Level = robot.RobotData.Level,
                 };
                 SCCommand.TankInfos.Add(tankInfo);
+                robot.SpriteUpdated();
             }
             foreach (var bullet in BulletManager.GetBullets())
             {
