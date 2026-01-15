@@ -94,10 +94,11 @@ namespace TankLogic
                     var buffData = new BuffData(_main.GetId(), robot.RobotId, BuffType.Invincible, 3000);
                     _main.BuffManager.AddBuff(buffData);
 
-                    _main.Logger.Warning($"Spawn robot id {robot.RobotId}");
-                    break;
+                    var effect = new Effect(_main.GetId(), robot.RobotId, robot.TargetPosition, EffectType.InvincibleShield, 3000);
+                    _main.EffectManager.AddClientEffect(effect);
 
-                    // buffComponent.AddBuff(robot.RobotId, TankBuffType.Invincible, 3000);
+                    _main.Logger.Warning($"Spawn robot id {robot.RobotId}");
+
                     // attachedEffectComponent.AddAttachedEffect(TankAttachedEffectType.InvincibleShield, 3000, robot);
                 }
             }

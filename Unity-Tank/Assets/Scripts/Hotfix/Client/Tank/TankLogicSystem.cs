@@ -115,11 +115,13 @@ namespace ET
                 tileMapComponent.SetTileType(tileMap.PosX, tileMap.PosY, tileType);
             }
 
+            var attachedEffectComponent = self.Root().GetComponent<TankAttachedEffectComponent>();
             foreach (var effect in self.tankLogic.SCCommand.EffectInfos)
             {
                 switch (effect.EffectType)
                 {
                     case EffectType.BulletExplosion: self.CreateExplosionEffect(effect); break;
+                    case EffectType.InvincibleShield: attachedEffectComponent.AddClientEffect(effect); break;
                     default: break;
                 }
             }
