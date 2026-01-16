@@ -65,7 +65,7 @@ namespace ET
                 robotGameObject.SetActive(true);
                 self.Robots[robot.RobotId] = robotGameObject;
 
-                //Log.Warning($"Add robot {robot.RobotId}, x: {robot.Position.X}, y: {robot.Position.X}, point:{robot.SpawnPointId}");
+                // Log.Warning($"Add robot {robot.RobotId}, x: {robot.Position.X}, y: {robot.Position.X}, point:{robot.SpawnPointId}");
             }
             robotComponent.RobotsToAdd.Clear();
         }
@@ -103,10 +103,12 @@ namespace ET
 
         private static void UpdateRobotSprite(this TankClientRobotComponent self, TankRobot robot)
         {
+            // Log.Warning("Start robot sprite update.");
             if (!robot.UpdateSprite)
             {
                 return;
             }
+            robot.UpdateSprite = false;
             Sprite sprite = null;
             var scale = new Vector3(1, 1, 1);
             if (robot.Level == 2)
@@ -146,6 +148,8 @@ namespace ET
             renderer.sprite = sprite;
             var transform = robotObject.GetComponent<Transform>();
             transform.localScale = scale;
+
+            // Log.Warning("Update tank sprite.");
         }
     }
 }

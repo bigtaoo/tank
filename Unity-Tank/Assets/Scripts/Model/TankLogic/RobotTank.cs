@@ -10,7 +10,7 @@ namespace TankLogic
         internal RobotData RobotData { get; private set; }
         internal Position TargetPosition { get; set; }
         internal bool ToRemove { get; private set; }
-        internal bool UpdateSprite { get; private set; }
+        // internal bool UpdateSprite { get; private set; }
         internal int SpawnPointId { get; set; }
 
         internal RobotTank(RobotData data, Main main, uint robotId) : base(data, main)
@@ -19,7 +19,7 @@ namespace TankLogic
             RobotData = data;
             RobotId = robotId;
             TargetPosition = RobotData.CurrentPosition.Copy();
-            UpdateSprite = data.Level != 1;
+            // UpdateSprite = data.Level != 1;
         }
 
         internal void UpdateShooting()
@@ -77,16 +77,16 @@ namespace TankLogic
             {
                 ToRemove = true;
             }
-            else
-            {
-                UpdateSprite = true;
-            }
+            // else
+            // {
+            //     UpdateSprite = true;
+            // }
         }
 
-        internal void SpriteUpdated()
-        {
-            UpdateSprite = false;
-        }
+        // internal void SpriteUpdated()
+        // {
+        //     UpdateSprite = false;
+        // }
 
         private void FindNextTargetPosition()
         {

@@ -97,9 +97,7 @@ namespace TankLogic
                     var effect = new Effect(_main.GetId(), robot.RobotId, robot.TargetPosition, EffectType.InvincibleShield, 3000);
                     _main.EffectManager.AddClientEffect(effect);
 
-                    _main.Logger.Warning($"Spawn robot id {robot.RobotId}");
-
-                    // attachedEffectComponent.AddAttachedEffect(TankAttachedEffectType.InvincibleShield, 3000, robot);
+                    // _main.Logger.Warning($"Spawn robot id {robot.RobotId}, level {robotData.Level}");
                 }
             }
         }

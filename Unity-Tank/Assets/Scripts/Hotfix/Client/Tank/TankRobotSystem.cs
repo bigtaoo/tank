@@ -70,15 +70,18 @@ namespace ET
                 self.Robots.Add(tankInfo.Id, robot);
                 self.RobotsToAdd.Add(robot);
             }
+            // Log.Warning($"tank level: {tankInfo.Level}, robot level: {robot.Level}");
             if (robot.Level != tankInfo.Level)
             {
                 robot.Level = (int)tankInfo.Level;
                 robot.UpdateSprite = true;
+                // Log.Warning("Enable update robot sprite");
             }
-            else
-            {
-                robot.UpdateSprite = false;
-            }
+            // else
+            // {
+            //     robot.UpdateSprite = false;
+            //     Log.Warning("Disable update robot sprite");
+            // }
         }
 
         public static void RemoveDeadRobots(this TankRobotComponent self, List<SCTankInfo> tankInfos)
