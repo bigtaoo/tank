@@ -64,8 +64,9 @@ namespace ET
                 var gameObject = attachedEffect.Value;
                 if (attachedEffectComponent.TankAttachedEffects.TryGetValue(attachedEffect.Key, out effect))
                 {
-                    if (effect.IsattachedToPlayer)
+                    if (effect.TankId == 1)
                     {
+                        Log.Warning("Update client attached effect.");
                         var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
                         var playerPosition = playerComponent.GetPlayerPosition();
                         gameObject.transform.position = new Vector3(playerPosition.X - TankConsts.TileOffset,
@@ -73,19 +74,19 @@ namespace ET
                         gameObject.transform.rotation = Quaternion.Euler(0f, 0f, TankHelper.TankDirectionToRotation(
                             playerComponent.GetPlayerMoveDirection()));
                     }
-                    else  
+                    else
                     {
                         var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-                        // Log.Warning($"Effect update, robot id: {effect.TankId}");
+                        Log.Warning($"Effect update, robot id: {effect.TankId}");
                         //var robot = robotComponent.Robots[effect.TankId];
-                        // if (!robotComponent.Robots.TryGetValue(effect.TankId, out var robot))
-                        // {
-                        //     Log.Error($"Can not find robot by id {effect.TankId} when updating client attached effect!");
-                        //     continue;
-                        // }
-                        // gameObject.transform.position = new Vector3(robot.Position.X - TankConsts.TileOffset,
-                        //     robot.Position.Y - TankConsts.TileOffset, TankConsts.AttachedEffectZ);
-                        // gameObject.transform.rotation = Quaternion.Euler(0f, 0f, TankHelper.TankDirectionToRotation(robot.Direction));
+                        if (!robotComponent.Robots.TryGetValue(effect.TankId, out var robot))
+                        {
+                            Log.Error($"Can not find robot by id {effect.TankId} when updating client attached effect!");
+                            continue;
+                        }
+                        gameObject.transform.position = new Vector3(robot.Position.X - TankConsts.TileOffset,
+                            robot.Position.Y - TankConsts.TileOffset, TankConsts.AttachedEffectZ);
+                        gameObject.transform.rotation = Quaternion.Euler(0f, 0f, TankHelper.TankDirectionToRotation(robot.Direction));
                     }
                 }
                 else
