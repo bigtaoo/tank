@@ -20,29 +20,6 @@ namespace TankLogic
             AdjustStopPosition();
         }
 
-        private void CheckHelth()
-        {
-            if (PlayerData.PlayerLifes <= 0)
-            {
-                return;
-            }
-            if (PlayerData.Level <= 0)
-            {
-                PlayerData.Level = 1;
-                --PlayerData.PlayerLifes;
-                PlayerData.CurrentPosition = PlayerData.SpawnPosition;
-                PlayerData.MoveDirection = Direction.None;
-
-                var spawnBuff = new BuffData(_main.GetId(), PlayerId, BuffType.Spwan, 1000);
-                _main.BuffManager.AddBuff(spawnBuff);
-                var invincibleBuff = new BuffData(_main.GetId(), PlayerId, BuffType.Invincible, 3000);
-                _main.BuffManager.AddBuff(invincibleBuff);
-
-                var effect = new Effect(_main.GetId(), PlayerId, null, EffectType.InvincibleShield, 3000);
-                _main.EffectManager.AddClientEffect(effect);
-            }
-        }
-
         internal void PlayerShoot()
         {
             var currentTime = _main.GameTime;
@@ -76,7 +53,22 @@ namespace TankLogic
 
         internal void OnPlayerHit()
         {
-            
+            --PlayerData.Level;
+            if (PlayerData.Level <= 0)
+            {
+                PlayerData.Level = 1;
+                --PlayerData.PlayerLifes;
+                PlayerData.CurrentPosition = PlayerData.SpawnPosition;
+                PlayerData.MoveDirection = Direction.None;
+
+                var spawnBuff = new BuffData(_main.GetId(), PlayerId, BuffType.Spwan, 1000);
+                _main.BuffManager.AddBuff(spawnBuff);
+                var invincibleBuff = new BuffData(_main.GetId(), PlayerId, BuffType.Invincible, 3000);
+                _main.BuffManager.AddBuff(invincibleBuff);
+
+                var effect = new Effect(_main.GetId(), PlayerId, PlayerData.CurrentPosition, EffectType.InvincibleShield, 3000);
+                _main.EffectManager.AddClientEffect(effect);
+            }
         }
 
         private void AdjustStopPosition()
@@ -93,12 +85,6 @@ namespace TankLogic
                 //Log.Warning($"Ajust Y: current Y: {self.Position.Y}, target Y: {position.Y}");
                 if (position.Y != targetY)
                 {
-                    // var time = Math.Abs(position.Y - _tankData.CurrentPosition.Y) * 1000 / _tankData.MoveSpeed / 2;
-                    // //Log.Warning($"Player tank tween time: {time}, t: {position.Y}, c:{self.Position.Y}, s: {self.MoveSpeed}");
-                    // var buff = new Buff(_main.GetId(), PlayerId, BuffType.AddTween, (uint)time);
-                    // _main.BuffManager.AddBuff(buff);
-
-                    // _tankData.CurrentPosition = position;
                     var dis = (int)(_tankData.MoveSpeed * 2 * Main.FrameTime / 1000);
                     if (Math.Abs(position.Y - targetY) < dis)
                     {
@@ -123,12 +109,6 @@ namespace TankLogic
                 var targetX = PositionToTile(_tankData.CurrentDirection, _tankData.CurrentPosition.X) * 1000;
                 if (position.X != targetX)
                 {
-                    // var time = Math.Abs(position.X - _tankData.CurrentPosition.X) * 1000 / _tankData.MoveSpeed / 2;
-                    // var buff = new Buff(_main.GetId(), PlayerId, BuffType.AddTween, (uint)time);
-                    // _main.BuffManager.AddBuff(buff);
-
-                    // _tankData.CurrentPosition = position;
-
                     var dis = (int)(_tankData.MoveSpeed * 2 * Main.FrameTime / 1000);
                     if (Math.Abs(position.X - targetX) < dis)
                     {

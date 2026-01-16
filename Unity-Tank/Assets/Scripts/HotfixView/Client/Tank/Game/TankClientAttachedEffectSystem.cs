@@ -1,4 +1,3 @@
-using ET.Client;
 using UnityEngine;
 
 namespace ET
@@ -66,7 +65,7 @@ namespace ET
                 {
                     if (effect.TankId == 1)
                     {
-                        Log.Warning("Update client attached effect.");
+                        // Log.Warning("Update client attached effect.");
                         var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
                         var playerPosition = playerComponent.GetPlayerPosition();
                         gameObject.transform.position = new Vector3(playerPosition.X - TankConsts.TileOffset,
@@ -77,7 +76,7 @@ namespace ET
                     else
                     {
                         var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-                        Log.Warning($"Effect update, robot id: {effect.TankId}");
+                        // Log.Warning($"Effect update, robot id: {effect.TankId}");
                         //var robot = robotComponent.Robots[effect.TankId];
                         if (!robotComponent.Robots.TryGetValue(effect.TankId, out var robot))
                         {
