@@ -69,6 +69,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Module/Numeric/NumericType.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Demo/NetClient/A2NetClient_Message.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Console/IConsoleHandler.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Commands/SCGameInfo.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Models/EffectType.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankUserInfo.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/LSUpdater.cs" />

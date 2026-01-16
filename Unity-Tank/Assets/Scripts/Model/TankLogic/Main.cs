@@ -84,6 +84,8 @@ namespace TankLogic
                     Level = player.PlayerData.Level,
                 };
                 SCCommand.TankInfos.Add(tankInfo);
+
+                SCCommand.GameInfo.PlayerLifes = player.PlayerData.PlayerLifes;
             }
             foreach (var robot in RobotManager.Robots.Values)
             {
@@ -97,7 +99,10 @@ namespace TankLogic
                     Level = robot.RobotData.Level,
                 };
                 SCCommand.TankInfos.Add(tankInfo);
-                // robot.SpriteUpdated();
+            }
+            for (int i = 0; i < 3; ++i)
+            {
+                SCCommand.GameInfo.RemainingRobotsCount[i] = RobotManager.RemainingRobotsCount[i];
             }
             foreach (var bullet in BulletManager.GetBullets())
             {
@@ -134,7 +139,7 @@ namespace TankLogic
                 };
                 SCCommand.EffectInfos.Add(effectInfo);
             }
-            EffectManager.ClientEffects.Clear();
+            EffectManager.ClientEffects.Clear();            
 
             // Log.Warning($"tank infos: {SCCommand.TankInfos.Count}");
         }

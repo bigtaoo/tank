@@ -8,6 +8,7 @@ namespace TankLogic
         public List<SCBulletInfo> BulletInfos { get; set; } = new();
         public List<SCTileInfo> TileInfos { get; set; } = new();
         public List<SCEffectInfo> EffectInfos{ get; set; } = new();
+        public SCGameInfo GameInfo { get; set; } = new();
 
         public void ClearData()
         {

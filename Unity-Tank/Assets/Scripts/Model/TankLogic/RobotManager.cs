@@ -8,7 +8,7 @@ namespace TankLogic
         private readonly Main _main;
         internal Dictionary<uint, RobotTank> Robots { get; private set; } = new();
         internal List<RobotSpawnInfo> RobotSpawnInfos { get; private set; } = new();
-        int[] RemainingRobotsCount { get; set; } = new int[10];
+        internal int[] RemainingRobotsCount { get; private set; } = new int[3];
         private Dictionary<int, int> RemainingSpawnRobots { get; set; } = new();
 
         internal RobotManager(Main main)
@@ -23,6 +23,7 @@ namespace TankLogic
             foreach (var info in RobotSpawnInfos)
             {
                 RemainingSpawnRobots.Add(info.SpawnPointId, info.RobotCount);
+                RemainingRobotsCount[info.RobotLevel - 1] += info.RobotCount;
             }
         }
 
@@ -43,6 +44,7 @@ namespace TankLogic
                             break;
                         }
                     }
+                    RemainingRobotsCount[robot.SpawnLevel - 1]--;
                     Robots.Remove(id);
                 }
                 else

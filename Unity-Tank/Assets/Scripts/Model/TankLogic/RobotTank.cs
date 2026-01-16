@@ -10,8 +10,8 @@ namespace TankLogic
         internal RobotData RobotData { get; private set; }
         internal Position TargetPosition { get; set; }
         internal bool ToRemove { get; private set; }
-        // internal bool UpdateSprite { get; private set; }
         internal int SpawnPointId { get; set; }
+        internal uint SpawnLevel { get; private set; }
 
         internal RobotTank(RobotData data, Main main, uint robotId) : base(data, main)
         {
@@ -19,7 +19,7 @@ namespace TankLogic
             RobotData = data;
             RobotId = robotId;
             TargetPosition = RobotData.CurrentPosition.Copy();
-            // UpdateSprite = data.Level != 1;
+            SpawnLevel = RobotData.Level;
         }
 
         internal void UpdateShooting()
@@ -36,10 +36,10 @@ namespace TankLogic
 
         internal void UpdateRobotPosition()
         {
-            // if (buffComponent.GetBuff(robot.RobotId, TankBuffType.CanNotMove) != null)
-            // {
-            //     continue;
-            // }
+            if (_main.BuffManager.GetBuff(RobotId, BuffType.CanNotMove) != null)
+            {
+                return;
+            }
             var distance = (int)(_tankData.MoveSpeed * Main.FrameTime / 1000);
             var nearTarget = Math.Abs(RobotData.CurrentPosition.X - TargetPosition.X) <= distance &&
                 Math.Abs(RobotData.CurrentPosition.Y - TargetPosition.Y) <= distance;
@@ -77,16 +77,7 @@ namespace TankLogic
             {
                 ToRemove = true;
             }
-            // else
-            // {
-            //     UpdateSprite = true;
-            // }
         }
-
-        // internal void SpriteUpdated()
-        // {
-        //     UpdateSprite = false;
-        // }
 
         private void FindNextTargetPosition()
         {
