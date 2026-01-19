@@ -92,13 +92,13 @@ namespace ET
             {
                 remainingRobot += c;
             }
-            if (remainingRobot == 0)
-            {
-                var gameResultComponent = self.Root().GetComponent<TankGameResultComponent>();
-                gameResultComponent.IsWin = true;
-                gameResultComponent.IsGameEnd = true;
-                UIHelper.Create(self.Root(), UIType.TankUIGameResult, UILayer.High).Coroutine();
-            }
+            // if (remainingRobot == 0)
+            // {
+            //     var gameResultComponent = self.Root().GetComponent<TankGameResultComponent>();
+            //     gameResultComponent.IsWin = true;
+            //     gameResultComponent.IsGameEnd = true;
+            //     UIHelper.Create(self.Root(), UIType.TankUIGameResult, UILayer.High).Coroutine();
+            // }
         }
 
         private static void UpdateRobotSprite(this TankClientRobotComponent self, TankRobot robot)

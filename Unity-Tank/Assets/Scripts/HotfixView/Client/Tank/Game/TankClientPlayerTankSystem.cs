@@ -34,13 +34,13 @@ namespace ET.Client
             }
 
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-            if (playerComponent.GetPlayerLifes() <= 0)
-            {
-                gameResultComponent.IsGameEnd = true;
-                gameResultComponent.IsWin = false;
-                UIHelper.Create(self.Root(), UIType.TankUIGameResult, UILayer.High).Coroutine();
-                return;
-            }
+            // if (playerComponent.GetPlayerLifes() <= 0)
+            // {
+            //     gameResultComponent.IsGameEnd = true;
+            //     gameResultComponent.IsWin = false;
+            //     UIHelper.Create(self.Root(), UIType.TankUIGameResult, UILayer.High).Coroutine();
+            //     return;
+            // }
 
             var transform = self.TankPlayer1.GetComponent<Transform>();
             var currentPosition = transform.position;
@@ -48,16 +48,16 @@ namespace ET.Client
             var targetPosition = new Vector3(playerPosition.X - TankConsts.TileOffset, playerPosition.Y - TankConsts.TileOffset, currentPosition.z);
 
             var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-            var addTweenBuff = buffComponent.GetBuff(TankConsts.PlayerIndex, TankBuffType.AddTween);
-            if (addTweenBuff != null)
-            {
-                var time = addTweenBuff.RemoveTime - TimeInfo.Instance.ClientFrameTime();
-                buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.TweenDisplay, time);
-                //Log.Warning($"Add tween display time {time}");
-                buffComponent.RemoveBuff(TankConsts.PlayerIndex, TankBuffType.AddTween);
+            // var addTweenBuff = buffComponent.GetBuff(TankConsts.PlayerIndex, TankBuffType.AddTween);
+            // if (addTweenBuff != null)
+            // {
+            //     var time = addTweenBuff.RemoveTime - TimeInfo.Instance.ClientFrameTime();
+            //     buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.TweenDisplay, time);
+            //     //Log.Warning($"Add tween display time {time}");
+            //     buffComponent.RemoveBuff(TankConsts.PlayerIndex, TankBuffType.AddTween);
 
-                transform.DOMove(targetPosition, time / 1000.0f);
-            }
+            //     transform.DOMove(targetPosition, time / 1000.0f);
+            // }
 
             if (buffComponent.GetBuff(TankConsts.PlayerIndex, TankBuffType.TweenDisplay) != null)
             {

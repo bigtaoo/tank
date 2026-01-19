@@ -95,8 +95,8 @@ namespace ET
                     }
                 case TankItemType.BaseWallUpgrade:
                     {
-                        var baseComponent = self.Root().GetComponent<TankBaseComponent>();
-                        baseComponent.UpgradeBaseWalls();
+                        // var baseComponent = self.Root().GetComponent<TankBaseComponent>();
+                        // baseComponent.UpgradeBaseWalls();
                         break;
                     }
                 case TankItemType.PlayerTankLevelUp:

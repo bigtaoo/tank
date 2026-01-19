@@ -88,8 +88,8 @@ namespace ET.Client
                     }
                 case TankSkillType.WallUpgradeSkill:
                     {
-                        var baseComponent = self.Root().GetComponent<TankBaseComponent>();
-                        baseComponent.UpgradeBaseWalls();
+                        // var baseComponent = self.Root().GetComponent<TankBaseComponent>();
+                        // baseComponent.UpgradeBaseWalls();
                         break;
                     }
                 default: break;
