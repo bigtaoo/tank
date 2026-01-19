@@ -88,7 +88,7 @@ namespace ET
             robotComponent.RobotsToRemove.Clear();
 
             var remainingRobot = 0;
-            foreach (var c in robotComponent.RemainingRobotsCount)
+            foreach (var c in robotComponent.InitialRemainingRobotsCount)
             {
                 remainingRobot += c;
             }

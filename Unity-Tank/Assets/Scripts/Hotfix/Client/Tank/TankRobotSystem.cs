@@ -96,6 +96,13 @@ namespace ET
             }
         }
 
+        public static void SetRemainingRobots(this TankRobotComponent self, int v1, int v2, int v3)
+        {
+            self.RemainingRobotsCount[0] = v1;
+            self.RemainingRobotsCount[1] = v2;
+            self.RemainingRobotsCount[2] = v3;
+        }
+
         public static void CheckRobotAlive(this TankRobotComponent self)
         {
             foreach(var key in self.Robots.Keys.ToList())
@@ -108,7 +115,7 @@ namespace ET
                     self.SpawnInfos[robot.SpawnPointId].SpawnTime = 0;
                     self.RobotsToRemove.Add(robot);
                     self.Robots.Remove(key);
-                    self.RemainingRobotsCount[robot.SpawnLevel - 1]--;
+                    self.InitialRemainingRobotsCount[robot.SpawnLevel - 1]--;
                 }
             }
         }

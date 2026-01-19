@@ -97,6 +97,8 @@ namespace ET
                 }
             }
             robotComponent.RemoveDeadRobots(tankInfos);
+            var remainingRobotInfo = self.tankLogic.SCCommand.GameInfo.RemainingRobotsCount;
+            robotComponent.SetRemainingRobots(remainingRobotInfo[0], remainingRobotInfo[1], remainingRobotInfo[2]);
 
             var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
             bulletComponent.UpdateSCBulletInfo(self.tankLogic.SCCommand.BulletInfos);
@@ -125,6 +127,9 @@ namespace ET
                     default: break;
                 }
             }
+
+            var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
+            gameInfoComponent.SetGold(self.tankLogic.SCCommand.GameInfo.Gold);
             
             self.tankLogic.SCCommand.ClearData();
         }

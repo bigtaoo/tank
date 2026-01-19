@@ -4,5 +4,6 @@ namespace TankLogic
     {
         public int PlayerLifes { get; set; }
         public int[] RemainingRobotsCount { get; set; } = new int[3];
+        public int Gold { get; set; }
     }
 }

@@ -57,7 +57,7 @@ namespace ET
                     
                     robotComponent.SpawnInfos.Add(spawnInfo);
                     spawnPoint.SetActive(false);
-                    robotComponent.RemainingRobotsCount[initiaConfig.RobotLevel(i) - 1] += initiaConfig.RobotCount(i);
+                    robotComponent.InitialRemainingRobotsCount[initiaConfig.RobotLevel(i) - 1] += initiaConfig.RobotCount(i);
                     robotComponent.RemainingSpawnRobots[initiaConfig.RobotLevel(i) - 1] += initiaConfig.RobotCount(i);
                 }
             }
