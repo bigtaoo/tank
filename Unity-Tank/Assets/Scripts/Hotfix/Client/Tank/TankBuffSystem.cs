@@ -10,23 +10,23 @@ namespace ET
 
         }
 
-        [EntitySystem]
-        private static void Update(this TankBuffComponent self)
-        {
-            var currentTime = TimeInfo.Instance.ClientFrameTime();
-            foreach(var tankBuff in self.TankBuffs.Values)
-            {
-                for (var i = tankBuff.Count - 1; i >= 0; i--)
-                {
-                    var buff = tankBuff[i];
-                    if (buff.RemoveTime <  currentTime)
-                    {
-                        Log.Info($"Remove buff: {buff.Type}");
-                        tankBuff.RemoveAt(i);
-                    }
-                }
-            }
-        }
+        // [EntitySystem]
+        // private static void Update(this TankBuffComponent self)
+        // {
+        //     var currentTime = TimeInfo.Instance.ClientFrameTime();
+        //     foreach(var tankBuff in self.TankBuffs.Values)
+        //     {
+        //         for (var i = tankBuff.Count - 1; i >= 0; i--)
+        //         {
+        //             var buff = tankBuff[i];
+        //             if (buff.RemoveTime <  currentTime)
+        //             {
+        //                 Log.Info($"Remove buff: {buff.Type}");
+        //                 tankBuff.RemoveAt(i);
+        //             }
+        //         }
+        //     }
+        // }
 
         public static void AddBuff(this TankBuffComponent self, int TankId, TankBuffType type, long persistTimeMS) 
         {

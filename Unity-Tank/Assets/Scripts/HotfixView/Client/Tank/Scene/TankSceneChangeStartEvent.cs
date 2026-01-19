@@ -53,7 +53,7 @@ namespace ET.Client
             scene.RemoveComponent<TankBulletComponent>();
             scene.RemoveComponent<TankEffectComponent>();
             scene.RemoveComponent<TankRobotComponent>();
-            scene.RemoveComponent<TankDamageComponent>();
+            // scene.RemoveComponent<TankDamageComponent>();
             scene.RemoveComponent<TankBuffComponent>();
             scene.RemoveComponent<TankGameResultComponent>();
             scene.RemoveComponent<TankItemComponent>();
