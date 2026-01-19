@@ -99,6 +99,7 @@ namespace ET
             robotComponent.RemoveDeadRobots(tankInfos);
             var remainingRobotInfo = self.tankLogic.SCCommand.GameInfo.RemainingRobotsCount;
             robotComponent.SetRemainingRobots(remainingRobotInfo[0], remainingRobotInfo[1], remainingRobotInfo[2]);
+            playerComponent.SetPlayerLifes(self.tankLogic.SCCommand.GameInfo.PlayerLifes);
 
             var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
             bulletComponent.UpdateSCBulletInfo(self.tankLogic.SCCommand.BulletInfos);

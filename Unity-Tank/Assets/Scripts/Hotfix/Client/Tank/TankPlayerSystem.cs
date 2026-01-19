@@ -96,6 +96,11 @@ namespace ET
             // Log.Warning($"New position: X {position.X}, Y {position.Y}");
         }
 
+        public static void SetPlayerLifes(this TankPlayerComponent self, int playerLifes)
+        {
+            self.PlayerLifes = playerLifes;
+        }
+
         // private static void CheckHelth(this TankPlayerComponent self)
         // {
         //     if (self.PlayerLifes <= 0)
