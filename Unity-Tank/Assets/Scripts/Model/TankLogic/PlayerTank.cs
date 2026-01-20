@@ -69,6 +69,10 @@ namespace TankLogic
                 var effect = new Effect(_main.GetId(), PlayerId, PlayerData.CurrentPosition, EffectType.InvincibleShield, 3000);
                 _main.EffectManager.AddClientEffect(effect);
             }
+            if (PlayerData.PlayerLifes <= 0)
+            {
+                _main.SetGameOver();
+            }
         }
 
         private void AdjustStopPosition()

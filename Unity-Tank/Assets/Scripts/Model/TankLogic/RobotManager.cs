@@ -29,6 +29,12 @@ namespace TankLogic
 
         internal void UpdateRobots()
         {
+            if (RemainingRobotsCount[0] <= 0 && RemainingRobotsCount[1] <= 0 && RemainingRobotsCount[2] <= 0)
+            {
+                _main.SetGameOver();
+                return;
+            }
+            
             SpawnRobot();
 
             foreach (var id in Robots.Keys.ToList())
