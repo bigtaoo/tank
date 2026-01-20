@@ -15,6 +15,7 @@ namespace TankLogic
         public const uint FrameTime = 20;
         internal uint GameTime { get; private set; }
         internal uint IdGenerator { get; private set; }
+        internal bool IsGameOver { get; private set; }
         public SCCommand SCCommand { get; set; } = new();
 
         public Main(ulong seed, ILogger logger)
@@ -37,6 +38,7 @@ namespace TankLogic
             initializeMap.Frame = 1;
             initializePlayer.Frame = 1;
             robotsCommand.Frame = 1;
+            IsGameOver = false;
 
             CommandManager.AddCommand(initializeMap);
             CommandManager.AddCommand(initializePlayer);
@@ -45,6 +47,10 @@ namespace TankLogic
 
         public void Update()
         {
+            if (IsGameOver)
+            {
+                return;
+            }
             ++Frame;
             GameTime += FrameTime;
 
@@ -61,6 +67,10 @@ namespace TankLogic
 
         public void AddCommand(Command command)
         {
+            if (IsGameOver)
+            {
+                return;
+            }
             command.Frame = Frame + 1;
             CommandManager.AddCommand(command);
         }
@@ -68,6 +78,11 @@ namespace TankLogic
         internal uint GetId()
         {
             return ++IdGenerator;
+        }
+
+        internal void SetGameOver()
+        {
+            IsGameOver = true;
         }
 
         private void UpdateSCCommand()
