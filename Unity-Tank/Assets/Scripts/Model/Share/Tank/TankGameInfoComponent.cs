@@ -7,5 +7,6 @@ namespace ET
     {
         public TankGameInfo GameInfo { get; set; } = new TankGameInfo();
         public ILogger TankLogicUnityLogger { get; set; }
+        public bool IsGameEnd { get; set; }
     }
 }

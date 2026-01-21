@@ -154,7 +154,9 @@ namespace TankLogic
                 };
                 SCCommand.EffectInfos.Add(effectInfo);
             }
-            EffectManager.ClientEffects.Clear();            
+            EffectManager.ClientEffects.Clear();         
+
+            SCCommand.GameInfo.IsGameEnd = IsGameOver;   
 
             // Log.Warning($"tank infos: {SCCommand.TankInfos.Count}");
         }
