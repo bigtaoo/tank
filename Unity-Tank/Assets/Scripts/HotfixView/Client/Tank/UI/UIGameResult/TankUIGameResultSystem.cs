@@ -29,6 +29,9 @@ namespace ET.Client
         {
             SoundManager.Instance.PlayButtonClick();
 
+            var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
+            gameInfoComponent.IsGameEnd = false;
+
             await TankSceneChangeHelper.SceneChangeTo(self.Root(), TankMapType.UI, "init", self.Root().InstanceId);
             var scene = self.Root();
             await UIHelper.Create(scene, UIType.TankUIGameMode, UILayer.Mid);

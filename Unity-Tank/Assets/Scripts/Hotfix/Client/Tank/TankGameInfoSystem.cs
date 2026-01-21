@@ -29,6 +29,7 @@ namespace ET
 
         public static void StartNewGame(this TankGameInfoComponent self, int mapIndex)
         {
+            self.IsGameResultUIShowed = false;
             self.GameInfo.MapIndex = mapIndex;
             self.GameInfo.GameStartTime = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
         }

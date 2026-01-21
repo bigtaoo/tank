@@ -16,16 +16,15 @@ namespace ET
             {
                 tankGameInfoComponent.TankLogicUnityLogger = new TankLogicUnityLogger();
             }
-            self.IsGameResultUIShowed = false;
         }
 
         [EntitySystem]
         private static void Update(this ET.TankClientGameInfoComponent self)
         {
             var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
-            if (!self.IsGameResultUIShowed && gameInfoComponent.IsGameEnd)
+            if (!gameInfoComponent.IsGameResultUIShowed && gameInfoComponent.IsGameEnd)
             {
-                self.IsGameResultUIShowed = true;
+                gameInfoComponent.IsGameResultUIShowed = true;
                 UIHelper.Create(self.Root(), UIType.TankUIGameResult, UILayer.Mid).Coroutine();
             }
         }

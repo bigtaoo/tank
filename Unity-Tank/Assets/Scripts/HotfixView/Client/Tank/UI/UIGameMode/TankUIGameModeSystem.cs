@@ -88,7 +88,7 @@ namespace ET.Client
 
             var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
             gameInfoComponent.StartNewGame(mapIndex);
-
+            
             Log.Info($"Start single mode for map: {mapIndex}");
             await TankSceneChangeHelper.SceneChangeTo(self.Root(), TankMapType.Game, $"level-{mapIndex}", self.Root().InstanceId);
             await UIHelper.Remove(self.Root(), UIType.TankUIGameMode);
