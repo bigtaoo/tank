@@ -60,6 +60,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Module/Unit/Unit.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Console/ConsoleHandlerAttribute.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Commands/TileType.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Headquarter.cs" />
     <Compile Include="Assets/Scripts/Model/Client/LockStep/LSClientUpdater.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Models/Camp.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankGameInfoComponent.cs" />
