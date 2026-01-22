@@ -64,6 +64,11 @@ namespace TankLogic
 
         private void CheckCollisionWithTiles()
         {
+            if (_main.Headquarter.IsHitBase(BulletData.Position.X, BulletData.Position.Y))
+            {
+                _main.SetGameOver();
+                return;  
+            };
             var tile = _main.TileManager.GetTile(BulletData.Position.X / 1000, BulletData.Position.Y / 1000);
             var neighborTile = BulletData.Direction == Direction.Up || BulletData.Direction == Direction.Down ?
                 _main.TileManager.GetTile(BulletData.Position.X / 1000 - 1, BulletData.Position.Y / 1000) :
@@ -154,8 +159,8 @@ namespace TankLogic
 
         private bool Hit(Position position)
         {
-            return Math.Abs(position.X - BulletData.Position.X) < 500 && 
-                Math.Abs(position.Y - BulletData.Position.Y) < 500;
+            return Math.Abs(position.X - BulletData.Position.X) < 800 && 
+                Math.Abs(position.Y - BulletData.Position.Y) < 800;
         }
 
         private void CreateExplosionEffect()

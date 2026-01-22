@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace TankLogic
@@ -5,6 +6,7 @@ namespace TankLogic
     internal class Headquarter
     {
         private List<Position> Walls;
+        private Position BasePosition;
 
         internal Headquarter()
         {
@@ -19,6 +21,12 @@ namespace TankLogic
                 new(101, 91),
                 new(101, 90),
             };
+            BasePosition = new(100, 91);
+        }
+
+        internal bool IsHitBase(int x, int y)
+        {
+            return Math.Abs(x - BasePosition.X * 1000) < 500 && Math.Abs(y - BasePosition.Y * 1000) < 500;
         }
     }
 }

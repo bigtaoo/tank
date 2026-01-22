@@ -10,6 +10,7 @@ namespace TankLogic
         internal EffectManager EffectManager { get; private set; }
         internal BuffManager BuffManager { get; private set; }
         internal TileManager TileManager { get; private set; }
+        internal Headquarter Headquarter { get; private set; }
         internal ILogger Logger { get; private set; }
         internal uint Frame { get; private set; }
         public const uint FrameTime = 20;
@@ -29,6 +30,7 @@ namespace TankLogic
             EffectManager = new EffectManager(this);
             BuffManager = new BuffManager(this);
             TileManager = new TileManager(this);
+            Headquarter = new Headquarter();
 
             Logger.Warning($"New Logic with seed: {seed}");
         }
