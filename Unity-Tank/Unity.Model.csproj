@@ -77,6 +77,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Module/Message/LogMsg.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Message/SessionIdleCheckerComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Plugins/Example/ModelShare.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Models/ItemData.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Commands/MoveCommand.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Enums/TankItemType.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Message/IMessageSessionHandler.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Assets/Scripts/Model/Share/EntitySerializeRegister.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Unit/UnitEventType.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/CommandManager.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Models/ItemType.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Bullet.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/AI/AAIHandler.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/ILSUpdateSystem.cs" />
@@ -167,6 +169,7 @@
     <Compile Include="Assets/Scripts/Model/TankLogic/Models/TankData.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/IRoomMessage.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/RobotTank.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/ItemManager.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Enums/TankSkillType.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Numeric/NumericWatcherComponent.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Plugins/Example/ModelClient.cs" />
@@ -200,6 +203,7 @@
     <Compile Include="Assets/Scripts/Model/Share/LockStep/FixedTimeCounter.cs" />
     <Compile Include="Assets/Scripts/Model/Client/LockStep/LSReplayUpdater.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Buff.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Item.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Models/Command.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/PlayerManager.cs" />
     <Compile Include="Assets/Scripts/Model/Client/Demo/Main/ClientSenderComponent.cs" />
