@@ -18,6 +18,7 @@ namespace TankLogic
         internal uint GameTime { get; private set; }
         internal uint IdGenerator { get; private set; }
         internal bool IsGameOver { get; private set; }
+        internal int Gold { get; private set; }
         public SCCommand SCCommand { get; set; } = new();
 
         public Main(ulong seed, ILogger logger)
@@ -87,6 +88,11 @@ namespace TankLogic
         internal void SetGameOver()
         {
             IsGameOver = true;
+        }
+
+        internal void AddGold()
+        {
+            Gold++;
         }
 
         private void UpdateSCCommand()

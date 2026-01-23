@@ -93,22 +93,24 @@ namespace TankLogic
                     }
                 case ItemType.Gold:
                     {
-                        var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
-                        gameInfoComponent.AddGold();
+                        _main.AddGold();
                         break;
                     }
                 case ItemType.PlayerLife:
                     {
-                        var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-                        playerComponent.UpdatePlayerLifes(1);
+                        var player = _main.PlayerManager.GetPlayer();
+                        player.PlayerData.PlayerLifes++;
                         break;
                     }
                 case ItemType.Shield:
                     {
-                        var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                        buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.Invincible, 3000);
-                        var attachedEffectComponent = self.Root().GetComponent<TankAttachedEffectComponent>();
-                        // attachedEffectComponent.AddAttachedEffect(TankAttachedEffectType.InvincibleShield, 3000, null, true);
+                        var player = _main.PlayerManager.GetPlayer();
+                        var buffData = new BuffData(_main.GetId(), player.PlayerId, BuffType.Invincible, 3000);
+                        _main.BuffManager.AddBuff(buffData);
+
+                        var effect = new Effect(_main.GetId(), player.PlayerId, player.PlayerData.CurrentPosition.Copy(),
+                            EffectType.InvincibleShield,3000);
+                        _main.EffectManager.AddClientEffect(effect);
                         break;
                     }
                 case ItemType.TimeStop:
