@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,6 +8,7 @@ namespace TankLogic
     {
         private readonly Main _main;
         private readonly Dictionary<uint, Item> Items = new();
+        private readonly ItemType[] ItemTypes = (ItemType[])Enum.GetValues(typeof(ItemType));
 
         internal ItemManager(Main main)
         {
@@ -35,32 +37,27 @@ namespace TankLogic
             {
                 return;
             }
-            var itemIndex = _main.Random.RandomInt(0, SpawnItemTypes.Length);
-            var itemType = self.SpawnItemTypes[itemIndex];
+            var itemIndex = _main.Random.RandomInt(1, (int)ItemType.Count);
+            var itemType = ItemTypes[itemIndex];
 
-            var itemData = new ItemData
-            {
-                ItemId = self.ItemId++,
-                ItemType = itemType,
-                LivingEndTime = 10 * 1000,
-                Position = position,
-            };
+            var itemData = new ItemData(itemType, position, 10 * 1000);
+            var item = new Item(_main, itemData);
             Items.Add(item.ItemId, item);
-            _main.Logger.Warning($"Spawn item: {item.ToJson()}");
+            _main.Logger.Warning($"Spawn item: {item.ItemId}");
         }
 
         private void PickUpItem()
         {
-            var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-            var playerPosition = playerComponent.GetPlayerPosition();
-
-            foreach (var item in self.Items.Values)
+            var player = _main.PlayerManager.GetPlayer();
+            var position = player.PlayerData.CurrentPosition;
+            foreach (var key in Items.Keys.ToList())
             {
-                if (math.abs(playerPosition.X - item.Position.X) < 0.5f &&
-                    math.abs(playerPosition.Y - item.Position.Y) < 0.5f)
+                var item = Items[key];
+                if (Math.Abs(position.X - item.ItemData.Position.X) < 500 &&
+                    Math.Abs(position.Y - item.ItemData.Position.Y) < 500)
                 {
-                    self.ItemEffect(item);
-                    self.RemoveItem(item);
+                    ItemEffect(item);
+                    Items.Remove(key);
                     break;
                 }
             }
@@ -68,9 +65,9 @@ namespace TankLogic
 
         private void ItemEffect(Item item)
         {
-            switch (item.ItemType)
+            switch (item.ItemData.ItemType)
             {
-                case TankItemType.Bomb:
+                case ItemType.Bomb:
                     {
                         // var robotComponent = self.Root().GetComponent<TankRobotComponent>();
                         // var buffComponent = self.Root().GetComponent<TankBuffComponent>();
@@ -82,31 +79,31 @@ namespace TankLogic
                         // }
                         break;
                     }
-                case TankItemType.BaseWallUpgrade:
+                case ItemType.BaseWallUpgrade:
                     {
                         // var baseComponent = self.Root().GetComponent<TankBaseComponent>();
                         // baseComponent.UpgradeBaseWalls();
                         break;
                     }
-                case TankItemType.PlayerTankLevelUp:
+                case ItemType.PlayerTankLevelUp:
                     {
-                        var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-                        playerComponent.UpdatePlayerTankLevel(1);
+                        var player = _main.PlayerManager.GetPlayer();
+                        player.UpgradeTankLevel();
                         break;
                     }
-                case TankItemType.Gold:
+                case ItemType.Gold:
                     {
                         var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
                         gameInfoComponent.AddGold();
                         break;
                     }
-                case TankItemType.PlayerLife:
+                case ItemType.PlayerLife:
                     {
                         var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
                         playerComponent.UpdatePlayerLifes(1);
                         break;
                     }
-                case TankItemType.Shield:
+                case ItemType.Shield:
                     {
                         var buffComponent = self.Root().GetComponent<TankBuffComponent>();
                         buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.Invincible, 3000);
@@ -114,7 +111,7 @@ namespace TankLogic
                         // attachedEffectComponent.AddAttachedEffect(TankAttachedEffectType.InvincibleShield, 3000, null, true);
                         break;
                     }
-                case TankItemType.TimeStop:
+                case ItemType.TimeStop:
                     {
                         // var robotComponent = self.Root().GetComponent<TankRobotComponent>();
                         // var buffComponent = self.Root().GetComponent<TankBuffComponent>();

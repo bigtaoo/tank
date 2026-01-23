@@ -10,5 +10,6 @@ namespace TankLogic
         PlayerLife,
         Shield,
         TimeStop,
+        Count,
     }
 }

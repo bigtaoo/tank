@@ -54,5 +54,10 @@ namespace TankLogic
             var player = Players.First();
             player.PlayerShoot();
         }
+
+        internal PlayerTank GetPlayer()
+        {
+            return Players.First();
+        }
     }
 }

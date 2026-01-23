@@ -132,5 +132,14 @@ namespace TankLogic
                 }
             }
         }
+    
+        internal void UpgradeTankLevel()
+        {
+            PlayerData.Level++;
+            if (PlayerData.Level > 3)
+            {
+                PlayerData.Level = 3;
+            }
+        }
     }
 }
