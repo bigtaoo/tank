@@ -5,11 +5,13 @@ namespace TankLogic
 {
     internal class Headquarter
     {
+        private readonly Main _main;
         private List<Position> Walls;
         private Position BasePosition;
 
-        internal Headquarter()
+        internal Headquarter(Main main)
         {
+            _main = main;
             Walls = new List<Position>
             {
                 new(98, 90),
@@ -27,6 +29,14 @@ namespace TankLogic
         internal bool IsHitBase(int x, int y)
         {
             return Math.Abs(x - BasePosition.X * 1000) < 500 && Math.Abs(y - BasePosition.Y * 1000) < 500;
+        }
+
+        internal void BaseWallsUpgrade()
+        {
+            foreach (var wall in Walls)
+            {
+                _main.TileManager.UpdateTile(wall.X, wall.Y, TileType.Steel);
+            }
         }
     }
 }

@@ -69,20 +69,18 @@ namespace TankLogic
             {
                 case ItemType.Bomb:
                     {
-                        // var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-                        // var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                        // var selectedRobot = robotComponent.Robots.Values.Where(r => buffComponent.GetBuff(r.RobotId, TankBuffType.Invincible) == null)
-                        //     .Take(3).ToList();
-                        // foreach (var robot in selectedRobot)
-                        // {
-                        //     robot.Level = 0;
-                        // }
+                        var selectedRobot = _main.RobotManager.Robots.Values
+                            .Where(r => _main.BuffManager.GetBuff(r.RobotId, BuffType.Invincible) == null)
+                            .Take(3).ToList();
+                        foreach (var robot in selectedRobot)
+                        {
+                            robot.RobotData.Level = 0;
+                        }
                         break;
                     }
                 case ItemType.BaseWallUpgrade:
                     {
-                        // var baseComponent = self.Root().GetComponent<TankBaseComponent>();
-                        // baseComponent.UpgradeBaseWalls();
+                        _main.Headquarter.BaseWallsUpgrade();
                         break;
                     }
                 case ItemType.PlayerTankLevelUp:
@@ -115,12 +113,11 @@ namespace TankLogic
                     }
                 case ItemType.TimeStop:
                     {
-                        // var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-                        // var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                        // foreach (var robot in robotComponent.Robots.Values)
-                        // {
-                        //     buffComponent.AddBuff(robot.RobotId, TankBuffType.CanNotMove, 3000);
-                        // }
+                        foreach (var robot in _main.RobotManager.Robots.Values)
+                        {
+                            var buffData = new BuffData(_main.GetId(), robot.RobotId, BuffType.CanNotMove, 3000);
+                            _main.BuffManager.AddBuff(buffData);
+                        }
                         break;
                     }
             }

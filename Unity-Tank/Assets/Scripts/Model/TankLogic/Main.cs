@@ -33,7 +33,7 @@ namespace TankLogic
             BuffManager = new BuffManager(this);
             TileManager = new TileManager(this);
             ItemManager = new ItemManager(this);
-            Headquarter = new Headquarter();
+            Headquarter = new Headquarter(this);
 
             Logger.Warning($"New Logic with seed: {seed}");
         }
