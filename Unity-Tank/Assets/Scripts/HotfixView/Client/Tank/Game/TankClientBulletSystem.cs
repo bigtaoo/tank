@@ -53,6 +53,7 @@ namespace ET
             {
                 var bulletGameObject = self.RecycledBullets.Count > 0 ? self.RecycledBullets.Pop() : UnityEngine.Object.Instantiate(self.Bullet);
                 bulletGameObject.SetActive(true);
+                bulletGameObject.name = $"Bullet-{bulletId}";
                 self.Bullets.Add(bulletId, bulletGameObject);
             }
             bulletComponent.BulletsToAdd.Clear();

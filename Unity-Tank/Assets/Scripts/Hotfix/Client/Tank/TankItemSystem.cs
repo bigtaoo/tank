@@ -1,9 +1,7 @@
-using ET.Client;
 using MongoDB.Bson;
 using System.Collections.Generic;
 using System.Linq;
 using TankLogic;
-using Unity.Mathematics;
 
 namespace ET
 {
@@ -33,6 +31,7 @@ namespace ET
 
         public static void UpdateSCItemInfo(this TankItemComponent self, List<SCItemInfo> itemInfos)
         {
+            Log.Warning($"Logic item count: {itemInfos.Count}, client item count: {self.Items.Count}");
             foreach (var item in self.Items.Keys.ToList())
             {
                 var findItem = itemInfos.FirstOrDefault(i => i.ItemId == item);
@@ -40,11 +39,13 @@ namespace ET
                 {
                     self.ItemsToRemove.Add(self.Items[item]);
                     self.Items.Remove(item);
+                    Log.Warning($"Remove client item id: {item}");
                 }
             }
             foreach (var itemInfo in itemInfos)
             {
                 var findItem = self.Items.Values.FirstOrDefault(i => i.ItemId == itemInfo.ItemId);
+                // Log.Warning($"Find client item: {findItem == null}");
                 if (findItem == null)
                 {
                     var item = new TankItem
@@ -62,11 +63,11 @@ namespace ET
                             _ => TankItemType.None,
                         },
                         LivingEndTime = TimeInfo.Instance.ClientFrameTime() + TankConsts.ItemLivingMS,
-                        Position = new TankPosition { X = itemInfo.X, Y = itemInfo.Y },
+                        Position = new TankPosition { X = itemInfo.X / 1000.0f, Y = itemInfo.Y / 1000.0f },
                     };
                     self.Items[item.ItemId] = item;
                     self.ItemsToAdd.Add(item);
-                    Log.Info($"Spawn item: {item.ToJson()}");
+                    Log.Info($"Spawn client item: {item.ItemId}");
                 }
             }
         }

@@ -22,6 +22,7 @@ namespace TankLogic
                 var item = Items[key];
                 if (item.LivingEndTime < _main.GameTime)
                 {
+                    _main.Logger.Warning($"Remove item {key}");
                     Items.Remove(key);
                 }
             }
