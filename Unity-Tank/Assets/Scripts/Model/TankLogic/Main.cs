@@ -139,6 +139,17 @@ namespace TankLogic
                 };
                 SCCommand.BulletInfos.Add(bulletInfo);
             }
+            foreach (var item in ItemManager.Items.Values)
+            {
+                SCItemInfo itemInfo = new()
+                {
+                    ItemId = item.ItemId,
+                    X = item.ItemData.Position.X,
+                    Y = item.ItemData.Position.Y,
+                    ItemType = item.ItemData.ItemType,
+                };
+                SCCommand.ItemInfos.Add(itemInfo);
+            }
             foreach (var tile in TileManager.UpdatedTiles)
             {
                 SCTileInfo tileInfo = new()

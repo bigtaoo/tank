@@ -165,6 +165,7 @@
     <Compile Include="Assets/Scripts/Model/Share/Tank/TankBuffComponent.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Tile.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankItem.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Commands/SCItemInfo.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Commands/SCTankInfo.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Models/TankData.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/IRoomMessage.cs" />

@@ -76,6 +76,7 @@ namespace TankLogic
             if (RobotData.Level < 1)
             {
                 ToRemove = true;
+                _main.ItemManager.SpawnItem(RobotData.CurrentPosition.Copy());
             }
         }
 

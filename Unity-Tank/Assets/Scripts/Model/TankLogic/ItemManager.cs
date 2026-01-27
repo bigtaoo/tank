@@ -7,7 +7,7 @@ namespace TankLogic
     internal class ItemManager
     {
         private readonly Main _main;
-        private readonly Dictionary<uint, Item> Items = new();
+        internal Dictionary<uint, Item> Items { get; private set; } = new();
         private readonly ItemType[] ItemTypes = (ItemType[])Enum.GetValues(typeof(ItemType));
 
         internal ItemManager(Main main)
@@ -33,7 +33,7 @@ namespace TankLogic
         {
             var spawnItemRate = _main.Random.RandomInt(0, 100);
             _main.Logger.Warning($"Item spawn rate: {spawnItemRate}");
-            if (spawnItemRate > 50)
+            if (spawnItemRate > 150)
             {
                 return;
             }
