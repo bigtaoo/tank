@@ -7,7 +7,7 @@ namespace ET
     public class TankClientItemComponent : Entity, IAwake, IUpdate
     {
         // public Dictionary<TankItemType, GameObject> ItemTypeToGameObject {  get; set; } = new Dictionary<TankItemType, GameObject>();
-        public Dictionary<TankItemType, List<GameObject>> AvaiableItemResources { get; set; } = new Dictionary<TankItemType, List<GameObject>>();
-        public Dictionary<int, GameObject> Items { get; set; } = new Dictionary<int, GameObject>();
+        public Dictionary<TankItemType, List<GameObject>> AvaiableItemResources { get; set; } = new();
+        public Dictionary<uint, GameObject> Items { get; set; } = new();
     }
 }

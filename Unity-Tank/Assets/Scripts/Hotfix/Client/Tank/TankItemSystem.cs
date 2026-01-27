@@ -12,7 +12,7 @@ namespace ET
         [EntitySystem]
         private static void Awake(this TankItemComponent self)
         {
-            self.ItemId = 10;
+            // self.ItemId = 10;
         }
 
         // [EntitySystem]
@@ -31,9 +31,10 @@ namespace ET
 
         public static void UpdateSCItemInfo(this TankItemComponent self, List<SCItemInfo> itemInfos)
         {
-            Log.Warning($"Logic item count: {itemInfos.Count}, client item count: {self.Items.Count}");
+            // Log.Warning($"Logic item count: {itemInfos.Count}, client item count: {self.Items.Count}");
             foreach (var item in self.Items.Keys.ToList())
             {
+                // Log.Warning($"Client item key: {item}");
                 var findItem = itemInfos.FirstOrDefault(i => i.ItemId == item);
                 if (findItem == null)
                 {
@@ -50,7 +51,7 @@ namespace ET
                 {
                     var item = new TankItem
                     {
-                        ItemId = self.ItemId++,
+                        ItemId = itemInfo.ItemId,
                         ItemType = itemInfo.ItemType switch
                         {
                             ItemType.Bomb => TankItemType.Bomb,
