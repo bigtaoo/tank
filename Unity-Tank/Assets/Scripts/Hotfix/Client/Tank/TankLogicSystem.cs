@@ -118,6 +118,9 @@ namespace ET
                 tileMapComponent.SetTileType(tileMap.PosX, tileMap.PosY, tileType);
             }
 
+            var itemComponent = self.Root().GetComponent<TankItemComponent>();
+            itemComponent.UpdateSCItemInfo(self.tankLogic.SCCommand.ItemInfos);
+
             var attachedEffectComponent = self.Root().GetComponent<TankAttachedEffectComponent>();
             foreach (var effect in self.tankLogic.SCCommand.EffectInfos)
             {

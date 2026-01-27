@@ -1,6 +1,8 @@
 using ET.Client;
 using MongoDB.Bson;
+using System.Collections.Generic;
 using System.Linq;
+using TankLogic;
 using Unity.Mathematics;
 
 namespace ET
@@ -15,127 +17,87 @@ namespace ET
             self.ItemId = 10;
         }
 
-        [EntitySystem]
-        private static void Update(this TankItemComponent self)
+        // [EntitySystem]
+        // private static void Update(this TankItemComponent self)
+        // {
+        //     var currentTime = TimeInfo.Instance.ClientFrameTime();
+        //     foreach(var key in self.Items.Keys.ToList())
+        //     {
+        //         var item = self.Items[key];
+        //         if (item.LivingEndTime < currentTime)
+        //         {
+        //             self.RemoveItem(item);
+        //         }
+        //     }
+        // }
+
+        public static void UpdateSCItemInfo(this TankItemComponent self, List<SCItemInfo> itemInfos)
         {
-            var currentTime = TimeInfo.Instance.ClientFrameTime();
-            foreach(var key in self.Items.Keys.ToList())
+            foreach (var item in self.Items.Keys.ToList())
             {
-                var item = self.Items[key];
-                if (item.LivingEndTime < currentTime)
+                var findItem = itemInfos.FirstOrDefault(i => i.ItemId == item);
+                if (findItem == null)
                 {
-                    self.RemoveItem(item);
+                    self.ItemsToRemove.Add(self.Items[item]);
+                    self.Items.Remove(item);
                 }
             }
-
-            self.PickUpItem();
-        }
-
-        public static void SpawnItem(this TankItemComponent self, TankPosition position)
-        {
-            var spawnItemRate = RandomGenerator.RandUInt32() % 100;
-            Log.Info($"Item spawn rate: {spawnItemRate}");
-            if (spawnItemRate > TankConsts.SpawnItemRate)
+            foreach (var itemInfo in itemInfos)
             {
-                return;
-            }
-            var itemIndex = RandomGenerator.RandUInt32() % self.SpawnItemTypes.Length;
-            var itemType = self.SpawnItemTypes[itemIndex];
-
-            var item = new TankItem
-            {
-                ItemId = self.ItemId++,
-                ItemType = itemType,
-                LivingEndTime = TimeInfo.Instance.ClientFrameTime() + TankConsts.ItemLivingMS,
-                Position = position,
-            };
-            self.Items[item.ItemId] = item;
-            self.ItemsToAdd.Add(item);
-            Log.Info($"Spawn item: {item.ToJson()}");
-        }
-
-        private static void PickUpItem(this TankItemComponent self)
-        {
-            var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-            var playerPosition = playerComponent.GetPlayerPosition();
-
-            foreach (var item in self.Items.Values)
-            {
-                if (math.abs(playerPosition.X - item.Position.X) < 0.5f &&
-                    math.abs(playerPosition.Y - item.Position.Y) < 0.5f)
+                var findItem = self.Items.Values.FirstOrDefault(i => i.ItemId == itemInfo.ItemId);
+                if (findItem == null)
                 {
-                    self.ItemEffect(item);
-                    self.RemoveItem(item);
-                    break;
+                    var item = new TankItem
+                    {
+                        ItemId = self.ItemId++,
+                        ItemType = itemInfo.ItemType switch
+                        {
+                            ItemType.Bomb => TankItemType.Bomb,
+                            ItemType.BaseWallUpgrade => TankItemType.BaseWallUpgrade,
+                            ItemType.Gold => TankItemType.Gold,
+                            ItemType.PlayerLife => TankItemType.PlayerLife,
+                            ItemType.PlayerTankLevelUp => TankItemType.PlayerTankLevelUp,
+                            ItemType.Shield => TankItemType.Shield,
+                            ItemType.TimeStop => TankItemType.TimeStop,
+                            _ => TankItemType.None,
+                        },
+                        LivingEndTime = TimeInfo.Instance.ClientFrameTime() + TankConsts.ItemLivingMS,
+                        Position = new TankPosition { X = itemInfo.X, Y = itemInfo.Y },
+                    };
+                    self.Items[item.ItemId] = item;
+                    self.ItemsToAdd.Add(item);
+                    Log.Info($"Spawn item: {item.ToJson()}");
                 }
             }
         }
 
-        private static void RemoveItem(this TankItemComponent self, TankItem item)
-        {
-            self.ItemsToRemove.Add(item);
-            self.Items.Remove(item.ItemId);
-        }
+        // public static void SpawnItem(this TankItemComponent self, TankPosition position)
+        // {
+        //     var spawnItemRate = RandomGenerator.RandUInt32() % 100;
+        //     Log.Info($"Item spawn rate: {spawnItemRate}");
+        //     if (spawnItemRate > TankConsts.SpawnItemRate)
+        //     {
+        //         return;
+        //     }
+        //     var itemIndex = RandomGenerator.RandUInt32() % self.SpawnItemTypes.Length;
+        //     var itemType = self.SpawnItemTypes[itemIndex];
 
-        private static void ItemEffect(this TankItemComponent self, TankItem item)
-        {
-            switch (item.ItemType)
-            {
-                case TankItemType.Bomb:
-                    {
-                        // var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-                        // var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                        // var selectedRobot = robotComponent.Robots.Values.Where(r => buffComponent.GetBuff(r.RobotId, TankBuffType.Invincible) == null)
-                        //     .Take(3).ToList();
-                        // foreach (var robot in selectedRobot)
-                        // {
-                        //     robot.Level = 0;
-                        // }
-                        break;
-                    }
-                case TankItemType.BaseWallUpgrade:
-                    {
-                        // var baseComponent = self.Root().GetComponent<TankBaseComponent>();
-                        // baseComponent.UpgradeBaseWalls();
-                        break;
-                    }
-                case TankItemType.PlayerTankLevelUp:
-                    {
-                        var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-                        playerComponent.UpdatePlayerTankLevel(1);
-                        break;
-                    }
-                case TankItemType.Gold:
-                    {
-                        var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
-                        gameInfoComponent.AddGold();
-                        break;
-                    }
-                case TankItemType.PlayerLife:
-                    {
-                        var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-                        playerComponent.UpdatePlayerLifes(1);
-                        break;
-                    }
-                case TankItemType.Shield:
-                    {
-                        var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                        buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.Invincible, 3000);
-                        var attachedEffectComponent = self.Root().GetComponent<TankAttachedEffectComponent>();
-                        // attachedEffectComponent.AddAttachedEffect(TankAttachedEffectType.InvincibleShield, 3000, null, true);
-                        break;
-                    }
-                case TankItemType.TimeStop:
-                    {
-                        // var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-                        // var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                        // foreach (var robot in robotComponent.Robots.Values)
-                        // {
-                        //     buffComponent.AddBuff(robot.RobotId, TankBuffType.CanNotMove, 3000);
-                        // }
-                        break;
-                    }
-            }
-        }
+        //     var item = new TankItem
+        //     {
+        //         ItemId = self.ItemId++,
+        //         ItemType = itemType,
+        //         LivingEndTime = TimeInfo.Instance.ClientFrameTime() + TankConsts.ItemLivingMS,
+        //         Position = position,
+        //     };
+        //     self.Items[item.ItemId] = item;
+        //     self.ItemsToAdd.Add(item);
+        //     Log.Info($"Spawn item: {item.ToJson()}");
+        // }
+
+        // private static void RemoveItem(this TankItemComponent self, TankItem item)
+        // {
+        //     self.ItemsToRemove.Add(item);
+        //     self.Items.Remove(item.ItemId);
+        // }
     }
 }

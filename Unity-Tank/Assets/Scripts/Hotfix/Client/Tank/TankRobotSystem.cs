@@ -103,28 +103,28 @@ namespace ET
             self.RemainingRobotsCount[2] = v3;
         }
 
-        public static void CheckRobotAlive(this TankRobotComponent self)
-        {
-            foreach(var key in self.Robots.Keys.ToList())
-            {
-                var robot = self.Robots[key];
-                if (robot.Level <= 0)
-                {
-                    self.SpawnItem(robot);
+        // public static void CheckRobotAlive(this TankRobotComponent self)
+        // {
+        //     foreach(var key in self.Robots.Keys.ToList())
+        //     {
+        //         var robot = self.Robots[key];
+        //         if (robot.Level <= 0)
+        //         {
+        //             // self.SpawnItem(robot);
 
-                    self.SpawnInfos[robot.SpawnPointId].SpawnTime = 0;
-                    self.RobotsToRemove.Add(robot);
-                    self.Robots.Remove(key);
-                    self.InitialRemainingRobotsCount[robot.SpawnLevel - 1]--;
-                }
-            }
-        }
+        //             self.SpawnInfos[robot.SpawnPointId].SpawnTime = 0;
+        //             self.RobotsToRemove.Add(robot);
+        //             self.Robots.Remove(key);
+        //             self.InitialRemainingRobotsCount[robot.SpawnLevel - 1]--;
+        //         }
+        //     }
+        // }
 
-        private static void SpawnItem(this TankRobotComponent self, TankRobot robot)
-        {
-            var itemComponent = self.Root().GetComponent<TankItemComponent>();
-            itemComponent.SpawnItem(robot.Position);
-        }
+        // private static void SpawnItem(this TankRobotComponent self, TankRobot robot)
+        // {
+        //     var itemComponent = self.Root().GetComponent<TankItemComponent>();
+        //     itemComponent.SpawnItem(robot.Position);
+        // }
 
         // private static void UpdateShooting(this TankRobotComponent self)
         // {
@@ -306,24 +306,24 @@ namespace ET
         //     }
         // }
 
-        private static TankDirection RotationToDirection(this TankRobotComponent self, int rotation)
-        {
-            if (rotation == 0)
-            {
-                return TankDirection.Up;
-            }
-            else if (rotation == 90)
-            {
-                return TankDirection.Left;
-            }
-            else if (rotation == 180)
-            {
-                return TankDirection.Down;
-            }
-            else
-            {
-                return TankDirection.Right;
-            }
-        }
+        // private static TankDirection RotationToDirection(this TankRobotComponent self, int rotation)
+        // {
+        //     if (rotation == 0)
+        //     {
+        //         return TankDirection.Up;
+        //     }
+        //     else if (rotation == 90)
+        //     {
+        //         return TankDirection.Left;
+        //     }
+        //     else if (rotation == 180)
+        //     {
+        //         return TankDirection.Down;
+        //     }
+        //     else
+        //     {
+        //         return TankDirection.Right;
+        //     }
+        // }
     }
 }
