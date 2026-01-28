@@ -77,7 +77,7 @@ namespace TankLogic
                             .Take(3).ToList();
                         foreach (var robot in selectedRobot)
                         {
-                            robot.RobotData.Level = 0;
+                            robot.OnRobotHit();
                         }
                         break;
                     }
