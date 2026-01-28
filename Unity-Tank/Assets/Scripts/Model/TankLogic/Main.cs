@@ -66,6 +66,7 @@ namespace TankLogic
             BuffManager.UpdateBuffs();
             TileManager.UpdateTiles();
             EffectManager.UpdateEffects();
+            ItemManager.UpdateItems();
 
             UpdateSCCommand();
         }

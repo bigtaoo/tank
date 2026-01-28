@@ -15,7 +15,7 @@ namespace TankLogic
             _main = main;
         }
 
-        internal void Update()
+        internal void UpdateItems()
         {
             foreach(var key in Items.Keys.ToList())
             {
@@ -33,7 +33,7 @@ namespace TankLogic
         internal void SpawnItem(Position position)
         {
             var spawnItemRate = _main.Random.RandomInt(0, 100);
-            _main.Logger.Warning($"Item spawn rate: {spawnItemRate}");
+            // _main.Logger.Warning($"Item spawn rate: {spawnItemRate}");
             if (spawnItemRate > 150)
             {
                 return;
@@ -44,7 +44,7 @@ namespace TankLogic
             var itemData = new ItemData(itemType, position, 10 * 1000);
             var item = new Item(_main, itemData);
             Items.Add(item.ItemId, item);
-            _main.Logger.Warning($"Spawn item: {item.ItemId}");
+            // _main.Logger.Warning($"Spawn item: {item.ItemId}");
         }
 
         private void PickUpItem()
@@ -54,9 +54,11 @@ namespace TankLogic
             foreach (var key in Items.Keys.ToList())
             {
                 var item = Items[key];
-                if (Math.Abs(position.X - item.ItemData.Position.X) < 500 &&
-                    Math.Abs(position.Y - item.ItemData.Position.Y) < 500)
+                // _main.Logger.Warning($"Player x {position.X}, y {position.Y}, item x {item.ItemData.Position.X}, y {item.ItemData.Position.Y}");
+                if (Math.Abs(position.X - item.ItemData.Position.X) < 1000 &&
+                    Math.Abs(position.Y - item.ItemData.Position.Y) < 1000)
                 {
+                    // _main.Logger.Warning($"Pick up item id: {item.ItemId}");
                     ItemEffect(item);
                     Items.Remove(key);
                     break;

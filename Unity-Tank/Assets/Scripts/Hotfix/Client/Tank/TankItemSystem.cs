@@ -1,4 +1,3 @@
-using MongoDB.Bson;
 using System.Collections.Generic;
 using System.Linq;
 using TankLogic;
@@ -40,7 +39,7 @@ namespace ET
                 {
                     self.ItemsToRemove.Add(self.Items[item]);
                     self.Items.Remove(item);
-                    Log.Warning($"Remove client item id: {item}");
+                    // Log.Warning($"Remove client item id: {item}");
                 }
             }
             foreach (var itemInfo in itemInfos)
@@ -68,7 +67,7 @@ namespace ET
                     };
                     self.Items[item.ItemId] = item;
                     self.ItemsToAdd.Add(item);
-                    Log.Info($"Spawn client item: {item.ItemId}");
+                    // Log.Info($"Spawn client item: {item.ItemId}");
                 }
             }
         }
