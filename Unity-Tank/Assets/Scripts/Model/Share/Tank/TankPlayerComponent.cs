@@ -14,7 +14,7 @@ namespace ET
         public long LastShootTime;
         public long ShootCoolDownTime { get; set; }= 1000;
         public int PlayerLifes;
-        public int TankLevel = 1;
+        public uint TankLevel = 1;
         public bool UpdateSprite = false;
     }
 }

@@ -92,6 +92,11 @@ namespace ET
             self.Position = position;
 
             self.Rotation = TankMovementHelper.DirectionToRotation(tankInfo.Direction);
+            if (self.TankLevel != tankInfo.Level)
+            {
+                self.UpdateSprite = true;
+                self.TankLevel = tankInfo.Level;
+            }
 
             // Log.Warning($"New position: X {position.X}, Y {position.Y}");
         }
@@ -210,20 +215,20 @@ namespace ET
             return self.MoveDirection;
         }
 
-        public static int GetTankLevel(this TankPlayerComponent self)
+        public static uint GetTankLevel(this TankPlayerComponent self)
         {
             return self.TankLevel;
         }
 
-        public static void UpdatePlayerTankLevel(this TankPlayerComponent self, int level)
-        {
-            self.TankLevel += level;
-            if (self.TankLevel > 3)
-            {
-                self.TankLevel = 3;
-            }
-            self.UpdateSprite = true;
-        }
+        // public static void UpdatePlayerTankLevel(this TankPlayerComponent self, int level)
+        // {
+        //     self.TankLevel += level;
+        //     if (self.TankLevel > 3)
+        //     {
+        //         self.TankLevel = 3;
+        //     }
+        //     self.UpdateSprite = true;
+        // }
 
         public static void UpdatePlayerLifes(this TankPlayerComponent self, int lifes)
         {

@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -73,7 +72,7 @@ namespace ET.Client
                 case TankSkillType.TankLevelUpSkill:
                     {
                         var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-                        playerComponent.UpdatePlayerTankLevel(1);
+                        // playerComponent.UpdatePlayerTankLevel(1);
                         break;
                     }
                 case TankSkillType.TimeStopSkill:
