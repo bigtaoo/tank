@@ -178,7 +178,8 @@ namespace TankLogic
             }
             EffectManager.ClientEffects.Clear();         
 
-            SCCommand.GameInfo.IsGameEnd = IsGameOver;   
+            SCCommand.GameInfo.IsGameEnd = IsGameOver;
+            SCCommand.GameInfo.Gold = Gold;
 
             // Log.Warning($"tank infos: {SCCommand.TankInfos.Count}");
         }
