@@ -20,8 +20,19 @@ namespace ET
             }
 
             var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+            var skillType = playerComponent.TankSkill.SkillType switch
+            {
+                TankSkillType.LifeSkill => SkillType.LifeSkill,
+                TankSkillType.BombSkill => SkillType.BombSkill,
+                TankSkillType.ShieldSkill => SkillType.ShieldSkill,
+                TankSkillType.WallUpgradeSkill => SkillType.WallUpgradeSkill,
+                TankSkillType.TankLevelUpSkill => SkillType.TankLevelUpSkill,
+                TankSkillType.TimeStopSkill => SkillType.TimeStopSkill,
+                _ => SkillType.None,  
+            };
             var initialPlayerCommand = new InitializePlayerCommand((int)playerComponent.SpawnPosition.X * 1000, (int)playerComponent.SpawnPosition.Y * 1000,
-                (int)playerComponent.MoveSpeed * 1000, (uint)playerComponent.ShootCoolDownTime, (int)playerComponent.BulletSpeed * 1000);
+                (int)playerComponent.MoveSpeed * 1000, (uint)playerComponent.ShootCoolDownTime, (int)playerComponent.BulletSpeed * 1000,
+                skillType, (uint)playerComponent.TankSkill.SkillLevel);
 
             var robotComponent = self.Root().GetComponent<TankRobotComponent>();
             var initialRobotsCommand = new InitializeRobotsCommand();

@@ -18,6 +18,9 @@ namespace ET.Client
             self.SkillCoolUpTimeMS = TimeInfo.Instance.ClientFrameTime();
 
             self.Skill.GetComponent<Image>().sprite = AtlasManager.Instance.GetSprite(TankHelper.GetSkillSpriteName(skillType));
+
+            // var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+            // playerComponent.TankSkill = new TankSkill { SkillType = skillType, SkillLevel = skillLevel };
         }
 
         private static void UpdateSkill(this TankUIGameMainComponent self)
@@ -25,7 +28,7 @@ namespace ET.Client
             var currentTime = TimeInfo.Instance.ClientFrameTime();
             if (currentTime - self.SkillCoolUpTimeMS > self.SkillCoolDownTimeMS)
             {
-                self.SkillEffect();
+                // self.SkillEffect();
                 self.SkillCoolUpTimeMS = currentTime;
             }
             else
@@ -36,63 +39,63 @@ namespace ET.Client
             }
         }
         
-        private static void SkillEffect(this TankUIGameMainComponent self)
-        {
-            var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
-            var skillType = savedFileComponent.UserInfo.SelectedSkillType;
+        // private static void SkillEffect(this TankUIGameMainComponent self)
+        // {
+        //     var savedFileComponent = self.Root().GetComponent<TankClientSavedFileComponent>();
+        //     var skillType = savedFileComponent.UserInfo.SelectedSkillType;
 
-            switch (skillType)
-            {
-                case TankSkillType.LifeSkill:
-                    {
-                        var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-                        playerComponent.UpdatePlayerLifes(1);
-                        break;
-                    }
-                case TankSkillType.BombSkill:
-                    {
-                        // var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-                        // var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                        // var selectedRobot = robotComponent.Robots.Values.Where(r => buffComponent.GetBuff(r.RobotId, TankBuffType.Invincible) == null)
-                        //     .Take(3).ToList();
-                        // foreach (var robot in selectedRobot)
-                        // {
-                        //     robot.Level = 0;
-                        // }
-                        break;
-                    }
-                case TankSkillType.ShieldSkill:
-                    {
-                        var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                        buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.Invincible, 3000);
-                        var attachedEffectComponent = self.Root().GetComponent<TankAttachedEffectComponent>();
-                        // attachedEffectComponent.AddAttachedEffect(TankAttachedEffectType.InvincibleShield, 3000, null, true);
-                        break;
-                    }
-                case TankSkillType.TankLevelUpSkill:
-                    {
-                        var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
-                        // playerComponent.UpdatePlayerTankLevel(1);
-                        break;
-                    }
-                case TankSkillType.TimeStopSkill:
-                    {
-                        // var robotComponent = self.Root().GetComponent<TankRobotComponent>();
-                        // var buffComponent = self.Root().GetComponent<TankBuffComponent>();
-                        // foreach (var robot in robotComponent.Robots.Values)
-                        // {
-                        //     buffComponent.AddBuff(robot.RobotId, TankBuffType.CanNotMove, 3000);
-                        // }
-                        break;
-                    }
-                case TankSkillType.WallUpgradeSkill:
-                    {
-                        // var baseComponent = self.Root().GetComponent<TankBaseComponent>();
-                        // baseComponent.UpgradeBaseWalls();
-                        break;
-                    }
-                default: break;
-            }
-        }
+        //     switch (skillType)
+        //     {
+        //         case TankSkillType.LifeSkill:
+        //             {
+        //                 var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+        //                 playerComponent.UpdatePlayerLifes(1);
+        //                 break;
+        //             }
+        //         case TankSkillType.BombSkill:
+        //             {
+        //                 // var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+        //                 // var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+        //                 // var selectedRobot = robotComponent.Robots.Values.Where(r => buffComponent.GetBuff(r.RobotId, TankBuffType.Invincible) == null)
+        //                 //     .Take(3).ToList();
+        //                 // foreach (var robot in selectedRobot)
+        //                 // {
+        //                 //     robot.Level = 0;
+        //                 // }
+        //                 break;
+        //             }
+        //         case TankSkillType.ShieldSkill:
+        //             {
+        //                 var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+        //                 buffComponent.AddBuff(TankConsts.PlayerIndex, TankBuffType.Invincible, 3000);
+        //                 var attachedEffectComponent = self.Root().GetComponent<TankAttachedEffectComponent>();
+        //                 // attachedEffectComponent.AddAttachedEffect(TankAttachedEffectType.InvincibleShield, 3000, null, true);
+        //                 break;
+        //             }
+        //         case TankSkillType.TankLevelUpSkill:
+        //             {
+        //                 var playerComponent = self.Root().GetComponent<TankPlayerComponent>();
+        //                 // playerComponent.UpdatePlayerTankLevel(1);
+        //                 break;
+        //             }
+        //         case TankSkillType.TimeStopSkill:
+        //             {
+        //                 // var robotComponent = self.Root().GetComponent<TankRobotComponent>();
+        //                 // var buffComponent = self.Root().GetComponent<TankBuffComponent>();
+        //                 // foreach (var robot in robotComponent.Robots.Values)
+        //                 // {
+        //                 //     buffComponent.AddBuff(robot.RobotId, TankBuffType.CanNotMove, 3000);
+        //                 // }
+        //                 break;
+        //             }
+        //         case TankSkillType.WallUpgradeSkill:
+        //             {
+        //                 // var baseComponent = self.Root().GetComponent<TankBaseComponent>();
+        //                 // baseComponent.UpgradeBaseWalls();
+        //                 break;
+        //             }
+        //         default: break;
+        //     }
+        // }
     }
 }

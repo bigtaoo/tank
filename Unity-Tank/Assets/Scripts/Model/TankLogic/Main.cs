@@ -11,6 +11,7 @@ namespace TankLogic
         internal BuffManager BuffManager { get; private set; }
         internal TileManager TileManager { get; private set; }
         internal ItemManager ItemManager { get; private set; }
+        internal SkillManager SkillManager { get; private set; }
         internal Headquarter Headquarter { get; private set; }
         internal ILogger Logger { get; private set; }
         internal uint Frame { get; private set; }
@@ -33,6 +34,7 @@ namespace TankLogic
             BuffManager = new BuffManager(this);
             TileManager = new TileManager(this);
             ItemManager = new ItemManager(this);
+            SkillManager = new SkillManager(this);
             Headquarter = new Headquarter(this);
 
             Logger.Warning($"New Logic with seed: {seed}");
@@ -67,6 +69,7 @@ namespace TankLogic
             TileManager.UpdateTiles();
             EffectManager.UpdateEffects();
             ItemManager.UpdateItems();
+            SkillManager.UpdateSkill();
 
             UpdateSCCommand();
         }

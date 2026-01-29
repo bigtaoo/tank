@@ -11,7 +11,7 @@ namespace ET
         private static void Awake(this TankPlayerComponent self)
         {
             self.MoveSpeed = 3.0f;
-            self.LastFrameTime = TimeInfo.Instance.ClientFrameTime();
+            // self.LastFrameTime = TimeInfo.Instance.ClientFrameTime();
             self.MoveDirection = TankDirection.None;
             self.ShootCoolDownTime = 500;
             self.BulletSpeed = 10.0f;

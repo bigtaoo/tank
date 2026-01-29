@@ -22,6 +22,10 @@ namespace ET.Client
             var position = self.TankPlayer1.GetComponent<Transform>().position;
             playerComponent.InilializePlayer(new TankPosition { X = position.x + TankConsts.TileOffset, Y = position.y + TankConsts.TileOffset },
                 moveSpeed, shootCoolDownTime, bulletSpeed);
+            
+            var skillType = gameInfoComponent.UserInfo.SelectedSkillType;
+            var skillLevel = gameInfoComponent.GetSkillLevel(skillType);
+            playerComponent.TankSkill = new TankSkill { SkillType = skillType, SkillLevel = skillLevel };
         }
 
         [EntitySystem]

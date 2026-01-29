@@ -41,9 +41,10 @@ namespace TankLogic
                         }
                     case InitializePlayerCommand initializePlayer:
                         {
-                            _main.Logger.Warning($"Spawn pos x: {initializePlayer.SpwanPosition.X}, y: {initializePlayer.SpwanPosition.Y}");
+                            // _main.Logger.Warning($"Spawn pos x: {initializePlayer.SpwanPosition.X}, y: {initializePlayer.SpwanPosition.Y}");
                             _main.PlayerManager.SetInitiaInfo(initializePlayer.SpwanPosition, initializePlayer.MoveSpeed,
-                             initializePlayer.BulletMoveSpeed, initializePlayer.ShootCoolDownTime);
+                                initializePlayer.BulletMoveSpeed, initializePlayer.ShootCoolDownTime);
+                            _main.SkillManager.InitializeSkill(initializePlayer.SkillType, initializePlayer.SkillLevel);
                             break;
                         }
                     case InitializeRobotsCommand initializeRobots:

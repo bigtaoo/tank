@@ -9,12 +9,13 @@ namespace ET
         public float MoveSpeed { get; set; }
         public float BulletSpeed { get; set; }
         public int Rotation;
-        public long LastFrameTime;
-        public TankDirection CurrentDirection = TankDirection.Up;
+        // public long LastFrameTime;
+        // public TankDirection CurrentDirection = TankDirection.Up;
         public long LastShootTime;
         public long ShootCoolDownTime { get; set; }= 1000;
         public int PlayerLifes;
         public uint TankLevel = 1;
         public bool UpdateSprite = false;
+        public TankSkill TankSkill { get; set; }
     }
 }
