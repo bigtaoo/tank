@@ -86,6 +86,7 @@
     <Compile Include="Assets/Scripts/Model/TankLogic/Commands/SCEffectInfo.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Console/ModeContex.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Models/PlayerData.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Models/SkillType.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/Room.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankBuff.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/AI/AIDispatcherComponent.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="Assets/Scripts/Model/Share/LockStep/LSEntitySystemAttribute.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/LSEntity.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Models/Position.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/SkillManager.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Module/Move/MoveEventType.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/ILSRollbackSystem.cs" />
     <Compile Include="Assets/Scripts/Model/Share/Tank/Structs/TankMapBound.cs" />
@@ -201,6 +203,7 @@
     <Compile Include="Assets/Scripts/Model/Share/LockStep/LSUnit.cs" />
     <Compile Include="Assets/Scripts/Model/Client/LockStep/WaitType.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Commands/InitializeMapCommand.cs" />
+    <Compile Include="Assets/Scripts/Model/TankLogic/Skill.cs" />
     <Compile Include="Assets/Scripts/Model/Share/LockStep/FixedTimeCounter.cs" />
     <Compile Include="Assets/Scripts/Model/Client/LockStep/LSReplayUpdater.cs" />
     <Compile Include="Assets/Scripts/Model/TankLogic/Buff.cs" />
