@@ -9,5 +9,6 @@ namespace ET
         public ILogger TankLogicUnityLogger { get; set; }
         public bool IsGameEnd { get; set; }
         public bool IsGameResultUIShowed { get; set; }
+        public bool IsGamePause { get; set; }
     }
 }

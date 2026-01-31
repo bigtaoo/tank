@@ -46,6 +46,9 @@ namespace ET.Client
             self.ShootCoolDown = rc.Get<GameObject>("ShootCoolDown");
             self.ShootCoolDown.SetActive(false);
 
+            self.Pause = rc.Get<GameObject>("Pause");
+            self.Pause.GetComponent<Button>().onClick.AddListener(() => { self.OnPauseClick(); });
+
             self.Center = rc.Get<GameObject>("center");
             var centerButton = self.Center.GetComponent<CenterJoystick>();
             centerButton.onDirectionChanged.AddListener((direction) => self.OnJoystickDirectionChanged(direction));
@@ -78,6 +81,12 @@ namespace ET.Client
             self.Gold.GetComponent<TMP_Text>().text = gameInfoComponent.GameInfo.Gold.ToString();
 
             self.UpdateSkill();
+        }
+
+        private static void OnPauseClick(this TankUIGameMainComponent self)
+        {
+            var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
+            gameInfoComponent.IsGamePause = !gameInfoComponent.IsGamePause;
         }
 
         private static void MoveTank(this TankUIGameMainComponent self, TankDirection direction)

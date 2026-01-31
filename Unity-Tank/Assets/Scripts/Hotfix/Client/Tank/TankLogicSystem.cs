@@ -1,4 +1,3 @@
-using System.Linq;
 using TankLogic;
 
 namespace ET
@@ -53,7 +52,17 @@ namespace ET
         [EntitySystem]
         private static void Update(this TankLogicComponent self)
         {
+            var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
+            if (gameInfoComponent.IsGamePause)
+            {
+                return;
+            }
             var pastTime = TimeInfo.Instance.ClientFrameTime() - self.lastUpdatedTime;
+            if (pastTime > 500)
+            {
+                self.lastUpdatedTime = TimeInfo.Instance.ClientFrameTime();
+                return;
+            }
             var logicUpdated = false;
             while (pastTime > Main.FrameTime)
             {

@@ -20,6 +20,7 @@ namespace ET.Client
         public GameObject Center;
         public GameObject Shoot;
         public GameObject ShootCoolDown;
+        public GameObject Pause;
 
         public GameObject Skill;
         public GameObject SkillCoolDown;
