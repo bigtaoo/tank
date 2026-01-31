@@ -66,7 +66,7 @@ namespace TankLogic
         {
             if (_main.Headquarter.IsHitBase(BulletData.Position.X, BulletData.Position.Y))
             {
-                _main.SetGameOver();
+                _main.SetGameOver(GameResultType.Lose);
                 return;  
             };
             var tile = _main.TileManager.GetTile(BulletData.Position.X / 1000, BulletData.Position.Y / 1000);

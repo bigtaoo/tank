@@ -31,7 +31,7 @@ namespace TankLogic
         {
             if (RemainingRobotsCount[0] <= 0 && RemainingRobotsCount[1] <= 0 && RemainingRobotsCount[2] <= 0)
             {
-                _main.SetGameOver();
+                _main.SetGameOver(GameResultType.Win);
                 return;
             }
             

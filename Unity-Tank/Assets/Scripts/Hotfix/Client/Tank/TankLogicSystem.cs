@@ -145,7 +145,10 @@ namespace ET
 
             var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
             gameInfoComponent.SetGold(self.tankLogic.SCCommand.GameInfo.Gold);
-            gameInfoComponent.IsGameEnd = self.tankLogic.SCCommand.GameInfo.IsGameEnd;
+            gameInfoComponent.IsGameEnd = self.tankLogic.SCCommand.GameInfo.GameResult != GameResultType.NotEnd;
+
+            var gameResultComponent = self.Root().GetComponent<TankGameResultComponent>();
+            gameResultComponent.IsWin = self.tankLogic.SCCommand.GameInfo.GameResult == GameResultType.Win;
             
             self.tankLogic.SCCommand.ClearData();
         }

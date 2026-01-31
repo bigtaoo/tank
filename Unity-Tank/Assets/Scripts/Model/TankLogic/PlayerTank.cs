@@ -71,7 +71,7 @@ namespace TankLogic
             }
             if (PlayerData.PlayerLifes <= 0)
             {
-                _main.SetGameOver();
+                _main.SetGameOver(GameResultType.Lose);
             }
         }
 

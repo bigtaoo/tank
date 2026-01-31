@@ -18,7 +18,7 @@ namespace TankLogic
         public const uint FrameTime = 20;
         internal uint GameTime { get; private set; }
         internal uint IdGenerator { get; private set; }
-        internal bool IsGameOver { get; private set; }
+        internal GameResultType GameResult { get; private set; }
         internal int Gold { get; private set; }
         public SCCommand SCCommand { get; set; } = new();
 
@@ -45,7 +45,7 @@ namespace TankLogic
             initializeMap.Frame = 1;
             initializePlayer.Frame = 1;
             robotsCommand.Frame = 1;
-            IsGameOver = false;
+            GameResult = GameResultType.NotEnd;
 
             CommandManager.AddCommand(initializeMap);
             CommandManager.AddCommand(initializePlayer);
@@ -54,7 +54,7 @@ namespace TankLogic
 
         public void Update()
         {
-            if (IsGameOver)
+            if (GameResult != GameResultType.NotEnd)
             {
                 return;
             }
@@ -76,7 +76,7 @@ namespace TankLogic
 
         public void AddCommand(Command command)
         {
-            if (IsGameOver)
+            if (GameResult != GameResultType.NotEnd)
             {
                 return;
             }
@@ -89,9 +89,9 @@ namespace TankLogic
             return ++IdGenerator;
         }
 
-        internal void SetGameOver()
+        internal void SetGameOver(GameResultType gameResult)
         {
-            IsGameOver = true;
+            GameResult = gameResult;
         }
 
         internal void AddGold()
@@ -181,7 +181,7 @@ namespace TankLogic
             }
             EffectManager.ClientEffects.Clear();         
 
-            SCCommand.GameInfo.IsGameEnd = IsGameOver;
+            SCCommand.GameInfo.GameResult = GameResult;
             SCCommand.GameInfo.Gold = Gold;
 
             // Log.Warning($"tank infos: {SCCommand.TankInfos.Count}");
