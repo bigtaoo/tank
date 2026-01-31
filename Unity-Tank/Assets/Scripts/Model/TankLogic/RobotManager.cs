@@ -99,6 +99,8 @@ namespace TankLogic
                     Robots.Add(robot.RobotId, robot);
                     RemainingSpawnRobots[spawnInfo.SpawnPointId]--;
 
+                    AdjustRobotSpawnPosition(robot);
+
                     var buffData = new BuffData(_main.GetId(), robot.RobotId, BuffType.Invincible, 3000);
                     _main.BuffManager.AddBuff(buffData);
 
@@ -109,7 +111,32 @@ namespace TankLogic
                 }
             }
         }
-        Direction RotationToDirection(int rotation)
+
+        private void AdjustRobotSpawnPosition(RobotTank robot)
+        {
+            if (robot.PositionHasTank(robot.RobotData.CurrentPosition, robot.RobotData.MoveDirection, robot.RobotId))
+            {
+                return;
+            }
+            var position = robot.RobotData.CurrentPosition;
+            for (int i = -2; i < 2; ++i)
+            {
+                if (i == 0) continue;
+                for (int j = -2; j < 2; ++j)
+                {
+                    if (j == 0) continue;
+                    if (robot.CanTankMoveToPosition(position.X + i, position.Y + j, robot.RobotData.MoveDirection))
+                    {
+                        position.X += i;
+                        position.Y += j;
+                        return;
+                    }
+                }
+            }
+            _main.Logger.Warning($"Can not find a proper position for robot: {robot.RobotId}");
+        }
+
+        private Direction RotationToDirection(int rotation)
         {
             if (rotation == 0)
             {
