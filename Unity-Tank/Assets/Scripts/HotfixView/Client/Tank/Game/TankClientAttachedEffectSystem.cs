@@ -15,6 +15,12 @@ namespace ET
         [EntitySystem]
         public static void Update(this TankClientAttachedEffectComponent self)
         {
+            var gameInfoComponent = self.Root().GetComponent<TankGameInfoComponent>();
+            if (gameInfoComponent.IsGameEnd)
+            {
+                return;
+            }
+            
             self.RemoveEffect();
             self.AddEffect();
             self.UpdatePosition();
