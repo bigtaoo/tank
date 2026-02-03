@@ -112,7 +112,6 @@
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/A2NetClient_RequestHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/LoginHelper.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/LSSceneChangeHelper.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankDamageSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankRobotSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Scene/SceneChangeHelper.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/Router/HttpClientHelper.cs" />

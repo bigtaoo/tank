@@ -12,11 +12,6 @@ namespace ET
 
         }
 
-        public static void AddGold(this TankGameInfoComponent self)
-        {
-            self.GameInfo.Gold++;
-        }
-
         public static int GetGold(this TankGameInfoComponent self)
         {
             return self.GameInfo.Gold;

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using TankLogic;
 
 namespace ET
@@ -16,8 +15,9 @@ namespace ET
 
         public static void UpdateSCBulletInfo(this TankBulletComponent self, List<SCBulletInfo> bulletInfos)
         {
+            self.TempCache.Clear();
             // To Remove
-            foreach (var id in self.Bullets.Keys.ToList())
+            foreach (var id in self.Bullets.Keys)
             {
                 var find = false;
                 foreach (var bullet in bulletInfos)
@@ -32,8 +32,12 @@ namespace ET
                 {
                     // Log.Warning($"Client delete bullet, id: {id}");
                     self.BulletsToRemove.Add(id);
-                    self.Bullets.Remove(id);
+                    self.TempCache.Add(id);                   
                 }
+            }
+            foreach (var key in self.TempCache)
+            {
+                self.Bullets.Remove(key);
             }
 
             // To Update
