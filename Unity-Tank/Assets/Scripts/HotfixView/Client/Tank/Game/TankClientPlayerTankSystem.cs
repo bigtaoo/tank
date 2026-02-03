@@ -63,11 +63,6 @@ namespace ET.Client
             //     transform.DOMove(targetPosition, time / 1000.0f);
             // }
 
-            if (buffComponent.GetBuff(TankConsts.PlayerIndex, TankBuffType.TweenDisplay) != null)
-            {
-                return;
-            }
-
             self.UpdateTankSprite();
             self.UpdateInput();
 

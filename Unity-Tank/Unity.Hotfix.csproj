@@ -86,7 +86,6 @@
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Move/MoveHelper.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/Module/Message/SessionIdleCheckerComponentSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/AI/XunLuoPathComponentSystem.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankBaseSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Module/Message/ClientSessionErrorComponentSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Unit/UnitHelper.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/Main/Scene/M2C_StartSceneChangeHandler.cs" />
@@ -105,7 +104,6 @@
     <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankGameInfoSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/Demo/EntryEvent1_InitShare.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Tank/Helper/TankMovementHelper.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankBuffSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/AI/AI_XunLuo.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/Module/Console/ReloadConfigConsoleHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/G2C_ChangeSceneHandler.cs" />
