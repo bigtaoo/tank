@@ -1,6 +1,3 @@
-using MongoDB.Bson;
-using System.Linq;
-
 namespace ET
 {
     [EntitySystemOf(typeof(TankMapTilesComponent))]
@@ -19,24 +16,21 @@ namespace ET
             self.TileWidth = tileWidth;
             self.TileHeight = tileHeight;
 
-            Log.Info($"width: {tileWidth}, height: {tileHeight}, tiles: {tiles.ToJson()},");
-        }
-
-        public static bool IsInMap(this TankMapTilesComponent self, TankPosition position, float collision)
-        {
-            return position.X >= self.MapBound.Left + collision && position.X <= self.MapBound.Right - collision &&
-                position.Y >= self.MapBound.Bottom + collision && position.Y <= self.MapBound.Top - collision;
-        }
-
-        public static TankMapTile GetTile(this TankMapTilesComponent self, TankPosition position)
-        {
-            return self.Tiles.Where(t => t.X == (int)position.X && t.Y == (int)position.Y).FirstOrDefault();
+            // Log.Info($"width: {tileWidth}, height: {tileHeight}, tiles: {tiles.ToJson()},");
         }
 
         public static void SetTileType(this TankMapTilesComponent self, int x, int y, TankMapTileType tileType)
         {
             // Log.Warning($"Update client tile: x {x}, y: {y}, type: {tileType}");
-            var tile = self.Tiles.FirstOrDefault(t => t.X == x && t.Y == y);
+            TankMapTile tile = null;
+            foreach (var t in self.Tiles)
+            {
+                if (t.X == x && t.Y == y)
+                {
+                    tile = t;
+                    break;
+                }
+            }
             if (tile == null)
             {
                 tile = new TankMapTile(x, y, tileType);
