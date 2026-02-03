@@ -1,4 +1,3 @@
-using System.Linq;
 using TankLogic;
 
 namespace ET
@@ -17,14 +16,20 @@ namespace ET
         public static void Update(this TankAttachedEffectComponent self)
         {
             var currentTime = TimeInfo.Instance.ClientFrameTime();
-            foreach (var key in self.TankAttachedEffects.Keys.ToList())
+            self.TempCache.Clear();
+            foreach (var key in self.TankAttachedEffects.Keys)
             {
                 var effect = self.TankAttachedEffects[key];
                 if (effect.RemoveTime < currentTime)
                 {
                     self.EffectsToRemove.Add(effect);
-                    self.TankAttachedEffects.Remove(key);
+                    self.TempCache.Add(key);
                 }
+            }
+            foreach (var key in self.TempCache)
+            {
+                self.TankAttachedEffects.Remove(key);
+                // Log.Warning($"Remove client effect id: {key}");
             }
         }
 

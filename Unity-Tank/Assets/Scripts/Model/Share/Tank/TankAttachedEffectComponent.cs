@@ -9,5 +9,6 @@ namespace ET
         public Dictionary<uint, TankAttachedEffect> TankAttachedEffects { get; set; } = new();
         public ListComponent<TankAttachedEffect> EffectsToAdd { get; set; } = new();
         public ListComponent<TankAttachedEffect> EffectsToRemove { get; set; } = new();
+        public ListComponent<uint> TempCache { get; set; } = new();
     }
 }
