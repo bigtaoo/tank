@@ -60,7 +60,6 @@
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/A2NetClient_MessageHandler.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/Module/Message/SessionAcceptTimeoutComponentSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Demo/NetClient/Router/RouterConnectorSystem.cs" />
-    <Compile Include="Assets/Scripts/Hotfix/Client/Tank/Helper/TankDamageHelper.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/LockStep/LSClientUpdaterSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Share/LockStep/LSInputComponentSystem.cs" />
     <Compile Include="Assets/Scripts/Hotfix/Client/Tank/TankLogicSystem.cs" />

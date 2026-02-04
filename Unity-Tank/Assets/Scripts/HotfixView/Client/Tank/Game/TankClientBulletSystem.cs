@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 namespace ET
@@ -62,7 +61,7 @@ namespace ET
         private static void UpdateBullets(this TankClientBulletComponent self)
         {
             var bulletComponent = self.Root().GetComponent<TankBulletComponent>();
-            foreach (var key in bulletComponent.Bullets.Keys.ToList())
+            foreach (var key in bulletComponent.Bullets.Keys)
             {
                 var bulletGameObject = self.Bullets[key];
                 var bullet = bulletComponent.Bullets[key];

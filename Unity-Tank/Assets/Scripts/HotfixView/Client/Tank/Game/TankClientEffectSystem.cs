@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 namespace ET
@@ -48,15 +47,20 @@ namespace ET
         private static void RecycleExplosionEffects(this TankClientEffectComponent self)
         {
             var currentTime = TimeInfo.Instance.ClientFrameTime();
-            foreach (var key in self.ExistExplosion.Keys.ToList())
+            self.TempCache.Clear();
+            foreach (var key in self.ExistExplosion.Keys)
             {
                 if (currentTime > key)
                 {
                     var explosion = self.ExistExplosion[key];
-                    self.ExistExplosion.Remove(key);
+                    self.TempCache.Add(key);
                     self.RecycledExplosion.Push(explosion);
                     explosion.SetActive(false);
                 }
+            }
+            foreach (var key in self.TempCache)
+            {
+                self.ExistExplosion.Remove(key);
             }
         }
     }

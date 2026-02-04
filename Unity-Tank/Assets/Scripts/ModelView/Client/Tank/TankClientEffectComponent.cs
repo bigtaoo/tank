@@ -7,8 +7,9 @@ namespace ET
     public class TankClientEffectComponent : Entity, IAwake, IUpdate
     {
         public GameObject Explosion;
-        public Stack<GameObject> RecycledExplosion = new Stack<GameObject>();
+        public Stack<GameObject> RecycledExplosion = new();
         public float ExplosionZ;
-        public Dictionary<long, GameObject> ExistExplosion = new Dictionary<long, GameObject>();
+        public Dictionary<long, GameObject> ExistExplosion = new();
+        public ListComponent<long> TempCache = new();
     }
 }
