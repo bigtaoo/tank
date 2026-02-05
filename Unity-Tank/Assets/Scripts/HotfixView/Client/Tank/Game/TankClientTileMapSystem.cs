@@ -1,4 +1,3 @@
-using MongoDB.Bson;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -81,7 +80,7 @@ namespace ET.Client
                 Left = topleft.x + TankConsts.TileOffset,
                 Right = buttomright.x + TankConsts.TileOffset,
             };
-            Log.Info($"map bound: {tankMapTileComponent.MapBound.ToJson()}");
+            // Log.Info($"map bound: {tankMapTileComponent.MapBound.ToJson()}");
         }
     }
 }
