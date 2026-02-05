@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace ET
@@ -14,7 +13,7 @@ namespace ET
         {
             foreach (TankItemType itemType in Enum.GetValues(typeof(TankItemType)))
             {
-                self.AvaiableItemResources.Add(itemType, new List<GameObject>());
+                self.AvaiableItemResources.Add(itemType, new Stack<GameObject>());
             }
         }
 
@@ -30,7 +29,11 @@ namespace ET
             var itemComponent = self.Root().GetComponent<TankItemComponent>();
             foreach (var item in itemComponent.ItemsToAdd)
             {
-                var gameObject = self.AvaiableItemResources[item.ItemType].FirstOrDefault();
+                GameObject gameObject = null;
+                if (self.AvaiableItemResources[item.ItemType].Count > 0)
+                {
+                    gameObject = self.AvaiableItemResources[item.ItemType].Pop();
+                }
                 if (gameObject == null)
                 {
                     gameObject = self.CreateItemGameObject(item.ItemType);
@@ -57,7 +60,7 @@ namespace ET
                 var gameObject = self.Items[item.ItemId];
                 gameObject.SetActive(false);
                 self.Items.Remove(item.ItemId);
-                self.AvaiableItemResources[item.ItemType].Add(gameObject);
+                self.AvaiableItemResources[item.ItemType].Push(gameObject);
 
                 SoundManager.Instance.PlayItemPickUp();
 
