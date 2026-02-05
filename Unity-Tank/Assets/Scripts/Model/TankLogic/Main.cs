@@ -70,6 +70,7 @@ namespace TankLogic
             EffectManager.UpdateEffects();
             ItemManager.UpdateItems();
             SkillManager.UpdateSkill();
+            Headquarter.UpdateHeadquarter();
 
             UpdateSCCommand();
         }

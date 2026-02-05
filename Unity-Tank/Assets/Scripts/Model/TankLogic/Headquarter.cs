@@ -8,6 +8,7 @@ namespace TankLogic
         private readonly Main _main;
         private List<Position> Walls;
         private Position BasePosition;
+        private uint _wallsUpgradeExpireTime;
 
         internal Headquarter(Main main)
         {
@@ -24,6 +25,19 @@ namespace TankLogic
                 new(101, 90),
             };
             BasePosition = new(100, 91);
+            _wallsUpgradeExpireTime = 0;
+        }
+
+        internal void UpdateHeadquarter()
+        {
+            if (_wallsUpgradeExpireTime != 0 && _wallsUpgradeExpireTime < _main.GameTime)
+            {
+                _wallsUpgradeExpireTime = 0;
+                foreach (var wall in Walls)
+                {
+                    _main.TileManager.UpdateTile(wall.X, wall.Y, TileType.Wall);
+                }
+            }
         }
 
         internal bool IsHitBase(int x, int y)
@@ -37,6 +51,7 @@ namespace TankLogic
             {
                 _main.TileManager.UpdateTile(wall.X, wall.Y, TileType.Steel);
             }
+            _wallsUpgradeExpireTime = _main.GameTime + 10 * 1000;
         }
     }
 }
