@@ -12,7 +12,7 @@ namespace ET.Client
         {
             ReferenceCollector rc = self.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             self.Back = rc.Get<GameObject>("Back");
-            self.Back.GetComponent<Button>().onClick.AddListener(() => { self.BackToGameModeUI().Coroutine(); });
+            self.Back.GetComponent<Button>().onClick.AddListener(() => { self.OnBackClick().Coroutine(); });
 
             self.MusicVolume = rc.Get<GameObject>("MusicValue");
             self.MusicVolume.GetComponent<Slider>().onValueChanged.AddListener(value => { self.SetMusicVolume(value); });
@@ -51,12 +51,12 @@ namespace ET.Client
             }
         }
 
-        private static async ETTask BackToGameModeUI(this TankUISettingsComponent self)
+        private static async ETTask OnBackClick(this TankUISettingsComponent self)
         {
             SoundManager.Instance.PlayButtonClick();
 
             var scene = self.Root();
-            await UIHelper.Create(scene, UIType.TankUIGameMode, UILayer.Mid);
+            await UIHelper.Create(scene, UIType.TankUIStartSite, UILayer.Mid);
             await UIHelper.Remove(scene, UIType.TankUISettings);
         }
 

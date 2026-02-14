@@ -63,7 +63,10 @@
     <Compile Include="Assets/Scripts/HotfixView/Client/LockStep/UI/UILSRoom/UILSRoomEvent.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIGameMain/TankUIGameMainSkillSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientPlayerTankSystem.cs" />
+    <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIStartSite/TankUIStartSiteEvent.cs" />
+    <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIInformation/TankUIInformationEvent.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/UI/UILogin/LoginFinish_RemoveLoginUI.cs" />
+    <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIInformation/TankUIInformationSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientGameInfoSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/LockStep/LSSceneInitFinish_Finish.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIGameResult/TankUIGameResultSystem.cs" />
@@ -74,6 +77,7 @@
     <Compile Include="Assets/Scripts/HotfixView/Client/LockStep/UI/UILSLogin/UILSLoginEvent.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Module/Resource/GameObjectHelper.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UISettings/TankUISettingsSystem.cs" />
+    <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/TankUIChooseGameMode_AppStartInitFinish.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/Unit/ChangeRotation_SyncGameObjectRotation.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UINote/TankUINoteEvent.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/UI/UIHelper.cs" />
@@ -100,7 +104,6 @@
     <Compile Include="Assets/Scripts/HotfixView/Client/LockStep/UI/UILSLobby/LoginFinish_CreateUILSLobby.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UINote/TankUINoteSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/Unit/AnimatorComponentSystem.cs" />
-    <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIGameMode/TankUIChooseGameMode_AppStartInitFinish.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Module/TrueSync/TrueSyncExtensions.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Utilities/TankHelper.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIGameMain/TankUIGameMainEvent.cs" />
@@ -115,6 +118,7 @@
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankClientAttachedEffectSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Tank/Game/TankCameraSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/LockStep/LSUnitViewSystem.cs" />
+    <Compile Include="Assets/Scripts/HotfixView/Client/Tank/UI/UIStartSite/TankUIStartSiteSystem.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/EntryEvent3_InitClient.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/LockStep/UI/UILSLogin/LoginFinish_RemoveLoginUI.cs" />
     <Compile Include="Assets/Scripts/HotfixView/Client/Demo/Unit/GameObjectComponentSystem.cs" />

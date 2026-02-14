@@ -56,7 +56,9 @@
     <Compile Include="Assets/Scripts/ModelView/Client/LockStep/UI/UILSLobby/UILSLobbyComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/UI.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Demo/UI/UILogin/UILoginComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankUIInformationComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Module/UI/UIEventComponent.cs" />
+    <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankUIStartSiteComponent.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Plugins/Example/ModelView.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankLogicUnityLogger.cs" />
     <Compile Include="Assets/Scripts/ModelView/Client/Tank/TankUIGameResultComponent.cs" />
