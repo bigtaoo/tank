@@ -16,20 +16,20 @@ namespace ET.Client
             self.SingleMode = rc.Get<GameObject>("SingleMode");
             self.SingleMode.GetComponent<Button>().onClick.AddListener(() => { self.OnSingleModeClick().Coroutine(); });
 
-            self.SingleMode = rc.Get<GameObject>("Multiplayer");
-            self.SingleMode.GetComponent<Button>().onClick.AddListener(() => { self.OnMultiplayerClick().Coroutine(); });
+            self.Multiplayer = rc.Get<GameObject>("Multiplayer");
+            self.Multiplayer.GetComponent<Button>().onClick.AddListener(() => { self.OnMultiplayerClick().Coroutine(); });
 
-            self.SingleMode = rc.Get<GameObject>("Challenge");
-            self.SingleMode.GetComponent<Button>().onClick.AddListener(() => { self.OnChallengeClick().Coroutine(); });
+            self.Challenge = rc.Get<GameObject>("Challenge");
+            self.Challenge.GetComponent<Button>().onClick.AddListener(() => { self.OnChallengeClick().Coroutine(); });
 
-            self.SingleMode = rc.Get<GameObject>("Settings");
-            self.SingleMode.GetComponent<Button>().onClick.AddListener(() => { self.OnSettingsClick().Coroutine(); });
+            self.Settings = rc.Get<GameObject>("Settings");
+            self.Settings.GetComponent<Button>().onClick.AddListener(() => { self.OnSettingsClick().Coroutine(); });
 
-            self.SingleMode = rc.Get<GameObject>("Shop");
-            self.SingleMode.GetComponent<Button>().onClick.AddListener(() => { self.OnShopClick().Coroutine(); });
+            self.Shop = rc.Get<GameObject>("Shop");
+            self.Shop.GetComponent<Button>().onClick.AddListener(() => { self.OnShopClick().Coroutine(); });
 
             self.Information = rc.Get<GameObject>("Information");
-            self.SingleMode.GetComponent<Button>().onClick.AddListener(() => { self.OnInformationClick().Coroutine(); });
+            self.Information.GetComponent<Button>().onClick.AddListener(() => { self.OnInformationClick().Coroutine(); });
         }
 
         private static async ETTask OnSingleModeClick(this TankUIStartSiteComponent self)
