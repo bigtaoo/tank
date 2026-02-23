@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using YooAsset;
 
 namespace ET.Client
@@ -88,7 +87,7 @@ namespace ET.Client
             return dictionary;
         }
 
-        public static async ETTask LoadSceneAsync(this ResourcesLoaderComponent self, string location, LoadSceneMode loadSceneMode)
+        public static async ETTask LoadSceneAsync(this ResourcesLoaderComponent self, string location, UnityEngine.SceneManagement.LoadSceneMode loadSceneMode)
         {
             using CoroutineLock coroutineLock = await self.Root().GetComponent<CoroutineLockComponent>().Wait(CoroutineLockType.ResourcesLoader, location.GetHashCode());
 
